@@ -1,0 +1,245 @@
+<footer class="doumdoum_custom-footer section--{{ section.id }} color-{{ section.settings.color_scheme }} 
+" style="background-image: url('{{ section.settings.footer_bg_image | image_url: width: 2000 }}'); background-size: cover; background-position: center; background-repeat: no-repeat">
+  <div class="dooumdoum_custom-footer footer_news-letter">
+    <h3 class="news-letter_title">
+      {{ section.settings.news_letter_title }}
+    </h3>
+    <p class="news-letter_info">
+      {{ section.settings.news_letter_info }}
+    </p>
+  </div>
+  <div class="dooumdoum_custom-footer footer_menu">
+    <div class="dooumdoum_custom-footer footer_menu--top">
+      <div class="footer-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px;">
+
+        {%- assign menu_index = 0 -%}
+        {%- assign total_menus = 4 -%}
+
+        {%- for i in (1..total_menus) -%}
+          {%- assign menu_setting = 'footer_menu_' | append: i -%}
+          {%- assign link_list = section.settings[menu_setting] -%}
+
+          {%- if link_list != blank -%}
+            {%- assign menu_data = linklists[link_list] -%}
+
+            {%- if i == 1 -%}
+              {%- assign col_span = 'grid-column: span 2;' -%}
+            {%- else -%}
+              {%- assign col_span = '' -%}
+            {%- endif -%}
+
+            <div class="footer-column" style="{{ col_span }}">
+              <h3 class="menu_title">{{ menu_data.title }}</h3>
+              <ul class="menu_list">
+                {%- for link in menu_data.links -%}
+                  <li class="menu_link">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+
+        <div class="footer-column">
+          <h3 class="menu_title">Langue</h3>
+          <ul class="menu_list">
+
+            <li class="language_link menu_link">
+              <a href="/fr">
+                <span style="margin-right: 8px;">🇫🇷</span>
+                Français
+              </a>
+            </li>
+
+            <li class="language_link menu_link">
+              <a href="/ar">
+                <span style="margin-right: 8px;">🇩🇿</span>
+                العربية
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="dooumdoum_custom-footer footer_devider"></div>
+    <div class="dooumdoum_custom-footer footer_logo--bot">
+      <img
+        src="{{ section.settings.logo_footer | img_url: '1024x' }}"
+        width="{{ section.settings.logo_footer.width }}"
+        height="{{ section.settings.logo_footer.height }}"
+        alt="{{ section.settings.logo_footer.alt }}"
+        loading="lazy">
+    </div>
+
+
+  </div>
+
+</footer>
+<style>
+  .doumdoum_custom-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer_news-letter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    margin-bottom: 34px;
+  }
+  .news-letter_title {
+    width: 420px;
+    font-family: Fredoka;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 34px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+  }
+  .news-letter_info {
+    width: 420px;
+    font-family: Nunito;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+  }
+  .footer_menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    max-width: 98%;
+    padding: 48px 112px;
+    background-color: #FAFAFA;
+    border-radius: 24px;
+    margin-bottom: 24px;
+  }
+  .footer-grid .footer-column:first-child .menu_list {
+    width: 100%;
+    column-count: 2;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-grid > .footer-column:first-child .menu_link {
+    break-inside: avoid;
+    display: block;
+  }
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .menu_list {
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+  }
+  .menu_link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 181.1px;
+    list-style: none;
+  }
+  .menu_title {
+    font-family: Nunito;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #181D27;
+  }
+  .menu_link a {
+    text-decoration: none;
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #181D27;
+
+  }
+  .footer_devider {
+    height: 0;
+    border: 0;
+    border-top: 1px dashed #A4A7AE;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 98%;
+  }
+  .footer_logo--bot {
+    max-width: 98%;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Custom Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "news_letter_title",
+        "label": "Titre de la newsletter",
+        "default": "-10% sur votre première commande"
+      },
+      {
+        "type": "text",
+        "id": "news_letter_info",
+        "label": "Info de la newsletter",
+        "default": "Offrez à votre bébé des soins sûrs et doux dès aujourd'hui, nous vous appelons pour confirmer."
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_bg_image",
+        "label": "Image de fond du footer"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_menu_1",
+        "label": "Shop"
+      }, {
+        "type": "link_list",
+        "id": "footer_menu_2",
+        "label": "Pages"
+      }, {
+        "type": "link_list",
+        "id": "footer_menu_3",
+        "label": "Social"
+      }, {
+        "type": "link_list",
+        "id": "footer_menu_4",
+        "label": "Langues"
+      }, {
+        "type": "image_picker",
+        "id": "logo_footer",
+        "label": "Logo Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Footer"
+      }
+    ]
+  }
+{% endschema %}
