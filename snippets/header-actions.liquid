@@ -18,7 +18,7 @@
   fetchpriority="low"
 ></script>
 
-{% capture cart_icon %}
+{% comment %} {% capture cart_icon %}
   <cart-icon
     class="header-actions__cart-icon{% if display_style == 'text' %} header-actions__cart-icon--text{% endif %}{% unless cart == empty %} header-actions__cart-icon--has-cart{% endunless %}"
     data-testid="cart-icon"
@@ -36,10 +36,74 @@
 
     {% render 'cart-bubble', limit: 100 %}
   </cart-icon>
+{% endcapture %} {% endcomment %}
+
+{% capture cart_icon %}
+  <cart-icon
+    class=""
+    data-testid="cart-icon"
+    style="display: flex; align-items: center; background-color: #FFFFFF; border: 1px solid #E9EAEB; border-radius: 16px; padding: 12px 16px"
+  >
+    <span class="{% if display_style == 'icon' %}hidden{% else %}mobile:hidden{% endif %}">
+      {{ 'content.cart_title' | t }}
+    </span>
+
+    <span
+      class="svg-wrapper {% if display_style != 'icon' %}desktop:hidden{% endif %}"
+      aria-hidden="true"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M5 5.11334V4.46667C5 2.96667 6.20667 1.49334 7.70667 1.35334C9.49333 1.18001 11 2.58667 11 4.34001V5.26001" stroke="#252B37" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5.99988 14.6666H9.99988C12.6799 14.6666 13.1599 13.5933 13.2999 12.2866L13.7999 8.28659C13.9799 6.65992 13.5132 5.33325 10.6666 5.33325H5.33322C2.48655 5.33325 2.01988 6.65992 2.19988 8.28659L2.69988 12.2866C2.83988 13.5933 3.31988 14.6666 5.99988 14.6666Z" stroke="#252B37" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M10.3306 8.00008H10.3366" stroke="#252B37" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5.66268 8.00008H5.66867" stroke="#252B37" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+
+
+    <div
+      ref="cartBubble"
+      class="doumdoum-cart-text"
+      {% assign item_count = cart.item_count %}
+    >
+      <span
+        ref="cartBubbleText"
+        class="doumdoum-cart-text__text"
+      >
+        <span
+          class="doumdoum-cart-text__text-count"
+          ref="cartBubbleCount"
+          aria-hidden="true"
+          data-testid="doumdoum-cart-text"
+        >
+          Panier ({{- cart.item_count -}})
+        </span>
+      </span>
+    </div>
+    <style>
+      .doumdoum-cart-text {
+        margin-left: 8px;
+      }
+      .doumdoum-cart-text__text-count {
+        font-family: nunito;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: -0.5%;
+      }
+    </style>
+    
+    
+    {% comment %} {% render 'cart-bubble', limit: 100 %} {% endcomment %}
+  </cart-icon>
 {% endcapture %}
 
 {% capture account_icon %}
-  <svg
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path d="M8.00033 7.99992C9.84127 7.99992 11.3337 6.50753 11.3337 4.66658C11.3337 2.82564 9.84127 1.33325 8.00033 1.33325C6.15938 1.33325 4.66699 2.82564 4.66699 4.66658C4.66699 6.50753 6.15938 7.99992 8.00033 7.99992Z" stroke="#252B37" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M13.7268 14.6667C13.7268 12.0867 11.1601 10 8.0001 10C4.8401 10 2.27344 12.0867 2.27344 14.6667" stroke="#252B37" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  {% comment %} <svg
     xmlns="http://www.w3.org/2000/svg"
     width="15"
     height="17"
@@ -54,7 +118,7 @@
       stroke-width="var(--icon-stroke-width)"
       d="M10.375 3.813a3.063 3.063 0 1 1-6.125 0 3.063 3.063 0 0 1 6.125 0ZM7.313 9.5c-3.667 0-6.24 2.691-6.563 6.125h13.125C13.552 12.191 10.979 9.5 7.312 9.5Z"
     />
-  </svg>
+  </svg> {% endcomment %}
 {% endcapture %}
 
 <header-actions
@@ -83,7 +147,7 @@
       endif
     %}
     <div
-      class="account-button header-actions__action{% if display_style == 'text' %} account-button--text{% endif %} color-{{ settings.popover_color_scheme }}"
+      class="account-button header-actions__action{% if display_style == 'text' %} account-button--text{% endif %} color-{{ settings.popover_color_scheme }} doumdoum__account-button"
     >
       <shopify-account
         menu="{{ customer_account_menu }}"
@@ -162,7 +226,7 @@
         {{ empty_cart_drawer_content }}
       </template>
       <button
-        class="header-actions__action button-unstyled{% if display_style == 'text' %} header-actions__text-style{% endif %}"
+        class="header-actions__action button-unstyled{% if display_style == 'text' %} header-actions__text-style{% endif %} doumdoum__cart-button"
         on:click="/open"
         aria-haspopup="dialog"
         aria-label="{{ 'accessibility.cart' | t }}"

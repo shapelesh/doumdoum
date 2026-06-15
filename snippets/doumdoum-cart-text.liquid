@@ -1,0 +1,33 @@
+{%- doc -%}
+  @param [limit] - {number}
+
+  The maximum number of items in the cart to display. If the number of items in the cart is greater than this limit, the
+  count will be displayed as "99+".
+{%- enddoc -%}
+
+<div
+  ref="cartBubble"
+  class="doumdoum-cart-text{% if cart == empty %} visually-hidden{% endif %}"
+  {% assign item_count = cart.item_count %}
+>
+  <span
+    ref="cartBubbleText"
+    id="doumdoum-cart-text-text"
+    class="doumdoum-cart-text__text"
+  >
+    <span
+      class="doumdoum-cart-text__text-count{% if cart == empty %} hidden{% endif %}"
+      ref="cartBubbleCount"
+      aria-hidden="true"
+      data-testid="doumdoum-cart-text"
+    >
+      {%- if limit == blank or cart.item_count < limit %}
+        {{- cart.item_count -}}
+      {%- endif -%}
+    </span>
+  </span>
+</div>
+
+{%- stylesheet -%}
+  
+{%- endstylesheet -%}

@@ -1,25 +1,136 @@
+{%- capture canonical_url_string -%}{{ content_for_header }}{%- endcapture -%}
+{%- assign page_url_parts = canonical_url_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&' -%}
+{%- assign current_url = page_url_parts -%}
+<script
+  src="{{ 'custom-header-menu.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"></script>
 <section class="doumdoum__header">
   <div class="doumdoum__header-left">
-    <span class="header-link">
-      <a href="{{ shop.url }}">
-        accueil
-      </a>
-    </span>
-    <span class="header-link">
-      Boutique +
-    </span>
-    {%- for link in section.settings.menu.links -%}
-      <span class="header-link">
-        <a href="{{ link.url }}">
-          {{ link.title }}
+    <div class="doumdoum__header-left-desktop">
+      <span class="header-link {% if request.page_type == 'index' %}active{% endif %}">
+        <a href="{{ shop.url }}">
+          Accueil
         </a>
       </span>
-    {%- endfor -%}
+      <span class="header-link" id="megamenu_opener">
+        Boutique +
+      </span>
+      {%- for link in section.settings.menu.links -%}
+        <span class="header-link {% if link.current %}active{% endif %}">
+          <a href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+        </span>
+      {%- endfor -%}
+    </div>
+    <div class="doumdoum__header-left-mobile">
+      {% render 'doumdoum__header-drawer-opener' %}
+    </div>
   </div>
-  <div class="doumdoum__header-center"></div>
-  <div class="doumdoum__header-bottom"></div>
-</section>
 
+  <div class="doumdoum__header-center">
+    {% content_for 'block'
+      , type: '_header-logo'
+      , id: 'header-logo' %}
+  </div>
+  <div class="doumdoum__header-bottom">
+    {% render 'header-actions'
+      , customer_account_menu: section.settings.customer_account_menu
+      , display_style: "icon"
+      , section: section %}
+  </div>
+  {%- render 'custom-header-megamenu'
+    , section: section -%}
+</section>
+{%- for block in section.blocks -%}
+  <script>console.log({{ block.settings.tab_name | json }})</script>
+{%- endfor -%}
+<style>
+  .doumdoum__header {
+    position: relative;
+    display: flex;
+    padding: 14.5px 112px;
+    justify-content: space-between;
+    background-color: #FAFAFA;
+    border-bottom: 1px solid #F5F5F5;
+  }
+  custom-header-megamenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 600px;
+    z-index: 5;
+    background-color: white;
+  }
+  .doumdoum__header-left {
+    display: flex;
+  }
+  .doumdoum__header-left-desktop {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .doumdoum__header-left .header-link {
+    font-family: Nunito;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #181D27;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+  }
+  .doumdoum__header-left .header-link.active {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .doumdoum__header-center {
+    min-height: 43px;
+  }
+  .doumdoum__header-left-mobile {
+    display: none;
+  }
+  @media screen and (max-width: 1120px) {
+    .doumdoum__header {
+      padding: 14.5px 80px;
+    }
+    .doumdoum__header-center {
+      max-width: 260px;
+    }
+  }
+  @media screen and (max-width: 1020px) {
+    .doumdoum__header {
+      padding: 14.5px 60px;
+    }
+    .doumdoum__header-center {
+      max-width: 240px;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .doumdoum__header {
+      padding: 14.5px 40px;
+    }
+    .doumdoum__header-center {
+      max-width: 180px;
+    }
+  }
+  @media screen and (max-width: 790px) {
+    .doumdoum__header {
+      padding: 14.5px 16px;
+    }
+    .doumdoum__header-left-mobile {
+      display: flex;
+    }
+    .doumdoum__header-left-desktop {
+      display: none;
+    }
+  }
+</style>
 {% schema %}
   {
     "name": "doumdoum header",
@@ -28,6 +139,11 @@
         "type": "link_list",
         "id": "menu",
         "label": "Menu"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@theme"
       }
     ],
     "presets": [
