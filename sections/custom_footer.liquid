@@ -26,7 +26,7 @@
   </div>
   <div class="dooumdoum__custom-footer footer_menu">
     <div class="dooumdoum__custom-footer footer_menu--top">
-      <div class="footer-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px;">
+      <div class="footer-grid">
 
         {%- assign menu_index = 0 -%}
         {%- assign total_menus = 4 -%}
@@ -156,6 +156,11 @@
     border-radius: 24px;
     margin-bottom: 24px;
   }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+  }
   .footer-grid .footer-column:first-child .menu_list {
     width: 100%;
     column-count: 2;
@@ -216,6 +221,122 @@
   }
   .footer_logo--bot {
     max-width: 98%;
+  }
+  @media screen and (max-width: 990px) {
+    .footer_menu {
+      max-width: 98%;
+      padding: 48px 78px;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .footer_menu {
+      max-width: 98%;
+      padding: 32px 42px;
+
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .footer_news-letter {
+      margin-top: 32px;
+      margin-bottom: 96px;
+    }
+    .custom__email-signup__input-group {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .custom__email-signup__input,
+    .custom__email-signup__button {
+      width: 100%;
+      max-width: 342px;
+      height: 44px;
+      border-radius: 16px;
+      align-self: center;
+    }
+
+    .footer_bear {
+      position: absolute;
+      left: 21px;
+      top: 275px;
+    }
+    .footer_menu {
+      max-width: 96%;
+      padding: 32px;
+
+    }
+    .footer-grid {
+      height: 437px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .footer-grid .footer-column:first-child .menu_list {
+      width: 100%;
+      column-count: 3;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-grid .footer-column:nth-child(2) .menu_list {
+      width: 100%;
+      column-count: 3;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-grid .footer-column:nth-child(3) {
+      grid-row: 3 / 4;
+    }
+    .footer-grid .footer-column:nth-child(3) .menu_list {
+      width: 100%;
+      column-count: 3;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-grid .footer-column:nth-child(4) {
+      grid-row: 4 / 5;
+    }
+    .footer-grid .footer-column:nth-child(4) .menu_list {
+      width: 100%;
+      column-count: 2;
+      padding: 0;
+      margin: 0;
+    }
+    .menu_list {
+      gap: 10px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .footer-grid .footer-column:first-child .menu_list {
+      width: 100%;
+      column-count: 2;
+      padding: 0;
+      margin: 0;
+    }
+    .footer_menu {
+      max-width: 94%;
+      padding: 16px 12px;
+
+    }
+    .footer_news-letter {
+      margin-top: 32px;
+      margin-bottom: 96px;
+    }
+    .custom__email-signup__input,
+    .custom__email-signup__button {
+      width: 100%;
+      min-width: 354px;
+      height: 48px;
+      border-radius: 16px;
+      align-self: center;
+    }
+    .news-letter_title,
+    .news-letter_info {
+      width: 100%;
+      min-width: 342px;
+      padding: 0 16px;
+      text-align: start;
+    }
+
   }
 </style>
 
