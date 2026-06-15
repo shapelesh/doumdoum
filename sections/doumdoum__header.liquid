@@ -1,0 +1,41 @@
+<section class="doumdoum__header">
+  <div class="doumdoum__header-left">
+    <span class="header-link">
+      <a href="{{ shop.url }}">
+        accueil
+      </a>
+    </span>
+    <span class="header-link">
+      Boutique +
+    </span>
+    {%- for link in section.settings.menu.links -%}
+      <span class="header-link">
+        <a href="{{ link.url }}">
+          {{ link.title }}
+          
+        </a>
+      </span>
+    {%- endfor -%}
+  </div>
+  <div class="doumdoum__header-center"></div>
+  <div class="doumdoum__header-bottom"></div>
+</section>
+
+{% schema %}
+  {
+    "name": "doumdoum header",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu"
+      }
+    ],
+    "presets": [
+      {
+        "name": "doumdoum header",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

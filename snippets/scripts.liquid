@@ -31,7 +31,11 @@
       "@theme/component-quantity-selector": "{{ 'component-quantity-selector.js' | asset_url }}",
       "@theme/comparison-slider": "{{ 'comparison-slider.js' | asset_url }}",
       "@theme/sticky-add-to-cart": "{{ 'sticky-add-to-cart.js' | asset_url }}",
-      "@theme/fly-to-cart": "{{ 'fly-to-cart.js' | asset_url }}"
+      "@theme/fly-to-cart": "{{ 'fly-to-cart.js' | asset_url }}",
+      "@theme/glide-esm": "{{ 'glide.esm.js' | asset_url }}",
+      "@theme/glide": {{ 'glide.js' | asset_url | json }},
+      "@theme/slider-registry": {{ 'slider-registry.js' | asset_url | json }},
+      "@theme/slider-init": {{ 'slider-init.js' | asset_url | json }}
     }
   }
 </script>
@@ -247,6 +251,29 @@
   type="module"
   fetchpriority="low"
 ></script>
+
+
+<script
+  src="{{ 'glide.esm.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+<script
+  src="{{ 'glide.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+<script
+  src="{{ 'slider-registry.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+<script
+  src="{{ 'slider-init.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
 
 {% if localization.available_countries.size > 1 or localization.available_languages.size > 1 %}
   <script

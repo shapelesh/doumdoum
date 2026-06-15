@@ -1,0 +1,52 @@
+{% # theme-check-disable %}
+<style>
+{% for font in shop.metaobjects.font.values %}
+  {% assign font_family = font.display_name | handle %}
+
+  {% for font_url in font.font_file_name.value %}
+    {% assign is_variable = false %}
+    {% assign font_style = "normal" %}
+    {% assign font_weight = 400 %}
+    {% assign format = "" %}
+
+    {% if font_url contains "variable" or font_url contains "wght" %}
+      {% assign is_variable = true %}
+    {% endif %}
+
+    {% if font_url contains "italic" %}
+      {% assign font_style = "italic" %}
+    {% endif %}
+
+    {% if font_url contains ".woff2" %}
+      {% assign format = "woff2" %}
+    {% elsif font_url contains ".woff" %}
+      {% assign format = "woff" %}
+    {% elsif font_url contains ".ttf" or font_url contains ".TTF" %}
+      {% assign format = "truetype" %}
+    {% elsif font_url contains ".otf" %}
+      {% assign format = "opentype" %}
+    {% endif %}
+
+    {% unless is_variable %}
+      {% if font_url contains "900" %}{% assign font_weight = 900 %}
+      {% elsif font_url contains "800" %}{% assign font_weight = 800 %}
+      {% elsif font_url contains "700" %}{% assign font_weight = 700 %}
+      {% elsif font_url contains "600" %}{% assign font_weight = 600 %}
+      {% elsif font_url contains "500" %}{% assign font_weight = 500 %}
+      {% elsif font_url contains "300" %}{% assign font_weight = 300 %}
+      {% elsif font_url contains "200" %}{% assign font_weight = 200 %}
+      {% elsif font_url contains "100" %}{% assign font_weight = 100 %}
+      {% endif %}
+    {% endunless %}
+
+@font-face {
+  font-family: "{{ font_family }}";
+  src: url("{{ font_url | file_url }}") format("{{ format }}");
+  font-style: {{ font_style }};
+  font-weight: {% if is_variable %}100 900{% else %}{{ font_weight }}{% endif %};
+  font-display: swap;
+}
+  {% endfor %}
+{% endfor %}
+</style>
+{% # theme-check-enable %}
