@@ -1,6 +1,6 @@
-<footer class="doumdoum_custom-footer section--{{ section.id }} color-{{ section.settings.color_scheme }} 
+<footer class="doumdoum__custom-footer section--{{ section.id }} color-{{ section.settings.color_scheme }} 
 " style="background-image: url('{{ section.settings.footer_bg_image | image_url: width: 2000 }}'); background-size: cover; background-position: center; background-repeat: no-repeat">
-  <div class="dooumdoum__custom-footer footer_news-letter">
+  <div class="doumdoum__custom-footer footer_news-letter">
     <h3 class="news-letter_title">
       {{ section.settings.news_letter_title }}
     </h3>
@@ -16,7 +16,7 @@
       {% endfor %}
     </div>
   </div>
-  <div class="dooumdoum__custom-footer footer_bear">
+  <div class="doumdoum__custom-footer footer_bear">
     <img
       src="{{ section.settings.footer_bear | img_url: '126px' }}"
       width="126px"
@@ -24,8 +24,8 @@
       alt="{{ section.settings.logo_footer.alt }}"
       loading="lazy">
   </div>
-  <div class="dooumdoum__custom-footer footer_menu">
-    <div class="dooumdoum__custom-footer footer_menu--top">
+  <div class="doumdoum__custom-footer footer_menu">
+    <div class="doumdoum__custom-footer footer_menu--top">
       <div class="footer-grid">
 
         {%- assign menu_index = 0 -%}
@@ -79,8 +79,8 @@
         </div>
       </div>
     </div>
-    <div class="dooumdoum__custom-footer footer_devider"></div>
-    <div class="dooumdoum__custom-footer footer_logo--bot">
+    <div class="doumdoum__custom-footer footer_devider"></div>
+    <div class="doumdoum__custom-footer footer_logo--bot">
       <img
         src="{{ section.settings.logo_footer | img_url: '1024x' }}"
         width="{{ section.settings.logo_footer.width }}"
