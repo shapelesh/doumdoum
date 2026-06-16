@@ -1,5 +1,5 @@
 <footer class="doumdoum__custom-footer section--{{ section.id }} color-{{ section.settings.color_scheme }} 
-" style="background-image: url('{{ section.settings.footer_bg_image | image_url: width: 2000 }}'); position:relative; background-size: cover; background-position: center; background-repeat: no-repeat; padding: 32px 0 16px">
+" style="background-image: url('{{ section.settings.footer_bg_image | image_url: width: 2000 }}'); position:relative;display: flex; flex-direction: column; justify-content: center; align-items: center; background-size: cover; background-position: center; background-repeat: no-repeat; padding: 32px 0 16px">
   <div class="doumdoum__custom-footer footer_news-letter">
     <h3 class="news-letter_title">
       {{ section.settings.news_letter_title }}
@@ -338,6 +338,7 @@
       top: 300px;
     }
     .footer-grid .footer-column:first-child .menu_list {
+      box-sizing: border-box;
       width: 100%;
       column-count: 2;
       padding: 0;
@@ -346,6 +347,8 @@
     .footer_menu {
       max-width: 94%;
       padding: 16px 12px;
+      align-self: center;
+      justify-self: center;
 
     }
     .footer_news-letter {
