@@ -19,7 +19,7 @@
           "settings": {
             "display_type": "text",
             "label": "Soumettre",
-            "placeholder": "Votre adresse email"
+            "placeholder": "0500 11 22 33"
           }
         }
       },
@@ -31,7 +31,7 @@
         "news_letter_title": "-10% sur votre première commande",
         "news_letter_info": "Offrez à votre bébé des soins sûrs et doux dès aujourd'hui, nous vous appelons pour confirmer.",
         "footer_bg_image": "shopify://shop_images/footer_bg.webp",
-        "footer_bear": "shopify://shop_images/bear.webp",
+        "footer_bear": "shopify://shop_images/bear.png",
         "footer_menu_1": "shop",
         "footer_menu_2": "pages",
         "footer_menu_3": "social",

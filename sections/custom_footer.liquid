@@ -1,5 +1,5 @@
 <footer class="doumdoum__custom-footer section--{{ section.id }} color-{{ section.settings.color_scheme }} 
-" style="background-image: url('{{ section.settings.footer_bg_image | image_url: width: 2000 }}'); background-size: cover; background-position: center; background-repeat: no-repeat">
+" style="background-image: url('{{ section.settings.footer_bg_image | image_url: width: 2000 }}'); position:relative; background-size: cover; background-position: center; background-repeat: no-repeat; padding: 32px 0 16px">
   <div class="doumdoum__custom-footer footer_news-letter">
     <h3 class="news-letter_title">
       {{ section.settings.news_letter_title }}
@@ -29,7 +29,7 @@
       <div class="footer-grid">
 
         {%- assign menu_index = 0 -%}
-        {%- assign total_menus = 4 -%}
+        {%- assign total_menus = 3 -%}
 
         {%- for i in (1..total_menus) -%}
           {%- assign menu_setting = 'footer_menu_' | append: i -%}
@@ -78,6 +78,7 @@
           </ul>
         </div>
       </div>
+      <h6 class="doudoum_signature">© 2025 - Doumdoum Baby Care</h6>
     </div>
     <div class="doumdoum__custom-footer footer_devider"></div>
     <div class="doumdoum__custom-footer footer_logo--bot">
@@ -94,6 +95,11 @@
 
 </footer>
 <style>
+  footer.doumdoum_custom-footer {
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 16px;
+  }
   .doumdoum_custom-footer {
     position: relative;
     display: flex;
@@ -143,18 +149,22 @@
   .footer_bear {
     position: absolute;
     left: 21px;
-    top: 153px;
+    top: 189px;
+    z-index: 1;
   }
   .footer_menu {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-self: center;
     align-self: center;
     max-width: 98%;
     padding: 48px 112px;
     background-color: #FAFAFA;
     border-radius: 24px;
     margin-bottom: 24px;
+    z-index: 2;
   }
   .footer-grid {
     display: grid;
@@ -215,12 +225,27 @@
     height: 0;
     border: 0;
     border-top: 1px dashed #A4A7AE;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
     width: 98%;
   }
   .footer_logo--bot {
     max-width: 98%;
+  }
+  .doudoum_signature {
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    text-align: center;
+    vertical-align: middle;
+    align-self: center;
+    color: #717680;
+    margin-top: 16px;
+
   }
   @media screen and (max-width: 990px) {
     .footer_menu {
@@ -256,12 +281,11 @@
     .footer_bear {
       position: absolute;
       left: 21px;
-      top: 275px;
+      top: 297px;
     }
     .footer_menu {
       max-width: 96%;
       padding: 32px;
-
     }
     .footer-grid {
       height: 437px;
@@ -305,11 +329,13 @@
       gap: 10px;
     }
   }
+  .doudoum_signature {
+    font-size: 12px;
+  }
   @media screen and (max-width: 450px) {
     .footer_bear {
-      position: absolute;
-      left: 21px;
-      top: 280px;
+      left: 31px;
+      top: 300px;
     }
     .footer-grid .footer-column:first-child .menu_list {
       width: 100%;
@@ -330,9 +356,15 @@
     .custom__email-signup__button {
       width: 100%;
       min-width: 354px;
-      height: 48px;
+
       border-radius: 16px;
       align-self: center;
+    }
+    .custom__email-signup__input {
+      padding: 12px 14px;
+    }
+    .custom__email-signup__button {
+      padding: 12.5px 133.5px;
     }
     .news-letter_title,
     .news-letter_info {
@@ -340,6 +372,13 @@
       min-width: 342px;
       padding: 0 16px;
       text-align: start;
+    }
+    .footer_devider {
+      margin-bottom: 0;
+    }
+    .footer_logo--bot {
+      padding-top: 20px;
+      padding-right: 49px;
     }
 
   }
@@ -382,10 +421,6 @@
         "type": "link_list",
         "id": "footer_menu_3",
         "label": "Social"
-      }, {
-        "type": "link_list",
-        "id": "footer_menu_4",
-        "label": "Langues"
       }, {
         "type": "image_picker",
         "id": "logo_footer",
