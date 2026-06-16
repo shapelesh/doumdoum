@@ -14,6 +14,7 @@
   </div>
 </section>
 <style>
+
   .doumdoum__custom-faq {
     position: relative;
     display: flex;
@@ -48,53 +49,48 @@
     border: none;
     outline: 1px solid #D5D7DA;
 
-
-    /*
-
-   max-height: 392.08px; 
-   overflow-y: auto; 
-   overflow-x: hidden; 
-*/
-
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  };
-
-
-  /*
-
-   .custom_faq--accordion::-webkit-scrollbar { 
-   width: 3px; 
-   } 
-
-   .custom_faq--accordion::-webkit-scrollbar-track { 
-   background: #f1f1f1; 
-   border-radius: 8px; 
-   } 
-
-   .custom_faq--accordion::-webkit-scrollbar-thumb { 
-   background: #D5D7DA; 
-   border-radius: 8px; 
-   } 
-
-   .custom_faq--accordion::-webkit-scrollbar-thumb:hover { 
-   background: #F570B7; 
-   /* Couleur au survol 
-*/
-
+  }
   @media screen and (max-width: 990px) {
+    .custom_faq--container {
+      width: 94%;
+      padding: 0;
+      margin: 0 16px
+    }
     .custom_faq--accordion {
       width: 100%;
       margin: 0 16px
-    };
-    .custom_faq--container h3 {
-      padding: 0 350px 0 0;
-
     }
-    .custom_faq--container {
+    .custom_faq--container h3 {
+      position: relative;
       padding: 0;
-      width: 98%;
-      margin: 0 16px
-    };
+      align-self: baseline;
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .dropdown-title {
+      overflow: visible;
+    }
+
+  }
+  @media screen and (max-width: 450px) {
+    .custom_faq--container h3 {
+      font-family: Fredoka;
+      font-weight: 600;
+      font-style: SemiBold;
+      font-size: 20px;
+    }
+    .dropdown-title h4 {
+      font-family: Nunito;
+      font-weight: 700;
+      font-style: Bold;
+      font-size: 16px;
+      leading-trim: NONE;
+      line-height: 120%;
+      letter-spacing: -0.5%;
+      vertical-align: middle;
+    }
+
   }
 </style>
 {% schema %}
