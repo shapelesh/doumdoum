@@ -284,6 +284,78 @@
         "padding-block-end": 48
       }
     },
+    "custom_interactive_map_TLU8EW": {
+      "type": "custom_interactive_map",
+      "blocks": {
+        "wilaya_3cnVVk": {
+          "type": "wilaya",
+          "settings": {
+            "wilaya_name": "Alger",
+            "center_lat": 36.8,
+            "center_lon": 3.0,
+            "zoom_level": 12,
+            "pin_number": 29,
+            "google_maps_link": ""
+          }
+        },
+        "wilaya_XXDhcp": {
+          "type": "wilaya",
+          "settings": {
+            "wilaya_name": "Blida",
+            "center_lat": 36.5,
+            "center_lon": 2.8,
+            "zoom_level": 12,
+            "pin_number": 2,
+            "google_maps_link": ""
+          }
+        },
+        "wilaya_x6BPQp": {
+          "type": "wilaya",
+          "settings": {
+            "wilaya_name": "Jijel",
+            "center_lat": 36.8,
+            "center_lon": 5.8,
+            "zoom_level": 12,
+            "pin_number": 2,
+            "google_maps_link": ""
+          }
+        },
+        "wilaya_P4qpT8": {
+          "type": "wilaya",
+          "settings": {
+            "wilaya_name": "Tipaza",
+            "center_lat": 36.6,
+            "center_lon": 2.4,
+            "zoom_level": 12,
+            "pin_number": 6,
+            "google_maps_link": ""
+          }
+        },
+        "wilaya_nWUQPf": {
+          "type": "wilaya",
+          "settings": {
+            "wilaya_name": "Boumerdas",
+            "center_lat": 36.8,
+            "center_lon": 3.5,
+            "zoom_level": 12,
+            "pin_number": 2,
+            "google_maps_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "wilaya_3cnVVk",
+        "wilaya_XXDhcp",
+        "wilaya_x6BPQp",
+        "wilaya_P4qpT8",
+        "wilaya_nWUQPf"
+      ],
+      "name": "Carte des Stores",
+      "settings": {
+        "param_title": "Disponibles près de vous",
+        "param_info": "Nos produits sont présents dans des points de vente sélectionnés à travers le pays"
+      }
+    },
     "custom_faq_6aqfRQ": {
       "type": "custom_FAQ",
       "blocks": {
@@ -355,6 +427,7 @@
   "order": [
     "hero_jVaWmY",
     "product_list_fa6P9H",
+    "custom_interactive_map_TLU8EW",
     "custom_faq_6aqfRQ"
   ]
 }
