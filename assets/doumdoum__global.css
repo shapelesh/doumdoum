@@ -1,3 +1,15 @@
+#header-group {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+main.content-for-layout {
+  margin-top: 76px;
+}
+
 .header__row--top {
   min-height: 72px;
 }
@@ -25,4 +37,11 @@
 .doumdoum__account-button:hover {
   box-shadow: 5px 5px 0px #d2d2d2;
   border-radius: 16px;
+}
+
+@media screen and (max-width: 790px) {
+  .doumdoum__account-button {
+    display: none;
+    opacity: 0;
+  }
 }

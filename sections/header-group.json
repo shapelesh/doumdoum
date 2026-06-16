@@ -78,7 +78,6 @@
           "blocks": {}
         }
       },
-      "disabled": true,
       "settings": {
         "logo_position": "center",
         "menu_position": "left",
@@ -117,9 +116,38 @@
     },
     "doumdoum_header_twyEGy": {
       "type": "doumdoum__header",
+      "blocks": {
+        "megamenu_tab_qdrkcp": {
+          "type": "megamenu_tab",
+          "settings": {
+            "tab_name": "Tous les produits",
+            "collection": "all-products"
+          }
+        },
+        "megamenu_tab_VDB7Xq": {
+          "type": "megamenu_tab",
+          "settings": {
+            "tab_name": "Coffrets",
+            "collection": ""
+          }
+        },
+        "megamenu_tab_7T93Y7": {
+          "type": "megamenu_tab",
+          "settings": {
+            "tab_name": "Produits",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "megamenu_tab_qdrkcp",
+        "megamenu_tab_VDB7Xq",
+        "megamenu_tab_7T93Y7"
+      ],
       "name": "doumdoum header",
       "settings": {
-        "menu": ""
+        "menu": "header-menu",
+        "logo": "shopify://shop_images/doumdoum_logo.svg"
       }
     }
   },

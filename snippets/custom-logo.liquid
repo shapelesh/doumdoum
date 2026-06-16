@@ -1,0 +1,61 @@
+{% liquid
+  assign logo_image        = image
+  assign logo_image_mobile = image_mobile | default: image
+  assign logo_width        = width | default: 120
+  assign logo_link         = link | default: routes.root_url
+  assign logo_2x           = logo_width | times: 2
+%}
+
+<a href="{{ logo_link }}" class="logo" aria-label="{{ shop.name }}">
+  {%- if logo_image != blank -%}
+
+    {%- comment -%} Desktop logo {%- endcomment -%}
+    {%- assign logo_src = logo_image | image_url: width: logo_2x -%}
+    {%- assign logo_alt = logo_image.alt | default: shop.name -%}
+    <img
+      src="{{ logo_src }}"
+      alt="{{ logo_alt | escape }}"
+      width="{{ logo_width }}"
+      height="auto"
+      loading="eager"
+      fetchpriority="high"
+      class="logo__image logo__image--desktop"
+      style="max-width: {{ logo_width }}px"
+    >
+
+  {%- else -%}
+
+    {%- comment -%} Text fallback when no logo image is set {%- endcomment -%}
+    <span class="logo__text">{{ shop.name }}</span>
+
+  {%- endif -%}
+</a>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .logo__image {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  .logo__image--mobile {
+    display: none;
+  }
+
+
+  .logo__text {
+    font-family: var(--font-heading--family);
+    font-size: 1.5rem;
+    font-weight: var(--font-heading--weight);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    color: currentColor;
+  }
+</style>

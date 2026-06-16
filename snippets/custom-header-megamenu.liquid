@@ -1,6 +1,90 @@
 <custom-header-megamenu>
-  <div class="doumdoum__custom-header-megamenu-left">
-    
+  <div ref="megaMenu" aria-hidden="true">
+    <div class="doumdoum__custom-header-megamenu-left">
+      {% for block in section.blocks %}
+        <div class="doumdoum__megamenu-tab-name {% if forloop.index == 1 %}selected_tab{% endif %}"
+          data-type="tab-button"
+          data-handle="{{ block.settings.tab_name | handleize }}">
+          <span>{{ block.settings.tab_name }}</span>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="doumdoum__custom-header-megamenu-right">
+      {%- for block in section.blocks -%}
+        <div class="doumdoum__megamenu-tab {% if forloop.first %}selected_tab{% endif %}"
+          data-type="tab"
+          data-handle="{{ block.settings.tab_name | handleize }}">
+          {{ block.settings.tab_name }}
+        </div>
+      {%- endfor -%}
+    </div>
   </div>
-  <div class="doumdoum__custom-header-megamenu-right"></div>
 </custom-header-megamenu>
+
+
+<style>
+  custom-header-megamenu [ref="megaMenu"] {
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 700px;
+    max-height: 600px;
+    z-index: 5;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease,
+                max-height 300ms ease;
+  }
+  
+  custom-header-megamenu [ref="megaMenu"][aria-hidden="false"] {
+    max-height: 700px;
+    opacity: 1;
+    pointer-events: all;
+  }
+/* 
+  custom-header-megamenu  {
+    display: block;
+  } */
+  .doumdoum__custom-header-megamenu-left {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex-shrink: 0;
+    min-width: 160px;
+  }
+  .doumdoum__megamenu-tab-name {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .doumdoum__custom-header-megamenu-right {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .doumdoum__megamenu-tab {
+    display: flex;
+    position: absolute;
+    background-color: white;
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .doumdoum__megamenu-tab.selected_tab {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: all;
+  }
+  .doumdoum__megamenu-tab-name.selected_tab {
+    background-color: #D5EDFF;
+
+    border-radius: 12px;
+  }
+</style>

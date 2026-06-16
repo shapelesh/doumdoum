@@ -1,10 +1,7 @@
 {%- capture canonical_url_string -%}{{ content_for_header }}{%- endcapture -%}
 {%- assign page_url_parts = canonical_url_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&' -%}
 {%- assign current_url = page_url_parts -%}
-<script
-  src="{{ 'custom-header-menu.js' | asset_url }}"
-  type="module"
-  fetchpriority="low"></script>
+
 <section class="doumdoum__header">
   <div class="doumdoum__header-left">
     <div class="doumdoum__header-left-desktop">
@@ -13,7 +10,10 @@
           Accueil
         </a>
       </span>
-      <span class="header-link" id="megamenu_opener">
+      <span
+        class="header-link"
+        id="megamenu_opener"
+        aria-expanded="false">
         Boutique +
       </span>
       {%- for link in section.settings.menu.links -%}
@@ -27,25 +27,33 @@
     <div class="doumdoum__header-left-mobile">
       {% render 'doumdoum__header-drawer-opener' %}
     </div>
+    {%- render 'custom-header-megamenu'
+      , section: section -%}
   </div>
 
   <div class="doumdoum__header-center">
-    {% content_for 'block'
-      , type: '_header-logo'
-      , id: 'header-logo' %}
+
+    {% render 'custom-logo'
+      , image: section.settings.logo
+      , image_mobile: nil
+      , width: 280
+    %}
   </div>
   <div class="doumdoum__header-bottom">
+
     {% render 'header-actions'
       , customer_account_menu: section.settings.customer_account_menu
       , display_style: "icon"
       , section: section %}
   </div>
-  {%- render 'custom-header-megamenu'
-    , section: section -%}
 </section>
-{%- for block in section.blocks -%}
-  <script>console.log({{ block.settings.tab_name | json }})</script>
-{%- endfor -%}
+{%- render 'custom-header-drawer'
+  , section: section -%}
+<script
+  src="{{ 'custom-header-menu.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+  defer></script>
 <style>
   .doumdoum__header {
     position: relative;
@@ -55,15 +63,7 @@
     background-color: #FAFAFA;
     border-bottom: 1px solid #F5F5F5;
   }
-  custom-header-megamenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: 600px;
-    z-index: 5;
-    background-color: white;
-  }
+
   .doumdoum__header-left {
     display: flex;
   }
@@ -91,6 +91,8 @@
   }
   .doumdoum__header-center {
     min-height: 43px;
+    display: flex;
+    align-items: center;
   }
   .doumdoum__header-left-mobile {
     display: none;
@@ -125,6 +127,7 @@
     }
     .doumdoum__header-left-mobile {
       display: flex;
+      cursor: pointer;
     }
     .doumdoum__header-left-desktop {
       display: none;
@@ -139,11 +142,27 @@
         "type": "link_list",
         "id": "menu",
         "label": "Menu"
+      }, {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
       }
     ],
     "blocks": [
       {
-        "type": "@theme"
+        "type": "megamenu_tab",
+        "name": "Megamenu Tab",
+        "settings": [
+          {
+            "type": "text",
+            "id": "tab_name",
+            "label": "Tab Name"
+          }, {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+        ]
       }
     ],
     "presets": [

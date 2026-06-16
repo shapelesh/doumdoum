@@ -40,9 +40,8 @@
 
 {% capture cart_icon %}
   <cart-icon
-    class=""
+    class="doumdoum-cart-icon"
     data-testid="cart-icon"
-    style="display: flex; align-items: center; background-color: #FFFFFF; border: 1px solid #E9EAEB; border-radius: 16px; padding: 12px 16px"
   >
     <span class="{% if display_style == 'icon' %}hidden{% else %}mobile:hidden{% endif %}">
       {{ 'content.cart_title' | t }}
@@ -82,7 +81,7 @@
     </div>
     <style>
       .doumdoum-cart-text {
-        margin-left: 8px;
+        /* margin-left: 8px; */
       }
       .doumdoum-cart-text__text-count {
         font-family: nunito;
@@ -90,6 +89,22 @@
         font-size: 16px;
         line-height: 120%;
         letter-spacing: -0.5%;
+      }
+      .doumdoum-cart-icon {
+        display: flex; 
+        align-items: center; 
+        background-color: #FFFFFF; 
+        border: 1px solid #E9EAEB; 
+        border-radius: 16px; 
+        padding: 12px 16px
+      }
+      @media screen and (max-width: 790px) {
+        .doumdoum-cart-icon {
+          padding: 12px;
+        }
+        .doumdoum-cart-text__text-count {
+          display: none;
+        }
       }
     </style>
     
