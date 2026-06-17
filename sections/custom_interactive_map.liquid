@@ -1,49 +1,21 @@
 <section class="doumdoum__custom-map section--{{ section.id }}">
   <div class="doumdoum__custom-map-container custom_map-container">
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin="" />
+
     <style>
       /* La carte DOIT avoir une hauteur définie pour s'afficher */
       #map-{{ section.id }} {
-        height: 481px;
+        height: 500px;
         width: 100%;
         z-index: 1;
+        background: #eee;
       }
       .custom_map-container {
         display: flex;
         flex-direction: column;
         gap: 20px;
       }
-      @media(min-width: 768px) {
-        .custom_map-container {
-          flex-direction: row;
-        }
-        .custom_map-container-prameters {
-          width: 30%;
-        }
-        .custom_map-container--map {
-          width: 70%;
-        }
-      }
-      .param_map {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .btn-wilaya {
-        padding: 10px;
-        cursor: pointer;
-        background: #f1f1f1;
-        border: 1px solid #ccc;
-        text-align: left;
-      }
-      .btn-wilaya:hover {
-        background: #e0e0e0;
-      }
+
     </style>
 
     <div class="custom_map-container-prameters">
@@ -161,50 +133,82 @@
     background-color: #ffffff;
   }
 
-.param_map button p {
+  .param_map button p {
     width: 149px;
-    margin:0;
-  font-family: Nunito;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 15px;
-  vertical-align: center;
-  leading-trim: NONE;
-  line-height: 120%;
-  letter-spacing: -0.5%;
-  color: #535862;
-}
-.arrow-right-icon-svg {
+    margin: 0;
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    vertical-align: center;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #535862;
+  }
+  .arrow-right-icon-svg {
     margin-top: 4px;
+  }
+
+  .param_map {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn-wilaya {
+    padding: 10px;
+    cursor: pointer;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  .btn-wilaya:hover {
+    background: #e0e0e0;
+  }
+
+  .custom-div-icon {
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    width: 32px;
+    height: 32px;
+    color: #3B4042;
+    text-align: center;
+    line-height: 24px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+  @media(min-width: 768px) {
+    .custom_map-container {
+      flex-direction: row;
+    }
+    .custom_map-container-prameters {
+      width: 30%;
+    }
+    .custom_map-container--map {
+      width: 70%;
+    }
+    .param_map button {
+    justify-content: flex-start;
 }
-
-
-.custom-div-icon {
-  background-color: #ffffff;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 0.89px solid #9AA0A6;
-  color: white;
-  text-align: center;
-  line-height: 24px;
-  font-weight: bold;
-  font-size: 14px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
-  font-family: sans-serif;
-  cursor: pointer;
+}
+@media(max-width: 620px){
+ .doumdoum__custom-map {
+    padding: 100px 40px;
+  }
+}
+@media(max-width: 450px){
+ .doumdoum__custom-map {
+    padding: 80px 16px;
+  }
 }
 
 </style>
 
-<script
-  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-  crossorigin=""
-  defer></script>
-
-
-<script defer>
+<script>
   (function() {
     const mapData = {};
     let currentWilayaId = null;
@@ -235,7 +239,7 @@
     function createNumberedIcon(number, color) {
       return L.divIcon({
         className: 'custom-div-icon',
-        html: `<div >${number}</div>`,
+        html: `<div>${number}</div>`,
         iconSize: [32, 32],
         iconAnchor: [16, 16]
       });
