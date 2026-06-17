@@ -284,6 +284,44 @@
         "padding-block-end": 48
       }
     },
+    "custom_blog_articles_BPJEFT": {
+      "type": "custom_blog_articles",
+      "blocks": {
+        "article_block_xxDhjy": {
+          "type": "article_block",
+          "settings": {
+            "selected_article": ""
+          }
+        },
+        "article_block_fjXtG8": {
+          "type": "article_block",
+          "settings": {
+            "selected_article": ""
+          }
+        },
+        "video_block_HaECQ6": {
+          "type": "video_block",
+          "settings": {
+            "custom_title": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "article_block_xxDhjy",
+        "article_block_fjXtG8",
+        "video_block_HaECQ6"
+      ],
+      "name": "Custom Articles de Blog",
+      "settings": {
+        "container_title": "Conseils & Astuces pour Bébé",
+        "container_info": "Découvrez des conseils pratiques, des guides utiles et des astuces d'experts pour prendre Comment prendre soin de votre bébé au quotidien.",
+        "podcast_link": "",
+        "blog_link": "",
+        "podcast_title": "DoumDoum podcast",
+        "blog_title": "Blog"
+      }
+    },
     "custom_interactive_map_TLU8EW": {
       "type": "custom_interactive_map",
       "blocks": {
@@ -292,7 +330,7 @@
           "settings": {
             "wilaya_name": "Alger",
             "center_lat": 36.8,
-            "center_lon": 3.0,
+            "center_lon": 3,
             "zoom_level": 12,
             "pin_number": 29,
             "google_maps_link": ""
@@ -422,11 +460,21 @@
       "settings": {
         "faq_title": "Questions fréquentes des parents"
       }
+    },
+    "custom_devider_7e79HN": {
+      "type": "custom_devider",
+      "name": "Custom Devider",
+      "settings": {
+        "costume_bg_fill_color": "{{ settings.costume_palette.color1 }}",
+        "costume_text_fill_color": "{{ settings.costume_palette.color1 }}"
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "product_list_fa6P9H",
+    "custom_devider_7e79HN",
+    "custom_blog_articles_BPJEFT",
     "custom_interactive_map_TLU8EW",
     "custom_faq_6aqfRQ"
   ]
