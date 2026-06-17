@@ -11,6 +11,48 @@
         {% render 'doumdoum__header-close-icon' %}
       </span>
     </div>
+    <div class="doumdoum__header-drawer-links">
+      <span class="doumdoum__header-drawer-link {% if request.page_type == 'index' %}active{% endif %}">
+        <a href="{{ shop.url }}">
+          Accueil
+        </a>
+      </span>
+      <span class="doumdoum__header-drawer-link" id="megamenu_opener" aria-expanded="false">
+        Boutique +
+      </span>
+      {%- for link in section.settings.menu.links -%}
+        <span class="doumdoum__header-drawer-link {% if link.current %}active{% endif %}">
+          <a href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+        </span>
+      {%- endfor -%}
+      <span class="doumdoum__header-drawer-link" id="account_button_clicker">
+        Mon compte
+      </span>
+      <shopify-account
+        menu="{{ section.settings.customer_account_menu }}"
+        {% if account_actions_style != blank %}
+        {% endif %}
+        style="display: none;"
+      >
+
+          <span
+            slot="signed-out-avatar"
+            class="account-button__text header-actions__text-style {% if display_style == 'icon' %}hidden{% else %}mobile:hidden{% endif %}"
+          >
+            {{ 'content.account_title' | t }}
+          </span>
+
+          <span
+            slot="signed-out-avatar"
+            class="{% if display_style != 'icon' %}desktop:hidden{% endif %}"
+            aria-hidden="true"
+          >
+            Mon compte
+          </span>
+      </shopify-account>
+    </div>
   </div>
 </custom-header-drawer>
 
@@ -42,6 +84,9 @@
     transition: transform 0.3s ease;
     overflow-y: auto;
     padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   custom-header-drawer.is-open .doumdoum__custom-header-drawer {
@@ -57,5 +102,19 @@
   }
   .doumdoum__header-drawer-top #doumdoum__header-drawer-closer {
     cursor: pointer;
+  }
+  .doumdoum__header-drawer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 8px 12px;
+  }
+  .doumdoum__header-drawer-link {
+    font-family: nunito;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #181D27;
   }
   </style>
