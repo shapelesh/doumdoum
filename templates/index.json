@@ -284,6 +284,15 @@
         "padding-block-end": 48
       }
     },
+    "custom_video_showcase_RKmzmT": {
+      "type": "custom_video_showcase",
+      "name": "Video ShowCase",
+      "settings": {
+        "header_title": "Les expériences réelles avec Doumdoum",
+        "follow_link": "",
+        "header_link": "Suivez-nous"
+      }
+    },
     "custom_icone_with_text_e6xBkF": {
       "type": "custom_icone_with_text",
       "blocks": {
@@ -451,6 +460,7 @@
   "order": [
     "hero_jVaWmY",
     "product_list_fa6P9H",
+    "custom_video_showcase_RKmzmT",
     "custom_icone_with_text_e6xBkF",
     "custom_picture_hy3KCi",
     "custom_devider_7e79HN",

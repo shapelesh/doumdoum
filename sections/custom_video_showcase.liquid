@@ -1,0 +1,104 @@
+<section class="doumdoum__video-showcase">
+  <div class="doumdoum__video-showcase_header-container header-container">
+    <h3>{{ section.settings.header_title }}</h3>
+    <a class="header-btn follow-link" href="{{ section.settings.follow_link }}">{{ section.settings.header_link }}
+      <span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="23"
+          height="23"
+          viewBox="0 0 23 23"
+          fill="none">
+          <path
+            d="M9.59766 7.30664L15.3205 7.30664L15.3205 13.0295"
+            stroke="#F570B7"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path
+            d="M7.30664 15.3203L15.2404 7.38658"
+            stroke="#F570B7"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </span>
+    </a>
+  </div>
+
+</section>
+<style>
+  .doumdoum__video-showcase {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 107px;
+  }
+  .header-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14.5px 16px;
+
+  }
+  .header-container h3 {
+    font-family: Fredoka;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 26px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    text-align: center;
+    vertical-align: middle;
+    color: #252B37;
+    margin: 0;
+
+  }
+  .header-container a {
+    display: flex;
+    font-family: Geist;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    border-radius: 16px;
+    padding: 8.5px 16px;
+    border: none;
+    outline: 1px solid #E9EAEB;
+    color: #F570B7;
+  }
+</style>
+{% schema %}
+  {
+    "name": "Video ShowCase",
+    "settings": [
+      {
+        "type": "text",
+        "id": "header_title",
+        "label": "Titre des UGC",
+        "default": "Les expériences réelles avec Doumdoum"
+      }, {
+        "type": "url",
+        "id": "follow_link",
+        "label": "Lien UGC"
+      }, {
+        "type": "text",
+        "id": "header_link",
+        "label": "Text boutton",
+        "default": "Suivez-nous"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video ShowCase"
+      }
+    ]
+  }
+{% endschema %}
