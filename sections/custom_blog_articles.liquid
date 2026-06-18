@@ -1,0 +1,473 @@
+<section class="doumdoum__custom-blog-articles section--{{ section.id }}">
+  <div class="doumdoum__custom-blog-articles_container blog-articles-container">
+    <div class="blog-articles-title">
+      <h3>{{ section.settings.container_title }}</h3>
+      <p>{{ section.settings.container_info }}</p>
+      <div class="container_btn">
+        <a class="doumdoum_podcast" href="{{ section.settings.podcast_link }}">{{ section.settings.podcast_title }}
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none">
+              <path
+                d="M9.59766 7.30664L15.3205 7.30664L15.3205 13.0295"
+                stroke="#F570B7"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M7.30664 15.3203L15.2404 7.38658"
+                stroke="#F570B7"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a class="doumdoum_blog" href="{{ section.settings.blog_link }}">{{ section.settings.blog_title }}</a>
+      </div>
+    </div>
+    <div class="blog-articles-grid">
+      {% for block in section.blocks %}
+        <div class="article-content" {{ block.shopify_attributes }}>
+
+          {% if block.type == 'article_block' %}
+            {% assign article = block.settings.selected_article %}
+
+            {% if article != blank %}
+              <img
+                src="{{ article.image | image_url: width: 160 }}"
+                width="{{ article.image.width }}"
+                height="{{ article.image.height }}"
+                alt="{{ article.title }}">
+
+              <div class="article-info-container">
+                <h3>{{ article.title }}</h3>
+                <p class="article-excerpt">{{ article.excerpt }}</p>
+                <a href="{{ article.url }}">Lire la suite
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none">
+                      <path
+                        d="M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465"
+                        stroke="#414651"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M2.33301 8L13.553 8"
+                        stroke="#414651"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+
+            {% else %}
+
+              <div class="placeholder-image">{{ 'image' | placeholder_svg_tag }}</div>
+
+              <div class="article-info-container">
+                <h3>Titre de l'article</h3>
+                <p>Extrait de l'article...</p>
+                <a href="#">Lire la suite
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none">
+                      <path
+                        d="M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465"
+                        stroke="#414651"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M2.33301 8L13.553 8"
+                        stroke="#414651"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            {% endif %}
+
+          {% elsif block.type == 'video_block' %}
+            {% assign video = block.settings.video_link %}
+
+
+            {% if video != blank %}
+
+              {% assign video_id = video.id %}
+              <img
+                src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg"
+                width="160"
+                height="160"
+                alt="Couverture vidéo">
+              <div class="article-info-container">
+                <h3>{{ block.settings.custom_title | default: video.title }}</h3>
+                <a href="{{ video.url }}">YouTube Podcast
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none">
+                      <path
+                        d="M9.62012 3.95312L13.6668 7.99979L9.62012 12.0465"
+                        stroke="#414651"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M2.33301 8L13.553 8"
+                        stroke="#414651"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            {% else %}
+
+              <div class="placeholder-image">{{ 'image' | placeholder_svg_tag }}</div>
+              <div class="article-info-container">
+                <h3>Titre du Podcast</h3>
+                <p>Description de la vidéo...</p>
+                <a href="#">YouTube Podcast
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none">
+                      <path
+                        d="M14.9902 17.5H16.5002C19.5202 17.5 22.0002 15.03 22.0002 12C22.0002 8.98 19.5302 6.5 16.5002 6.5H14.9902"
+                        stroke="#353535"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M9 6.5H7.5C4.47 6.5 2 8.97 2 12C2 15.02 4.47 17.5 7.5 17.5H9"
+                        stroke="#353535"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M8 12H16"
+                        stroke="#353535"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            {% endif %}
+
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+<style>
+  .doumdoum__custom-blog-articles {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 57px 90px;
+  }
+  .blog-articles-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+  }
+  .blog-articles-title {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 50%;
+    padding: 20px 16px;
+  }
+  .blog-articles-title h3 {
+    font-family: Fredoka;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 34px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    margin: 0;
+  }
+  .blog-articles-title p {
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    margin: 0;
+  }
+  .container_btn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .container_btn a {
+    display: flex;
+    font-family: Geist;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    border-radius: 16px;
+    padding: 8.5px 16px;
+    border: none;
+    outline: 1px solid #E9EAEB;
+  }
+  .doumdoum_podcast {
+    color: #F570B7;
+  }
+
+  .blog-articles-grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 16px;
+    width: 50%;
+  }
+  .blog-articles-grid .article-content:last-child {
+    padding-top: 16px;
+    border-top: 1px solid #D5D7DA;
+  }
+  .article-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+    height: 100%;
+    width: 100%;
+
+  }
+  .article-content img,
+  .placeholder-image {
+    width: 160px;
+    max-height: 160px;
+
+    border-radius: 20px;
+  }
+  .placeholder-image {
+    outline: 1px solid #E9EAEB;
+  }
+  .article-info-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 8px;
+  }
+  .article-info-container h3 {
+    font-family: Nunito;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 18px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #252B37;
+    margin: 0;
+
+  }
+  .article-info-container p {
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #252B37;
+    margin: 0;
+
+  }
+  .article-info-container a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-family: Geist;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #252B37;
+    margin-top: 16px;
+    align-self: center;
+
+  }
+  @media screen and (max-width: 844px) {
+    .blog-articles-title h3 {
+      font-size: 26px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .blog-articles-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .blog-articles-grid {
+      width: 100%;
+    }
+    .blog-articles-title {
+      width: 100%;
+
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .doumdoum__custom-blog-articles {
+      padding: 57px 40px;
+    }
+    .blog-articles-title {
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .doumdoum__custom-blog-articles {
+      padding: 57px 16px;
+    }
+    .blog-articles-title h3 {
+      font-size: 24px;
+    }
+    .blog-articles-title p {
+      font-size: 14px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Custom Articles de Blog ",
+    "settings": [
+      {
+        "type": "text",
+        "id": "container_title",
+        "label": "Titre de la section",
+        "default": "Conseils & Astuces pour Bébé"
+      },
+      {
+        "type": "text",
+        "id": "container_info",
+        "label": "Info de la section",
+        "default": "Découvrez des conseils pratiques, des guides utiles et des astuces d'experts pour prendre Comment prendre soin de votre bébé au quotidien."
+      },
+      {
+        "type": "url",
+        "id": "podcast_link",
+        "label": "Lien vers les podcastes"
+      },
+      {
+        "type": "url",
+        "id": "blog_link",
+        "label": "Lien vers le Blog"
+      }, {
+        "type": "text",
+        "id": "podcast_title",
+        "label": "Text vers les podcastes",
+        "default": "DoumDoum podcast"
+      }, {
+        "type": "text",
+        "id": "blog_title",
+        "label": "Text vers les blogs",
+        "default": "Blog"
+      }
+
+    ],
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "article_block",
+        "name": "Article de blog",
+        "settings": [
+          {
+            "type": "article",
+            "id": "selected_article",
+            "label": "Choisir l'article"
+          }
+        ]
+      }, {
+        "type": "video_block",
+        "name": "Vidéo YouTube / Podcast",
+        "settings": [
+          {
+            "type": "video_url",
+            "id": "video_link",
+            "label": "Lien YouTube",
+            "accept": ["youtube"],
+            "info": "Le titre et la couverture seront utilisés."
+          }, {
+            "type": "text",
+            "id": "custom_title",
+            "label": "Titre personnalisé",
+            "info": "Laisser vide pour utiliser le titre de la vidéo"
+          }, {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description courte"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Articles de Blog",
+        "blocks": [
+          {
+            "type": "article_block"
+          }, {
+            "type": "article_block"
+          }, {
+            "type": "video_block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

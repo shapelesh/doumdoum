@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "hero_jVaWmY": {
       "type": "hero",
@@ -65,6 +66,7 @@
         "custom_mobile_media": false,
         "media_type_1_mobile": "image",
         "media_type_2_mobile": "image",
+        "link": "",
         "open_in_new_tab": false,
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -281,10 +283,199 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "custom_blog_articles_BPJEFT": {
+      "type": "custom_blog_articles",
+      "blocks": {
+        "article_block_xxDhjy": {
+          "type": "article_block",
+          "settings": {
+            "selected_article": ""
+          }
+        },
+        "article_block_fjXtG8": {
+          "type": "article_block",
+          "settings": {
+            "selected_article": ""
+          }
+        },
+        "video_block_HaECQ6": {
+          "type": "video_block",
+          "settings": {
+            "custom_title": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "article_block_xxDhjy",
+        "article_block_fjXtG8",
+        "video_block_HaECQ6"
+      ],
+      "name": "Custom Articles de Blog",
+      "settings": {
+        "container_title": "Conseils & Astuces pour Bébé",
+        "container_info": "Découvrez des conseils pratiques, des guides utiles et des astuces d'experts pour prendre Comment prendre soin de votre bébé au quotidien.",
+        "podcast_link": "",
+        "blog_link": "",
+        "podcast_title": "DoumDoum podcast",
+        "blog_title": "Blog"
+      }
+    },
+    "custom_interactive_map_TLU8EW": {
+      "type": "custom_interactive_map",
+      "blocks": {
+        "wilaya_3cnVVk": {
+          "type": "wilaya",
+          "settings": {
+            "wilaya_name": "Alger",
+            "center_lat": 36.8,
+            "center_lon": 3,
+            "zoom_level": 12,
+            "pin_number": 29,
+            "google_maps_link": ""
+          }
+        },
+        "wilaya_XXDhcp": {
+          "type": "wilaya",
+          "settings": {
+            "wilaya_name": "Blida",
+            "center_lat": 36.5,
+            "center_lon": 2.8,
+            "zoom_level": 12,
+            "pin_number": 2,
+            "google_maps_link": ""
+          }
+        },
+        "wilaya_x6BPQp": {
+          "type": "wilaya",
+          "settings": {
+            "wilaya_name": "Jijel",
+            "center_lat": 36.8,
+            "center_lon": 5.8,
+            "zoom_level": 12,
+            "pin_number": 2,
+            "google_maps_link": ""
+          }
+        },
+        "wilaya_P4qpT8": {
+          "type": "wilaya",
+          "settings": {
+            "wilaya_name": "Tipaza",
+            "center_lat": 36.6,
+            "center_lon": 2.4,
+            "zoom_level": 12,
+            "pin_number": 6,
+            "google_maps_link": ""
+          }
+        },
+        "wilaya_nWUQPf": {
+          "type": "wilaya",
+          "settings": {
+            "wilaya_name": "Boumerdas",
+            "center_lat": 36.8,
+            "center_lon": 3.5,
+            "zoom_level": 12,
+            "pin_number": 2,
+            "google_maps_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "wilaya_3cnVVk",
+        "wilaya_XXDhcp",
+        "wilaya_x6BPQp",
+        "wilaya_P4qpT8",
+        "wilaya_nWUQPf"
+      ],
+      "name": "Carte des Stores",
+      "settings": {
+        "param_title": "Disponibles près de vous",
+        "param_info": "Nos produits sont présents dans des points de vente sélectionnés à travers le pays"
+      }
+    },
+    "custom_faq_6aqfRQ": {
+      "type": "custom_FAQ",
+      "blocks": {
+        "custom_faq_JXf4m6": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Est-ce que ce produit convient si mon bébé a de l’eczéma ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont formulés pour les peaux sensibles et fragiles. Grace a des ingrédients doux et sans substances agressives, ils peuvent être utilisés en cas de peau sujette a l'eczéma. En cas de poussés importante, il est toujours recommandé de demander l'avis d'un professionnel de santé"
+          }
+        },
+        "custom_faq_iaHRBU": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Quelle est la différence entre le liniment et la crème de change ?",
+            "faq_res_text": "Le liniment s'utilise en prévention, dés le change, pour nettoyer la peau et créer un barrière protectrices afin d'éviter les irritations"
+          }
+        },
+        "custom_faq_MzmqBB": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "À partir de quel âge peut-on utiliser ces produits ?",
+            "faq_res_text": "Les produits Doumdoum peuvent être utilisés dés l'âge de 6 mois, ils sont conçue pour être doux et sûre  pour la peau des enfants"
+          }
+        },
+        "custom_faq_8xUXQj": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Les produits sont-ils disponibles en pharmacie ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont disponible dans les pharmacie et les magasins"
+          }
+        },
+        "custom_faq_zPVpdz": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Les produits sont-ils adaptés aux peaux sensibles ?",
+            "faq_res_text": "Oui, tous les produits Doumdoum sont spécialement formulés pour les peaux sensibles : sans parfums agressif, avec des ingrédients doux et testés dermatologiquement"
+          }
+        },
+        "custom_faq_VqDn4i": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Le produit est-il algérien ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont conçus fabriqués en Algérie spécialement pensés pour répondre aux besoins des mamans et bébés algériens"
+          }
+        },
+        "custom_faq_qbPPh8": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Peut-on utiliser ces produits dès la naissance ?",
+            "faq_res_text": "Les produits Doumdoum sont adaptés dés le plus jeune âges, mais pour les nouveau-nés, il est toujours préférable de demander conseils a un professionnel de santé, surtout en cas de peau très sensibles ou de situation particulière"
+          }
+        }
+      },
+      "block_order": [
+        "custom_faq_JXf4m6",
+        "custom_faq_iaHRBU",
+        "custom_faq_MzmqBB",
+        "custom_faq_8xUXQj",
+        "custom_faq_zPVpdz",
+        "custom_faq_VqDn4i",
+        "custom_faq_qbPPh8"
+      ],
+      "name": "Custom FAQ",
+      "settings": {
+        "faq_title": "Questions fréquentes des parents"
+      }
+    },
+    "custom_devider_7e79HN": {
+      "type": "custom_devider",
+      "name": "Custom Devider",
+      "settings": {
+        "costume_bg_fill_color": "{{ settings.costume_palette.color1 }}",
+        "costume_text_fill_color": "{{ settings.costume_palette.color1 }}"
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "product_list_fa6P9H",
+    "custom_devider_7e79HN",
+    "custom_blog_articles_BPJEFT",
+    "custom_interactive_map_TLU8EW",
+    "custom_faq_6aqfRQ"
   ]
 }

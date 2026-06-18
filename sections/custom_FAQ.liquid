@@ -1,0 +1,136 @@
+<section class="doumdoum__custom-faq section--{{ section.id }}">
+  <div class="doumdoum__custom-faq custom_faq--container">
+    <h3>
+      {{ section.settings.faq_title }}
+    </h3>
+    <div class="custom_faq--accordion">
+      {% for block in section.blocks %}
+        {% if block.type == 'custom_faq' %}
+          {% render 'custom_faq-accordion'
+            , block: block %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<style>
+
+  section.doumdoum__custom-faq {
+    position: relative;
+    display: flex;
+    padding: 80px 0 153px;
+  }
+  .custom_faq--container {
+    width: 100%;
+    padding: 0 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .custom_faq--container h3 {
+    font-family: Fredoka;
+    font-weight: 500;
+    text-wrap: nowrap;
+    font-style: Medium;
+    font-size: 26px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 450px 0 0;
+    color: #181D27;
+
+  }
+  .custom_faq--accordion {
+    width: 780px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: none;
+    outline: 1px solid #D5D7DA;
+
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @media screen and (max-width: 990px) {
+    .custom_faq--container {
+      width: 94%;
+      padding: 0;
+      margin: 0 16px
+    }
+    .custom_faq--accordion {
+      width: 100%;
+      margin: 0 16px
+    }
+    .custom_faq--container h3 {
+      position: relative;
+      padding: 0;
+      align-self: baseline;
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .dropdown-title {
+      overflow: visible;
+    }
+
+  }
+  @media screen and (max-width: 450px) {
+    .custom_faq--container h3 {
+      font-family: Fredoka;
+      font-weight: 600;
+      font-style: SemiBold;
+      font-size: 20px;
+    }
+    .dropdown-title h4 {
+      font-family: Nunito;
+      font-weight: 700;
+      font-style: Bold;
+      font-size: 16px;
+      leading-trim: NONE;
+      line-height: 120%;
+      letter-spacing: -0.5%;
+      vertical-align: middle;
+    }
+
+  }
+</style>
+{% schema %}
+  {
+    "name": "Custom FAQ",
+    "settings": [
+      {
+        "type": "text",
+        "id": "faq_title",
+        "label": "Titre de Question frequentes",
+        "default": "Questions fréquentes des parents"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "custom_faq",
+        "name": "FAQ",
+        "settings": [
+          {
+            "type": "text",
+            "id": "faq_qst_text",
+            "label": "Question"
+          }, {
+            "type": "text",
+            "id": "faq_res_text",
+            "label": "Réponse"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom FAQ",
+        "blocks": [
+          {
+            "type": "custom_faq"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

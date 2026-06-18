@@ -1,0 +1,365 @@
+<section class="doumdoum__custom-map section--{{ section.id }}">
+  <div class="doumdoum__custom-map-container custom_map-container">
+
+
+    <style>
+      /* La carte DOIT avoir une hauteur définie pour s'afficher */
+      #map-{{ section.id }} {
+        height: 500px;
+        width: 100%;
+        z-index: 1;
+        background: #eee;
+      }
+      .custom_map-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+    </style>
+
+    <div class="custom_map-container-prameters">
+      <div class="param_title">
+        <h3>{{ section.settings.param_title }}</h3>
+        <p>{{ section.settings.param_info }}</p>
+      </div>
+
+      <div class="param_map">
+        {% for block in section.blocks %}
+          {% if block.type == 'wilaya' %}
+            <button
+              class="btn-wilaya"
+              data-wilaya-id="{{ block.id }}"
+              data-center="{{ block.settings.center_lat }},{{ block.settings.center_lon }}"
+              data-zoom="{{ block.settings.zoom_level }}">
+              <div class="pine-icon-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="20"
+                  viewBox="0 0 16 20"
+                  fill="none">
+                  <path d="M8.00008 3.69238C5.61854 3.69238 3.69238 5.61854 3.69238 8.00008C3.69238 11.2308 8.00008 16.0001 8.00008 16.0001C8.00008 16.0001 12.3078 11.2308 12.3078 8.00008C12.3078 5.61854 10.3816 3.69238 8.00008 3.69238ZM8.00008 9.53854C7.59205 9.53854 7.20074 9.37645 6.91222 9.08793C6.6237 8.79941 6.46161 8.4081 6.46161 8.00008C6.46161 7.59205 6.6237 7.20074 6.91222 6.91222C7.20074 6.6237 7.59205 6.46161 8.00008 6.46161C8.4081 6.46161 8.79941 6.6237 9.08793 6.91222C9.37645 7.20074 9.53854 7.59205 9.53854 8.00008C9.53854 8.4081 9.37645 8.79941 9.08793 9.08793C8.79941 9.37645 8.4081 9.53854 8.00008 9.53854Z" fill="#FF5246" />
+                </svg>
+              </div>
+              <p>
+                {{ block.settings.wilaya_name }} ({{ block.settings.pin_number }})
+              </p>
+
+              <div class="arrow-right-icon-svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="6"
+                  height="12"
+                  viewBox="0 0 6 12"
+                  fill="none">
+                  <path
+                    d="M0.5 11.06L4.84667 6.71333C5.36 6.2 5.36 5.36 4.84667 4.84667L0.5 0.5"
+                    stroke="#353535"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+            </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="custom_map-container--map" id="map-{{ section.id }}"></div>
+
+  </div>
+</section>
+<style>
+  .doumdoum__custom-map {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 112px;
+  }
+  .custom_map-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .custom_map-container-prameters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .param_title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .param_title h3 {
+    font-family: Fredoka;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    margin: 0;
+  }
+  .param_title p {
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 15px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    margin: 0;
+  }
+  .param_map {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+  }
+  .param_map button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10.85px 36px;
+    border-radius: 16px;
+    border: none;
+    outline: 1px solid #D5D7DA;
+    background-color: #ffffff;
+  }
+
+  .param_map button p {
+    width: 149px;
+    margin: 0;
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    vertical-align: center;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #535862;
+  }
+  .arrow-right-icon-svg {
+    margin-top: 4px;
+  }
+
+  .param_map {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn-wilaya {
+    padding: 10px;
+    cursor: pointer;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  .btn-wilaya:hover {
+    background: #e0e0e0;
+  }
+
+  .custom-div-icon {
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    width: 32px;
+    height: 32px;
+    color: #3B4042;
+    text-align: center;
+    line-height: 24px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+  @media(min-width: 768px) {
+    .custom_map-container {
+      flex-direction: row;
+    }
+    .custom_map-container-prameters {
+      width: 30%;
+    }
+    .custom_map-container--map {
+      width: 70%;
+    }
+    .param_map button {
+    justify-content: flex-start;
+}
+}
+@media(max-width: 620px){
+ .doumdoum__custom-map {
+    padding: 100px 40px;
+  }
+}
+@media(max-width: 450px){
+ .doumdoum__custom-map {
+    padding: 80px 16px;
+  }
+}
+
+</style>
+
+<script>
+  (function() {
+    const mapData = {};
+    let currentWilayaId = null;
+    const wilayaIds = [];
+  
+    {% for block in section.blocks %}
+      {% if block.type == 'wilaya' %}
+        currentWilayaId = "{{ block.id }}";
+        wilayaIds.push(currentWilayaId);
+        
+        mapData[currentWilayaId] = {
+          name: "{{ block.settings.wilaya_name | escape }}",
+          pinNumber: {{ block.settings.pin_number | default: 1 }},
+          center: [{{ block.settings.center_lat | default: 36.5 }}, {{ block.settings.center_lon | default: 3.0 }}],
+          zoom: {{ block.settings.zoom_level | default: 10 }},
+          gmapLink: "{{ block.settings.google_maps_link | default: '#' }}" 
+        };
+      {% endif %}
+    {% endfor %}
+  
+    const map = L.map('map-{{ section.id }}').setView([36.5, 2.5], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+  
+    const markersGroup = L.layerGroup().addTo(map);
+  
+    function createNumberedIcon(number, color) {
+      return L.divIcon({
+        className: 'custom-div-icon',
+        html: `<div>${number}</div>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 16]
+      });
+    }
+  
+    const colors = ['#3498db', '#2ecc71', '#e67e22', '#9b59b6', '#e74c3c'];
+  
+    // Affichage des pins
+    wilayaIds.forEach((id, index) => {
+      const data = mapData[id];
+      if (data) {
+        const number = data.pinNumber;
+        const color = colors[index % colors.length];
+        const icon = createNumberedIcon(number, color);
+        
+        const marker = L.marker(data.center, { icon: icon }).addTo(markersGroup);
+  
+        // GESTION DU CLIC SUR LE PIN
+        marker.on('click', () => {
+          if (data.gmapLink && data.gmapLink !== '#') {
+            // Ouvre le lien Google Maps dans un nouvel onglet
+            window.open(data.gmapLink, '_blank');
+          } else {
+            // Fallback : ouvre juste la popup avec le nom si pas de lien
+            marker.bindPopup(`<strong>${number}. ${data.name}</strong><br><em>Cliquez pour voir les stores</em>`).openPopup();
+          }
+        });
+        
+        // Optionnel : Tooltip au survol
+        marker.bindTooltip(`${number}. ${data.name}`, { direction: 'top' });
+      }
+    });
+  
+    // Gestion des boutons (optionnel, peut juste zoomer maintenant)
+    document.querySelectorAll('.btn-wilaya').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const wilayaId = btn.dataset.wilayaId;
+        const data = mapData[wilayaId];
+        if(!data) return;
+  
+        map.flyTo(data.center, data.zoom, { duration: 1.5 });
+        
+        // Optionnel : Ouvrir le lien aussi quand on clique sur le bouton
+        if (data.gmapLink && data.gmapLink !== '#') {
+           window.open(data.gmapLink, '_blank');
+        }
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+  {
+    "name": "Custom Map",
+    "settings": [
+      {
+        "type": "text",
+        "id": "param_title",
+        "label": "Titre des parametres",
+        "default": "Disponibles près de vous"
+      }, {
+        "type": "text",
+        "id": "param_info",
+        "label": "Info des parametres",
+        "default": "Nos produits sont présents dans des points de vente sélectionnés à travers le pays"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "wilaya",
+        "name": "📍 Wilaya (Groupe)",
+        "settings": [
+          {
+            "type": "text",
+            "id": "wilaya_name",
+            "label": "Nom Wilaya"
+          },
+          {
+            "type": "number",
+            "id": "center_lat",
+            "label": "Latitude Centre",
+            "info": "Latitude de la wilaya sur la map"
+          },
+          {
+            "type": "number",
+            "id": "center_lon",
+            "label": "Longitude Centre",
+            "info": "Longitude de la wilaya sur la map"
+          },
+          {
+            "type": "range",
+            "id": "zoom_level",
+            "min": 5,
+            "max": 18,
+            "default": 12,
+            "label": "Zoom"
+          }, {
+            "type": "number",
+            "id": "pin_number",
+            "label": "Numéro du Pin",
+            "info": "Ex: 29 pour Alger, 6 pour Tipaza",
+            "default": 1
+          }, {
+            "type": "url",
+            "id": "google_maps_link",
+            "label": "Lien Google Maps",
+            "info": "Collez le lien Google Maps de la liste des stores pour cette wilaya"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Carte des Stores",
+        "blocks": [
+          {
+            "type": "wilaya"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
