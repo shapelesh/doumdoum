@@ -8,7 +8,6 @@ import {
 /**
  * Custom header mega menu and drawer
  *
- * @typedef {object} Refs
  * @property {HTMLDivElement} megaMenu - the megamenu element
  */
 class CustomHeaderMegaMenu extends Component {
@@ -122,7 +121,6 @@ customElements.define("custom-header-megamenu", CustomHeaderMegaMenu);
 /**
  * Custom header drawer
  *
- * @typedef {object} Refs
  * @property {HTMLDivElement} headerDrawer - the drawer element
  */
 class CustomHeaderDrawer extends Component {
@@ -132,14 +130,21 @@ class CustomHeaderDrawer extends Component {
     this.drawerOpener = document.querySelector(
       "#doumdoum__header-drawer-opener",
     );
-    this.drawerCloseButton = this.querySelector(
-      "#doumdoum__header-drawer-closer",
+    this.drawerCloseButtons = this.querySelectorAll(
+      ".doumdoum__header-drawer-closer-button",
+    );
+    this.tabOpenButton = this.querySelector("#tabOpenButton");
+    this.tabReturnButton = this.querySelector(
+      ".doumdoum__header-drawer-products_tab-top > svg",
     );
 
     this._handleOpenerClick = this._handleOpenerClick.bind(this);
     this._handleCloseClick = this._closeDrawer.bind(this);
     this._handleClickOutside = this._handleClickOutside.bind(this);
     this._handleKeyDown = this._handleKeyDown.bind(this);
+
+    this._openTab = this._openTab.bind(this);
+    this._closeTab = this._closeTab.bind(this);
 
     this._attachListeners();
   }
@@ -151,23 +156,32 @@ class CustomHeaderDrawer extends Component {
 
   _attachListeners() {
     this.drawerOpener?.addEventListener("click", this._handleOpenerClick);
-    this.drawerCloseButton?.addEventListener("click", this._handleCloseClick);
+    this.drawerCloseButtons?.forEach((button) => {
+      button.addEventListener("click", this._handleCloseClick);
+    });
     document.addEventListener("click", this._handleClickOutside);
     document.addEventListener("keydown", this._handleKeyDown);
+    this.tabOpenButton?.addEventListener("click", this._openTab);
+    this.tabReturnButton?.addEventListener("click", this._closeTab);
   }
 
   _detachListeners() {
     this.drawerOpener?.removeEventListener("click", this._handleOpenerClick);
-    this.drawerCloseButton?.removeEventListener(
-      "click",
-      this._handleCloseClick,
-    );
+    this.drawerCloseButtons?.forEach((button) => {
+      button.removeEventListener("click", this._handleCloseClick);
+    });
     document.removeEventListener("click", this._handleClickOutside);
     document.removeEventListener("keydown", this._handleKeyDown);
   }
 
   get _isOpen() {
     return this.drawerOpener?.getAttribute("aria-expanded") === "true";
+  }
+
+  get _isTabOpen() {
+    const tab = this.querySelector(".doumdoum__header-drawer-products_tab");
+    if (!tab) return;
+    return tab?.classList.contains("open");
   }
 
   _handleOpenerClick() {
@@ -177,10 +191,11 @@ class CustomHeaderDrawer extends Component {
   _handleClickOutside(event) {
     if (!this._isOpen) return;
 
+    const isTarget = (button) => button.contains(event.target);
+
     const clickedInsideDrawer = this.refs.headerDrawer?.contains(event.target);
     const clickedOpener = this.drawerOpener?.contains(event.target);
-    const clickedCloser = this.drawerCloseButton?.contains(event.target);
-
+    const clickedCloser = Array.from(this.drawerCloseButtons).some(isTarget);
     if (!clickedInsideDrawer && !clickedOpener && !clickedCloser) {
       this._closeDrawer();
     }
@@ -195,7 +210,7 @@ class CustomHeaderDrawer extends Component {
     if (!drawer) return;
 
     this.classList.add("is-open");
-    drawer.setAttribute("aria-hidden", "false");
+    drawer?.setAttribute("aria-hidden", "false");
     this.drawerOpener?.setAttribute("aria-expanded", "true");
 
     removeWillChangeOnAnimationEnd(drawer);
@@ -206,6 +221,10 @@ class CustomHeaderDrawer extends Component {
     const drawer = this.refs.headerDrawer;
     if (!drawer) return;
 
+    if (this._isTabOpen) {
+      this._closeTab();
+    }
+
     this.classList.remove("is-open");
     drawer.setAttribute("aria-hidden", "true");
     this.drawerOpener?.setAttribute("aria-expanded", "false");
@@ -213,6 +232,79 @@ class CustomHeaderDrawer extends Component {
     removeTrapFocus(drawer);
     removeWillChangeOnAnimationEnd(drawer);
   }
+
+  _openTab() {
+    const tab = this.querySelector(".doumdoum__header-drawer-products_tab");
+    if (!tab || this._isTabOpen) return;
+
+    tab.classList.add("open");
+  }
+  _closeTab() {
+    const tab = this.querySelector(".doumdoum__header-drawer-products_tab");
+    if (!tab || !this._isTabOpen) return;
+
+    tab.classList.remove("open");
+  }
 }
 
 customElements.define("custom-header-drawer", CustomHeaderDrawer);
+
+/**
+ * Custom header drawer
+ */
+class ProductCategoryTabs extends Component {
+  connectedCallback() {
+    super.connectedCallback();
+
+    this.tabButtons = this.querySelectorAll(".doumdoum__product-category-tab");
+    this.pages = this.querySelectorAll(".doumdoum__product-category-page");
+
+    this._handleChange = this._handleChange.bind(this);
+
+    this.attachEvents();
+  }
+
+  disconnectedCallback() {}
+
+  attachEvents() {
+    Array.from(this.tabButtons).forEach((button) => {
+      button.addEventListener("click", this._handleChange);
+    });
+  }
+
+  get _activePage() {
+    return Array.from(this.pages).find((page) =>
+      page.classList.contains("open"),
+    );
+  }
+  get _activeTabButton() {
+    return Array.from(this.tabButtons).find((tabButton) =>
+      tabButton.classList.contains("selected-tab"),
+    );
+  }
+  _handleChange(event) {
+    this._changePage(event);
+    this._changeTab(event);
+  }
+  _changeTab(event) {
+    const clickedTabButton = event.currentTarget;
+    if (clickedTabButton === this._activeTabButton) return;
+
+    this._activeTabButton?.classList.remove("selected-tab");
+    clickedTabButton.classList.add("selected-tab");
+  }
+  _changePage(event) {
+    const newSelectedPage = this.querySelector(
+      `.doumdoum__product-category-page[data-page-handle='${event.target.dataset.tabHandle}']`,
+    );
+
+    console.log(newSelectedPage);
+
+    if (!newSelectedPage || this._activePage === newSelectedPage) return;
+
+    this._activePage?.classList.remove("open");
+    newSelectedPage.classList.add("open");
+  }
+}
+
+customElements.define("product-category-tabs", ProductCategoryTabs);

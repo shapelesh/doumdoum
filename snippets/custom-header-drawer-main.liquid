@@ -1,0 +1,57 @@
+{{ "custom-header-drawer-main.css"  | asset_url | stylesheet_tag}}
+<div class="doumdoum__header-drawer-top">
+  {% render 'custom-logo'
+    , image: section.settings.logo
+    , image_mobile: nil
+    , width: 188
+  %}
+  <span id="doumdoum__header-drawer-closer" class="doumdoum__header-drawer-closer-button">
+    {% render 'doumdoum__header-close-icon' %}
+  </span>
+</div>
+<div class="doumdoum__header-drawer-links">
+  <span class="doumdoum__header-drawer-link {% if request.page_type == 'index' %}active{% endif %}">
+    <a href="{{ shop.url }}">
+      Accueil
+    </a>
+  </span>
+  <span class="doumdoum__header-drawer-link" id="tabOpenButton" aria-expanded="false">
+    <span>
+      Boutique 
+    </span>
+    {% render 'icon-right-caret' %}
+  </span>
+  {%- for link in section.settings.menu.links -%}
+    <span class="doumdoum__header-drawer-link {% if link.current %}active{% endif %}">
+      <a href="{{ link.url }}">
+        {{ link.title }}
+      </a>
+    </span>
+  {%- endfor -%}
+  <span class="doumdoum__header-drawer-link" id="mobile_account_fake_button">
+    Mon compte
+  </span>
+  <shopify-account
+    menu="{{ section.settings.customer_account_menu }}"
+    {% if account_actions_style != blank %}
+    {% endif %}
+    {% comment %} style="display: none;" {% endcomment %}
+  >
+
+      <span
+        slot="signed-out-avatar"
+        class="account-button__text header-actions__text-style {% if display_style == 'icon' %}hidden{% else %}mobile:hidden{% endif %}"
+      >
+        {{ 'content.account_title' | t }}
+      </span>
+
+      <span
+        slot="signed-out-avatar"
+        class="{% if display_style != 'icon' %}desktop:hidden{% endif %}"
+        aria-hidden="true"
+      >
+        Mon compte
+      </span>
+  </shopify-account>
+</div>
+

@@ -18,25 +18,6 @@
   fetchpriority="low"
 ></script>
 
-{% comment %} {% capture cart_icon %}
-  <cart-icon
-    class="header-actions__cart-icon{% if display_style == 'text' %} header-actions__cart-icon--text{% endif %}{% unless cart == empty %} header-actions__cart-icon--has-cart{% endunless %}"
-    data-testid="cart-icon"
-  >
-    <span class="{% if display_style == 'icon' %}hidden{% else %}mobile:hidden{% endif %}">
-      {{ 'content.cart_title' | t }}
-    </span>
-
-    <span
-      class="svg-wrapper {% if display_style != 'icon' %}desktop:hidden{% endif %}"
-      aria-hidden="true"
-    >
-      {{ 'icon-cart.svg' | inline_asset_content }}
-    </span>
-
-    {% render 'cart-bubble', limit: 100 %}
-  </cart-icon>
-{% endcapture %} {% endcomment %}
 
 {% capture cart_icon %}
   <cart-icon

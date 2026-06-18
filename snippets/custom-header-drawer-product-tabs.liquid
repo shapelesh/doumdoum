@@ -1,0 +1,33 @@
+{{ "custom-header-drawer-product-tabs.css"  | asset_url | stylesheet_tag }}
+
+<div class="doumdoum__header-drawer-products_tab">
+  <div class="doumdoum__header-drawer-products_tab-top">
+    {% render 'doumdoum__return-button-icon' %}
+    {% render 'custom-logo'
+      , image: section.settings.logo
+      , image_mobile: nil
+      , width: 188
+    %}
+    <span class="doumdoum__header-drawer-closer-button" id="doumdoum__header-drawer-closer">
+      {% render 'doumdoum__header-close-icon' %}
+    </span>
+  </div>
+  <div class="doumdoum__header-drawer-products_tab-bottom">
+    <product-category-tabs>
+      <div class="doumdoum__product-category-tabs" ref="tabList" id="tabList">
+        {%- for block in section.blocks -%}
+          <span class="doumdoum__product-category-tab {% if forloop.first %} selected-tab {% endif %}" data-tab-handle="{{ block.settings.tab_name |  handleize }}">
+            {{ block.settings.tab_name |  capitalize }}
+          </span>
+        {%- endfor -%}
+      </div>
+      <div class="doumdoum__product-category-pages" ref="pageList" id="pageList">
+        {%- for block in section.blocks -%}
+          <div class="doumdoum__product-category-page {% if forloop.first %} open    {% endif %}" data-page-handle="{{ block.settings.tab_name |  handleize }}">
+            here goes {{ block.settings.tab_name }} products
+          </div>
+        {%- endfor -%}
+      </div>
+    </product-category-tabs>
+  </div>
+</div>

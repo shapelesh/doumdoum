@@ -44,4 +44,13 @@ main.content-for-layout {
     display: none;
     opacity: 0;
   }
+
+  .doumdoum__header .svg-wrapper > svg {
+    width: 16px;
+    height: 16px;
+  }
+  .doumdoum__header .svg-wrapper {
+    width: 16px;
+    height: 16px;
+  }
 }

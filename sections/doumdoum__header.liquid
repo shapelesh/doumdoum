@@ -1,3 +1,5 @@
+{{ 'doumdoum__header.css' | asset_url | stylesheet_tag }}
+
 {%- capture canonical_url_string -%}{{ content_for_header }}{%- endcapture -%}
 {%- assign page_url_parts = canonical_url_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&' -%}
 {%- assign current_url = page_url_parts -%}
@@ -14,7 +16,10 @@
         class="header-link"
         id="megamenu_opener"
         aria-expanded="false">
-        Boutique +
+        <span>
+          Boutique
+        </span>
+        {% render 'icon-down-caret' %}
       </span>
       {%- for link in section.settings.menu.links -%}
         <span class="header-link {% if link.current %}active{% endif %}">
@@ -54,86 +59,7 @@
   type="module"
   fetchpriority="low"
   defer></script>
-<style>
-  .doumdoum__header {
-    position: relative;
-    display: flex;
-    padding: 14.5px 112px;
-    justify-content: space-between;
-    background-color: #FAFAFA;
-    border-bottom: 1px solid #F5F5F5;
-  }
-
-  .doumdoum__header-left {
-    display: flex;
-  }
-  .doumdoum__header-left-desktop {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  .doumdoum__header-left .header-link {
-    font-family: Nunito;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 120%;
-    letter-spacing: -0.5%;
-    color: #181D27;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    cursor: pointer;
-  }
-  .doumdoum__header-left .header-link.active {
-    font-weight: 700;
-    text-decoration: underline;
-  }
-  .doumdoum__header-center {
-    min-height: 43px;
-    display: flex;
-    align-items: center;
-  }
-  .doumdoum__header-left-mobile {
-    display: none;
-  }
-  @media screen and (max-width: 1120px) {
-    .doumdoum__header {
-      padding: 14.5px 80px;
-    }
-    .doumdoum__header-center {
-      max-width: 260px;
-    }
-  }
-  @media screen and (max-width: 1020px) {
-    .doumdoum__header {
-      padding: 14.5px 60px;
-    }
-    .doumdoum__header-center {
-      max-width: 240px;
-    }
-  }
-  @media screen and (max-width: 992px) {
-    .doumdoum__header {
-      padding: 14.5px 40px;
-    }
-    .doumdoum__header-center {
-      max-width: 180px;
-    }
-  }
-  @media screen and (max-width: 790px) {
-    .doumdoum__header {
-      padding: 14.5px 16px;
-    }
-    .doumdoum__header-left-mobile {
-      display: flex;
-      cursor: pointer;
-    }
-    .doumdoum__header-left-desktop {
-      display: none;
-    }
-  }
-</style>
+<style></style>
 {% schema %}
   {
     "name": "doumdoum header",
