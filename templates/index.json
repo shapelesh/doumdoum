@@ -54,7 +54,10 @@
           "blocks": {}
         }
       },
-      "block_order": ["text_YLPk4p", "button_H9gpTf"],
+      "block_order": [
+        "text_YLPk4p",
+        "button_H9gpTf"
+      ],
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
@@ -281,6 +284,20 @@
         "padding-block-end": 48
       }
     },
+    "custom_picture_hy3KCi": {
+      "type": "custom_picture",
+      "name": "Custom Picture Bg",
+      "settings": {
+        "img_custom_sec": "shopify://shop_images/site-creme-solaire.webp"
+      }
+    },
+    "custom_devider_7e79HN": {
+      "type": "custom_devider",
+      "name": "Custom Devider",
+      "settings": {
+        "color": "bleu"
+      }
+    },
     "custom_blog_articles_BPJEFT": {
       "type": "custom_blog_articles",
       "blocks": {
@@ -299,6 +316,7 @@
         "video_block_HaECQ6": {
           "type": "video_block",
           "settings": {
+            "video_link": "",
             "custom_title": "",
             "description": ""
           }
@@ -319,7 +337,6 @@
         "blog_title": "Blog"
       }
     },
-
     "custom_faq_6aqfRQ": {
       "type": "custom_FAQ",
       "blocks": {
@@ -386,19 +403,12 @@
       "settings": {
         "faq_title": "Questions fréquentes des parents"
       }
-    },
-    "custom_devider_7e79HN": {
-      "type": "custom_devider",
-      "name": "Custom Devider",
-      "settings": {
-        "costume_bg_fill_color": "{{ settings.costume_palette.color1 }}",
-        "costume_text_fill_color": "{{ settings.costume_palette.color1 }}"
-      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "product_list_fa6P9H",
+    "custom_picture_hy3KCi",
     "custom_devider_7e79HN",
     "custom_blog_articles_BPJEFT",
     "custom_faq_6aqfRQ"
