@@ -28,7 +28,7 @@ main.content-for-layout {
 }
 
 .doumdoum__account-button {
-  width: 36px;
+  /* width: 36px; */
   margin-right: 16px;
   background-color: white !important;
   border-radius: 16px;

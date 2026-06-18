@@ -1,0 +1,90 @@
+{{ "doumdoum__main-hero.css" | asset_url | stylesheet_tag }}
+<section class="doumdoum__main-hero">
+  <div class="doumdoum__main-hero-left">
+    <div class="doumdoum__main-hero-left-top">
+      <div class="doumdoum__main-hero-left-top-left">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0943/3572/9946/files/leaf-left.png?v=1781785734"
+          alt="Decorative leaf"
+          width="27"
+          height="27">
+        <span>
+          {%- assign split_text = section.settings.approuve_par | split: " " -%}
+          {%- for word in split_text -%}
+            {{ word }}
+            {%- if forloop.index == 3 -%}
+              <br>
+            {%- endif -%}
+          {%- endfor -%}
+        </span>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0943/3572/9946/files/leaf-right.png?v=1781785734"
+          alt="Decorative leaf"
+          width="27"
+          height="27">
+      </div>
+      <div class="doumdoum__main-hero-left-top-right">
+        <p>
+          {%- assign split_text = section.settings.top_right_text | split: " " -%}
+          {% for word in split_text %}
+            {{ word }}
+            {%- if forloop.index == 5 or forloop.index == 10 -%}
+              <br>
+            {%- endif -%}
+          {% endfor %}
+        </p>
+      </div>
+    </div>
+    <div class="doumdoum__main-hero-left-bottom">
+      <div class="doumdoum__main-hero-left-bottom-top">
+        <h1>
+          {%- assign split_heading = section.settings.heading | split: " " -%}
+          {%- for word in split_heading -%}
+            {%- if forloop.index == 7 or forloop.index == 10 -%}
+              <span>
+            {%- endif -%}
+            {{ word }}
+            {%- if forloop.index == 8 or forloop.last -%}
+              </span>
+            {%- endif -%}
+            {%- if forloop.index == 4 or forloop.index == 8 -%}
+              <br>
+            {%- endif -%}
+          {%- endfor -%}
+        </h1>
+      </div>
+      <div class="doumdoum__main-hero-left-bottom-bottom"></div>
+    </div>
+  </div>
+  <div class="doumdoum__main-hero-right"></div>
+</section>
+
+{% schema %}
+  {
+    "name": "Main hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "approuve_par",
+        "label": "Approuve Par",
+        "default": "Approuvé par des dermatologues"
+      }, {
+        "type": "text",
+        "id": "top_right_text",
+        "label": "Top Right Text",
+        "default": "Des centaines de cliniciens ont partagé cela avec leurs patients sans compensation"
+      }, {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Prenez soin de la peau de votre bébé dès les premiers jours"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Main hero",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

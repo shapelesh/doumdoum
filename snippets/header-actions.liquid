@@ -40,11 +40,12 @@
       </svg>
     </span>
 
-
+    <div class="doumdoum__mobile-cart-bubble" ref="cartBubbleMobile">
+      {{ cart.item_count }}
+    </div>
     <div
       ref="cartBubble"
       class="doumdoum-cart-text"
-      {% assign item_count = cart.item_count %}
     >
       <span
         ref="cartBubbleText"
@@ -77,7 +78,21 @@
         background-color: #FFFFFF; 
         border: 1px solid #E9EAEB; 
         border-radius: 16px; 
-        padding: 12px 16px
+        padding: 12px 16px;
+        position: relative;
+      }
+      .doumdoum__mobile-cart-bubble {
+        display: none;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        border: 0.75px solid #F570B7;
+        border-radius: 100%;
+        width: 12px;
+        height: 12px;
+        font-size: 8px;
+        color: #FF008B;
+        background-color: #FFEEF6;
       }
       @media screen and (max-width: 790px) {
         .doumdoum-cart-icon {
@@ -85,6 +100,9 @@
         }
         .doumdoum-cart-text__text-count {
           display: none;
+        }
+        .doumdoum__mobile-cart-bubble {
+          display: block;
         }
       }
     </style>
