@@ -1,0 +1,12 @@
+<li class="list_icon-and-text block--{{block.id}}">
+  <div class="icon">
+    <img
+      src="{{ block.settings.list_icon |  image_url: width:block.settings.list_icon.width  }}"
+      width="{{ block.settings.list_icon.width }}"
+      height="{{ block.settings.list_icon.height }}"
+      alt="{{ block.settings.list_icon.alt }}">
+  </div>
+  <div class="text">
+    <h4>{{ block.settings.list_text }}</h4>
+  </div>
+</li>

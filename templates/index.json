@@ -284,6 +284,49 @@
         "padding-block-end": 48
       }
     },
+    "custom_icone_with_text_e6xBkF": {
+      "type": "custom_icone_with_text",
+      "blocks": {
+        "icons_and_text_bYKxQC": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/teste.png",
+            "list_text": "Testé en laboratoire"
+          }
+        },
+        "icons_and_text_ibNw7H": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/Avocat.png",
+            "list_text": "Formules naturelles et sûres"
+          }
+        },
+        "icons_and_text_AMR8Gm": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/bear.png",
+            "list_text": "Qualité optimale pour la peau bébé"
+          }
+        },
+        "icons_and_text_KNwzPU": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/Fabrique_en_algerie.png",
+            "list_text": "Fabriqué en Algérie"
+          }
+        }
+      },
+      "block_order": [
+        "icons_and_text_bYKxQC",
+        "icons_and_text_ibNw7H",
+        "icons_and_text_AMR8Gm",
+        "icons_and_text_KNwzPU"
+      ],
+      "name": "Custom Text et icones",
+      "settings": {
+        "icons_with_text_title": "Doumdoum, le choix des parents exigeants"
+      }
+    },
     "custom_picture_hy3KCi": {
       "type": "custom_picture",
       "name": "Custom Picture Bg",
@@ -408,6 +451,7 @@
   "order": [
     "hero_jVaWmY",
     "product_list_fa6P9H",
+    "custom_icone_with_text_e6xBkF",
     "custom_picture_hy3KCi",
     "custom_devider_7e79HN",
     "custom_blog_articles_BPJEFT",

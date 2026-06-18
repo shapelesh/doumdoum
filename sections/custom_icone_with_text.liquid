@@ -1,0 +1,150 @@
+<section class="doumdoum__icons-with-text section--{{ section.id }}">
+  <div class="doumdoum_icons-with-text_container icons-with-text_container">
+    <h3>{{ section.settings.icons_with_text_title }}</h3>
+    <div class="icons-with-text_container-list">
+      <ul class="container-list">
+        {% for block in section.blocks %}
+          {% if block.type == 'icons_and_text' %}
+            {% render 'custom_icons-and-text'
+              , block: block %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <style>
+    .doumdoum__icons-with-text {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 73.58px 112px;
+    }
+    .icons-with-text_container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .icons-with-text_container h3 {
+      font-family: Fredoka;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 26px;
+      leading-trim: NONE;
+      line-height: 120%;
+      letter-spacing: -0.75%;
+      text-align: center;
+      color: #252B37;
+      margin: 0;
+    }
+    .icons-with-text_container-list ul {
+      width: 100%;
+      height: 100%;
+    }
+    .icons-with-text_container-list ul li {
+      list-style: none;
+    }
+    .container-list {
+      display: grid;
+      grid-template-columns: repeat(4, 146px);
+      grid-template-rows: 1fr;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      gap: 16px;
+    }
+    .list_icon-and-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 10px;
+      width: 146px;
+    }
+    .list_icon-and-text .icon {
+      width: 126px;
+      height: 126px;
+    }
+    .list_icon-and-text .text h4 {
+      font-family: Nunito;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 16px;
+      leading-trim: NONE;
+      line-height: 120%;
+      letter-spacing: -0.5%;
+      text-align: center;
+      color: #181D27;
+
+    }
+    @media screen and (max-width: 768px) {
+      .doumdoum__icons-with-text {
+        padding: 73.58px 90px;
+      }
+    }
+    @media screen and (max-width: 632px) {
+      .doumdoum__icons-with-text {
+        padding: 73.58px 40px;
+      }
+      .container-list {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+      }
+      .container-list::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 450px) {
+      .doumdoum__icons-with-text {
+        padding: 73.58px 16px;
+      }
+    }
+  </style>
+
+</section>
+
+{% schema %}
+  {
+    "name": "Custom Text et icones",
+    "settings": [
+      {
+        "type": "text",
+        "id": "icons_with_text_title",
+        "label": "Titre",
+        "default": "Doumdoum, le choix des parents exigeants"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icons_and_text",
+        "name": "Icones et text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "list_icon",
+            "label": "Icone"
+          }, {
+            "type": "text",
+            "id": "list_text",
+            "label": "text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Text et icones"
+      }
+    ]
+  }
+{% endschema %}
