@@ -1,13 +1,14 @@
 export const sliderRegistry = {
-  product: {
-    type: "slider",
-    perView: 5,
-    bound: true,
-    gap: 10,
+  scrolling_text: {
+    type: "carousel",
+    perView: 3,
+    autoplay: 1,
+    animationDuration: 5000,
+    rewind: false,
+    animationTimingFunc: "cubic-bezier(0,0,1,1)",
     breakpoints: {
-      992: { perView: 3 },
-      // 768: { perView: 2 },
-      480: { perView: 1 },
+      768: { perView: 2 },
+      480: { perView: 1.2 },
     },
   },
 };

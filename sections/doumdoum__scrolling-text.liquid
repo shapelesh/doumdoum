@@ -1,0 +1,46 @@
+<section
+  class="doumdoum__sliding_text"
+  data-slider="scrolling_text"
+  data-speed="3000">
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        {%- for block in section.blocks -%}
+          <li class="glide__slide">
+            {{ block.settings.text }}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Scrolling Text",
+    "settings": [],
+    "blocks": [
+      {
+        "name": "text instance",
+        "type": "text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "+10 000 mamans satisfaites de Doumdoum"
+          }, {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Scrolling Text",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

@@ -1,84 +1,116 @@
 {{ "doumdoum__main-hero.css" | asset_url | stylesheet_tag }}
 <section class="doumdoum__main-hero">
-  <div class="doumdoum__main-hero-left">
-    <div class="doumdoum__main-hero-left-top">
-      <div class="doumdoum__main-hero-left-top-left">
-        <img
-          src="https://cdn.shopify.com/s/files/1/0943/3572/9946/files/leaf-left.png?v=1781785734"
-          alt="Decorative leaf"
-          width="27"
-          height="27">
-        <span>
-          {%- assign split_text = section.settings.approuve_par | split: " " -%}
-          {%- for word in split_text -%}
-            {{ word }}
-            {%- if forloop.index == 3 -%}
-              <br>
-            {%- endif -%}
-          {%- endfor -%}
-        </span>
-        <img
-          src="https://cdn.shopify.com/s/files/1/0943/3572/9946/files/leaf-right.png?v=1781785734"
-          alt="Decorative leaf"
-          width="27"
-          height="27">
+  <div class="doumdoum__main-hero-wrapper">
+    <div class="doumdoum__main-hero-left">
+      <div class="doumdoum__main-hero-left-top">
+        <div class="doumdoum__main-hero-left-top-left">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0943/3572/9946/files/leaf-left.png?v=1781785734"
+            alt="Decorative leaf"
+            width="27"
+            height="27">
+          <span>
+            {%- assign split_text = section.settings.approuve_par | split: " " -%}
+            {%- for word in split_text -%}
+              {{ word }}
+              {%- if forloop.index == 3 -%}
+                <br>
+              {%- endif -%}
+            {%- endfor -%}
+          </span>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0943/3572/9946/files/leaf-right.png?v=1781785734"
+            alt="Decorative leaf"
+            width="27"
+            height="27">
+        </div>
+        <div class="doumdoum__main-hero-left-top-right">
+          <p>
+            {%- assign split_text = section.settings.top_right_text | split: " " -%}
+            {% for word in split_text %}
+              {{ word }}
+              {%- if forloop.index == 5 or forloop.index == 10 -%}
+                <br>
+              {%- endif -%}
+            {% endfor %}
+          </p>
+        </div>
       </div>
-      <div class="doumdoum__main-hero-left-top-right">
-        <p>
-          {%- assign split_text = section.settings.top_right_text | split: " " -%}
-          {% for word in split_text %}
-            {{ word }}
-            {%- if forloop.index == 5 or forloop.index == 10 -%}
-              <br>
-            {%- endif -%}
-          {% endfor %}
-        </p>
+      <div class="doumdoum__main-hero-left-bottom">
+        <div class="doumdoum__main-hero-left-bottom-top">
+          <h1>
+            {%- assign split_heading = section.settings.heading | split: " " -%}
+            {%- for word in split_heading -%}
+              {%- if forloop.index == 8 or forloop.index == 11 -%}
+                <span>
+              {%- endif -%}
+              {{ word }}
+              {%- if forloop.index == 8 or forloop.last -%}
+                </span>
+              {%- endif -%}
+              {%- if forloop.index == 4 or forloop.index == 8 -%}
+                <br>
+              {%- endif -%}
+            {%- endfor -%}
+          </h1>
+          <p>
+            {{ section.settings.paragraph }}
+          </p>
+        </div>
+        <div class="doumdoum__main-hero-left-bottom-bottom">
+          <div class="doumdoum__main-hero-left-bottom-bottom-reviews">
+            {% render 'hero-yellow-stars' %}
+            <span>
+              {{ section.settings.review_text }}
+            </span>
+          </div>
+          <a href="{{ section.settings.cta_url }}">
+            {{ section.settings.cta_label }}
+          </a>
+          <p>
+            {{ section.settings.bottom_text }}
+          </p>
+        </div>
       </div>
     </div>
-    <div class="doumdoum__main-hero-left-bottom">
-      <div class="doumdoum__main-hero-left-bottom-top">
-        <h1>
-          {%- assign split_heading = section.settings.heading | split: " " -%}
-          {%- for word in split_heading -%}
-            {%- if forloop.index == 8 or forloop.index == 11 -%}
-              <span>
-            {%- endif -%}
-            {{ word }}
-            {%- if forloop.index == 8 or forloop.last -%}
-              </span>
-            {%- endif -%}
-            {%- if forloop.index == 4 or forloop.index == 8 -%}
-              <br>
-            {%- endif -%}
-          {%- endfor -%}
-        </h1>
-        <p>
-          {{ section.settings.paragraph }}
-        </p>
+    <div class="doumdoum__main-hero-right">
+      <div class="doumdoum__main-hero-right-image-wrapper">
+        <img
+          src="{{ section.settings.right_image |  image_url: width: section.settings.right_image.width }}"
+          alt="{{ section.settings.right_image.alt }}"
+          width="{{ section.settings.right_image.width }}"
+          height="{{ section.settings.right_image.height }}">
       </div>
-      <div class="doumdoum__main-hero-left-bottom-bottom">
-        <div class="doumdoum__main-hero-left-bottom-bottom-reviews">
-          {% render 'hero-yellow-stars' %}
-          <span>
-            {{ section.settings.review_text }}
-          </span>
-        </div>
+      <img
+        src="{{ section.settings.approved |  image_url: width: section.settings.approved.width }}"
+        alt="{{ section.settings.approved.alt }}"
+        width="{{ section.settings.approved.width }}"
+        height="{{ section.settings.approved.height }}"
+        class="approved">
+    </div>
+  </div>
+  <div class="doumdoum__main-hero-pink-rectangle">
+    <div class="desktop">
+      <img
+        src="{{ section.settings.desktop_rectangle |  image_url: width: section.settings.desktop_rectangle.width }}"
+        alt="{{ section.settings.desktop_rectangle.alt }}"
+        width="{{ section.settings.desktop_rectangle.width }}"
+        height="{{ section.settings.desktop_rectangle.height }}">
+    </div>
+    <div class="mobile">
+      <img
+        src="{{ section.settings.mobile_rectangle |  image_url: width: section.settings.mobile_rectangle.width }}"
+        alt="{{ section.settings.mobile_rectangle.alt }}"
+        width="{{ section.settings.mobile_rectangle.width }}"
+        height="{{ section.settings.mobile_rectangle.height }}">
+      <div class="text">
         <a href="{{ section.settings.cta_url }}">
-          {{ section.settings.cta_label }}
+          {{ section.settings.cta_label_mobile }}
         </a>
         <p>
           {{ section.settings.bottom_text }}
         </p>
       </div>
-    </div>
-  </div>
-  <div class="doumdoum__main-hero-right">
-    <div class="doumdoum__main-hero-right-image-wrapper">
-      <img
-        src="{{ section.settings.right_image |  image_url: width: section.settings.right_image.width }}"
-        alt="{{ section.settings.right_image.alt }}"
-        width="{{ section.settings.right_image.width }}"
-        height="{{ section.settings.right_image.height }}">
     </div>
   </div>
 </section>
@@ -121,6 +153,11 @@
         "label": "Cta Label",
         "default": "Commander maintenant"
       }, {
+        "type": "text",
+        "id": "cta_label_mobile",
+        "label": "Cta Label (mobile)",
+        "default": "Commander maintenant - 2,500 da"
+      }, {
         "type": "url",
         "id": "cta_url",
         "label": "Cta Url"
@@ -133,6 +170,18 @@
         "type": "image_picker",
         "id": "right_image",
         "label": "Right Image"
+      }, {
+        "type": "image_picker",
+        "id": "approved",
+        "label": "Approved"
+      }, {
+        "type": "image_picker",
+        "id": "desktop_rectangle",
+        "label": "Desktop Rectangle"
+      }, {
+        "type": "image_picker",
+        "id": "mobile_rectangle",
+        "label": "Mobile Ractangle"
       }
     ],
     "presets": [
