@@ -1,0 +1,117 @@
+{{ "doumdoum__nos-coffrets.css" | asset_url | stylesheet_tag }}
+
+<section class="doumdoum__nos-coffrets">
+  <div class="doumdoum__nos-coffrets-label">
+    <span>
+      {{ section.settings.section_label }}
+    </span>
+  </div>
+  <div class="doumdoum__nos-coffrets-heading">
+    <h2>
+      {{ section.settings.heading }}
+    </h2>
+  </div>
+  <div class="doumdoum__nos-coffrets-products">
+    <ul>
+      <li>
+        {%- assign product = section.settings.first_product -%}
+        {%- assign product_image = section.settings.first_product_thumbnail -%}
+        <div class="doumdoum__nos-coffret-product-top">
+          <img
+            src="{{ product_image |  image_url: width: product_image.width }}"
+            alt="{{ product_image.alt }}"
+            width="{{ product_image.width }}"
+            height="{{ product_image.height }}">
+        </div>
+        <div class="doumdoum__nos-coffret-product-bottom">
+          <div class="doumdoum__nos-coffret-product-text">
+            <h4>
+              {{ product.title }}
+            </h4>
+            <p>
+              {%- assign split_product_desc = product.description | split: " " -%}
+              {%- for word in split_product_desc limit: 15 -%}
+                {{ word }}
+              {%- endfor -%}
+            </p>
+          </div>
+          <div class="doumdoum__nos-coffret-product-price"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Nos Coffrets",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_label",
+        "label": "Section Label",
+        "default": "Nos Coffrets"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Coffrets bébé : confort et soin au quotidien"
+      },
+      {
+        "type": "header",
+        "content": "First Product"
+      },
+      {
+        "type": "product",
+        "id": "first_product",
+        "label": "First Product"
+      }, {
+        "type": "image_picker",
+        "id": "first_product_thumbnail",
+        "label": "First Product Thumbnail"
+      }, {
+        "type": "color_background",
+        "id": "first_background_color",
+        "label": "First Background Color"
+      }, {
+        "type": "header",
+        "content": "Second Product"
+      }, {
+        "type": "product",
+        "id": "second_product",
+        "label": "Second Product"
+      }, {
+        "type": "image_picker",
+        "id": "second_product_thumbnail",
+        "label": "Second Product Thumbnail"
+      }, {
+        "type": "color_background",
+        "id": "second_background_color",
+        "label": "Second Background Color"
+      }, {
+        "type": "header",
+        "content": "Third Product"
+      }, {
+        "type": "product",
+        "id": "third_product",
+        "label": "Third Product"
+      }, {
+        "type": "image_picker",
+        "id": "third_product_thumbnail",
+        "label": "Third Product Thumbnail"
+      }, {
+        "type": "color_background",
+        "id": "third_background_color",
+        "label": "Third Background Color"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Nos Coffrets",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

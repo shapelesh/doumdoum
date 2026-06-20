@@ -19,13 +19,41 @@
         "paragraph": "Nettoie délicatement sans agresser, tout en respectant la sensibilité naturelle de sa peau.",
         "review_text": "+5,000 maman a validé le produit",
         "cta_label": "Commander maintenant",
+        "cta_label_mobile": "Commander maintenant - 2,500 da",
         "cta_url": "",
         "bottom_text": "Protège la peau de votre bébé en 30 s",
-        "right_image": "shopify://shop_images/ss.png"
+        "right_image": "shopify://shop_images/ss.png",
+        "approved": "shopify://shop_images/approved.svg",
+        "desktop_rectangle": "shopify://shop_images/Pink_Rectangle.png",
+        "mobile_rectangle": "shopify://shop_images/Pink_Rectangle_1.png"
       }
+    },
+    "doumdoum_scrolling_text_BCYUq4": {
+      "type": "doumdoum__scrolling-text",
+      "blocks": {
+        "text_WtWDh3": {
+          "type": "text",
+          "settings": {
+            "text": "+10 000 mamans satisfaites de Doumdoum"
+          }
+        },
+        "text_JfByCn": {
+          "type": "text",
+          "settings": {
+            "text": "+10 000 mamans satisfaites de Doumdoum"
+          }
+        }
+      },
+      "block_order": [
+        "text_WtWDh3",
+        "text_JfByCn"
+      ],
+      "name": "Scrolling Text",
+      "settings": {}
     }
   },
   "order": [
-    "doumdoum_main_hero_jXMF4E"
+    "doumdoum_main_hero_jXMF4E",
+    "doumdoum_scrolling_text_BCYUq4"
   ]
 }
