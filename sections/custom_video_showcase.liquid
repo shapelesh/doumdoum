@@ -172,6 +172,11 @@
       padding: 0;
     }
   }
+  @media (min-width: 991px) {
+    body:has(doumdoum-video-player[active]) .cart-drawer__overlay {
+      display: none !important;
+    }
+  }
 </style>
 {% schema %}
   {
