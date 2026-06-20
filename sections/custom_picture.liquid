@@ -6,13 +6,13 @@
     height="{{ section.settings.img_custom_sec.height }}"
     alt="{{ section.settings.img_custom_sec.alt }}"
     loading="lazy">
-  <img
-    class="phone_version"
-    src="{{ section.settings.img_custom_sec_phone |  image_url: width:section.settings.img_custom_sec.width }}"
-    width="{{ section.settings.img_custom_sec_phone.width }}"
-    height="{{ section.settings.img_custom_sec_phone.height }}"
-    alt="{{ section.settings.img_custom_sec_phone.alt }}"
-    loading="lazy">
+  {% comment %} <img
+            class="phone_version"
+            src="{{ section.settings.img_custom_sec_phone |  image_url: width:section.settings.img_custom_sec.width }}"
+            width="{{ section.settings.img_custom_sec_phone.width }}"
+            height="{{ section.settings.img_custom_sec_phone.height }}"
+            alt="{{ section.settings.img_custom_sec_phone.alt }}"
+        loading="lazy"> {% endcomment %}
 </section>
 <style>
   .doumdoum__custom-picutre-sec {

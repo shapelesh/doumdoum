@@ -13,6 +13,7 @@
     <doumdoum-video-player
       data-video-url="{{ video_src }}"
       data-cover-image="{{ video_obj.preview_image | image_url: width: 600 }}"
+      data-css-url="{{ "doumdoum_video_player.css" | asset_url }}"
       data-product-handle="{{ block.settings.product_handle | default: '' }}"
       style="display: block; width: 100%; height: 100%;"></doumdoum-video-player>
 
