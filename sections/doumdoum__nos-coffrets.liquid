@@ -13,31 +13,33 @@
   </div>
   <div class="doumdoum__nos-coffrets-products">
     <ul>
-      <li>
-        {%- assign product = section.settings.first_product -%}
-        {%- assign product_image = section.settings.first_product_thumbnail -%}
-        <div class="doumdoum__nos-coffret-product-top">
-          <img
-            src="{{ product_image |  image_url: width: product_image.width }}"
-            alt="{{ product_image.alt }}"
-            width="{{ product_image.width }}"
-            height="{{ product_image.height }}">
-        </div>
-        <div class="doumdoum__nos-coffret-product-bottom">
-          <div class="doumdoum__nos-coffret-product-text">
-            <h4>
-              {{ product.title }}
-            </h4>
-            <p>
-              {%- assign split_product_desc = product.description | split: " " -%}
-              {%- for word in split_product_desc limit: 15 -%}
-                {{ word }}
-              {%- endfor -%}
-            </p>
-          </div>
-          <div class="doumdoum__nos-coffret-product-price"></div>
-        </div>
-      </li>
+
+      {%- assign product_price = section.settings.first_product.price | money | downcase -%}
+      {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
+
+      {%- render 'doumdoum__big-product-card'
+        , product: section.settings.first_product
+        , product_image: section.settings.first_product_thumbnail
+        , add_to_cart_text: add_to_cart_text
+        , background_image: section.settings.product_bg -%}
+
+      {%- assign product_price = section.settings.second_product.price | money | downcase -%}
+      {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
+
+      {%- render 'doumdoum__big-product-card'
+        , product: section.settings.second_product
+        , product_image: section.settings.second_product_thumbnail
+        , add_to_cart_text: add_to_cart_text
+        , background_image: section.settings.product_bg_2 -%}
+
+      {%- assign product_price = section.settings.third_product.price | money | downcase -%}
+      {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
+
+      {%- render 'doumdoum__big-product-card'
+        , product: section.settings.third_product
+        , product_image: section.settings.third_product_thumbnail
+        , add_to_cart_text: add_to_cart_text
+        , background_image: section.settings.product_bg_3 -%}
     </ul>
   </div>
 </section>
@@ -76,6 +78,10 @@
         "id": "first_background_color",
         "label": "First Background Color"
       }, {
+        "type": "image_picker",
+        "id": "product_bg",
+        "label": "Product Background"
+      }, {
         "type": "header",
         "content": "Second Product"
       }, {
@@ -91,6 +97,10 @@
         "id": "second_background_color",
         "label": "Second Background Color"
       }, {
+        "type": "image_picker",
+        "id": "product_bg_2",
+        "label": "Product Bg 2"
+      }, {
         "type": "header",
         "content": "Third Product"
       }, {
@@ -105,6 +115,10 @@
         "type": "color_background",
         "id": "third_background_color",
         "label": "Third Background Color"
+      }, {
+        "type": "image_picker",
+        "id": "product_bg_3",
+        "label": "Product Bg 3"
       }
     ],
     "presets": [

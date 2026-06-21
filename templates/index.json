@@ -34,13 +34,15 @@
         "text_WtWDh3": {
           "type": "text",
           "settings": {
-            "text": "+10 000 mamans satisfaites de Doumdoum"
+            "text": "+10 000 mamans satisfaites de Doumdoum",
+            "icon": "shopify://shop_images/pink.svg"
           }
         },
         "text_JfByCn": {
           "type": "text",
           "settings": {
-            "text": "+10 000 mamans satisfaites de Doumdoum"
+            "text": "+10 000 mamans satisfaites de Doumdoum",
+            "icon": "shopify://shop_images/pink.png"
           }
         }
       },
@@ -50,10 +52,28 @@
       ],
       "name": "Scrolling Text",
       "settings": {}
+    },
+    "doumdoum_nos_coffrets_MFdBbz": {
+      "type": "doumdoum__nos-coffrets",
+      "name": "Nos Coffrets",
+      "settings": {
+        "section_label": "Nos Coffrets",
+        "heading": "Coffrets bébé : confort et soin au quotidien",
+        "first_product": "coffret-naissance",
+        "first_product_thumbnail": "shopify://shop_images/2eace863e8ec031917b3745987799bcb4f1de5c2.png",
+        "first_background_color": "radial-gradient(rgba(195, 255, 222, 1), rgba(255, 255, 255, 1) 100%)",
+        "second_product": "pack-soins-complets",
+        "second_product_thumbnail": "shopify://shop_images/880e0f7dda7a0ebde45fecea8e54798d93ec9da4.png",
+        "second_background_color": "linear-gradient(57deg, rgba(255, 196, 235, 1), rgba(255, 255, 255, 1) 100%)",
+        "third_product": "pack-ma-premiere-routine-dhygiene",
+        "third_product_thumbnail": "shopify://shop_images/b43e868ac3820ebc2e46871c6fe452718e0cbbd6.png",
+        "third_background_color": "radial-gradient(rgba(190, 233, 255, 1), rgba(255, 255, 255, 1) 100%)"
+      }
     }
   },
   "order": [
     "doumdoum_main_hero_jXMF4E",
-    "doumdoum_scrolling_text_BCYUq4"
+    "doumdoum_scrolling_text_BCYUq4",
+    "doumdoum_nos_coffrets_MFdBbz"
   ]
 }

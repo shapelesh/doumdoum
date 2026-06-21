@@ -1,0 +1,59 @@
+<li>
+  <a href="{{ product.url }}"></a>
+  <div class="doumdoum__nos-coffret-product-top">
+    <img
+      src="{{ product_image |  image_url: width: product_image.width }}"
+      alt="{{ product_image.alt }}"
+      width="{{ product_image.width }}"
+      height="{{ product_image.height }}">
+  </div>
+  <div class="doumdoum__nos-coffret-product-bottom">
+    <a href="{{ product.url }}"></a>
+    <div class="doumdoum__nos-coffret-product-text">
+      <h4>
+        {%- assign split_product_title = product.title | split: " " -%}
+        {%- for letter in split_product_title limit: 4 -%}
+          {%- if forloop.index == 4 -%}
+            ...
+          {%- else -%}
+          {{ letter }}  
+          {%- endif -%}
+        {%- endfor -%}
+      </h4>
+      <p>
+        {%- assign split_product_desc = product.description | split: " " -%}
+        {%- for word in split_product_desc limit: 15 -%}
+          {{ word }}
+        {%- endfor -%}
+      </p>
+    </div>
+    <div class="doumdoum__nos-coffret-product-atc">
+      <product-form-component on:submit="/handleSubmit">
+        <div class="visutally-hidden" ref="liveRegion"></div>
+        {%- form 'product'
+          , product -%}
+          <input
+            type="hidden"
+            name="id"
+            ref="variantId"
+            value="{{ product.selected_or_first_available_variant.id }}">
+          <input
+            type="hidden"
+            name="quantity"
+            value="1">
+          {%- render 'add-to-cart-button'
+            , can_add_to_cart: true
+            , product: product
+            , add_to_cart_text: add_to_cart_text -%}
+        {%- endform -%}
+      </product-form-component>
+    </div>
+  </div>
+  <div class="doumdoum__nos-coffret-product-background">
+    <img
+      src="{{ background_image |  image_url: width: background_image.width }}"
+      alt="{{ background_image.alt }}"
+      width="{{ background_image.width }}"
+      height="{{ background_image.height }}">
+  </div>
+</li>

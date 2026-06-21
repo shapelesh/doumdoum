@@ -37,6 +37,8 @@
   letter-spacing: -0.75%;
   text-align: center;
   color: #181d27;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .doumdoum__nos-coffrets-products {
@@ -48,15 +50,188 @@
 .doumdoum__nos-coffrets-products ul {
   margin: 0;
   padding: 0;
-  /* border: 1px solid #d5d7da; */
+  border: 1px solid #d5d7da;
   border-radius: 24px;
   list-style: none;
-  padding: 16px;
+  display: flex;
+  overflow: hidden;
 }
 
 .doumdoum__nos-coffrets-products ul li {
+  padding: 16px;
+  max-width: 350px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.doumdoum__nos-coffrets-products ul li > a {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
+.doumdoum__nos-coffrets-products ul li:nth-child(2) {
+  border-left: 1px solid #d5d7da;
+  border-right: 1px solid #d5d7da;
+}
+
+.doumdoum__nos-coffrets-products ul li .doumdoum__nos-coffret-product-top {
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+  padding: 9px 5px;
+  z-index: 2;
+  max-width: 318px;
+}
 .doumdoum__nos-coffrets-products ul li .doumdoum__nos-coffret-product-top img {
   max-width: 318.66px;
+}
+
+.doumdoum__nos-coffrets-products ul li .doumdoum__nos-coffret-product-bottom {
+  z-index: 5;
+  margin-top: auto;
+  position: relative;
+}
+.doumdoum__nos-coffret-product-bottom > a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.doumdoum__nos-coffrets-products
+  ul
+  li
+  .doumdoum__nos-coffret-product-bottom
+  h4 {
+  font-family: fredoka;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 120%;
+  letter-spacing: -0.75%;
+  color: #181d27;
+  margin: 0;
+  margin-bottom: 4px;
+}
+.doumdoum__nos-coffrets-products ul li .doumdoum__nos-coffret-product-bottom p {
+  font-family: nunito;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  color: #535862;
+  margin: 0;
+  margin-bottom: 18px;
+}
+
+.doumdoum__nos-coffret-product-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.doumdoum__nos-coffret-product-background img {
+  height: 100%;
+  width: 100%;
+}
+.doumdoum__nos-coffret-product-atc {
+  z-index: 3;
+  position: relative;
+}
+.doumdoum__nos-coffret-product-atc button[type="submit"] {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: white;
+  color: #101010;
+  font-family: nunito;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+}
+
+@media (max-width: 1094px) {
+  .doumdoum__nos-coffrets-products
+    ul
+    li
+    .doumdoum__nos-coffret-product-bottom
+    h4 {
+    font-size: 24px;
+  }
+  .doumdoum__nos-coffrets-products
+    ul
+    li
+    .doumdoum__nos-coffret-product-bottom
+    p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 992px) {
+  .doumdoum__nos-coffret-product-atc
+    button[type="submit"]
+    .add-to-cart-text__content {
+    font-size: 14px;
+  }
+  .doumdoum__nos-coffrets-products
+    ul
+    li
+    .doumdoum__nos-coffret-product-bottom
+    h4 {
+    font-size: 20px;
+  }
+  .doumdoum__nos-coffrets-products
+    ul
+    li
+    .doumdoum__nos-coffret-product-bottom
+    p {
+    font-size: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .doumdoum__nos-coffrets-products
+    ul
+    li
+    .doumdoum__nos-coffret-product-bottom
+    h4 {
+    font-size: 20px;
+  }
+  .doumdoum__nos-coffrets-heading h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    margin-top: 10px;
+  }
+  .doumdoum__nos-coffrets-products
+    ul
+    li
+    .doumdoum__nos-coffret-product-bottom
+    p {
+    font-size: 14px;
+  }
+  .doumdoum__nos-coffrets {
+    padding: 44px 16px;
+  }
+  .doumdoum__nos-coffrets-products ul {
+    flex-direction: column;
+  }
+  .doumdoum__nos-coffrets-products ul li:nth-child(2) {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #d5d7da;
+    border-bottom: 1px solid #d5d7da;
+  }
+  .doumdoum__nos-coffret-product-atc
+    button[type="submit"]
+    .add-to-cart-text__content {
+    font-size: 16px;
+  }
 }
