@@ -1,3 +1,6 @@
+.doumdoum__main-hero {
+  /* max-width: 1280px; */
+}
 .doumdoum__main-hero-wrapper {
   display: flex;
   padding: 43.66px 109.5px;
@@ -97,6 +100,10 @@
   display: flex;
   gap: 10px;
   margin-bottom: 24px;
+}
+
+.doumdoum__main-hero-left-bottom-bottom a:hover {
+  box-shadow: 4px 4px #2693ff66;
 }
 
 .doumdoum__main-hero-left-bottom-bottom-reviews span {
@@ -236,7 +243,7 @@
     display: none;
   }
   .doumdoum__main-hero-left-bottom-bottom-reviews {
-    margin-bottom: 21px;
+    margin-bottom: 0;
   }
   .doumdoum__main-hero-left-bottom-top {
     margin-bottom: 12px;
@@ -249,6 +256,11 @@
   }
   .doumdoum__main-hero-left-top-left {
     gap: 5px;
+  }
+  .doumdoum__main-hero-left-top {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
   }
 }
 

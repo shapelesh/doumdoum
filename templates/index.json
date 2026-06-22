@@ -72,11 +72,21 @@
         "third_background_color": "radial-gradient(rgba(190, 233, 255, 1), rgba(255, 255, 255, 1) 100%)",
         "product_bg_3": "shopify://shop_images/gradient-bg3.png"
       }
+    },
+    "doumdoum_nos_produits_BqTE9R": {
+      "type": "doumdoum__nos-produits",
+      "name": "Nos Produits",
+      "settings": {
+        "heading": "Découvrez nos produits pour bébé",
+        "label": "Nos produits",
+        "collection": "produits"
+      }
     }
   },
   "order": [
     "doumdoum_main_hero_jXMF4E",
     "doumdoum_scrolling_text_BCYUq4",
-    "doumdoum_nos_coffrets_MFdBbz"
+    "doumdoum_nos_coffrets_MFdBbz",
+    "doumdoum_nos_produits_BqTE9R"
   ]
 }

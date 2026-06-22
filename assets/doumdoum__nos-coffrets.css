@@ -158,6 +158,11 @@
   font-size: 16px;
   line-height: 120%;
   letter-spacing: -0.5%;
+  border: 1px solid #e9eaeb;
+}
+.doumdoum__nos-coffret-product-atc button[type="submit"]:hover {
+  background-color: #fafafa;
+  box-shadow: 4px 4px #d2d2d2;
 }
 
 @media (max-width: 1094px) {

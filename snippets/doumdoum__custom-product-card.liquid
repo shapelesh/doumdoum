@@ -1,0 +1,78 @@
+<li>
+  <div class="doumdoum__custom-product-card-top" style="background-color: {{ product.metafields.custom.theme_color }}">
+    {%- assign card_image = product.metafields.custom.product_card_image.value -%}
+    {%- if card_image != blank -%}
+      {%- for image in card_image -%}
+        <img
+          src="{{ image |  image_url: width: image.width }}"
+          alt="{{ image.alt }}"
+          width="{{ image.width }}"
+          height="{{ image.height }}">
+      {%- endfor -%}
+    {%- endif -%}
+    <div class="doumdoum__custom-product-card-top-bottom">
+      <h3 style="color: {{ product.metafields.custom.text_color }}">
+        {{ product.metafields.custom.substance }}
+      </h3>
+      <p style="color: {{ product.metafields.custom.text_color }};">
+        {{ product.metafields.custom.usage }}
+      </p>
+    </div>
+    <div class="bear-wrapper" style="color: {{ product.metafields.custom.theme_accent }};">
+      {%- render 'doumdoum__bear' -%}
+    </div>
+  </div>
+  <div class="doumdoum__custom-product-card-bottom">
+    <div class="product-title">
+      <h5>
+        {{ product.title }}
+      </h5>
+      <div class="product-star-review">
+        {%- render 'doumdoum__star-review'
+          , percentage: 80 -%}
+        <span>
+          4.5
+        </span>
+      </div>
+    </div>
+    <div class="product-description">
+      {%- if product.description != blank and show_description == true -%}
+        <p>
+          {%- assign split_description = product.description | split: " " -%}
+          {%- for word in split_description -%}
+            {{ word }}
+          {%- endfor -%}
+        </p>
+      {%- endif -%}
+    </div>
+    <div class="product-atc">
+      {%- assign product_price = product.price | money_without_trailing_zeros | downcase -%}
+      {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
+      <product-form-component on:submit="/handleSubmit">
+        <div class="visutally-hidden" style="opacity: 0; display: none;" ref="liveRegion"></div>
+        {%- form 'product'
+          , product -%}
+          <input
+            type="hidden"
+            name="id"
+            ref="variantId"
+            value="{{ product.selected_or_first_available_variant.id }}">
+          <input
+            type="hidden"
+            name="quantity"
+            value="1">
+          {%- render 'add-to-cart-button'
+            , can_add_to_cart: true
+            , product: product
+            , add_to_cart_text: add_to_cart_text -%}
+        {%- endform -%}
+      </product-form-component>
+    </div>
+  </div>
+</li>
+
+
+
+<style>
+
+</style>

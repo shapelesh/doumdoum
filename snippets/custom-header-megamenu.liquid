@@ -14,7 +14,13 @@
         <div class="doumdoum__megamenu-tab {% if forloop.first %}selected_tab{% endif %}"
           data-type="tab"
           data-handle="{{ block.settings.tab_name | handleize }}">
-          {{ block.settings.tab_name }}
+          <ul>
+            {%- for product in block.settings.collection.products -%}
+              {%- render 'doumdoum__custom-product-card'
+                , product: product
+                , show_description: false -%}
+            {%- endfor -%}
+          </ul>
         </div>
       {%- endfor -%}
     </div>
@@ -77,7 +83,15 @@
     z-index: 0;
     pointer-events: none;
   }
-  .doumdoum__megamenu-tab.selected_tab {
+  .doumdoum__megamenu-tab ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 16px 10px;
+  }
+  custom-header-megamenu [ref="megaMenu"][aria-hidden="false"] .doumdoum__megamenu-tab.selected_tab {
     opacity: 1;
     z-index: 1;
     pointer-events: all;
