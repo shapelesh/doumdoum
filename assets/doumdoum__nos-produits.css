@@ -1,7 +1,7 @@
 .doumdoum__nos-produits {
   display: flex;
   flex-direction: column;
-  padding: 0 112px;
+  padding: 0 112px 96px;
 }
 
 .doumdoum__nos-produits-top {

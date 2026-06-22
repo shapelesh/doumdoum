@@ -57,12 +57,12 @@ main.content-for-layout {
 
 /* SMALL PRODUCT CARD */
 
-li {
+.doumdoum__custom-product-card {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-li .doumdoum__custom-product-card-top {
+.doumdoum__custom-product-card .doumdoum__custom-product-card-top {
   display: flex;
   position: relative;
   width: 216px;
@@ -98,7 +98,7 @@ li .doumdoum__custom-product-card-top {
   margin: 0;
 }
 
-li .doumdoum__custom-product-card-top .bear-wrapper {
+.doumdoum__custom-product-card .doumdoum__custom-product-card-top .bear-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -110,7 +110,7 @@ li .doumdoum__custom-product-card-top .bear-wrapper {
   padding-top: 30px;
 }
 
-li .doumdoum__custom-product-card-top > img {
+.doumdoum__custom-product-card .doumdoum__custom-product-card-top > img {
   z-index: 2;
   width: 96px;
   height: auto;
@@ -150,9 +150,7 @@ li .doumdoum__custom-product-card-top > img {
   color: #414651;
   font-family: Inter;
   font-weight: 500;
-  font-style: Medium;
   font-size: 16px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.5%;
 }
@@ -182,9 +180,8 @@ li .doumdoum__custom-product-card-top > img {
   padding-bottom: 12px;
   background-color: #fff1f9;
   color: #f570b7;
-  font-family: Nunito;
+  font-family: nunito;
   font-weight: 500;
-  font-style: Medium;
   font-size: 16px;
   line-height: 120%;
   letter-spacing: -0.5%;
@@ -196,7 +193,7 @@ li .doumdoum__custom-product-card-top > img {
 
 @media (max-width: 992px) {
   .doumdoum__nos-produits {
-    padding: 0 50px;
+    padding: 0 50px 50px;
   }
   .doumdoum__nos-produits-top h2 {
     font-size: 28px;
@@ -204,12 +201,11 @@ li .doumdoum__custom-product-card-top > img {
 }
 @media (max-width: 600px) {
   .doumdoum__nos-produits {
-    padding: 0 16px;
+    padding: 0 16px 44px;
   }
   .doumdoum__nos-produits-top h2 {
-    font-family: Fredoka;
+    font-family: fredoka;
     font-weight: 600;
-    font-style: SemiBold;
     font-size: 24px;
     line-height: 120%;
     letter-spacing: -0.75%;

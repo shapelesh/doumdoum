@@ -1,4 +1,4 @@
-<li>
+<li class="doumdoum__custom-product-card">
   <div class="doumdoum__custom-product-card-top" style="background-color: {{ product.metafields.custom.theme_color }}">
     {%- assign card_image = product.metafields.custom.product_card_image.value -%}
     {%- if card_image != blank -%}
@@ -49,7 +49,7 @@
       {%- assign product_price = product.price | money_without_trailing_zeros | downcase -%}
       {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
       <product-form-component on:submit="/handleSubmit">
-        <div class="visutally-hidden" style="opacity: 0; display: none;" ref="liveRegion"></div>
+        <div class="visually-hidden" style="opacity: 0; display: none;" ref="liveRegion"></div>
         {%- form 'product'
           , product -%}
           <input
@@ -70,9 +70,3 @@
     </div>
   </div>
 </li>
-
-
-
-<style>
-
-</style>
