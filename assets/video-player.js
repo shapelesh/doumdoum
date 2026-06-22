@@ -55,7 +55,7 @@ class DoumdoumVideoPlayer extends HTMLElement {
         display: none; justify-content: center; align-items: center;
         backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       }
-      .overlay.active { display: flex; }
+      .overlay.active { display: flex; justify-content: flex-start;}
       
       .overlay-content {
         display: grid; grid-template-columns: 106.21px 1fr;
@@ -72,7 +72,7 @@ class DoumdoumVideoPlayer extends HTMLElement {
 
       .vid-button {
         position: absolute; top: 16px; z-index: 10;
-        background: rgba(0,0,0,0.3); border: none; border-radius: 50%;
+        background: rgba(0, 0, 0, 0); border: none; border-radius: 50%;
         cursor: pointer; padding: 10px; display: flex; transition: 0.3s;
       }
       .vid-button:hover { background: rgba(0,0,0,0.6); }
@@ -141,7 +141,7 @@ class DoumdoumVideoPlayer extends HTMLElement {
   }
   getMuteSvg() {
     return this.isMuted
-      ? `<svg xmlns="http://www.w3.org/2000/svg" width="42" height="36" viewBox="0 0 42 36" fill="none" class="icon-sound"> <g filter="url(#filter0_d_3634_18577)"> <path d="M6.6499 14.8293V20.4293C6.6499 23.2293 8.0499 24.6293 10.8499 24.6293H12.8519C13.3699 24.6293 13.8879 24.7833 14.3359 25.0493L18.4239 27.6113C21.9519 29.8233 24.8499 28.2133 24.8499 24.0553V11.2033C24.8499 7.03134 21.9519 5.43534 18.4239 7.64734L14.3359 10.2093C13.8879 10.4753 13.3699 10.6293 12.8519 10.6293H10.8499C8.0499 10.6293 6.6499 12.0293 6.6499 14.8293Z" stroke="white" stroke-width="2.1"/> <!-- Ligne diagonale (Slash) --> <path d="M5 5 L35 30" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/> </g> <defs> <filter id="filter0_d_3634_18577" x="-1.7499" y="-4.77065" width="44.8001" height="44.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/> <feOffset/> <feGaussianBlur stdDeviation="2.8"/> <feComposite in2="hardAlpha" operator="out"/> <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3634_18577"/> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3634_18577" result="shape"/> </filter> </defs> </svg>`
+      ? `<svg xmlns="http://www.w3.org/2000/svg" width="42" height="36" viewBox="0 0 24 24" fill="none"><path d="M15 8.37003V7.41003C15 4.43003 12.93 3.29003 10.41 4.87003L7.49 6.70003C7.17 6.89003 6.8 7.00003 6.43 7.00003H5C3 7.00003 2 8.00003 2 10V14C2 16 3 17 5 17H7" stroke="#353535" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.41 19.13C12.93 20.71 15 19.56 15 16.59V12.95" stroke="#353535" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.81 9.41992C19.71 11.5699 19.44 14.0799 18 15.9999" stroke="#353535" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.15 7.80005C22.62 11.29 22.18 15.37 19.83 18.5" stroke="#353535" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L2 22" stroke="#353535" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
       : ` <svg xmlns="http://www.w3.org/2000/svg" width="42" height="36" viewBox="0 0 42 36" fill="none"> <g filter="url(#filter0_d_3634_18577)"> <path d="M6.6499 14.8293V20.4293C6.6499 23.2293 8.0499 24.6293 10.8499 24.6293H12.8519C13.3699 24.6293 13.8879 24.7833 14.3359 25.0493L18.4239 27.6113C21.9519 29.8233 24.8499 28.2133 24.8499 24.0553V11.2033C24.8499 7.03134 21.9519 5.43534 18.4239 7.64734L14.3359 10.2093C13.8879 10.4753 13.3699 10.6293 12.8519 10.6293H10.8499C8.0499 10.6293 6.6499 12.0293 6.6499 14.8293Z" stroke="white" stroke-width="2.1"/> <path d="M29.0503 12.0294C31.5423 15.3474 31.5423 19.9114 29.0503 23.2294" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/> <path d="M31.6123 8.52936C35.6583 13.9194 35.6583 21.3394 31.6123 26.7294" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/> </g> <defs> <filter id="filter0_d_3634_18577" x="-1.7499" y="-4.77065" width="44.8001" height="44.8" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/> <feOffset/> <feGaussianBlur stdDeviation="2.8"/> <feComposite in2="hardAlpha" operator="out"/> <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3634_18577"/> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3634_18577" result="shape"/> </filter> </defs> </svg>;`;
   }
 
@@ -192,36 +192,25 @@ class DoumdoumVideoPlayer extends HTMLElement {
     const overlay = this.shadowRoot.getElementById("overlay");
     overlay.classList.add("active");
     document.body.style.overflow = "hidden";
+    document.body.classList.add("video-component-active");
 
     this.renderThumbs();
     this.loadVideo(this.getAttribute("data-video-url"));
 
     if (window.innerWidth > 990) {
-      this.toggleThemeCart(true);
+      this.toggleCustomCart(true);
     }
   }
 
-  toggleThemeCart(open = true) {
-    customElements.whenDefined("cart-drawer").then(() => {
-      const cartDrawer = document.querySelector("cart-drawer");
+  toggleCustomCart(open = true) {
+    const cartDrawer = document.querySelector("custom-cart-drawer");
+    if (!cartDrawer) return;
 
-      if (!cartDrawer) {
-        console.warn(
-          "Composant cart-drawer introuvable dans le DOM même après chargement.",
-        );
-        return;
-      }
-
-      console.log("Cart-drawer trouvé, ouverture/fermeture en cours...");
-
-      if (open) {
-        cartDrawer.open();
-        document.body.classList.add("cart-drawer--open-no-backdrop");
-      } else {
-        cartDrawer.close();
-        document.body.classList.remove("cart-drawer--open-no-backdrop");
-      }
-    });
+    if (open) {
+      cartDrawer.open(true);
+    } else {
+      cartDrawer.close();
+    }
   }
   renderThumbs() {
     const container = this.shadowRoot.getElementById("thumbs-container");
@@ -264,15 +253,17 @@ class DoumdoumVideoPlayer extends HTMLElement {
     const video = this.shadowRoot.querySelector("#video-dest video");
     if (video) video.muted = this.isMuted;
 
-    // Update Icon
     this.shadowRoot.getElementById("mute-vid").innerHTML = this.getMuteSvg();
   }
 
   closeOverlay() {
     this.isOpen = false;
     this.shadowRoot.getElementById("overlay").classList.remove("active");
-    this.shadowRoot.getElementById("video-dest").innerHTML = ""; // On vide uniquement la vidéo
+    this.shadowRoot.getElementById("video-dest").innerHTML = "";
     document.body.style.overflow = "";
+    document.body.classList.remove("video-component-active");
+
+    this.toggleCustomCart(false);
   }
 }
 

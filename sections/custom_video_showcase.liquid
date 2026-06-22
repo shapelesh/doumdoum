@@ -173,9 +173,19 @@
     }
   }
   @media (min-width: 991px) {
-    body:has(doumdoum-video-player[active]) .cart-drawer__overlay {
-      display: none !important;
+    body.video-component-active.cart-drawer--open-no-backdrop .dialog-modal[open]::backdrop,
+    body.video-component-active cart-drawer-component[open]::backdrop {
+      opacity: 0 !important;
+      background: transparent !important;
+      animation: none !important;
+      pointer-events: none !important;
     }
+    body.video-component-active .cart-drawer__dialog .dialog-modal[open] {
+      max-width: 400px;
+      justify-self: end;
+      margin: 0;
+    }
+
   }
 </style>
 {% schema %}
