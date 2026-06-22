@@ -73,8 +73,8 @@ class CartIcon extends Component {
   ) => {
     // If the cart update is coming from the product form, we add to the current cart count, otherwise we set the new cart count
 
-    this.refs.cartBubbleCount.classList.toggle("hidden", itemCount === 0);
-    this.refs.cartBubble.classList.toggle("visually-hidden", itemCount === 0);
+    // this.refs.cartBubbleCount.classList.toggle("hidden", itemCount === 0);
+    // this.refs.cartBubble.classList.toggle("visually-hidden", itemCount === 0);
 
     this.currentCartCount = comingFromProductForm
       ? this.currentCartCount + itemCount

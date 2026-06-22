@@ -1,0 +1,32 @@
+{%- liquid
+  assign final_percentage = percentage | default: 80
+-%}
+
+<div class="doumdoum__star-review">
+  {%- case final_percentage -%}
+    {%- when 0 -%}
+      {%- render 'star-0' -%}
+    {%- when 10 -%}
+      {%- render 'star-10' -%}
+    {%- when 20 -%}
+      {%- render 'star-20' -%}
+    {%- when 30 -%}
+      {%- render 'star-30' -%}
+    {%- when 40 -%}
+      {%- render 'star-40' -%}
+    {%- when 50 -%}
+      {%- render 'star-50' -%}
+    {%- when 60 -%}
+      {%- render 'star-60' -%}
+    {%- when 70 -%}
+      {%- render 'star-70' -%}
+    {%- when 80 -%}
+      {%- render 'star-80' -%}
+    {%- when 90 -%}
+      {%- render 'star-90' -%}
+    {%- when 100 -%}
+      {%- render 'star-100' -%}
+    {%- else -%}
+      {%- render 'star-80' -%}
+  {%- endcase -%}
+</div>

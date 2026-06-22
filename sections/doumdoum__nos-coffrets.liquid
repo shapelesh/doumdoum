@@ -14,7 +14,7 @@
   <div class="doumdoum__nos-coffrets-products">
     <ul>
 
-      {%- assign product_price = section.settings.first_product.price | money | downcase -%}
+      {%- assign product_price = section.settings.first_product.price | money_without_trailing_zeros | downcase -%}
       {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
 
       {%- render 'doumdoum__big-product-card'
@@ -23,7 +23,7 @@
         , add_to_cart_text: add_to_cart_text
         , background_image: section.settings.product_bg -%}
 
-      {%- assign product_price = section.settings.second_product.price | money | downcase -%}
+      {%- assign product_price = section.settings.second_product.price | money_without_trailing_zeros | downcase -%}
       {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
 
       {%- render 'doumdoum__big-product-card'
@@ -32,7 +32,7 @@
         , add_to_cart_text: add_to_cart_text
         , background_image: section.settings.product_bg_2 -%}
 
-      {%- assign product_price = section.settings.third_product.price | money | downcase -%}
+      {%- assign product_price = section.settings.third_product.price | money_without_trailing_zeros | downcase -%}
       {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
 
       {%- render 'doumdoum__big-product-card'
