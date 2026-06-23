@@ -70,10 +70,28 @@
         "info_text_left": "<p>Chez Doumdoum Babycare, nous croyons que la peau des bébés mérite une attention particulière, dès les premiers jours. Fine, fragile et encore en développement, elle nécessite des soins spécifiquement formulés pour protéger, apaiser et renforcer sa barrière naturelle.</p>",
         "info_text_right": "<p>Doumdoum est née avec une ambition simple :offrir aux parents des produits sûrs, efficaces et transparents, adaptés aux besoins réels de leurs bébés.</p>"
       }
+    },
+    "custom_product_about_6CHRcq": {
+      "type": "custom_product-about",
+      "blocks": {
+        "about_carousel_WrPYWk": {
+          "type": "about_carousel",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "about_carousel_WrPYWk"
+      ],
+      "name": "Carousel Produits About",
+      "settings": {
+        "collection": "produits",
+        "products_limit": 10
+      }
     }
   },
   "order": [
     "main",
-    "custom_hero_about_R6RDdq"
+    "custom_hero_about_R6RDdq",
+    "custom_product_about_6CHRcq"
   ]
 }

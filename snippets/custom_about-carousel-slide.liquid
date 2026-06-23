@@ -1,0 +1,40 @@
+<div class="carousel-slide">
+  <a
+    href="{{ product.url }}"
+    class="product-card"
+    aria-label="Voir les détails de {{ product.title }}">
+
+    {% assign card_image = product.metafields.custom.product_card_image %}
+
+    {% if card_image and card_image.type == 'image' %}
+      <img
+        src="{{ card_image | image_url: width: 500 }}"
+        alt="{{ product.title }}"
+        loading="lazy"
+        width="500"
+        height="500">
+    {% elsif product.featured_image %}
+      <img
+        src="{{ product.featured_image | image_url: width: 500 }}"
+        alt="{{ product.title }}"
+        loading="lazy"
+        width="500"
+        height="500">
+    {% endif %}
+
+    <div class="product-title-container">
+      <h3 class="product-title" style="color: {{ product.metafields.custom.text_color }};">{{ product.title }}</h3>
+      <a class="command-link" href="{{ product.url }}">
+        <span>Commander</span>
+        <img
+          src="{{ 'arrow-right.svg' | asset_url }}"
+          alt="Commander"
+          width="24"
+          height="24"
+          class="arrow-icon">
+      </a>
+
+    </div>
+    <p class="product-desc">{{ product.metafields.custom.about_desc }}</p>
+  </a>
+</div>
