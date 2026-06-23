@@ -340,7 +340,8 @@
       "type": "custom_picture",
       "name": "Custom Picture Bg",
       "settings": {
-        "img_custom_sec": "shopify://shop_images/site-creme-solaire.webp"
+        "img_custom_sec": "shopify://shop_images/site-creme-solaire_8f5075a0-e5d1-49b9-81e8-0ce3514d9fb8.webp",
+        "img_custom_sec_phone": "shopify://shop_images/creme-responsive.png"
       }
     },
     "custom_devider_7e79HN": {
