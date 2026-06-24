@@ -1,0 +1,427 @@
+<section class="doumdoum__custom-product-card section--{{ section.id }} {{ product.title }}--{{ section.id }}">
+  <div class="doumdoum__custom-product-card_container-grid">
+    <div class="container-grid__images">
+      <div class="product-gallery">
+        <div class="product-main-image">
+          <img
+            id="MainImage-{{ section.id }}"
+            src="{{ product.featured_media | img_url: '800x' }}"
+            alt="{{ product.featured_media.alt | escape }}"
+            width="100%"
+            height="100%"
+            loading="lazy">
+        </div>
+
+        <div class="product-thumbnails-container">
+          <div class="product-thumbnails-slider" id="ThumbSlider-{{ section.id }}">
+            {% for media in product.media %}
+              <div class="thumb-item {% if forloop.first %}active{% endif %}" onclick="updateMainImage('{{ media | img_url: '800x' }}', this)">
+                <img
+                  src="{{ media | img_url: '150x150', crop: 'center' }}"
+                  alt="{{ media.alt | escape }}"
+                  width="100%"
+                  height="100%"
+                  loading="lazy">
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-grid__card-info card-info">
+      <div class="card-info_title-price">
+        <div class="card-info_reviews"></div>
+        <h1>{{ product.title }}</h1>
+        <span>{{ product.price | money }}</span>
+      </div>
+      <div class="card-info_benifits-list">
+        {% render 'meta_benefits'
+          , benefits: product.metafields.custom.product_benfits %}
+      </div>
+      <div class="card-info_quantity-container">
+        <input
+          type="hidden"
+          name="quantity"
+          id="Quantity-{{ section.id }}"
+          value="1"
+          min="1">
+        {% for i in (1..3) %}
+          <button
+            type="button"
+            class="qty-btn {% if i == 1 %}active{% endif %}"
+            onclick="selectQuantity({{ i }})">{{ i }}x</button>
+        {% endfor %}
+      </div>
+      <div class="card-info_tabs-container">
+
+        <div class="tabs-header">
+          {%- assign details_val = product.metafields.custom.details -%}
+          {%- assign usage_val = product.metafields.custom.utilisations -%}
+
+          <button
+            type="button"
+            class="tab-btn active"
+            data-tab="details"
+            data-content="{{ details_val | escape }}">
+            Détails
+          </button>
+
+          <button
+            type="button"
+            class="tab-btn"
+            data-tab="usage"
+            data-content="{{ usage_val | escape }}">
+            Utilisations
+          </button>
+
+          <button
+            type="button"
+            class="tab-btn"
+            data-tab="ingredients"
+            data-content="">
+            Ingrédients
+          </button>
+        </div>
+        <div class="tab-content-display" id="TabContentDisplay">
+          {%- if details_val != blank -%}
+            {{ details_val | escape | replace: '\n', '<br>' }}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  function selectQuantity(value) {
+    document.getElementById('Quantity-{{ section.id }}').value = value;
+    
+    document.querySelectorAll('.qty-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    document.getElementById('QtySelect-{{ section.id }}').value = "";
+    document.getElementById('QtyInput-{{ section.id }}').value = "";
+  }
+  
+  function handleSelectChange(selectElement) {
+    const value = selectElement.value;
+    document.getElementById('Quantity-{{ section.id }}').value = value;
+    document.getElementById('QtyInput-{{ section.id }}').value = "";
+    document.querySelectorAll('.qty-btn').forEach(btn => btn.classList.remove('active'));
+  }
+  
+  function updateQuantity(value) {
+    if(value && value >= 10) {
+      document.getElementById('Quantity-{{ section.id }}').value = value;
+      document.getElementById('QtySelect-{{ section.id }}').value = "";
+      document.querySelectorAll('.qty-btn').forEach(btn => btn.classList.remove('active'));
+    }
+  }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.tab-btn');
+    const displayArea = document.getElementById('TabContentDisplay');
+  
+    buttons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        buttons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+  
+        const content = this.getAttribute('data-content');
+  
+        const formattedContent = content
+        .replace(/&quot;/g, '"') 
+        .replace(/\n/g, '<br>'); 
+  
+        displayArea.innerHTML = formattedContent; 
+        
+        displayArea.style.opacity = 0;
+        setTimeout(() => {
+          displayArea.style.transition = 'opacity 0.3s ease';
+          displayArea.style.opacity = 1;
+        }, 50);
+      });
+    });
+  });
+</script>
+<script>
+  function updateMainImage(imgSrc, thumbElement) {
+  const mainImg = document.getElementById('MainImage-{{ section.id }}');
+  
+  mainImg.style.opacity = '0';
+  
+  setTimeout(() => {
+    mainImg.src = imgSrc;
+    mainImg.style.opacity = '1';
+  }, 200);
+  
+  const thumbnails = document.querySelectorAll('.thumb-item');
+  thumbnails.forEach(thumb => thumb.classList.remove('active'));
+  thumbElement.classList.add('active');
+  }
+</script>
+<style>
+  .doumdoum__custom-product-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 38px 112px;
+  }
+  .doumdoum__custom-product-card_container-grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 33px;
+  }
+  .container-grid__images {
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / 2;
+  }
+  .container-grid__card-info {
+    width: 100%;
+    height: 100% grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 15%;
+  }
+  .card-info_title-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .card-info_title-price h1 {
+    font-family: Fredoka;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 34px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    color: #000000;
+    margin: 0;
+
+  }
+  .card-info_title-price span {
+    font-family: Nunito;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #000000;
+  }
+  .card-info_benifits-list {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .card-info_benifits-list ul {
+    margin: 0;
+    padding: 0;
+  }
+  .card-info_benifits-list ul li {
+    margin: 0;
+    list-style: none;
+  }
+  .benefits-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .benefit-item {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+  .benefit-item .benefit-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .benefit-text {
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #252B37;
+  }
+
+  .card-info_quantity-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .qty-btn {
+    width: 121.88px;
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 16px;
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    background-color: #FAFAFA;
+    color: #535862;
+    border: none;
+    outline: 1px solid#D5D7DA;
+    transition: all ease-in-out 0.3s;
+  }
+  .qty-btn.active {
+    background-color: #FFF1F9;
+    outline: 1px dashed #F570B7;
+    color: #FF008B;
+  }
+  .card-info_tabs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .tabs-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .tab-btn {
+    width: 100%;
+    border: none;
+    outline: 1px solid #E9EAEB;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: none;
+    padding: 8px 10px;
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    text-align: center;
+    color: #252B37;
+    transition: all ease-in-out 0.3s;
+  }
+  .tab-btn.active {
+    background-color: #FFF1F9;
+    color: #FF008B;
+    transform: translateY(-1px);
+  }
+  .tab-content-display {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: 1px solid #E9EAEB;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    white-space: pre-line;
+  }
+  .tab-content-display p {
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    text-align: center;
+    color: #414651;
+  }
+
+  /* Style de la Galerie */
+  .product-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .product-main-image {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    aspect-ratio: 1 / 1;
+  }
+
+  .product-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+
+  .product-thumbnails-container {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  /* Barre de défilement style Horizon (discrète) */
+  .product-thumbnails-container::-webkit-scrollbar {
+    height: 4px;
+  }
+  .product-thumbnails-container::-webkit-scrollbar-thumb {
+    background: #E9EAEB;
+    border-radius: 10px;
+  }
+
+  .product-thumbnails-slider {
+    display: flex;
+    gap: 10px;
+  }
+
+  .thumb-item {
+    width: 59.17px;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #E9EAEB;
+    transition: all 0.2s ease;
+  }
+
+  .thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .thumb-item.active {
+    border: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .doumdoum__custom-product-card_container-grid {
+      grid-template-columns: 1fr;
+    }
+    .doumdoum__custom-product-card {
+      padding: 20px;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "Custom product-card ",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Carte Produit Détaillée"
+      }
+    ]
+  }
+{% endschema %}

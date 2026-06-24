@@ -76,16 +76,6 @@
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
-    "sections": {
-      "custom-cart-drawer": {
-        "type": "custom-cart-drawer",
-        "settings": {
-          "free_shipping_threshold": 569000,
-          "header_offer": "Livraison gratuite pour +",
-          "fallback_product": "coffret-naissance"
-        }
-      }
-    },
     "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
