@@ -1,0 +1,242 @@
+<section class="doumdoum_about-page_main-hero section--{{ section.id }}">
+  <div class="doumdoum_about-page_main-hero_header main-hero_header">
+    <a href="{{ section.settings.btn_title_link }}" class="main-hero_header_title-btn">{{ section.settings.btn_title }}</a>
+    <h1 class="main-hero_header_title">{{ section.settings.about_title }}</h1>
+  </div>
+  <div class="doumdoum_about-page_main-hero_header main-hero_banner">
+    {% if section.settings.banner_type == 'video' and section.settings.about_banner_video != blank %}
+      <div class="hero-video-container">
+        {{ section.settings.about_banner_video | video_tag: image_size: '1800x1000', autoplay: section.settings.video_autoplay, loop: true, muted: true, controls: false, class: 'hero-video' }}
+      </div>
+    {% elsif section.settings.banner_type == 'image' and section.settings.about_banner != blank %}
+      <div class="hero-image-container">
+        <img
+          src="{{ section.settings.about_banner | image_url: width: 1800 }}"
+          alt="{{ section.settings.about_banner.alt | default: 'Bannière principale' }}"
+          loading="eager"
+          width="1800"
+          height="1000"
+          class="hero-image">
+      </div>
+    {% endif %}
+  </div>
+  <div class="doumdoum_about-page_main-hero_header main-hero_info">
+    <div class="main-hero_info_left">
+      {{ section.settings.info_text_left }}
+    </div>
+    <div class="main-hero_info_right">
+      {{ section.settings.info_text_right }}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .doumdoum_about-page_main-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 23px;
+    padding: 62px 112px 51px;
+  }
+  .main-hero_header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .main-hero_header a {
+    display: inline-block;
+    min-height: 30px;
+    font-family: Nunito;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 15px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    text-align: center;
+    text-shadow: 0 0 0 4px #00000040;
+    border-radius: 20px;
+    color: #EEF6FF;
+    padding: 6px;
+    margin: 0;
+    border: none;
+    outline: 1px solid #D5D7DA;
+    box-shadow: 0 0 5px 0 #FFF1F940;
+    background-image: url('{{ 'footer_bg.webp' | asset_url }}');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .main-hero_header h1 {
+    font-family: Fredoka;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 34px;
+    leading-trim: NONE;
+    line-height: 120%;
+    text-align: left;
+    letter-spacing: -0.75%;
+    color: #252B37;
+    margin: 0;
+  }
+  .main-hero_banner {
+    display: flex;
+    width: 100%;
+    max-height: 402px;
+  }
+  .main-hero_banner .hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  .hero-video-container {
+    width: 100%;
+  }
+  .hero-image-container {
+    width: 100%;
+  }
+  .main-hero_banner .hero-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    border-radius: 20px;
+  }
+  .main-hero_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .main-hero_info p {
+    font-family: Nunito;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    text-align: left;
+    margin: 0;
+  }
+  .main-hero_info_right {
+    color: #535862;
+  }
+  .main-hero_info_left {
+    color: #181D27;
+  }
+  @media screen and (max-width: 990px) {
+    .doumdoum_about-page_main-hero {
+      padding: 62px 90px 51px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .doumdoum_about-page_main-hero {
+      padding: 62px 40px 51px;
+    }
+    .main-hero_header h1 {
+      font-size: 28px;
+    }
+    .main-hero_info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .doumdoum_about-page_main-hero {
+      padding: 62px 16px 51px;
+    }
+    .main-hero_header h1 {
+      font-size: 24px;
+    }
+    .main-hero_info p {
+      font-size: 14px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Custom About Hero",
+    "settings": [
+      {
+        "type": "url",
+        "id": "btn_title_link",
+        "label": "Lien boutton Nos Valeurs"
+      },
+      {
+        "type": "text",
+        "id": "btn_title",
+        "label": "Nos Valeurs",
+        "default": "Nos Valeurs"
+      },
+      {
+        "type": "text",
+        "id": "about_title",
+        "label": "Titre de la page",
+        "info": "Seo ++",
+        "default": "DoumDoum Plus qu'une marque, une mission"
+
+      },
+      {
+        "type": "select",
+        "id": "banner_type",
+        "label": "Type de média",
+        "options": [
+          {
+            "value": "image",
+            "label": "Image"
+          }, {
+            "value": "video",
+            "label": "Vidéo"
+          }
+        ],
+        "default": "image"
+      }, {
+        "type": "image_picker",
+        "id": "about_banner",
+        "label": "Bannière Image"
+      }, {
+        "type": "video",
+        "id": "about_banner_video",
+        "label": "Bannière Vidéo"
+      }, {
+        "type": "checkbox",
+        "id": "video_autoplay",
+        "label": "Lecture automatique",
+        "default": true
+      }, {
+        "type": "richtext",
+        "id": "info_text_left",
+        "label": "Description",
+        "info": "Coté gauche",
+        "default": "<p>Chez Doumdoum Babycare, nous croyons que la peau des bébés mérite une attention particulière, dès les premiers jours. Fine, fragile et encore en développement, elle nécessite des soins spécifiquement formulés pour protéger, apaiser et renforcer sa barrière naturelle.</p>"
+
+      }, {
+        "type": "richtext",
+        "id": "info_text_right",
+        "label": "Description",
+        "info": "Coté droit",
+        "default": "<p>Doumdoum est née avec une ambition simple :offrir aux parents des produits sûrs, efficaces et transparents, adaptés aux besoins réels de leurs bébés.</p>"
+
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom About Hero",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

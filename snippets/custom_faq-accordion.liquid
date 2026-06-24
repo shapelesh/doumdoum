@@ -1,0 +1,18 @@
+<div class="dropdown _blurry _icon-plus">
+  <input
+    type="checkbox"
+    class="dropdown-toggler"
+    id="toggler-faq-{{ block.id }}">
+  <div class="dropdown-container">
+    <label class="dropdown-title" for="toggler-faq-{{ block.id }}">
+      <h4 class="dropdown-title__text">
+        {{ block.settings.faq_qst_text }}
+      </h4>
+    </label>
+    <div class="dropdown-content__wrap">
+      <div class="dropdown-content">
+        <p>{{ block.settings.faq_res_text }}</p>
+      </div>
+    </div>
+  </div>
+</div>

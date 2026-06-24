@@ -1,0 +1,211 @@
+<section class="doumdoum__products-about section--{{ section.id }}">
+  <div class="doumdoum__products-about_carousel-container carousel-container">
+    {% assign target_collection = collections[section.settings.collection] %}
+    {% for block in section.blocks %}
+      {% if block.type == 'about_carousel' %}
+        <div class="carousel-track" {{ block.shopify_attributes }}>
+
+          {% if target_collection != blank %}
+            {% for product in target_collection.products limit: section.settings.products_limit %}
+              {%- render 'custom_about-carousel-slide'
+                , product: product -%}
+            {% endfor %}
+          {% endif %}
+
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .doumdoum__products-about {
+    position: relative;
+    padding: 82px 0 105px 48px;
+    overflow: hidden;
+  }
+  .carousel-container {
+    width: 100%;
+  }
+  .carousel-slide {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 340px;
+  }
+  .carousel-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+  }
+  .carousel-track:last-child {
+    padding-right: 20px;
+  }
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel-slide {
+    flex: 0 0 340px;
+    scroll-snap-align: start;
+    width: 340px;
+  }
+  .carousel-slide .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    width: 100%;
+  }
+  .product-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+  }
+  .product-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 308px;
+    padding: 8px;
+  }
+  .product-title-container h3 {
+    font-family: Fredoka;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    text-align: left;
+    text-decoration: none;
+    align-self: flex-start;
+  }
+  .product-title-container a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    text-align: right;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-offset: 0;
+    text-decoration-thickness: 0;
+    gap: 4px;
+    color: #181D27;
+  }
+  .product-desc {
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -1.5%;
+    text-align: left;
+    color: #181D27;
+    padding: 0 8px 8px;
+  }
+  @media screen and (max-width: 990px) {
+    .doumdoum__products-about {
+      padding: 64px 0 64px 90px;
+    }
+
+  }
+  @media screen and (max-width: 768px) {
+    .doumdoum__products-about {
+      padding: 64px 0 64px 40px;
+    }
+    .product-title-container {
+      display: contents;
+    }
+    .carousel-slide {
+      display: grid;
+      grid-template-rows: auto;
+      row-gap: 10px;
+      padding: 8px;
+      border-radius: 16px;
+      border: 1px solid #D5D7DA;
+    }
+    .command-link {
+      justify-content: center;
+      grid-row-end: 6;
+
+    }
+    .product-title-container a {
+      justify-content: flex-start;
+    }
+    .command-link .arrow-icon {
+      width: 44px;
+      height: 44px;
+    }
+    .product-desc {
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .doumdoum__products-about {
+      padding: 64px 0 64px 16px;
+    }
+    .carousel-track {
+      gap: 12px;
+    }
+    .carousel-slide {
+      flex: 0 0 220px;
+      width: 220px;
+    }
+
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Carousel Produits About",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection à afficher"
+      }, {
+        "type": "range",
+        "id": "products_limit",
+        "label": "Nombre de produits",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 10
+      }
+    ],
+    "blocks": [
+      {
+        "type": "about_carousel",
+        "name": "Zone Carousel",
+        "limit": 1
+      }
+    ],
+    "presets": [
+      {
+        "name": "Carousel Produits About",
+        "blocks": [
+          {
+            "type": "about_carousel"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

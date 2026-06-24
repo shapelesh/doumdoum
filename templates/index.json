@@ -46,10 +46,7 @@
           }
         }
       },
-      "block_order": [
-        "text_WtWDh3",
-        "text_JfByCn"
-      ],
+      "block_order": ["text_WtWDh3", "text_JfByCn"],
       "name": "Scrolling Text",
       "settings": {}
     },
@@ -142,6 +139,179 @@
         "heading": "Aimé par +10,000 parents",
         "show_stars": true
       }
+    },
+    "custom_video_showcase_RKmzmT": {
+      "type": "custom_video_showcase",
+      "name": "Video ShowCase",
+      "settings": {
+        "header_title": "Les expériences réelles avec Doumdoum",
+        "follow_link": "",
+        "header_link": "Suivez-nous"
+      }
+    },
+    "custom_icone_with_text_e6xBkF": {
+      "type": "custom_icone_with_text",
+      "blocks": {
+        "icons_and_text_bYKxQC": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/teste.png",
+            "list_text": "Testé en laboratoire"
+          }
+        },
+        "icons_and_text_ibNw7H": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/Avocat.png",
+            "list_text": "Formules naturelles et sûres"
+          }
+        },
+        "icons_and_text_AMR8Gm": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/bear.png",
+            "list_text": "Qualité optimale pour la peau bébé"
+          }
+        },
+        "icons_and_text_KNwzPU": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/Fabrique_en_algerie.png",
+            "list_text": "Fabriqué en Algérie"
+          }
+        }
+      },
+      "block_order": [
+        "icons_and_text_bYKxQC",
+        "icons_and_text_ibNw7H",
+        "icons_and_text_AMR8Gm",
+        "icons_and_text_KNwzPU"
+      ],
+      "name": "Custom Text et icones",
+      "settings": {
+        "icons_with_text_title": "Doumdoum, le choix des parents exigeants"
+      }
+    },
+    "custom_picture_hy3KCi": {
+      "type": "custom_picture",
+      "name": "Custom Picture Bg",
+      "settings": {
+        "img_custom_sec": "shopify://shop_images/site-creme-solaire_8f5075a0-e5d1-49b9-81e8-0ce3514d9fb8.webp",
+        "img_custom_sec_phone": "shopify://shop_images/creme-responsive.png"
+      }
+    },
+    "custom_devider_7e79HN": {
+      "type": "custom_devider",
+      "name": "Custom Devider",
+      "settings": {
+        "color": "bleu"
+      }
+    },
+    "custom_blog_articles_BPJEFT": {
+      "type": "custom_blog_articles",
+      "blocks": {
+        "article_block_xxDhjy": {
+          "type": "article_block",
+          "settings": {
+            "selected_article": ""
+          }
+        },
+        "article_block_fjXtG8": {
+          "type": "article_block",
+          "settings": {
+            "selected_article": ""
+          }
+        },
+        "video_block_HaECQ6": {
+          "type": "video_block",
+          "settings": {
+            "video_link": "",
+            "custom_title": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "article_block_xxDhjy",
+        "article_block_fjXtG8",
+        "video_block_HaECQ6"
+      ],
+      "name": "Custom Articles de Blog",
+      "settings": {
+        "container_title": "Conseils & Astuces pour Bébé",
+        "container_info": "Découvrez des conseils pratiques, des guides utiles et des astuces d'experts pour prendre Comment prendre soin de votre bébé au quotidien.",
+        "podcast_link": "",
+        "blog_link": "",
+        "podcast_title": "DoumDoum podcast",
+        "blog_title": "Blog"
+      }
+    },
+    "custom_faq_6aqfRQ": {
+      "type": "custom_FAQ",
+      "blocks": {
+        "custom_faq_JXf4m6": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Est-ce que ce produit convient si mon bébé a de l’eczéma ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont formulés pour les peaux sensibles et fragiles. Grace a des ingrédients doux et sans substances agressives, ils peuvent être utilisés en cas de peau sujette a l'eczéma. En cas de poussés importante, il est toujours recommandé de demander l'avis d'un professionnel de santé"
+          }
+        },
+        "custom_faq_iaHRBU": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Quelle est la différence entre le liniment et la crème de change ?",
+            "faq_res_text": "Le liniment s'utilise en prévention, dés le change, pour nettoyer la peau et créer un barrière protectrices afin d'éviter les irritations"
+          }
+        },
+        "custom_faq_MzmqBB": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "À partir de quel âge peut-on utiliser ces produits ?",
+            "faq_res_text": "Les produits Doumdoum peuvent être utilisés dés l'âge de 6 mois, ils sont conçue pour être doux et sûre  pour la peau des enfants"
+          }
+        },
+        "custom_faq_8xUXQj": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Les produits sont-ils disponibles en pharmacie ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont disponible dans les pharmacie et les magasins"
+          }
+        },
+        "custom_faq_zPVpdz": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Les produits sont-ils adaptés aux peaux sensibles ?",
+            "faq_res_text": "Oui, tous les produits Doumdoum sont spécialement formulés pour les peaux sensibles : sans parfums agressif, avec des ingrédients doux et testés dermatologiquement"
+          }
+        },
+        "custom_faq_VqDn4i": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Le produit est-il algérien ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont conçus fabriqués en Algérie spécialement pensés pour répondre aux besoins des mamans et bébés algériens"
+          }
+        },
+        "custom_faq_qbPPh8": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Peut-on utiliser ces produits dès la naissance ?",
+            "faq_res_text": "Les produits Doumdoum sont adaptés dés le plus jeune âges, mais pour les nouveau-nés, il est toujours préférable de demander conseils a un professionnel de santé, surtout en cas de peau très sensibles ou de situation particulière"
+          }
+        }
+      },
+      "block_order": [
+        "custom_faq_JXf4m6",
+        "custom_faq_iaHRBU",
+        "custom_faq_MzmqBB",
+        "custom_faq_8xUXQj",
+        "custom_faq_zPVpdz",
+        "custom_faq_VqDn4i",
+        "custom_faq_qbPPh8"
+      ],
+      "name": "Custom FAQ",
+      "settings": {
+        "faq_title": "Questions fréquentes des parents"
+      }
     }
   },
   "order": [
@@ -149,6 +319,12 @@
     "doumdoum_scrolling_text_BCYUq4",
     "doumdoum_nos_coffrets_MFdBbz",
     "doumdoum_nos_produits_BqTE9R",
-    "doumdoum_testimonials_aimeP"
+    "doumdoum_testimonials_aimeP",
+    "custom_video_showcase_RKmzmT",
+    "custom_icone_with_text_e6xBkF",
+    "custom_picture_hy3KCi",
+    "custom_devider_7e79HN",
+    "custom_blog_articles_BPJEFT",
+    "custom_faq_6aqfRQ"
   ]
 }
