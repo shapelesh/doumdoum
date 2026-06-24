@@ -1,7 +1,8 @@
 .doumdoum__nos-produits {
   display: flex;
   flex-direction: column;
-  padding: 0 112px 96px;
+  padding: 0 0 96px;
+  background-color: #fafafa;
 }
 
 .doumdoum__nos-produits-top {
@@ -50,4 +51,10 @@
   gap: 20px;
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 992px) {
+  .doumdoum__nos-produits {
+    padding: 0 0 100px 0;
+  }
 }

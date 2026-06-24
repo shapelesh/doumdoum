@@ -81,12 +81,74 @@
         "label": "Nos produits",
         "collection": "produits"
       }
+    },
+    "doumdoum_testimonials_aimeP": {
+      "type": "doumdoum__testimonials",
+      "name": "Testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
+            "author": "Amel"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Une vraie routine douceur le soir. Mon fils adore le moment du bain et sa peau ne tiraille plus.",
+            "author": "Une maman de Blida"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Des produits sains, sans odeur agressive. Exactement ce que je cherchais pour ma fille.",
+            "author": "Sarah"
+          }
+        },
+        "testimonial_4": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Je recommande à toutes les mamans. Les rougeurs ont disparu en quelques jours.",
+            "author": "Nawel"
+          }
+        },
+        "testimonial_5": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Enfin une marque algérienne en qui j'ai confiance pour mon bébé. Qualité au top.",
+            "author": "Une maman d'Alger"
+          }
+        },
+        "testimonial_6": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Texture légère, ça pénètre vite et ça sent bon sans être fort. On adore à la maison.",
+            "author": "Imene"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3",
+        "testimonial_4",
+        "testimonial_5",
+        "testimonial_6"
+      ],
+      "settings": {
+        "label": "Témoignages",
+        "heading": "Aimé par +10,000 parents",
+        "show_stars": true
+      }
     }
   },
   "order": [
     "doumdoum_main_hero_jXMF4E",
     "doumdoum_scrolling_text_BCYUq4",
     "doumdoum_nos_coffrets_MFdBbz",
-    "doumdoum_nos_produits_BqTE9R"
+    "doumdoum_nos_produits_BqTE9R",
+    "doumdoum_testimonials_aimeP"
   ]
 }

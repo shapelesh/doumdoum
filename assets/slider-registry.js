@@ -16,4 +16,20 @@ export const sliderRegistry = {
     type: "slider",
     perView: 3,
   },
+  testimonials: {
+    type: "carousel",
+    perView: 5,
+    bound: true,
+    gap: 0,
+    focusAt: "center",
+    startAt: 3,
+    breakpoints: {
+      1050: { perView: 4 },
+      992: { perView: 3.5 },
+      768: { perView: 3 },
+      700: { perView: 2.5 },
+      600: { perView: 1.5 },
+      550: { perView: 1.2 },
+    },
+  },
 };

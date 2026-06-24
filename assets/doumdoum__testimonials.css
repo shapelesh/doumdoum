@@ -1,0 +1,200 @@
+.doumdoum__testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+/* Top: label + heading + stars */
+.doumdoum__testimonials-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doumdoum__testimonials-label {
+  display: flex;
+  justify-content: center;
+}
+
+.doumdoum__testimonials-label span {
+  padding: 6px 28px;
+  background-color: #eef6ff;
+  border: 1px solid #d5edff;
+  border-radius: 20px;
+  width: fit-content;
+  font-family: nunito;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+  color: #2998f6;
+}
+
+.doumdoum__testimonials-top h2 {
+  font-family: fredoka;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 120%;
+  letter-spacing: -0.75%;
+  text-align: center;
+  color: #181d27;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.doumdoum__testimonials-stars {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* Photo collage */
+.doumdoum__testimonials-image {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin-top: 24px;
+}
+
+.doumdoum__testimonials-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hanging testimonial cards */
+.doumdoum__testimonials-cards {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.doumdoum__testimonials-cards ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.doumdoum__testimonials-cards ul li {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+.doumdoum__testimonials-cards ul li:hover .doumdoum__testimonial-card {
+  z-index: 3;
+  transform: rotate(0);
+}
+
+.doumdoum__testimonial-card {
+  position: relative;
+  width: 240px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #d5edff;
+  border: 1px solid #c3e5ff;
+  min-height: 246px;
+  min-width: 301px;
+  transition: transform 300ms cubic-bezier(0.41, 0.55, 0.01, 2.5);
+}
+
+.doumdoum__testimonial-card-peg {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 14px;
+  border-radius: 7px;
+  background-color: #6bb4f3;
+}
+
+.doumdoum__testimonial-card-text {
+  font-family: nunito;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: -0.5%;
+  color: #414651;
+  margin: 0;
+}
+
+.doumdoum__testimonials-card-top {
+  margin-bottom: 8px;
+}
+.doumdoum__testimonial-card-author {
+  font-family: Nunito;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  color: #181d27;
+  margin: 0;
+}
+.doumdoum__testimonial-card-text {
+  font-family: nunito;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  color: #252b37;
+}
+
+/* Auto alternation: blue / pink, tilt left / right, staggered heights */
+li:nth-child(odd) .doumdoum__testimonial-card {
+  transform: rotate(-10deg);
+}
+
+li:nth-child(even) .doumdoum__testimonial-card {
+  transform: rotate(10deg);
+  background-color: #ffeef6;
+  border: 1px solid #f2b6d6;
+}
+
+li:nth-child(even) .doumdoum__testimonial-card .doumdoum__testimonial-card-peg {
+  background-color: #f570b7;
+}
+
+li:nth-child(3n + 2) .doumdoum__testimonial-card {
+  margin-top: 26px;
+}
+
+li:nth-child(3n) .doumdoum__testimonial-card {
+  margin-top: 14px;
+}
+
+@media (max-width: 992px) {
+  .doumdoum__testimonials {
+  }
+  .doumdoum__testimonials-top h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doumdoum__testimonials-cards ul {
+  }
+  .doumdoum__testimonial-card {
+    width: 234px;
+    height: 202px;
+  }
+}
+
+@media (max-width: 600px) {
+  .doumdoum__testimonials {
+  }
+  .doumdoum__testimonials-top h2 {
+    font-size: 24px;
+  }
+  .doumdoum__testimonial-card,
+  .doumdoum__testimonial-card:nth-child(odd),
+  .doumdoum__testimonial-card:nth-child(even),
+  .doumdoum__testimonial-card:nth-child(3n + 2),
+  .doumdoum__testimonial-card:nth-child(3n) {
+    width: 100%;
+    transform: none;
+    margin-top: 0;
+  }
+}

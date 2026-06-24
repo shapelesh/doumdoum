@@ -98,7 +98,9 @@ main.content-for-layout {
   margin: 0;
 }
 
-.doumdoum__custom-product-card .doumdoum__custom-product-card-top .bear-wrapper {
+.doumdoum__custom-product-card
+  .doumdoum__custom-product-card-top
+  .bear-wrapper {
   position: absolute;
   top: 0;
   left: 0;
