@@ -28,8 +28,9 @@ export const sliderRegistry = {
       992: { perView: 3.5 },
       768: { perView: 3 },
       700: { perView: 2.5 },
-      600: { perView: 1.5 },
-      550: { perView: 1.2 },
+      600: { perView: 2.2 },
+      500: { perView: 1.8 },
+      420: { perView: 1.5 },
     },
   },
 };

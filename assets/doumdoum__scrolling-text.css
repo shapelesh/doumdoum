@@ -20,6 +20,7 @@
   font-size: 14px;
   line-height: 120%;
   letter-spacing: -0.5%;
+  text-wrap: nowrap;
 }
 
 @media screen and (max-width: 600px) {
