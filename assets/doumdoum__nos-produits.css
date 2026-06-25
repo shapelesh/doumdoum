@@ -42,6 +42,7 @@
 .doumdoum__nos-produits-products {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .doumdoum__nos-produits-products ul {
   display: flex;
