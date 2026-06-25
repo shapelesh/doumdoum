@@ -1,0 +1,158 @@
+{{ 'custom-cart.Css' | asset_url | stylesheet_tag }}
+
+{%- assign threshold = section.settings.free_shipping_threshold -%}
+
+<div class="cart-drawer-overlay" data-close-drawer></div>
+<custom-cart-drawer id="CustomCartDrawer">
+  <div class="cart-header">
+    <div class="cart-header-offers">
+      <p>{{ section.settings.header_offer }}<span>{{ threshold }}</span>
+      </p>
+
+    </div>
+    <div class="cart-header-title">
+      <h2>
+        <span class="cart-header-title-icon">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+        Le panier (<span class="cart-count">{{ cart.item_count }}</span>)</h2>
+      <button data-close-drawer aria-label="Fermer">x</button>
+    </div>
+  </div>
+
+  <div class="free-shipping-bar">
+    {%- if cart.total_price < threshold -%}
+      {%- assign remaining = threshold | minus: cart.total_price -%}
+      <p class="shipping-message">
+        😉
+        <span class="amount-needed">{{ remaining | money }}</span>
+        pour la livraison gratuite !
+      </p>
+    {%- else -%}
+      <p class="shipping-message">Félicitations ! La livraison est gratuite.</p>
+    {%- endif -%}
+
+    {%- assign progress = cart.total_price | times: 100 | divided_by: threshold -%}
+    {%- if progress > 100 -%}
+      {%- assign progress = 100 -%}{%- endif -%}
+
+
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: {{ progress }}%; --icon-url: url('{{ 'truck.svg' | asset_url }}');"></div>
+    </div>
+  </div>
+
+  <div class="cart-items-container" data-ref="items-container">
+    {%- if cart.item_count > 0 -%}
+      {%- for item in cart.items -%}
+        <a href="{{ item.product.url }}">
+          <div
+            class="cart-item"
+            id="{{ item.product.id }}"
+            data-product-id="{{ item.product_id }}">
+            <img
+              src="{{ item.product.featured_image | image_url: width: 100  }}"
+              width="100"
+              height="112.9"
+              alt="product">
+            <div class="item-product-info">
+              <p class="item-product-info-title">{{ item.product.title | strip_html | truncate: 60 }}</p>
+              <p class="item-product-info-desc">{{ item.product.description | strip_html | truncate: 120 }}</p>
+              <div class="item-product-quantity">
+                <div class="quantity-nav">
+                  <button
+                    type="button"
+                    class="quantity-btn"
+                    data-action="minus"
+                    data-key="{{ item.key }}"
+                    data-qty="{{ item.quantity }}">
+                    -
+                  </button>
+
+                  <input
+                    type="number"
+                    class="quantity-input"
+                    value="{{ item.quantity }}"
+                    readonly>
+
+                  <button
+                    type="button"
+                    class="quantity-btn"
+                    data-action="plus"
+                    data-key="{{ item.key }}"
+                    data-qty="{{ item.quantity }}">
+                    +
+                  </button>
+                </div>
+                <button
+                  type="button"
+                  class="item-remove"
+                  data-action="remove"
+                  data-key="{{ item.key }}">
+                  Supprimer
+                </button>
+              </div>
+            </div>
+          </div>
+        </a>
+      {%- endfor -%}
+    {%- endif -%}
+  </div>
+
+  <div
+    class="cart-recommendations"
+    id="cart-recommendations"
+    data-fallback-id="{{ section.settings.fallback_product.id }}"
+    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&limit=4">
+    <div data-base-product-id="{{ cart.items[0].product_id }}">
+      {% if recommendations.performed %}
+        {% render 'cart-drawer-recommendations' %}
+      {% endif %}
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="buy-now-container" data-cart-buy-now>
+      {%- if cart.item_count > 0 -%}
+        <a href="/checkout" class="btn-checkout active">
+          Commander maintenant
+          <span class="total-price">{{ cart.total_price | money }}</span>
+        </a>
+      {%- else -%}
+        <button class="btn-checkout disabled" disabled>
+          Commander maintenant  0 Da
+        </button>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div
+    class="sr-only visually-hidden"
+    data-ref="liveRegion"
+    aria-live="polite"></div>
+</custom-cart-drawer>
+
+<script type="module">
+  import { CustomCartDrawer } from '{{ "custom-cart-drawer.js" | asset_url }}';
+</script>
+
+{% schema %}
+  {
+    "name": "Custom Cart Drawer",
+    "settings": [
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Montant livraison gratuite",
+        "default": 569000
+      }, {
+        "type": "text",
+        "id": "header_offer",
+        "label": "Offre",
+        "default": "Livraison gratuite pour +"
+      }, {
+        "type": "product",
+        "id": "fallback_product",
+        "label": "Produit pour recommandations (panier vide)",
+        "info": "(Best-seller recommandée) pour afficher recommendations"
+      }
+    ]
+  }
+{% endschema %}

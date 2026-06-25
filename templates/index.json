@@ -152,6 +152,52 @@
     },
     "custom_video_showcase_RKmzmT": {
       "type": "custom_video_showcase",
+      "blocks": {
+        "videos_TAATaJ": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel-1- .mp4"
+          }
+        },
+        "videos_JcWMib": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 2.mp4"
+          }
+        },
+        "videos_6rwBKB": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 3.mp4"
+          }
+        },
+        "videos_9mf4cW": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/_ونت_دوشي_لولدك_ولا_بنتك_فالشتاء_و_لا_تخافي_؟_أنا_ميرو_لحق_شهر_ونوصف.mp4"
+          }
+        },
+        "videos_TFwNUw": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 5.mp4"
+          }
+        },
+        "videos_8EQXN8": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 7.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "videos_TAATaJ",
+        "videos_JcWMib",
+        "videos_6rwBKB",
+        "videos_9mf4cW",
+        "videos_TFwNUw",
+        "videos_8EQXN8"
+      ],
       "name": "Video ShowCase",
       "settings": {
         "header_title": "Les expériences réelles avec Doumdoum",

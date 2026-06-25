@@ -1,4 +1,8 @@
+{{ 'video-player.js' | asset_url | script_tag }}
+{{ 'cart-drawer.js' | asset_url | script_tag }}
 <section class="doumdoum__video-showcase">
+
+
   <div class="doumdoum__video-showcase_header-container header-container">
     <h3>{{ section.settings.header_title }}</h3>
     <a class="header-btn follow-link" href="{{ section.settings.follow_link }}">{{ section.settings.header_link }}
@@ -27,14 +31,28 @@
       </span>
     </a>
   </div>
-
+  <div class="doumdoum__video-showcase_carousels-container">
+    <ul class="carousel-vids">
+      {% for block in section.blocks %}
+        {% if block.type == 'videos' %}
+          {% render 'custom-video'
+            , block: block 
+ video_index: forloop.index %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 <style>
+
+
   .doumdoum__video-showcase {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 24px;
     padding: 100px 107px;
   }
   .header-container {
@@ -74,6 +92,101 @@
     outline: 1px solid #E9EAEB;
     color: #F570B7;
   }
+  .doumdoum__video-showcase_carousels-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+  .carousel-vids {
+    width: max-content;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 16px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  .carousel-vids::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel-vids li {
+    list-style: none;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .video-ugc {
+    width: 200px;
+    height: 360px;
+  }
+
+  @media screen and (max-width: 990px) {
+    .doumdoum__video-showcase {
+      padding: 100px 90px;
+    }
+
+  }
+  @media screen and (max-width: 768px) {
+    .doumdoum__video-showcase {
+      padding: 100px 90px;
+    }
+    .header-container h3 {
+
+      text-align: left;
+    }
+    .header-container a {
+      text-wrap: nowrap;
+      align-self: center;
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .doumdoum__video-showcase {
+      padding: 100px 40px;
+    }
+    .header-container h3 {
+      font-size: 22px;
+
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .doumdoum__video-showcase {
+      padding: 86px 16px;
+    }
+    .header-container {
+      padding: 0;
+
+    }
+    .header-container h3 {
+      font-size: 17px;
+    }
+    .header-container a {
+      font-size: 15px;
+    }
+    .doumdoum__video-showcase_carousels-container,
+    .carousel-vids {
+      padding: 0;
+    }
+  }
+  @media (min-width: 991px) {
+    body.video-component-active.cart-drawer--open-no-backdrop .dialog-modal[open]::backdrop,
+    body.video-component-active cart-drawer-component[open]::backdrop {
+      opacity: 0 !important;
+      background: transparent !important;
+      animation: none !important;
+      pointer-events: none !important;
+    }
+    body.video-component-active .cart-drawer__dialog .dialog-modal[open] {
+      max-width: 400px;
+      justify-self: end;
+      margin: 0;
+    }
+
+  }
 </style>
 {% schema %}
   {
@@ -93,6 +206,20 @@
         "id": "header_link",
         "label": "Text boutton",
         "default": "Suivez-nous"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "videos",
+        "name": "Videos",
+        "settings": [
+
+          {
+            "type": "video",
+            "id": "video_ugc",
+            "label": "Video UGC"
+          }
+        ]
       }
     ],
     "presets": [
