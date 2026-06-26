@@ -11,7 +11,6 @@
             height="100%"
             loading="lazy">
         </div>
-
         <div class="product-thumbnails-container">
           <div class="product-thumbnails-slider" id="ThumbSlider-{{ section.id }}">
             {% for media in product.media %}
@@ -43,14 +42,55 @@
           type="hidden"
           name="quantity"
           id="Quantity-{{ section.id }}"
-          value="1"
-          min="1">
+          value="1">
+
         {% for i in (1..3) %}
           <button
             type="button"
-            class="qty-btn {% if i == 1 %}active{% endif %}"
-            onclick="selectQuantity({{ i }})">{{ i }}x</button>
+            class="qty-btn {% if i == 1 %}active{% endif %} static-qty-btn"
+            id="qty-btn-{{ i }}"
+            onclick="selectQuantity({{ i }}, this)">
+            {{ i }}x
+          </button>
         {% endfor %}
+
+        <div class="card-info_custom-select-wrapper" id="custom-select-wrapper">
+          <button
+            type="button"
+            class="qty-btn"
+            id="custom-qty-trigger"
+            onclick="toggleDropdown()">
+            <span id="custom-qty-btn-text"></span>
+            <svg
+              class="chevron-icon"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+
+          <div class="qty-dropdown-list" id="qty-dropdown">
+            {% for i in (4..9) %}
+              <div class="qty-dropdown-item" onclick="selectQuantity({{ i }}, null, true)">{{ i }}x</div>
+            {% endfor %}
+            <div class="qty-dropdown-item" onclick="showManualInput()">10+</div>
+          </div>
+
+          <input
+            type="number"
+            id="manual-qty-input"
+            class="qty-btn manual-input"
+            style="display: none;"
+            min="10"
+            placeholder="Nb..."
+            oninput="updateManualQuantity(this.value)">
+        </div>
       </div>
       <div class="card-info_tabs-container">
 
@@ -60,7 +100,7 @@
 
           <button
             type="button"
-            class="tab-btn active"
+            class="tab-btn selected"
             data-tab="details"
             data-content="{{ details_val | escape }}">
             Détails
@@ -92,31 +132,86 @@
   </div>
 </section>
 <script>
-  function selectQuantity(value) {
-    document.getElementById('Quantity-{{ section.id }}').value = value;
-    
-    document.querySelectorAll('.qty-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-    
-    document.getElementById('QtySelect-{{ section.id }}').value = "";
-    document.getElementById('QtyInput-{{ section.id }}').value = "";
-  }
+  function handleActiveState(element, selector) {
+    if (element && element.classList.contains('active')) {
+      return;
+    }
+    document.querySelectorAll(selector).forEach(el => el.classList.remove('active'));
   
-  function handleSelectChange(selectElement) {
-    const value = selectElement.value;
-    document.getElementById('Quantity-{{ section.id }}').value = value;
-    document.getElementById('QtyInput-{{ section.id }}').value = "";
-    document.querySelectorAll('.qty-btn').forEach(btn => btn.classList.remove('active'));
-  }
-  
-  function updateQuantity(value) {
-    if(value && value >= 10) {
-      document.getElementById('Quantity-{{ section.id }}').value = value;
-      document.getElementById('QtySelect-{{ section.id }}').value = "";
-      document.querySelectorAll('.qty-btn').forEach(btn => btn.classList.remove('active'));
+    if (element) {
+      element.classList.add('active');
     }
   }
+  
+  function selectQuantity(val, element = null, fromDropdown = false) {
+    const sectionId = "{{ section.id }}";
+    const hiddenInput = document.getElementById('Quantity-' + sectionId);
+    const triggerBtn = document.getElementById('custom-qty-trigger');
+    const manualInput = document.getElementById('manual-qty-input');
+    const btnText = document.getElementById('custom-qty-btn-text');
+  
+    hiddenInput.value = val;
+  
+    if (fromDropdown) {
+      handleActiveState(triggerBtn, '.qty-btn, .manual-input');
+      btnText.innerText = val + 'x';      
+      manualInput.style.display = 'none';
+      triggerBtn.style.display = 'flex';
+    } 
+    else if (element) {
+      handleActiveState(element, '.qty-btn, .manual-input');
+  
+      btnText.innerText = '4x';           
+      manualInput.style.display = 'none';
+      triggerBtn.style.display = 'flex';
+    }
+  
+    closeDropdown();
+  }
+  
+  function showManualInput() {
+    const triggerBtn = document.getElementById('custom-qty-trigger');
+    const manualInput = document.getElementById('manual-qty-input');
+    const sectionId = "{{ section.id }}";
+    const hiddenInput = document.getElementById('Quantity-' + sectionId);
+  
+    triggerBtn.style.display = 'none';
+    manualInput.style.display = 'block';
+  
+    handleActiveState(manualInput, '.static-qty-btn, .manual-input');
+    
+    if (!manualInput.classList.contains('active')) {
+        manualInput.value = 10;
+        hiddenInput.value = 10;
+    }
+    
+    manualInput.focus();
+    closeDropdown();
+  }
+  
+  function updateManualQuantity(val) {
+    const sectionId = "{{ section.id }}";
+    document.getElementById('Quantity-' + sectionId).value = val;
+  }
+  
+  function toggleDropdown() {
+    document.getElementById('qty-dropdown').classList.toggle('show');
+    document.getElementById('custom-select-wrapper').classList.toggle('open');
+  }
+  
+  function closeDropdown() {
+    document.getElementById('qty-dropdown').classList.remove('show');
+    document.getElementById('custom-select-wrapper').classList.remove('open');
+  }
+  
+  window.addEventListener('click', function(event) {
+    const wrapper = document.getElementById('custom-select-wrapper');
+    if (wrapper && !wrapper.contains(event.target)) {
+      closeDropdown();
+    }
+  });
 </script>
+{% comment %} tab-btns {% endcomment %}
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.tab-btn');
@@ -124,8 +219,8 @@
   
     buttons.forEach(btn => {
       btn.addEventListener('click', function() {
-        buttons.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
+        buttons.forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
   
         const content = this.getAttribute('data-content');
   
@@ -144,6 +239,7 @@
     });
   });
 </script>
+{% comment %} gallery-image {% endcomment %}
 <script>
   function updateMainImage(imgSrc, thumbElement) {
   const mainImg = document.getElementById('MainImage-{{ section.id }}');
@@ -176,6 +272,7 @@
     column-gap: 33px;
   }
   .container-grid__images {
+    min-width: 400px;
     width: 100%;
     height: 100%;
     grid-column: 1 / 2;
@@ -257,13 +354,14 @@
   }
 
   .card-info_quantity-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(121.88px, 1fr));
     gap: 8px;
   }
   .qty-btn {
-    width: 121.88px;
+    position: relative;
+    width: 100%;
     text-align: center;
     padding: 10px 16px;
     border-radius: 16px;
@@ -284,6 +382,99 @@
     background-color: #FFF1F9;
     outline: 1px dashed #F570B7;
     color: #FF008B;
+  }
+  .qty-dropdown-list {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border: 1px solid #D5D7DA;
+    overflow: hidden;
+  }
+  .qty-dropdown-list.show {
+    display: block;
+  }
+
+  .qty-dropdown-item {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Nunito';
+    font-size: 14px;
+    color: #535862;
+    transition: background 0.2s;
+  }
+
+  .qty-dropdown-item:hover {
+    background-color: #FFF1F9;
+    color: #FF008B;
+  }
+  .card-info_custom-select-wrapper {
+    position: relative;
+    width: 100%;
+
+  }
+  #custom-qty-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  .chevron-icon {
+    transition: transform 0.3s;
+  }
+
+  .custom-select-wrapper.open .chevron-icon {
+    transform: rotate(180deg);
+  }
+  .manual-input {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    outline: 1px solid #F570B7 !important;
+  }
+  .manual-input.active {
+    outline: 1px dashed #F570B7 !important;
+  }
+
+  .manual-input::-webkit-outer-spin-button,
+  .manual-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .card-info_quantity-container #qty-btn-2::after {
+    content: "Idéal jeunes mamans";
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 92.52px;
+    height: 38px;
+
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 11px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    text-align: center;
+    color: #F570B7;
+    padding: 6px 4px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border: none;
+    outline: 1px solid #EF95C5;
+
+    z-index: -1;
   }
   .card-info_tabs-container {
     display: flex;
@@ -317,7 +508,7 @@
     color: #252B37;
     transition: all ease-in-out 0.3s;
   }
-  .tab-btn.active {
+  .tab-btn.selected {
     background-color: #FFF1F9;
     color: #FF008B;
     transform: translateY(-1px);
@@ -404,7 +595,17 @@
   .thumb-item.active {
     border: 2px;
   }
-
+  @media (max-width: 990px ) {
+    .doumdoum__custom-product-card {
+      padding: 38px 40px;
+    }
+    .container-grid__images {
+      min-width: 320px;
+      width: 100%;
+      height: 100%;
+      grid-column: 1 / 2;
+    }
+  }
   @media (max-width: 768px) {
     .doumdoum__custom-product-card_container-grid {
       grid-template-columns: 1fr;
@@ -412,7 +613,60 @@
     .doumdoum__custom-product-card {
       padding: 20px;
     }
+    .card-info_title-price {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .card-info_reviews {
+      grid-column: 1 / 4;
+    }
+    .card-info_title-price span {
+      align-self: center;
+      justify-self: flex-end;
+    }
+
+    .card-info_quantity-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .card-info_custom-select-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    .qty-btn {
+      width: 100%;
+    }
+    .card-info_quantity-container #qty-btn-2::after {
+      width: 80%;
+    }
   }
+  @media (max-width: 500px) {
+    .doumdoum__custom-product-card {
+      padding: 38px 16px;
+    }
+    .card-info_title-price h1 {
+      font-size: 24px;
+    }
+    .card-info_title-price span {
+      font-size: 16px;
+    }
+    .card-info_quantity-container #qty-btn-2::after {
+      width: 119.15px;
+      top: -15%;
+    }
+    .benefit-text {
+      font-size: 14px;
+    }
+    .qty-btn {
+      font-size: 14px;
+    }
+  }
+
 </style>
 {% schema %}
   {
