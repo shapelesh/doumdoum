@@ -1,63 +1,32 @@
-<section class="doumdoum__devider section--{{ section.id }}">
+{%- liquid
+  assign accent_color = section.settings.color
 
+  if product.metafields.custom.devider_color != blank
+    assign accent_color = product.metafields.custom.devider_color | downcase
+  else
+    assign accent_color = 'blue'
+  endif
+
+  assign file_suffix = accent_color
+  if accent_color == 'orange'
+    assign file_suffix = 'orang'
+  elsif accent_color == 'violet'
+    assign file_suffix = 'purple'
+  elsif accent_color == 'rose'
+    assign file_suffix = 'pink'
+  endif
+
+  assign filename = 'devider-' | append: file_suffix | append: '.svg'
+-%}
+
+<section class="doumdoum__devider section--{{ section.id }} accent-{{ accent_color }}">
   <div class="devider-svg-container">
-    {% if section.settings.color == 'rose' %}
-      <img
-        src="{{ 'devider-pink.svg' | asset_url }}"
-        alt="Devider Rose"
-        width="100%"
-        height="100%"
-        loading="lazy">
-    {% elsif section.settings.color == 'bleu' %}
-      <img
-        src="{{ 'devider-blue.svg' | asset_url }}"
-        alt="Devider Bleu"
-        width="100%"
-        height="100%"
-        loading="lazy">
-    {% elsif section.settings.color == 'vert' %}
-      <img
-        src="{{ 'devider-green.svg' | asset_url }}"
-        alt="Devider Vert"
-        width="100%"
-        height="100%"
-        loading="lazy">
-    {% elsif section.settings.color == 'jaune' %}
-      <img
-        src="{{ 'devider-yellow.svg' | asset_url }}"
-        alt="Devider Jaune"
-        width="100%"
-        height="100%"
-        loading="lazy">
-    {% elsif section.settings.color == 'cyan' %}
-      <img
-        src="{{ 'devider-cyan.svg' | asset_url }}"
-        alt="Devider Cyan"
-        width="100%"
-        height="100%"
-        loading="lazy">
-    {% elsif section.settings.color == 'blanc' %}
-      <img
-        src="{{ 'devider-white.svg' | asset_url }}"
-        alt="Devider Blanc"
-        width="100%"
-        height="100%"
-        loading="lazy">
-    {% elsif section.settings.color == 'orange' %}
-      <img
-        src="{{ 'devider-orang.svg' | asset_url }}"
-        alt="Devider Orange"
-        width="100%"
-        height="100%"
-        loading="lazy">
-    {% elsif section.settings.color == 'violet' %}
-      <img
-        src="{{ 'devider-purple.svg' | asset_url }}"
-        alt="Devider Violet"
-        width="100%"
-        height="100%"
-        loading="lazy">
-    {% endif %}
+    <img
+      src="{{ filename | asset_url }}"
+      alt="Devider {{ accent_color }}"
+      width="100%"
+      height="100%"
+      loading="lazy">
   </div>
 </section>
 

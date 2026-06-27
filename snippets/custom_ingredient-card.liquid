@@ -1,0 +1,34 @@
+<div class="ingredient-card" id="ingredient-{{ loop_index }}">
+  <div class="ingredient-card__image-wrapper">
+    <img
+      src="{{ ingredients.ingredient_pic | image_url: width: 400 }}"
+      alt="{{ ingredients.name.value }}"
+      loading="lazy"
+      width="400"
+      height="400"
+      class="ingredient-card__image ingredient-card__image--primary">
+    {%- if ingredients.ingredient_side_pic -%}
+      <img
+        src="{{ ingredients.ingredient_side_pic | image_url: width: 400 }}"
+        alt="{{ ingredients.name.value }} - vue 2"
+        loading="lazy"
+        width="400"
+        height="400"
+        class="ingredient-card__image ingredient-card__image--secondary">
+    {%- endif -%}
+  </div>
+
+
+  <div class="ingredient-card__content">
+    <h3 class="ingredient-card__title">{{ ingredients.name }}</h3>
+
+    <div class="ingredient-card__description">
+      {{ ingredients.ingredient_desc }}
+    </div>
+    <ul class="ingredient-card__benefits">
+      {%- for benefit in ingredients.ingredient_benifits.value -%}
+        <li>{{ benefit }}</li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
