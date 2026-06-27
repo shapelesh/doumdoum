@@ -1,4 +1,4 @@
-<section class="doumdoum__custom-picutre-sec section--{{ section.id }}">
+<section class="doumdoum__custom-picture-sec section--{{ section.id }}">
   <img
     class="desktop_version"
     src="{{ section.settings.img_custom_sec |  image_url: width:section.settings.img_custom_sec.width }}"
@@ -15,12 +15,15 @@
         loading="lazy"> {% endcomment %}
 </section>
 <style>
-  .doumdoum__custom-picutre-sec {
+  .doumdoum__custom-picture-sec-wrapper {
+    background-color: #FAFAFA;
+  }
+  .doumdoum__custom-picture-sec {
     position: relative;
     display: flex;
     margin-bottom: 75px;
   }
-  .doumdoum__custom-picutre-sec img {
+  .doumdoum__custom-picture-sec img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -41,6 +44,7 @@
 {% schema %}
   {
     "name": "Custom Picture Bg",
+    "class": "doumdoum__custom-picture-sec-wrapper",
     "settings": [
       {
         "type": "image_picker",

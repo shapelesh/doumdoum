@@ -6,6 +6,7 @@
   padding: 43.66px 109.5px;
   padding-bottom: 0;
   gap: 24px;
+  max-height: 80vh;
 }
 
 .doumdoum__main-hero-left {
@@ -149,7 +150,7 @@
 .doumdoum__main-hero-right img.approved {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 5px;
   width: 96px;
   height: auto;
   transform: translate(36%, -38%);

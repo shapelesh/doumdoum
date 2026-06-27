@@ -31,8 +31,8 @@
       </span>
     </a>
   </div>
-  <div class="doumdoum__video-showcase_carousels-container">
-    <ul class="carousel-vids">
+  <div class="doumdoum__video-showcase_carousels-container glide" data-slider="video_carousel">
+    <ul class="carousel-vids glide__track" data-glide-el="track">
       {% for block in section.blocks %}
         {% if block.type == 'videos' %}
           {% render 'custom-video'
@@ -54,6 +54,7 @@
     align-items: center;
     gap: 24px;
     padding: 100px 107px;
+    background-color: #FAFAFA;
   }
   .header-container {
     width: 100%;
@@ -127,13 +128,12 @@
 
   @media screen and (max-width: 990px) {
     .doumdoum__video-showcase {
-      padding: 100px 90px;
+      padding: 100px 32px;
     }
-
   }
   @media screen and (max-width: 768px) {
     .doumdoum__video-showcase {
-      padding: 100px 90px;
+      padding: 100px 16px;
     }
     .header-container h3 {
 
@@ -146,7 +146,7 @@
   }
   @media screen and (max-width: 620px) {
     .doumdoum__video-showcase {
-      padding: 100px 40px;
+      padding: 100px 16px;
     }
     .header-container h3 {
       font-size: 22px;
