@@ -21,6 +21,13 @@
         "color": "bleu"
       }
     },
+    "custom_product_ingredient_QCVzcp": {
+      "type": "custom_product-ingredient",
+      "name": "Ingrédients Produit",
+      "settings": {
+        "product_ingredient_title": "Nos Ingrédients"
+      }
+    },
     "main": {
       "type": "product-information",
       "blocks": {
@@ -283,11 +290,11 @@
         "padding-block-end": 0
       }
     },
-    "custom_product_ingredient_QCVzcp": {
-      "type": "custom_product-ingredient",
-      "name": "Ingrédients Produit",
+    "custom_product_usage_9qJdM8": {
+      "type": "custom_product-usage",
+      "name": "Utilisations Produits",
       "settings": {
-        "product_ingredient_title": "Nos Ingrédients"
+        "usage_title": "Comment prendre soin de votre bébé"
       }
     }
   },
@@ -295,6 +302,7 @@
     "custom_product_card_K3t6yT",
     "custom_devider_79RKQL",
     "custom_product_ingredient_QCVzcp",
-    "main"
+    "main",
+    "custom_product_usage_9qJdM8"
   ]
 }
