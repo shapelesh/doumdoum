@@ -1,0 +1,14 @@
+{%- if benefits and benefits.value -%}
+  <ul class="benefits-list">
+    {%- for benefit in benefits.value -%}
+      {%- if benefit != blank -%}
+        <li class="benefit-item">
+          <span class="benefit-icon">
+            {{ 'correct.svg' | inline_asset_content }}
+          </span>
+          <span class="benefit-text">{{ benefit | strip }}</span>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

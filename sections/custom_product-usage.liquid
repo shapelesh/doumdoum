@@ -1,0 +1,406 @@
+<div class="doumdoum__custom-product-usage_section-header-devider section-header-devider">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    viewBox="0 0 1280 68"
+    fill="none">
+    <path d="M0 12L627 0L1280 12V66C1280 66 1082.47 68.5927 961 66C678.71 59.9748 461.022 47.89 246 53C138.579 55.5529 0 66 0 66V12Z" fill="#BDE4FD" />
+  </svg>
+</div>
+<section class="doumdoum__custom-product-usage section-{{ section.id }}">
+  {%- liquid
+    assign devider_color = product.metafields.custom.devider_color | downcase
+    assign roll_img = 'roll-blue.svg'
+
+    case devider_color
+      when 'pink'
+        assign roll_img = 'roll-pink.svg'
+      when 'green'
+        assign roll_img = 'roll-green.svg'
+      when 'orange'
+        assign roll_img = 'roll-orange.svg'
+      when 'purple'
+        assign roll_img = 'roll-purple.svg'
+      when 'yellow'
+        assign roll_img = 'roll-yellow.svg'
+      when 'cyan'
+        assign roll_img = 'roll-cyan.svg'
+    endcase
+
+    assign final_roll_img_url = roll_img | asset_url
+  -%}
+  <div class="product-usage_content_roll" style="--roll-icon: url('{{ final_roll_img_url }}');"></div>
+  <div class="doumdoum__custom-product-usage_content-container product-usage_content-container">
+    <div class="product-usage_content_stars">
+      <div class="left-stars content_stars">
+        {%- liquid
+          assign devider_color = product.metafields.custom.devider_color | downcase
+          assign star_img = 'Star-blue.svg'
+
+          case devider_color
+            when 'pink'
+              assign star_img = 'Star-pink.svg'
+            when 'green'
+              assign star_img = 'Star-green.svg'
+            when 'orange'
+              assign star_img = 'Star-orange.svg'
+            when 'purple'
+              assign star_img = 'Star-purple.svg'
+            when 'yellow'
+              assign star_img = 'Star-yellow.svg'
+            when 'white'
+              assign star_img = 'Star-yellow.svg'
+          endcase
+
+          assign final_star_img_url = star_img | asset_url
+        -%}
+        {% for i in (1..3) %}
+          <div class="single-star left-single-star--{{ i }}">
+            <img
+              src="{{ final_star_img_url }}"
+              alt="Décoratif {{ devider_color }}"
+              width="12px"
+              height="20px" />
+          </div>
+        {% endfor %}
+      </div>
+      <div class="right-stars content_stars">
+        {% for i in (1..3) %}
+          <div class="single-star right-single-star--{{ i }}">
+            <img
+              src="{{ final_star_img_url }}"
+              alt="Décoratif {{ devider_color }}"
+              width="12px"
+              height="20px" />
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="product-usage_content usage-image">
+      {% assign usage_image = product.metafields.custom.usage_img %}
+      {% if usage_image != blank %}
+        <img
+          src="{{ usage_image.value |  image_url: width:1000  }}"
+          width="{{ usage_image.width }}"
+          height="{{ usage_image.height }}"
+          alt="image d'utilisation">
+      {% endif %}
+    </div>
+    <div class="product-usage_content-container usage-text-content">
+      <h3>{{ section.settings.usage_title }}</h3>
+      {% assign instructions_list = product.metafields.custom.produits.value %}
+
+      {% if instructions_list %}
+        <div class="product-instructions">
+
+          {% for instruction in instructions_list %}
+            <div class="instruction-item" style="margin-bottom: 20px;">
+
+              <h4 class="instruction-title">
+                {{ instruction.name }}
+              </h4>
+
+              <div class="instruction-description">
+                {{ instruction.usage }}
+              </div>
+
+            </div>
+          {% endfor %}
+
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+
+</section>
+<style>
+  .doumdoum__custom-product-usage {
+    padding: 34px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 37px;
+  }
+  .section-header-devider {
+    width: 100%;
+  }
+  .section-header-devider svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .product-usage_content-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 47px;
+    gap: 20px;
+  }
+  .product-usage_content_roll {
+    position: relative;
+    top: 200px;
+    background-color: #0c81e7;
+    width: 0;
+    align-self: flex-start;
+    height: 0;
+  }
+  .product-usage_content_roll::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: var(--roll-icon);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 157.76px;
+    height: 309px;
+    z-index: -1;
+  }
+  .product-usage_content_stars {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    z-index: -1;
+  }
+  .content_stars {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+    height: 100%;
+  }
+  .single-star {
+    position: relative;
+  }
+  .left-single-star--2 {
+    left: 90px;
+  }
+  .right-single-star--2 {
+    left: -90px;
+  }
+  .left-single-star--3 {
+    left: -20px;
+  }
+  .right-single-star--3 {
+    left: 20px;
+  }
+
+  .usage-image {
+    width: 100%;
+    max-width: 363px;
+    height: 100%;
+  }
+  .usage-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .usage-text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 47px 47px 47px 0;
+  }
+  .usage-text-content h3 {
+    font-family: Fredoka;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 34px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    margin: 0;
+    color: #2998F6;
+    width: 300px;
+    text-align: left;
+  }
+  .instruction-title {
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    margin: 0;
+    color: #9DC7EB;
+  }
+  .instruction-description {
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    margin: 0;
+    color: #2998F6;
+  }
+  @media screen and (max-width: 1280px) {
+    .product-usage_content_stars {
+      width: 95%;
+      max-width: 100%;
+    }
+    .product-usage_content_roll::after {
+      width: 125.76px;
+      height: 250px;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .product-usage_content_roll::after {
+      width: 100.76px;
+      height: 203px;
+    }
+
+  }
+  @media screen and (max-width: 990px) {
+    .product-usage_content-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+    .product-usage_content_roll::after {
+      display: none;
+    }
+    .product-usage_content_stars {
+      width: 80%;
+      max-width: auto;
+    }
+  }
+  @media screen and (max-width: 768px) {
+
+    .product-usage_content-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+    .usage-text-content h3 {
+      font-size: 28px;
+      max-width: 288px;
+      align-self: baseline;
+    }
+    .product-usage_content_roll {
+      top: 320px;
+    }
+    .product-usage_content_roll::after {
+      display: block;
+      width: 100.12px;
+      height: 209.64px;
+    }
+    .product-usage_content_stars {
+      top: -3%;
+      width: 95%;
+      max-width: 100%;
+    }
+    .content_stars {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 380px;
+      height: 100%;
+    }
+    .right-single-star--1 {
+      left: -37px;
+    }
+    .left-single-star--1 {
+      left: 90px;
+    }
+    .right-single-star--2 {
+      top: -27px;
+      left: 20px;
+    }
+    .right-single-star--3 {
+      left: -40px;
+    }
+    .left-single-star--3 {
+      top: -180px;
+    }
+    .usage-image {
+      padding: 23.6px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .product-usage_content_roll {
+      top: 320px;
+      left: -16px;
+    }
+    .product-usage_content_roll::after {
+      display: block;
+      width: 80.12px;
+      height: 157.64px;
+    }
+    .product-usage_content_stars {
+      top: -5%;
+      width: 85%;
+      max-width: 100%;
+    }
+    .content_stars {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 380px;
+      height: 100%;
+    }
+    .right-single-star--1 {
+      left: -37px;
+    }
+    .left-single-star--1 {
+      left: 90px;
+    }
+    .right-single-star--2 {
+      top: -27px;
+      left: 20px;
+    }
+    .right-single-star--3 {
+      left: -40px;
+    }
+    .left-single-star--3 {
+      top: -180px;
+      left: 20px;
+    }
+    .doumdoum__custom-product-usage {
+      padding: 34px 16px;
+    }
+    .section-header-devider svg {
+      height: 67px;
+    }
+
+    .usage-text-content h3 {
+      font-size: 24px;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "Utilisations Produits",
+    "settings": [
+      {
+        "type": "text",
+        "id": "usage_title",
+        "label": "Titre d'usages",
+        "default": "Comment prendre soin de votre bébé"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Utilisations Produits"
+      }
+    ]
+  }
+{% endschema %}

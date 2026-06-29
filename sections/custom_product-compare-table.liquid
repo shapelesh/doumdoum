@@ -1,0 +1,351 @@
+{% liquid
+  assign metafield_color = product.metafields.custom.compared_product.value.bg_color
+
+  if metafield_color == 'blue'
+    assign bg_color = '#EEF6FF'
+    assign icon_name = 'doumdoum-blue.svg' | asset_url
+    assign rotation_deg_top = '-20deg'
+    assign rotation_deg_bot = '45deg'
+    assign width = '112px'
+    assign height = '108px'
+  else
+    assign bg_color = '#FFF1F9'
+    assign icon_name = 'doumdoum-pink.svg' | asset_url
+    assign rotation_deg_top = '-45deg'
+    assign rotation_deg_bot = '0deg'
+    assign width = '112px'
+    assign height = '112px'
+  endif
+%}
+
+<section class="doumdoum__custom-product_table section--{{ section.id }}" style="--custom-bg-color : {{ bg_color }}">
+  <div class="doumdoum-icon doumdoum-icon-top" style="--bear-icon: url('{{ icon_name }}'); --rotation-deg:{{ rotation_deg_top }}; --icon-width:{{ width }}; --icon-height:{{ height }};"></div>
+  <h2 class="product_table-title">{{ section.settings.table_title }}</h2>
+
+  <div class="doumdoum__custom-product_table--grid_container product_table--grid_container">
+    <div class="cutom_grid--cell grid--cell_img col-left">
+      {% assign compared_img = product.metafields.custom.compared_product.value.image %}
+      {% if compared_img %}
+        <img
+          src="{{ compared_img | image_url: width: 500 }}"
+          class="vs-product-img"
+          width="500"
+          height="500"
+          alt="Produit comparé" />
+      {% endif %}
+    </div>
+    <div class="cutom_grid--cell grid--cell_img-vs grid--cell-vs col-center">
+      <p class="vs-text" id="vs-text">VS</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_img col-right">
+      {% assign compared_product_img = product.metafields.custom.compared_image.value %}
+      {% if compared_product_img %}
+        <img
+          src="{{ compared_product_img | image_url: width: 500 }}"
+          width="500"
+          height="500"
+          alt="Produit principal" />
+      {% endif %}
+    </div>
+    <div class="cutom_grid--cell grid--cell_price col-left">
+      {% assign compared_price = product.metafields.custom.compared_product.value.price %}
+      <span>+{{ compared_price | money }}</span>
+    </div>
+    <div class="cutom_grid--cell grid--cell_price-vs grid--cell-vs col-center">
+      <p>Prix</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_price col-right">
+      <span>{{ product.price | money }}</span>
+    </div>
+    <div class="cutom_grid--cell grid--cell_availability col-left">
+      <p>Non disponible facilement</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_availability-vs grid--cell-vs col-center">
+      <p>Disponibilité</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_availability col-right">
+      <p>Disponible</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_adaptation col-left">
+      <p>Non adapté aux mamans algériennes</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_adaptation-vs grid--cell-vs col-center">
+      <p>Adapté à l'Algérie</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_adaptation col-right">
+      <p>Pensé pour les mamans algériennes</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_quality col-left">
+      <p>haute</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_quality-vs grid--cell-vs col-center">
+      <p>Qualité</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_quality col-right">
+      <p>haute</p>
+    </div>
+
+  </div>
+  <div class="doumdoum-icon doumdoum-icon-bot" style="--bear-icon: url('{{ icon_name }}') ; --rotation-deg: {{  rotation_deg_bot }};--icon-width:{{ width }}; --icon-height:{{ height }};"></div>
+</section>
+<style>
+  .doumdoum__custom-product_table {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 316.5px;
+    background-color: var(--custom-bg-color);
+    z-index: -2;
+  }
+  .doumdoum-icon {
+    position: absolute;
+    width: 100%;
+  }
+  .doumdoum-icon::after {
+    content: "";
+    position: absolute;
+    width: var(--icon-width);
+    height: var(--icon-height);
+    background-image: var(--bear-icon);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+  .doumdoum-icon-top::after {
+    transform: rotate(var(--rotation-deg, 0deg));
+    top: -30px;
+    right: 30px;
+  }
+  .doumdoum-icon-bot::after {
+    transform: rotate(var(--rotation-deg, 0deg));
+    bottom: 0;
+    left: 0;
+  }
+  .doumdoum-icon-top {
+    top: 0;
+  }
+  .doumdoum-icon-bot {
+    bottom: 0;
+  }
+  .product_table-title {
+    font-family: Fredoka;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 26px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    text-align: center;
+    vertical-align: middle;
+    color: #252B37;
+  }
+  .product_table--grid_container {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    column-gap: 10px;
+    row-gap: 0;
+    width: 100%;
+    align-items: center;
+  }
+  .product_table--grid_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cutom_grid--cell {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    width: 100%;
+    height: 89px;
+    padding: 33.5px 0;
+    text-align: center;
+    border-top: 1px solid #EF95C5;
+    border-bottom-width: 100%;
+    box-sizing: border-box;
+  }
+  .grid--cell-vs {
+    position: relative;
+    border: none;
+
+  }
+  .grid--cell-vs p {
+    background-color: var(--custom-bg-color);
+  }
+  .grid--cell-vs::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    top: 0;
+    left: -10px;
+    border-top: 1px solid #EF95C5;
+  }
+  .grid--cell-vs::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    background-color: #EF95C5;
+    z-index: -1;
+  }
+  .grid--cell_img-vs::before {
+    height: 150px;
+    top: -22px;
+  }
+  .grid--cell_img-vs::after {
+    border: none;
+  }
+  .grid--cell_img {
+    height: 100%;
+    max-height: 164px;
+    border: none;
+    padding-bottom: 0;
+    justify-self: center;
+    overflow: hidden;
+  }
+  .grid--cell_img img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .vs-product-img {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    -webkit-filter: blur(3px)
+  }
+
+  .product_table-title {
+    font-family: Fredoka;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 26px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    text-align: center;
+    vertical-align: middle;
+    color: #000000;
+    margin: 0;
+
+  }
+  .grid--cell_price span {
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    text-align: center;
+    margin: 0;
+    color: #252B37;
+  }
+  .cutom_grid--cell p {
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--custom-bg-color);
+    color: #252B37;
+    margin: 0;
+  }
+  #vs-text {
+    font-family: Fredoka;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    vertical-align: middle;
+    color: #252B37;
+  }
+  @media screen and (max-width: 1024px) {
+    .doumdoum__custom-product_table {
+      padding: 20px 216.5px;
+    }
+  }
+  @media screen and (max-width: 990px) {
+    .doumdoum__custom-product_table {
+      padding: 20px 57px;
+    }
+    .doumdoum-icon::after {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .doumdoum__custom-product_table {
+      padding: 20px 40px;
+    }
+    .cutom_grid--cell p {
+      font-size: 15px;
+    }
+    .grid--cell_price span {
+      font-size: 15px;
+    }
+    .grid--cell-vs p {
+      font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .doumdoum__custom-product_table {
+      padding: 20px 16px;
+    }
+    .cutom_grid--cell p {
+      font-size: 14px;
+    }
+    ..grid--cell_price span {
+      font-size: 14px;
+    }
+    .grid--cell-vs p {
+      font-size: 12px;
+    }
+
+  }
+  @media screen and (max-width: 450px) {
+    .doumdoum__custom-product_table {
+      padding: 20px 0;
+    }
+    .cutom_grid--cell {
+      height: 86px;
+      padding: 26px 12px;
+
+    }
+    .grid--cell_img {
+      padding: 0;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "Tableau de Comparaison",
+    "settings": [
+      {
+        "type": "text",
+        "id": "table_title",
+        "label": "Titre du tableau",
+        "default": "Autres VS Doumdoum"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Comparaison de produits"
+      }
+    ]
+  }
+{% endschema %}

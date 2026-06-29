@@ -6,8 +6,28 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
+    "custom_product_card_K3t6yT": {
+      "type": "custom_product-card",
+      "name": "Carte Produit Détaillée",
+      "settings": {}
+    },
+    "custom_devider_79RKQL": {
+      "type": "custom_devider",
+      "name": "Custom Devider",
+      "settings": {
+        "color": "bleu"
+      }
+    },
+    "custom_product_ingredient_QCVzcp": {
+      "type": "custom_product-ingredient",
+      "name": "Ingrédients Produit",
+      "settings": {
+        "product_ingredient_title": "Nos Ingrédients"
+      }
+    },
     "main": {
       "type": "product-information",
       "blocks": {
@@ -24,6 +44,7 @@
             "slideshow_mobile_controls_style": "dots",
             "thumbnail_position": "right",
             "thumbnail_width": 44,
+            "thumbnail_radius": 0,
             "aspect_ratio": "adapt",
             "constrain_to_viewport": true,
             "media_fit": "contain",
@@ -70,7 +91,6 @@
               "type": "group",
               "name": "Header",
               "settings": {
-                "open_in_new_tab": false,
                 "content_direction": "column",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
@@ -98,6 +118,9 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -188,6 +211,7 @@
               "settings": {
                 "stacking": true,
                 "show_pickup_availability": false,
+                "gift_card_form": true,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -253,161 +277,168 @@
           ]
         }
       },
+      "disabled": true,
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
         "equal_columns": false,
         "limit_details_width": false,
         "gap": 48,
+        "enable_sticky_add_to_cart": true,
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
     },
-    "product_recommendations_qggXJq": {
-      "type": "product-recommendations",
+    "custom_product_usage_9qJdM8": {
+      "type": "custom_product-usage",
+      "name": "Utilisations Produits",
+      "settings": {
+        "usage_title": "Comment prendre soin de votre bébé"
+      }
+    },
+    "custom_product_compare_table_EFbkg8": {
+      "type": "custom_product-compare-table",
+      "name": "Comparaison de produits",
+      "settings": {
+        "table_title": "Autres VS Doumdoum"
+      }
+    },
+    "custom_video_showcase_7fhjNL": {
+      "type": "custom_video_showcase",
+      "name": "Video ShowCase",
+      "settings": {
+        "header_title": "Les expériences réelles avec Doumdoum",
+        "follow_link": "",
+        "header_link": "Suivez-nous"
+      }
+    },
+    "custom_icone_with_text_inLJkX": {
+      "type": "custom_icone_with_text",
       "blocks": {
-        "text_cbcgyb": {
-          "type": "text",
-          "name": "t:names.header",
+        "icons_and_text_y9NQkA": {
+          "type": "icons_and_text",
           "settings": {
-            "text": "<h3>You may also like </h3>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h4",
-            "font": "var(--font-primary--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "list_icon": "shopify://shop_images/teste.png",
+            "list_text": "Testé en laboratoire"
+          }
         },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
+        "icons_and_text_pFzeB7": {
+          "type": "icons_and_text",
           "settings": {
-            "product_card_gap": 8,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 8,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_DNizbJ": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_M7MJkb": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_gLWgA6": {
-              "type": "price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_DNizbJ",
-            "product_title_M7MJkb",
-            "price_gLWgA6"
-          ]
+            "list_icon": "shopify://shop_images/Avocat.png",
+            "list_text": "Formules naturelles et sûres"
+          }
+        },
+        "icons_and_text_YYGXec": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/bf89d1a964785b1b8dd97800402fb708832168ea.png",
+            "list_text": "Qualité optimale pour la peau bébé"
+          }
+        },
+        "icons_and_text_JQfg9M": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/Fabrique_en_algerie.png",
+            "list_text": "Fabriqué en Algérie"
+          }
         }
       },
       "block_order": [
-        "text_cbcgyb"
+        "icons_and_text_y9NQkA",
+        "icons_and_text_pFzeB7",
+        "icons_and_text_YYGXec",
+        "icons_and_text_JQfg9M"
       ],
-      "name": "t:names.product_recommendations",
+      "name": "Custom Text et icones",
       "settings": {
-        "product": "{{ closest.product }}",
-        "recommendation_type": "related",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 4,
-        "columns": 4,
-        "mobile_columns": "2",
-        "columns_gap": 12,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "gap": 28,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "icons_with_text_title": "Doumdoum, le choix des parents exigeants"
       }
+    },
+    "custom_faq_YMYNXW": {
+      "type": "custom_FAQ",
+      "blocks": {
+        "custom_faq_8nRW6c": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Est-ce que ce produit convient si mon bébé a de l’eczéma ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont formulés pour les peaux sensibles et fragiles. Grace a des ingrédients doux et sans substances agressives, ils peuvent être utilisés en cas de peau sujette a l'eczéma. En cas de poussés importante, il est toujours recommandé de demander l'avis d'un professionnel de santé"
+          }
+        },
+        "custom_faq_Cwn676": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Que se passe-t-il si le gel lavant entre dans les yeux de bébé ?",
+            "faq_res_text": "Le liniment s'utilise en prévention, dés le change, pour nettoyer la peau et créer un barrière protectrices afin d'éviter les irritations"
+          }
+        },
+        "custom_faq_knBawY": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Quelle est la différence entre le liniment et la crème de change ?",
+            "faq_res_text": "Les produits Doumdoum peuvent être utilisés dés l'âge de 6 mois, ils sont conçue pour être doux et sûre pour la peau des enfants"
+          }
+        },
+        "custom_faq_DnBBKQ": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "À partir de quel âge peut-on utiliser ces produits ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont disponible dans les pharmacie et les magasins"
+          }
+        },
+        "custom_faq_PVGLf7": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Les produits sont-ils disponibles en pharmacie ?",
+            "faq_res_text": "Oui, tous les produits Doumdoum sont spécialement formulés pour les peaux sensibles : sans parfums agressif, avec des ingrédients doux et testés dermatologiquement"
+          }
+        },
+        "custom_faq_KyxeEN": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Le produit est-il algérien ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont conçus fabriqués en Algérie spécialement pensés pour répondre aux besoins des mamans et bébés algériens"
+          }
+        },
+        "custom_faq_H9DWdj": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Peut-on utiliser ces produits dès la naissance ?",
+            "faq_res_text": "Les produits Doumdoum sont adaptés dés le plus jeune âges, mais pour les nouveau-nés, il est toujours préférable de demander conseils a un professionnel de santé, surtout en cas de peau très sensibles ou de situation particulière"
+          }
+        }
+      },
+      "block_order": [
+        "custom_faq_8nRW6c",
+        "custom_faq_Cwn676",
+        "custom_faq_knBawY",
+        "custom_faq_DnBBKQ",
+        "custom_faq_PVGLf7",
+        "custom_faq_KyxeEN",
+        "custom_faq_H9DWdj"
+      ],
+      "name": "Custom FAQ",
+      "settings": {
+        "faq_title": "Questions fréquentes des parents"
+      }
+    },
+    "custom_product_devider_ry4t6w": {
+      "type": "custom_product-devider",
+      "name": "Custom Devider - Product",
+      "settings": {}
     }
   },
   "order": [
+    "custom_product_card_K3t6yT",
+    "custom_devider_79RKQL",
+    "custom_product_ingredient_QCVzcp",
     "main",
-    "product_recommendations_qggXJq"
+    "custom_product_usage_9qJdM8",
+    "custom_product_compare_table_EFbkg8",
+    "custom_video_showcase_7fhjNL",
+    "custom_icone_with_text_inLJkX",
+    "custom_product_devider_ry4t6w",
+    "custom_faq_YMYNXW"
   ]
 }
