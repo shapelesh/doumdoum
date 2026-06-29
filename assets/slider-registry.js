@@ -8,7 +8,8 @@ export const sliderRegistry = {
     rewind: false,
     animationTimingFunc: "cubic-bezier(0,0,1,1)",
     breakpoints: {
-      768: { perView: 2 },
+      992: { perView: 2 },
+      768: { perView: 1.5 },
       480: { perView: 1.2 },
     },
   },
