@@ -296,6 +296,13 @@
       "settings": {
         "usage_title": "Comment prendre soin de votre bébé"
       }
+    },
+    "custom_product_compare_table_EFbkg8": {
+      "type": "custom_product-compare-table",
+      "name": "Comparaison de produits",
+      "settings": {
+        "table_title": "Autres VS Doumdoum"
+      }
     }
   },
   "order": [
@@ -303,6 +310,7 @@
     "custom_devider_79RKQL",
     "custom_product_ingredient_QCVzcp",
     "main",
-    "custom_product_usage_9qJdM8"
+    "custom_product_usage_9qJdM8",
+    "custom_product_compare_table_EFbkg8"
   ]
 }
