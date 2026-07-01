@@ -38,10 +38,22 @@ export const sliderRegistry = {
   video_carousel: {
     type: "slider",
     perView: 5,
+    bound: true,
     breakpoints: {
+      1064: {
+        perView: 4,
+      },
+      768: {
+        perView: 3,
+      },
       600: {
         perView: 1.8,
       },
     },
+  },
+  icons: {
+    type: "slider",
+    perView: 4,
+    bound: true,
   },
 };

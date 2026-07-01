@@ -46,10 +46,7 @@
           }
         }
       },
-      "block_order": [
-        "text_WtWDh3",
-        "text_JfByCn"
-      ],
+      "block_order": ["text_WtWDh3", "text_JfByCn"],
       "name": "Scrolling Text",
       "settings": {}
     },
@@ -206,7 +203,7 @@
       }
     },
     "custom_icone_with_text_e6xBkF": {
-      "type": "custom_icone_with_text",
+      "type": "doumdoum__icons-with-text",
       "blocks": {
         "icons_and_text_bYKxQC": {
           "type": "icons_and_text",
@@ -249,7 +246,7 @@
       }
     },
     "custom_picture_hy3KCi": {
-      "type": "custom_picture",
+      "type": "doumdoum__custom-picture",
       "name": "Custom Picture Bg",
       "settings": {
         "img_custom_sec": "shopify://shop_images/site-creme-solaire_8f5075a0-e5d1-49b9-81e8-0ce3514d9fb8.webp",
@@ -257,7 +254,7 @@
       }
     },
     "custom_devider_7e79HN": {
-      "type": "custom_devider",
+      "type": "doumdoum__custom-devider",
       "name": "Custom Devider",
       "settings": {
         "color": "bleu"

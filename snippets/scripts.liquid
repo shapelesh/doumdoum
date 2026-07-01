@@ -35,7 +35,8 @@
       "@theme/glide-esm": "{{ 'glide.esm.js' | asset_url }}",
       "@theme/glide": {{ 'glide.js' | asset_url | json }},
       "@theme/slider-registry": {{ 'slider-registry.js' | asset_url | json }},
-      "@theme/slider-init": {{ 'slider-init.js' | asset_url | json }}
+      "@theme/slider-init": {{ 'slider-init.js' | asset_url | json }},
+      "@theme/custom-cart-drawer": {{ "custom-cart-drawer.js" | asset_url | json }}
     }
   }
 </script>
@@ -270,6 +271,12 @@
 ></script>
 <script
   src="{{ 'slider-init.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+<script
+  src="{{ 'custom-cart-drawer.js' | asset_url }}"
   type="module"
   fetchpriority="low"
 ></script>

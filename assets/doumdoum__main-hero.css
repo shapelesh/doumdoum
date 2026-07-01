@@ -1,6 +1,8 @@
 .doumdoum__main-hero {
   /* max-width: 1280px; */
   /* height: calc(100vh - 76px); */
+  position: relative;
+  background-color: #fafafa;
 }
 .doumdoum__main-hero-wrapper {
   display: flex;
@@ -240,6 +242,10 @@
 @media screen and (max-width: 900px) {
   .doumdoum__main-hero-pink-rectangle .desktop {
     display: none;
+  }
+  .doumdoum__main-hero-pink-rectangle {
+    position: sticky;
+    bottom: 0;
   }
   .doumdoum__main-hero-pink-rectangle .mobile {
     display: flex;

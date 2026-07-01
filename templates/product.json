@@ -10,19 +10,19 @@
 {
   "sections": {
     "custom_product_card_K3t6yT": {
-      "type": "custom_product-card",
+      "type": "doumdoum__product-section",
       "name": "Carte Produit Détaillée",
       "settings": {}
     },
     "custom_devider_79RKQL": {
-      "type": "custom_devider",
+      "type": "doumdoum__custom-devider",
       "name": "Custom Devider",
       "settings": {
         "color": "bleu"
       }
     },
     "custom_product_ingredient_QCVzcp": {
-      "type": "custom_product-ingredient",
+      "type": "doumdoum__product-ingredients",
       "name": "Ingrédients Produit",
       "settings": {
         "product_ingredient_title": "Nos Ingrédients"
@@ -176,10 +176,7 @@
                   "blocks": {}
                 }
               },
-              "block_order": [
-                "text_xrnftG",
-                "price_tVjtKg"
-              ]
+              "block_order": ["text_xrnftG", "price_tVjtKg"]
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -314,7 +311,7 @@
       }
     },
     "custom_icone_with_text_inLJkX": {
-      "type": "custom_icone_with_text",
+      "type": "doumdoum__icons-with-text",
       "blocks": {
         "icons_and_text_y9NQkA": {
           "type": "icons_and_text",

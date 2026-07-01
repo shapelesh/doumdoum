@@ -1,10 +1,6 @@
 {{ 'doumdoum__header.css' | asset_url | stylesheet_tag }}
 
-{%- capture canonical_url_string -%}{{ content_for_header }}{%- endcapture -%}
-{%- assign page_url_parts = canonical_url_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&' -%}
-{%- assign current_url = page_url_parts -%}
-
-<section class="doumdoum__header">
+<section class="doumdoum__header page-width">
   <div class="doumdoum__header-left">
     <div class="doumdoum__header-left-desktop">
       <span class="header-link {% if request.page_type == 'index' %}active{% endif %}">

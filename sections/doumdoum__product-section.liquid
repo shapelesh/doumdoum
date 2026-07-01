@@ -1,0 +1,272 @@
+{{ "doumdoum__product-section.css" | asset_url | stylesheet_tag }}
+
+<section class="doumdoum__custom-product-section section--{{ section.id }} {{ product.title }}--{{ section.id }}">
+  <div class="doumdoum__custom-product-section_container-grid">
+    <div class="container-grid__images">
+      <div class="product-gallery">
+        <div class="product-main-image">
+          <img
+            id="MainImage-{{ section.id }}"
+            src="{{ product.featured_media | img_url: '800x' }}"
+            alt="{{ product.featured_media.alt | escape }}"
+            width="100%"
+            height="100%"
+            loading="lazy">
+        </div>
+        <div class="product-thumbnails-container">
+          <div class="product-thumbnails-slider" id="ThumbSlider-{{ section.id }}">
+            {% for media in product.media %}
+              <div class="thumb-item {% if forloop.first %}active{% endif %}" onclick="updateMainImage('{{ media | img_url: '800x' }}', this)">
+                <img
+                  src="{{ media | img_url: '150x150', crop: 'center' }}"
+                  alt="{{ media.alt | escape }}"
+                  width="100%"
+                  height="100%"
+                  loading="lazy">
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-grid__card-info card-info">
+      <div class="card-info_title-price">
+        <div class="card-info_reviews"></div>
+        <h1>{{ product.title }}</h1>
+        <span>{{ product.price | money }}</span>
+      </div>
+      <div class="card-info_benifits-list">
+        {% render 'meta_benefits'
+          , benefits: product.metafields.custom.product_benfits %}
+      </div>
+      <div class="card-info_quantity-container">
+        <input
+          type="hidden"
+          name="quantity"
+          id="Quantity-{{ section.id }}"
+          value="1">
+
+        {% for i in (1..3) %}
+          <button
+            type="button"
+            class="qty-btn {% if i == 1 %}active{% endif %} static-qty-btn"
+            id="qty-btn-{{ i }}"
+            onclick="selectQuantity({{ i }}, this)">
+            {{ i }}x
+          </button>
+        {% endfor %}
+
+        <div class="card-info_custom-select-wrapper" id="custom-select-wrapper">
+          <button
+            type="button"
+            class="qty-btn"
+            id="custom-qty-trigger"
+            onclick="toggleDropdown()">
+            <span id="custom-qty-btn-text"></span>
+            <svg
+              class="chevron-icon"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+
+          <div class="qty-dropdown-list" id="qty-dropdown">
+            {% for i in (4..9) %}
+              <div class="qty-dropdown-item" onclick="selectQuantity({{ i }}, null, true)">{{ i }}x</div>
+            {% endfor %}
+            <div class="qty-dropdown-item" onclick="showManualInput()">10+</div>
+          </div>
+
+          <input
+            type="number"
+            id="manual-qty-input"
+            class="qty-btn manual-input"
+            style="display: none;"
+            min="10"
+            placeholder="Nb..."
+            oninput="updateManualQuantity(this.value)">
+        </div>
+      </div>
+      <div class="card-info_tabs-container">
+
+        <div class="tabs-header">
+          {%- assign details_val = product.metafields.custom.details -%}
+          {%- assign usage_val = product.metafields.custom.utilisations -%}
+
+          <button
+            type="button"
+            class="tab-btn selected"
+            data-tab="details"
+            data-content="{{ details_val | escape }}">
+            Détails
+          </button>
+
+          <button
+            type="button"
+            class="tab-btn"
+            data-tab="usage"
+            data-content="{{ usage_val | escape }}">
+            Utilisations
+          </button>
+
+          <button
+            type="button"
+            class="tab-btn"
+            data-tab="ingredients"
+            data-content="">
+            Ingrédients
+          </button>
+        </div>
+        <div class="tab-content-display" id="TabContentDisplay">
+          {%- if details_val != blank -%}
+            {{ details_val | escape | replace: '\n', '<br>' }}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  function handleActiveState(element, selector) {
+    if (element && element.classList.contains('active')) {
+      return;
+    }
+    document.querySelectorAll(selector).forEach(el => el.classList.remove('active'));
+  
+    if (element) {
+      element.classList.add('active');
+    }
+  }
+  
+  function selectQuantity(val, element = null, fromDropdown = false) {
+    const sectionId = "{{ section.id }}";
+    const hiddenInput = document.getElementById('Quantity-' + sectionId);
+    const triggerBtn = document.getElementById('custom-qty-trigger');
+    const manualInput = document.getElementById('manual-qty-input');
+    const btnText = document.getElementById('custom-qty-btn-text');
+  
+    hiddenInput.value = val;
+  
+    if (fromDropdown) {
+      handleActiveState(triggerBtn, '.qty-btn, .manual-input');
+      btnText.innerText = val + 'x';      
+      manualInput.style.display = 'none';
+      triggerBtn.style.display = 'flex';
+    } 
+    else if (element) {
+      handleActiveState(element, '.qty-btn, .manual-input');
+  
+      btnText.innerText = '4x';           
+      manualInput.style.display = 'none';
+      triggerBtn.style.display = 'flex';
+    }
+  
+    closeDropdown();
+  }
+  
+  function showManualInput() {
+    const triggerBtn = document.getElementById('custom-qty-trigger');
+    const manualInput = document.getElementById('manual-qty-input');
+    const sectionId = "{{ section.id }}";
+    const hiddenInput = document.getElementById('Quantity-' + sectionId);
+  
+    triggerBtn.style.display = 'none';
+    manualInput.style.display = 'block';
+  
+    handleActiveState(manualInput, '.static-qty-btn, .manual-input');
+    
+    if (!manualInput.classList.contains('active')) {
+        manualInput.value = 10;
+        hiddenInput.value = 10;
+    }
+    
+    manualInput.focus();
+    closeDropdown();
+  }
+  
+  function updateManualQuantity(val) {
+    const sectionId = "{{ section.id }}";
+    document.getElementById('Quantity-' + sectionId).value = val;
+  }
+  
+  function toggleDropdown() {
+    document.getElementById('qty-dropdown').classList.toggle('show');
+    document.getElementById('custom-select-wrapper').classList.toggle('open');
+  }
+  
+  function closeDropdown() {
+    document.getElementById('qty-dropdown').classList.remove('show');
+    document.getElementById('custom-select-wrapper').classList.remove('open');
+  }
+  
+  window.addEventListener('click', function(event) {
+    const wrapper = document.getElementById('custom-select-wrapper');
+    if (wrapper && !wrapper.contains(event.target)) {
+      closeDropdown();
+    }
+  });
+</script>
+{% comment %} tab-btns {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.tab-btn');
+    const displayArea = document.getElementById('TabContentDisplay');
+  
+    buttons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        buttons.forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+  
+        const content = this.getAttribute('data-content');
+  
+        const formattedContent = content
+        .replace(/&quot;/g, '"') 
+        .replace(/\n/g, '<br>'); 
+  
+        displayArea.innerHTML = formattedContent; 
+        
+        displayArea.style.opacity = 0;
+        setTimeout(() => {
+          displayArea.style.transition = 'opacity 0.3s ease';
+          displayArea.style.opacity = 1;
+        }, 50);
+      });
+    });
+  });
+</script>
+{% comment %} gallery-image {% endcomment %}
+<script>
+  function updateMainImage(imgSrc, thumbElement) {
+  const mainImg = document.getElementById('MainImage-{{ section.id }}');
+  
+  mainImg.style.opacity = '0';
+  
+  setTimeout(() => {
+    mainImg.src = imgSrc;
+    mainImg.style.opacity = '1';
+  }, 200);
+  
+  const thumbnails = document.querySelectorAll('.thumb-item');
+  thumbnails.forEach(thumb => thumb.classList.remove('active'));
+  thumbElement.classList.add('active');
+  }
+</script>
+<style></style>
+{% schema %}
+  {
+    "name": "Product Section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Product Section"
+      }
+    ]
+  }
+{% endschema %}

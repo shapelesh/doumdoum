@@ -1,0 +1,44 @@
+{{ "doumdoum__custom-picture.css" | asset_url | stylesheet_tag }}
+
+<section class="doumdoum__custom-picture page-width section--{{ section.id }}">
+  <img
+    class="desktop_version"
+    src="{{ section.settings.img_custom_sec | image_url: width:section.settings.img_custom_sec.width }}"
+    width="{{ section.settings.img_custom_sec.width }}"
+    height="{{ section.settings.img_custom_sec.height }}"
+    alt="{{ section.settings.img_custom_sec.alt }}"
+    loading="lazy">
+
+  <img
+    class="phone_version"
+    src="{{ section.settings.img_custom_sec_phone |  image_url: width:section.settings.img_custom_sec.width }}"
+    width="{{ section.settings.img_custom_sec_phone.width }}"
+    height="{{ section.settings.img_custom_sec_phone.height }}"
+    alt="{{ section.settings.img_custom_sec_phone.alt }}"
+    loading="lazy">
+</section>
+<style></style>
+
+{% schema %}
+  {
+    "name": "Custom Picture",
+    "class": "doumdoum__custom-picture-wrapper",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "img_custom_sec",
+        "label": "Custom bannière d'image"
+      }, {
+        "type": "image_picker",
+        "id": "img_custom_sec_phone",
+        "label": "Custom bannière d'image pour mobile"
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Custom Picture"
+      }
+    ]
+  }
+{% endschema %}

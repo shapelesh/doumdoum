@@ -2,7 +2,6 @@
   {% if block.settings.video_ugc != blank %}
     {% assign video_obj = block.settings.video_ugc %}
 
-
     {% if video_obj.sources %}
       {% assign mp4_source = video_obj.sources | where: 'format', 'mp4' | first %}
       {% assign video_src = mp4_source.url | default: video_obj.sources.first.url %}

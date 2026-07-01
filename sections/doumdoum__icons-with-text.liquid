@@ -1,0 +1,57 @@
+{{ "doumdoum__icons-with-text.css" | asset_url | stylesheet_tag }}
+<section class="doumdoum__icons-with-text page-width section--{{ section.id }}">
+  <div class="doumdoum_icons-with-text_container icons-with-text_container">
+    <h3>{{ section.settings.icons_with_text_title }}</h3>
+    <div class="icons-with-text_container-list glide" data-slider="icons">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          {% for block in section.blocks %}
+            {% if block.type == 'icons_and_text' %}
+              {% render 'custom_icons-and-text'
+                , block: block %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <style></style>
+
+</section>
+
+{% schema %}
+  {
+    "name": "Custom Text et icones",
+    "settings": [
+      {
+        "type": "text",
+        "id": "icons_with_text_title",
+        "label": "Titre",
+        "default": "Doumdoum, le choix des parents exigeants"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icons_and_text",
+        "name": "Icones et text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "list_icon",
+            "label": "Icone"
+          }, {
+            "type": "text",
+            "id": "list_text",
+            "label": "text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Text et icones"
+      }
+    ]
+  }
+{% endschema %}

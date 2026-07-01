@@ -1,7 +1,7 @@
 import { Component } from "@theme/component";
 import { CartAddEvent, CartUpdateEvent } from "@theme/events";
 
-class CustomCartDrawer extends Component {
+export class CustomCartDrawer extends Component {
   constructor() {
     super();
     this._handleCartUpdate = this._handleCartUpdate.bind(this);

@@ -86,7 +86,13 @@
     </div>
 
   </div>
-  <div class="doumdoum-icon doumdoum-icon-bot" style="--bear-icon: url('{{ icon_name }}') ; --rotation-deg: {{  rotation_deg_bot }};--icon-width:{{ width }}; --icon-height:{{ height }};"></div>
+  <div class="doumdoum__product-table-left-icon">
+    <img
+      src="{{ "doumdoum-pink.svg" | asset_url }}"
+      alt="Doumdoum Icon"
+      width="133"
+      height="128">
+  </div>
 </section>
 <style>
   .doumdoum__custom-product_table {
@@ -104,17 +110,30 @@
     position: absolute;
     width: 100%;
   }
-  .doumdoum-icon::after {
-    content: "";
+
+  .doumdoum__product-table-left-icon {
+    max-width: 133px;
+    max-height: 128px;
     position: absolute;
-    width: var(--icon-width);
-    height: var(--icon-height);
-    background-image: var(--bear-icon);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+    left: 0;
+    bottom: 14px;
   }
+
+
+  /*
+
+   .doumdoum-icon::after { 
+   content: ""; 
+   position: absolute; 
+   width: var(--icon-width); 
+   height: var(--icon-height); 
+   background-image: var(--bear-icon); 
+   background-position: center; 
+   background-repeat: no-repeat; 
+   background-size: cover; 
+   overflow: hidden; 
+   } 
+*/
   .doumdoum-icon-top::after {
     transform: rotate(var(--rotation-deg, 0deg));
     top: -30px;
@@ -124,12 +143,6 @@
     transform: rotate(var(--rotation-deg, 0deg));
     bottom: 0;
     left: 0;
-  }
-  .doumdoum-icon-top {
-    top: 0;
-  }
-  .doumdoum-icon-bot {
-    bottom: 0;
   }
   .product_table-title {
     font-family: Fredoka;

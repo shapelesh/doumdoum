@@ -1,7 +1,7 @@
 {% assign product_ingredients = product.metafields.custom.ingredients.value %}
 
-<section class="doumdoum__custom-product-ingredient section-{{ section.id }} ingredient-of-{{ product.title }}">
-  <div class="doumdoum__custom-product-ingredient_title product-ingredient_title">
+<section class="doumdoum__product-ingredients section-{{ section.id }} ingredient-of-{{ product.title }}">
+  <div class="doumdoum__product-ingredients_title product-ingredient_title">
     <h2>{{ section.settings.product_ingredient_title }}</h2>
   </div>
   {%- liquid
@@ -21,7 +21,7 @@
     <div class="right-sun"></div>
 
   </div>
-  <div class="doumdoum__custom-product-ingredient_container product-ingredient_container">
+  <div class="doumdoum__product-ingredients_container product-ingredient_container">
 
     {%- if product_ingredients -%}
       {%- for ingredient in product_ingredients -%}
@@ -35,7 +35,7 @@
   </div>
 </section>
 <style>
-  .doumdoum__custom-product-ingredient {
+  .doumdoum__product-ingredients {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -43,6 +43,7 @@
     align-items: center;
     gap: 24px;
     padding: 57px;
+    background-color: #fafafa;
   }
   .product-ingredient_container--sun-svg {
     position: absolute;
@@ -224,7 +225,7 @@
     .ingredient-card__content h3 {
       font-size: 18px;
     }
-    .doumdoum__custom-product-ingredient {
+    .doumdoum__product-ingredients {
       padding: 57px 40px;
     }
     .product-ingredient_container--sun-svg {
@@ -250,7 +251,7 @@
     .ingredient-card__content h3 {
       font-size: 16px;
     }
-    .doumdoum__custom-product-ingredient {
+    .doumdoum__product-ingredients {
       padding: 57px 0 57px 16px;
       overflow: hidden;
     }
@@ -264,7 +265,7 @@
 </style>
 {% schema %}
   {
-    "name": "Ingrédients Produit",
+    "name": "Product ingredients",
     "settings": [
       {
         "type": "text",
@@ -275,7 +276,7 @@
     ],
     "presets": [
       {
-        "name": "Ingrédients Produit"
+        "name": "Product ingredients"
       }
     ]
   }

@@ -1,0 +1,329 @@
+.doumdoum__video-showcase {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 100px 107px;
+  background-color: #fafafa;
+}
+.header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 14.5px 16px;
+}
+.header-container h3 {
+  font-family: Fredoka;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 26px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: -0.75%;
+  text-align: center;
+  vertical-align: middle;
+  color: #252b37;
+  margin: 0;
+}
+.header-container a {
+  display: flex;
+  font-family: Geist;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  border-radius: 16px;
+  padding: 8.5px 16px;
+  border: none;
+  outline: 1px solid #e9eaeb;
+  color: #f570b7;
+}
+.doumdoum__video-showcase_carousels-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.carousel-vids {
+  width: max-content;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 16px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel-vids::-webkit-scrollbar {
+  display: none;
+}
+.carousel-vids li {
+  list-style: none;
+  margin: 0;
+  flex-shrink: 0;
+}
+.video-ugc {
+  width: 200px;
+  height: 360px;
+}
+
+@media screen and (max-width: 1064px) {
+  .doumdoum__video-showcase {
+    padding: 100px 60px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .doumdoum__video-showcase {
+    padding: 100px 32px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .doumdoum__video-showcase {
+    padding: 100px 16px;
+  }
+  .header-container h3 {
+    text-align: left;
+  }
+  .header-container a {
+    text-wrap: nowrap;
+    align-self: center;
+  }
+}
+@media screen and (max-width: 620px) {
+  .doumdoum__video-showcase {
+    padding: 58px 16px 86px 16px;
+  }
+  .header-container h3 {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .doumdoum__video-showcase {
+    padding: 86px 16px;
+  }
+  .header-container {
+    padding: 0;
+  }
+  .header-container h3 {
+    font-size: 17px;
+  }
+  .header-container a {
+    font-size: 15px;
+  }
+  .doumdoum__video-showcase_carousels-container,
+  .carousel-vids {
+    padding: 0;
+  }
+}
+@media (min-width: 991px) {
+  body.video-component-active.cart-drawer--open-no-backdrop
+    .dialog-modal[open]::backdrop,
+  body.video-component-active cart-drawer-component[open]::backdrop {
+    opacity: 0 !important;
+    background: transparent !important;
+    animation: none !important;
+    pointer-events: none !important;
+  }
+  body.video-component-active .cart-drawer__dialog .dialog-modal[open] {
+    max-width: 400px;
+    justify-self: end;
+    margin: 0;
+  }
+}
+
+doumdoum-video-player.ddv-trigger {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 9/16;
+  cursor: pointer;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+}
+
+.ddv-main-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ddv-cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+doumdoum-video-player.ddv-trigger:hover .ddv-cover-image {
+  transform: scale(1.05);
+}
+
+.ddv-hover-video-el {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.ddv-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ddv-play-icon {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid #f570b7;
+  margin-left: 4px;
+}
+
+doumdoum-video-overlay.ddv-overlay-root {
+  display: contents;
+}
+
+.ddv-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.ddv-overlay.active {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ddv-overlay-content {
+  display: grid;
+  grid-template-columns: 106.21px 1fr;
+  width: calc(100% - 400px);
+  height: 100%;
+  gap: 20px;
+  padding: 0;
+}
+
+.ddv-player-col {
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 450px;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+#ddv-video-dest {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ddv-vid-button {
+  position: absolute;
+  top: 16px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.ddv-vid-button:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.ddv-close-overlay {
+  left: 30px;
+}
+
+.ddv-mute-vid {
+  right: 30px;
+}
+
+.ddv-thumbnails-col {
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.ddv-thumb {
+  width: 100%;
+  height: 86.21px;
+  aspect-ratio: 9/16;
+  object-fit: cover;
+  border-radius: 10.34px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  display: block;
+}
+
+.ddv-thumb.active {
+  opacity: 1;
+  border-color: #f570b7;
+}
+
+.ddv-cart-col {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+@media (max-width: 990px) {
+  .ddv-overlay-content {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ddv-overlay-content {
+    grid-template-columns: 1fr;
+  }
+  .ddv-thumbnails-col {
+    display: none;
+  }
+}
