@@ -42,6 +42,12 @@
   width: 126px;
   height: 126px;
 }
+.list_icon-and-text .text {
+  max-width: 146px;
+}
+.list_icon-and-text .text h4 {
+  text-wrap: wrap;
+}
 .list_icon-and-text .text h4 {
   font-family: Nunito;
   font-weight: 500;
@@ -76,6 +82,12 @@
   }
   .container-list::-webkit-scrollbar {
     display: none;
+  }
+  .list_icon-and-text .text {
+    max-width: 126px;
+  }
+  .list_icon-and-text .text h4 {
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 450px) {

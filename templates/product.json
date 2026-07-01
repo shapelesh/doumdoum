@@ -15,7 +15,7 @@
       "settings": {}
     },
     "custom_devider_79RKQL": {
-      "type": "doumdoum__custom-devider",
+      "type": "custom_devider",
       "name": "Custom Devider",
       "settings": {
         "color": "bleu"
@@ -311,7 +311,7 @@
       }
     },
     "custom_icone_with_text_inLJkX": {
-      "type": "doumdoum__icons-with-text",
+      "type": "custom_icone_with_text",
       "blocks": {
         "icons_and_text_y9NQkA": {
           "type": "icons_and_text",

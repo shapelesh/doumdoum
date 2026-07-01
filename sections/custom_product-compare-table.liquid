@@ -18,7 +18,7 @@
   endif
 %}
 
-<section class="doumdoum__custom-product_table section--{{ section.id }}" style="--custom-bg-color : {{ bg_color }}">
+<section class="doumdoum__custom-product_table page-width section--{{ section.id }}" style="--custom-bg-color : {{ bg_color }}">
   <div class="doumdoum-icon doumdoum-icon-top" style="--bear-icon: url('{{ icon_name }}'); --rotation-deg:{{ rotation_deg_top }}; --icon-width:{{ width }}; --icon-height:{{ height }};"></div>
   <h2 class="product_table-title">{{ section.settings.table_title }}</h2>
 
@@ -102,7 +102,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 20px 316.5px;
+    padding: 20px 0;
     background-color: var(--custom-bg-color);
     z-index: -2;
   }
@@ -163,6 +163,7 @@
     row-gap: 0;
     width: 100%;
     align-items: center;
+    max-width: 647px;
   }
   .product_table--grid_col {
     display: flex;

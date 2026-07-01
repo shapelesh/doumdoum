@@ -41,3 +41,9 @@ function setupMobileOnlySlider(el, config, breakpoint) {
   sync(mql);
   mql.addEventListener("change", sync);
 }
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSliders);
+} else {
+  initSliders();
+}

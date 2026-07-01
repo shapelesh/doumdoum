@@ -53,7 +53,7 @@ export const sliderRegistry = {
   },
   icons: {
     type: "slider",
-    perView: 4,
+    perView: 2.5,
     bound: true,
   },
 };

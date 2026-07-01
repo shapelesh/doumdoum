@@ -2,7 +2,10 @@
 <section class="doumdoum__icons-with-text page-width section--{{ section.id }}">
   <div class="doumdoum_icons-with-text_container icons-with-text_container">
     <h3>{{ section.settings.icons_with_text_title }}</h3>
-    <div class="icons-with-text_container-list glide" data-slider="icons">
+    <div
+      class="icons-with-text_container-list glide"
+      data-slider="icons"
+      data-mobile-slider="600">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           {% for block in section.blocks %}

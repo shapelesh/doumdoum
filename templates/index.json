@@ -59,15 +59,15 @@
         "first_product": "coffret-naissance",
         "first_product_thumbnail": "shopify://shop_images/2eace863e8ec031917b3745987799bcb4f1de5c2.png",
         "first_background_color": "radial-gradient(rgba(195, 255, 222, 1), rgba(255, 255, 255, 1) 100%)",
-        "product_bg": "shopify://shop_images/png.png",
+        "product_bg": "shopify://shop_images/green.png",
         "second_product": "pack-soins-complets",
         "second_product_thumbnail": "shopify://shop_images/880e0f7dda7a0ebde45fecea8e54798d93ec9da4.png",
         "second_background_color": "linear-gradient(57deg, rgba(255, 196, 235, 1), rgba(255, 255, 255, 1) 100%)",
-        "product_bg_2": "shopify://shop_images/gradient-bg2.png",
+        "product_bg_2": "shopify://shop_images/pink_52b2e6ef-2ba8-4cd8-8c34-bc30046dcf99.png",
         "third_product": "pack-ma-premiere-routine-dhygiene",
         "third_product_thumbnail": "shopify://shop_images/b43e868ac3820ebc2e46871c6fe452718e0cbbd6.png",
         "third_background_color": "radial-gradient(rgba(190, 233, 255, 1), rgba(255, 255, 255, 1) 100%)",
-        "product_bg_3": "shopify://shop_images/gradient-bg3.png"
+        "product_bg_3": "shopify://shop_images/blue.png"
       }
     },
     "doumdoum_nos_produits_BqTE9R": {
@@ -147,53 +147,59 @@
         "top_image": "shopify://shop_images/stories.png"
       }
     },
-    "custom_video_showcase_RKmzmT": {
-      "type": "custom_video_showcase",
+    "doumdoum_video_showcase_7N8pkC": {
+      "type": "doumdoum__video-showcase",
       "blocks": {
-        "videos_TAATaJ": {
+        "videos_hYP8ew": {
           "type": "videos",
           "settings": {
-            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel-1- .mp4"
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel-1- .mp4",
+            "product_handle": ""
           }
         },
-        "videos_JcWMib": {
+        "videos_3VRqP3": {
           "type": "videos",
           "settings": {
-            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 2.mp4"
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 2.mp4",
+            "product_handle": ""
           }
         },
-        "videos_6rwBKB": {
+        "videos_Q7f4wQ": {
           "type": "videos",
           "settings": {
-            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 3.mp4"
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 3.mp4",
+            "product_handle": ""
           }
         },
-        "videos_9mf4cW": {
+        "videos_kWKCAm": {
           "type": "videos",
           "settings": {
-            "video_ugc": "shopify://files/videos/_ونت_دوشي_لولدك_ولا_بنتك_فالشتاء_و_لا_تخافي_؟_أنا_ميرو_لحق_شهر_ونوصف.mp4"
+            "video_ugc": "shopify://files/videos/showering-product.mp4",
+            "product_handle": ""
           }
         },
-        "videos_TFwNUw": {
+        "videos_FjyTPC": {
           "type": "videos",
           "settings": {
-            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 5.mp4"
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 5.mp4",
+            "product_handle": ""
           }
         },
-        "videos_8EQXN8": {
+        "videos_KFpjkC": {
           "type": "videos",
           "settings": {
-            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 7.mp4"
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 7.mp4",
+            "product_handle": ""
           }
         }
       },
       "block_order": [
-        "videos_TAATaJ",
-        "videos_JcWMib",
-        "videos_6rwBKB",
-        "videos_9mf4cW",
-        "videos_TFwNUw",
-        "videos_8EQXN8"
+        "videos_hYP8ew",
+        "videos_3VRqP3",
+        "videos_Q7f4wQ",
+        "videos_kWKCAm",
+        "videos_FjyTPC",
+        "videos_KFpjkC"
       ],
       "name": "Video ShowCase",
       "settings": {
@@ -202,31 +208,31 @@
         "header_link": "Suivez-nous"
       }
     },
-    "custom_icone_with_text_e6xBkF": {
+    "doumdoum_icons_with_text_hbpHbF": {
       "type": "doumdoum__icons-with-text",
       "blocks": {
-        "icons_and_text_bYKxQC": {
+        "icons_and_text_mkGMeG": {
           "type": "icons_and_text",
           "settings": {
             "list_icon": "shopify://shop_images/teste.png",
             "list_text": "Testé en laboratoire"
           }
         },
-        "icons_and_text_ibNw7H": {
+        "icons_and_text_aqXJaK": {
           "type": "icons_and_text",
           "settings": {
             "list_icon": "shopify://shop_images/Avocat.png",
             "list_text": "Formules naturelles et sûres"
           }
         },
-        "icons_and_text_AMR8Gm": {
+        "icons_and_text_e8Rw6J": {
           "type": "icons_and_text",
           "settings": {
             "list_icon": "shopify://shop_images/bear.png",
             "list_text": "Qualité optimale pour la peau bébé"
           }
         },
-        "icons_and_text_KNwzPU": {
+        "icons_and_text_rMCzTE": {
           "type": "icons_and_text",
           "settings": {
             "list_icon": "shopify://shop_images/Fabrique_en_algerie.png",
@@ -235,25 +241,25 @@
         }
       },
       "block_order": [
-        "icons_and_text_bYKxQC",
-        "icons_and_text_ibNw7H",
-        "icons_and_text_AMR8Gm",
-        "icons_and_text_KNwzPU"
+        "icons_and_text_mkGMeG",
+        "icons_and_text_aqXJaK",
+        "icons_and_text_e8Rw6J",
+        "icons_and_text_rMCzTE"
       ],
       "name": "Custom Text et icones",
       "settings": {
         "icons_with_text_title": "Doumdoum, le choix des parents exigeants"
       }
     },
-    "custom_picture_hy3KCi": {
+    "doumdoum_custom_picture_W4P8WG": {
       "type": "doumdoum__custom-picture",
-      "name": "Custom Picture Bg",
+      "name": "Custom Picture",
       "settings": {
         "img_custom_sec": "shopify://shop_images/site-creme-solaire_8f5075a0-e5d1-49b9-81e8-0ce3514d9fb8.webp",
         "img_custom_sec_phone": "shopify://shop_images/creme-responsive.png"
       }
     },
-    "custom_devider_7e79HN": {
+    "doumdoum_custom_devider_78WVxR": {
       "type": "doumdoum__custom-devider",
       "name": "Custom Devider",
       "settings": {
@@ -261,7 +267,7 @@
       }
     },
     "custom_blog_articles_BPJEFT": {
-      "type": "custom_blog_articles",
+      "type": "doumdoum__blog-posts",
       "blocks": {
         "article_block_xxDhjy": {
           "type": "article_block",
@@ -373,10 +379,10 @@
     "doumdoum_nos_coffrets_MFdBbz",
     "doumdoum_nos_produits_BqTE9R",
     "doumdoum_testimonials_aimeP",
-    "custom_video_showcase_RKmzmT",
-    "custom_icone_with_text_e6xBkF",
-    "custom_picture_hy3KCi",
-    "custom_devider_7e79HN",
+    "doumdoum_video_showcase_7N8pkC",
+    "doumdoum_icons_with_text_hbpHbF",
+    "doumdoum_custom_picture_W4P8WG",
+    "doumdoum_custom_devider_78WVxR",
     "custom_blog_articles_BPJEFT",
     "custom_faq_6aqfRQ"
   ]
