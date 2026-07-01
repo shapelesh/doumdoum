@@ -46,7 +46,10 @@
           }
         }
       },
-      "block_order": ["text_WtWDh3", "text_JfByCn"],
+      "block_order": [
+        "text_WtWDh3",
+        "text_JfByCn"
+      ],
       "name": "Scrolling Text",
       "settings": {}
     },
@@ -266,34 +269,33 @@
         "color": "bleu"
       }
     },
-    "custom_blog_articles_BPJEFT": {
+    "doumdoum_blog_posts_MCkike": {
       "type": "doumdoum__blog-posts",
       "blocks": {
-        "article_block_xxDhjy": {
+        "article_block_Vny3zJ": {
           "type": "article_block",
           "settings": {
             "selected_article": ""
           }
         },
-        "article_block_fjXtG8": {
+        "article_block_K4mndy": {
           "type": "article_block",
           "settings": {
             "selected_article": ""
           }
         },
-        "video_block_HaECQ6": {
+        "video_block_94g7yc": {
           "type": "video_block",
           "settings": {
-            "video_link": "",
             "custom_title": "",
             "description": ""
           }
         }
       },
       "block_order": [
-        "article_block_xxDhjy",
-        "article_block_fjXtG8",
-        "video_block_HaECQ6"
+        "article_block_Vny3zJ",
+        "article_block_K4mndy",
+        "video_block_94g7yc"
       ],
       "name": "Custom Articles de Blog",
       "settings": {
@@ -383,7 +385,7 @@
     "doumdoum_icons_with_text_hbpHbF",
     "doumdoum_custom_picture_W4P8WG",
     "doumdoum_custom_devider_78WVxR",
-    "custom_blog_articles_BPJEFT",
+    "doumdoum_blog_posts_MCkike",
     "custom_faq_6aqfRQ"
   ]
 }

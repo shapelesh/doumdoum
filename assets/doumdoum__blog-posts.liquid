@@ -1,0 +1,184 @@
+.doumdoum__custom-blog-articles {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 57px 90px;
+    background-color: #FAFAFA;
+  }
+  .doumdoum__custom-blog-articles .blog-articles-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+  }
+  .doumdoum__custom-blog-articles .blog-articles-title {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 50%;
+    padding: 20px 16px;
+  }
+  .doumdoum__custom-blog-articles .blog-articles-title h3 {
+    font-family: Fredoka;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 34px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    margin: 0;
+  }
+  .doumdoum__custom-blog-articles .blog-articles-title p {
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    margin: 0;
+  }
+  .doumdoum__custom-blog-articles .container_btn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .doumdoum__custom-blog-articles .container_btn a {
+    display: flex;
+    font-family: Geist;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    border-radius: 16px;
+    padding: 8.5px 16px;
+    border: none;
+    outline: 1px solid #E9EAEB;
+  }
+  .doumdoum__custom-blog-articles .doumdoum_podcast {
+    color: #F570B7;
+  }
+
+  .doumdoum__custom-blog-articles .blog-articles-grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 16px;
+    width: 50%;
+  }
+  .doumdoum__custom-blog-articles .blog-articles-grid .article-content:last-child {
+    padding-top: 16px;
+    border-top: 1px solid #D5D7DA;
+  }
+  .doumdoum__custom-blog-articles .article-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+    height: 100%;
+    width: 100%;
+
+  }
+  .doumdoum__custom-blog-articles .article-content img,
+  .placeholder-image {
+    width: 160px;
+    max-height: 160px;
+
+    border-radius: 20px;
+  }
+  .doumdoum__custom-blog-articles .placeholder-image {
+    outline: 1px solid #E9EAEB;
+  }
+  .doumdoum__custom-blog-articles .article-info-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 8px;
+  }
+  .doumdoum__custom-blog-articles .article-info-container h3 {
+    font-family: Nunito;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 18px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #252B37;
+    margin: 0;
+
+  }
+  .doumdoum__custom-blog-articles .article-info-container p {
+    font-family: Nunito;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #252B37;
+    margin: 0;
+
+  }
+  .doumdoum__custom-blog-articles .article-info-container a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-family: Geist;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    color: #252B37;
+    margin-top: 16px;
+    align-self: center;
+
+  }
+  @media screen and (max-width: 844px) {
+    .doumdoum__custom-blog-articles .blog-articles-title h3 {
+      font-size: 26px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .doumdoum__custom-blog-articles .blog-articles-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .doumdoum__custom-blog-articles .blog-articles-grid {
+      width: 100%;
+    }
+    .doumdoum__custom-blog-articles .blog-articles-title {
+      width: 100%;
+
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .doumdoum__custom-blog-articles {
+      padding: 57px 40px;
+    }
+    .doumdoum__custom-blog-articles .blog-articles-title {
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .doumdoum__custom-blog-articles {
+      padding: 57px 16px;
+    }
+    .doumdoum__custom-blog-articles .blog-articles-title h3 {
+      font-size: 24px;
+    }
+    .doumdoum__custom-blog-articles .blog-articles-title p {
+      font-size: 14px;
+    }
+  }

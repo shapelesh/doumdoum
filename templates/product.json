@@ -14,8 +14,8 @@
       "name": "Carte Produit Détaillée",
       "settings": {}
     },
-    "custom_devider_79RKQL": {
-      "type": "custom_devider",
+    "doumdoum_custom_devider_mKKRYb": {
+      "type": "doumdoum__custom-devider",
       "name": "Custom Devider",
       "settings": {
         "color": "bleu"
@@ -176,7 +176,10 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["text_xrnftG", "price_tVjtKg"]
+              "block_order": [
+                "text_xrnftG",
+                "price_tVjtKg"
+              ]
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -294,6 +297,74 @@
         "usage_title": "Comment prendre soin de votre bébé"
       }
     },
+    "doumdoum_testimonials_RhzaHL": {
+      "type": "doumdoum__testimonials",
+      "blocks": {
+        "testimonial_byRmTz": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
+            "author": "Une maman",
+            "background": ""
+          }
+        },
+        "testimonial_7pE3PR": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
+            "author": "Une maman",
+            "background": ""
+          }
+        },
+        "testimonial_eKC8AM": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
+            "author": "Une maman",
+            "background": ""
+          }
+        },
+        "testimonial_CP4rjr": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
+            "author": "Une maman",
+            "background": ""
+          }
+        },
+        "testimonial_e69Mcn": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
+            "author": "Une maman",
+            "background": ""
+          }
+        },
+        "testimonial_p8NbWt": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
+            "author": "Une maman",
+            "background": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_byRmTz",
+        "testimonial_7pE3PR",
+        "testimonial_eKC8AM",
+        "testimonial_CP4rjr",
+        "testimonial_e69Mcn",
+        "testimonial_p8NbWt"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "label": "Témoignages",
+        "heading": "Aimé par +10,000 parents",
+        "show_stars": true,
+        "top_image": "shopify://shop_images/stories.png"
+      }
+    },
     "custom_product_compare_table_EFbkg8": {
       "type": "custom_product-compare-table",
       "name": "Comparaison de produits",
@@ -301,57 +372,10 @@
         "table_title": "Autres VS Doumdoum"
       }
     },
-    "custom_video_showcase_7fhjNL": {
-      "type": "custom_video_showcase",
-      "name": "Video ShowCase",
-      "settings": {
-        "header_title": "Les expériences réelles avec Doumdoum",
-        "follow_link": "",
-        "header_link": "Suivez-nous"
-      }
-    },
-    "custom_icone_with_text_inLJkX": {
-      "type": "custom_icone_with_text",
-      "blocks": {
-        "icons_and_text_y9NQkA": {
-          "type": "icons_and_text",
-          "settings": {
-            "list_icon": "shopify://shop_images/teste.png",
-            "list_text": "Testé en laboratoire"
-          }
-        },
-        "icons_and_text_pFzeB7": {
-          "type": "icons_and_text",
-          "settings": {
-            "list_icon": "shopify://shop_images/Avocat.png",
-            "list_text": "Formules naturelles et sûres"
-          }
-        },
-        "icons_and_text_YYGXec": {
-          "type": "icons_and_text",
-          "settings": {
-            "list_icon": "shopify://shop_images/bf89d1a964785b1b8dd97800402fb708832168ea.png",
-            "list_text": "Qualité optimale pour la peau bébé"
-          }
-        },
-        "icons_and_text_JQfg9M": {
-          "type": "icons_and_text",
-          "settings": {
-            "list_icon": "shopify://shop_images/Fabrique_en_algerie.png",
-            "list_text": "Fabriqué en Algérie"
-          }
-        }
-      },
-      "block_order": [
-        "icons_and_text_y9NQkA",
-        "icons_and_text_pFzeB7",
-        "icons_and_text_YYGXec",
-        "icons_and_text_JQfg9M"
-      ],
-      "name": "Custom Text et icones",
-      "settings": {
-        "icons_with_text_title": "Doumdoum, le choix des parents exigeants"
-      }
+    "custom_product_devider_ry4t6w": {
+      "type": "custom_product-devider",
+      "name": "Custom Devider - Product",
+      "settings": {}
     },
     "custom_faq_YMYNXW": {
       "type": "custom_FAQ",
@@ -419,22 +443,16 @@
       "settings": {
         "faq_title": "Questions fréquentes des parents"
       }
-    },
-    "custom_product_devider_ry4t6w": {
-      "type": "custom_product-devider",
-      "name": "Custom Devider - Product",
-      "settings": {}
     }
   },
   "order": [
     "custom_product_card_K3t6yT",
-    "custom_devider_79RKQL",
+    "doumdoum_custom_devider_mKKRYb",
     "custom_product_ingredient_QCVzcp",
     "main",
     "custom_product_usage_9qJdM8",
+    "doumdoum_testimonials_RhzaHL",
     "custom_product_compare_table_EFbkg8",
-    "custom_video_showcase_7fhjNL",
-    "custom_icone_with_text_inLJkX",
     "custom_product_devider_ry4t6w",
     "custom_faq_YMYNXW"
   ]
