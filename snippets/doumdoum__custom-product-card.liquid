@@ -1,4 +1,5 @@
 {%- assign background_image = product.metafields.custom.card_background.value |  image_url: width: 500 -%}
+<script>console.log({{ background_image | json }})</script>
 
 <li class="doumdoum__custom-product-card">
   <div class="doumdoum__custom-product-card-top" 
@@ -34,8 +35,8 @@
     </div>
     {%- unless background_image -%}
       <div class="bear-wrapper" style="color: {{ product.metafields.custom.theme_accent }};">
-        {%- render 'doumdoum__bear' -%}
-      </div>
+      {%- render 'doumdoum__bear' -%}
+    </div>
     {%- endunless -%}
   </div>
   <div class="doumdoum__custom-product-card-bottom">
