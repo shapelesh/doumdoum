@@ -28,7 +28,6 @@ custom-cart-drawer {
 custom-cart-drawer.is-open {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   transform: translateX(0);
   visibility: visible;
 }
@@ -312,6 +311,7 @@ custom-cart-drawer.is-loading {
 /* Recommendations */
 .cart-recommendations {
   height: 192px;
+  margin-top: auto;
 }
 
 .cart-recommendations h3 {

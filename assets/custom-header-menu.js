@@ -42,7 +42,7 @@ class CustomHeaderMegaMenu extends Component {
 
     this.megamenuOpener?.addEventListener("click", this._handleOpenerClick);
 
-    this._handleScroll = this._closeMegaMenu.bind(this);
+    // this._handleScroll = this._closeMegaMenu.bind(this);
     this._handleClickOutside = this._handleClickOutside.bind(this);
 
     window.addEventListener("scroll", this._handleScroll, { passive: true });
