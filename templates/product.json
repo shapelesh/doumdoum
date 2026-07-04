@@ -12,7 +12,10 @@
     "custom_product_card_K3t6yT": {
       "type": "doumdoum__product-section",
       "name": "Carte Produit Détaillée",
-      "settings": {}
+      "settings": {
+        "review_text": "+5,000 maman a validé le produit",
+        "approved": "shopify://shop_images/approved.svg"
+      }
     },
     "doumdoum_custom_devider_mKKRYb": {
       "type": "doumdoum__custom-devider",
