@@ -1,5 +1,6 @@
-{%- assign background_image = product.metafields.custom.card_background.value |  image_url: width: 500 -%}
-<script>console.log({{ background_image | json }})</script>
+{%- assign background_image = product.metafields.custom.card_background.value |  image_url: height: 280 -%}
+
+
 
 <li class="doumdoum__custom-product-card">
   <div class="doumdoum__custom-product-card-top" 
@@ -20,8 +21,9 @@
           width="{{ image.width }}"
           height="{{ image.height }}"
           {%- if background_image -%}
-            style="width: 100%; object-fit: cover; padding: 0 22px;"
+            style="width: 100%; padding: 0 22px;"
           {%- endif -%}
+          class="doumdoum__object-fit"
           >
       {%- endfor -%}
     {%- endif -%}

@@ -66,10 +66,13 @@
   .list_icon-and-text .text h4 {
     font-size: 15px;
   }
+  .icons-with-text_container h3 {
+    font-size: 24px;
+  }
 }
 @media screen and (max-width: 632px) {
   .doumdoum__icons-with-text {
-    padding: 73.58px 0;
+    padding: 73.58px 16px;
   }
   .container-list {
     display: flex;

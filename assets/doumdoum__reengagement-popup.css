@@ -1,0 +1,55 @@
+.doumdoum__reengagement-popup {
+  display: none;
+}
+
+.doumdoum__reengagement-popup.doumdoum__reengagement-popup-active {
+  display: block;
+}
+
+.doumdoum__reengagement-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.doumdoum__reengagement-popup-container {
+  width: 516px;
+  height: 522px;
+  z-index: 999;
+  background-color: #fafafa;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+}
+.doumdoum__reengagement-popup-exit {
+  width: fit-content;
+  place-self: flex-end;
+  border: none;
+  background-color: transparent;
+}
+
+.doumdoum__reengagement-popup-product {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #d5d7da;
+  border-radius: 24px;
+  padding-top: 17px;
+}
+.doumdoum__reengagement-popup-product img {
+  height: 307px;
+  width: 300px;
+  object-fit: contain;
+}
+/* Popup A visible only in state-a */
+.doumdoum__reengagement-popup-state-a .doumdoum__reengagement-popup-overlay-a {
+  display: flex;
+}
+
+/* Popup B visible only in state-b */
+.doumdoum__reengagement-popup-state-b .doumdoum__reengagement-popup-overlay-b {
+  display: flex;
+}

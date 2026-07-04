@@ -57,6 +57,9 @@
 
 @media (max-width: 992px) {
   .doumdoum__nos-produits {
-    padding: 0 0 100px 0;
+    padding: 0 16px 100px 16px;
+  }
+  .doumdoum__nos-produits-top h2 {
+    font-size: 24px;
   }
 }

@@ -219,3 +219,13 @@ main.content-for-layout {
     text-align: center;
   }
 }
+
+.doumdoum__object-fit {
+  object-fit: cover;
+}
+
+@media (max-width: 790px) {
+  .doumdoum__object-fit {
+    object-fit: contain;
+  }
+}
