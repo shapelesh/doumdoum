@@ -349,7 +349,10 @@
 }
 @media (max-width: 768px) {
   .doumdoum__custom-product-section_container-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .doumdoum__custom-product-section {
     padding: 20px;

@@ -17,9 +17,7 @@
     "doumdoum_custom_devider_mKKRYb": {
       "type": "doumdoum__custom-devider",
       "name": "Custom Devider",
-      "settings": {
-        "color": "bleu"
-      }
+      "settings": {}
     },
     "custom_product_ingredient_QCVzcp": {
       "type": "doumdoum__product-ingredients",
@@ -290,11 +288,81 @@
         "padding-block-end": 0
       }
     },
-    "custom_product_usage_9qJdM8": {
-      "type": "custom_product-usage",
+    "doumdoum_custom_product_usage_i639tK": {
+      "type": "doumdoum__product-usage",
       "name": "Utilisations Produits",
       "settings": {
         "usage_title": "Comment prendre soin de votre bébé"
+      }
+    },
+    "doumdoum_custom_product_compare_table_QjRkL3": {
+      "type": "doumdoum__product-compare-table",
+      "name": "Comparaison de produits",
+      "settings": {
+        "table_title": "Autres VS Doumdoum"
+      }
+    },
+    "doumdoum_video_showcase_bfziUp": {
+      "type": "doumdoum__video-showcase",
+      "blocks": {
+        "videos_XnBb4J": {
+          "type": "videos",
+          "settings": {
+            "product_handle": ""
+          }
+        }
+      },
+      "block_order": [
+        "videos_XnBb4J"
+      ],
+      "name": "Video ShowCase",
+      "settings": {
+        "header_title": "Les expériences réelles avec Doumdoum",
+        "follow_link": "",
+        "header_link": "Suivez-nous"
+      }
+    },
+    "doumdoum_icons_with_text_mNrxRR": {
+      "type": "doumdoum__icons-with-text",
+      "blocks": {
+        "icons_and_text_A3L3aa": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/teste.png",
+            "list_text": "Testé en laboratoire"
+          }
+        },
+        "icons_and_text_kbtFgf": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/Avocat.png",
+            "list_text": "Formules naturelles et sûres"
+          }
+        },
+        "icons_and_text_bbAzmN": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/bf89d1a964785b1b8dd97800402fb708832168ea.png",
+            "list_text": "Qualité optimale pour la peau bébé"
+          }
+        },
+        "icons_and_text_cJTQMh": {
+          "type": "icons_and_text",
+          "settings": {
+            "list_icon": "shopify://shop_images/Fabrique_en_algerie.png",
+            "list_text": "Fabriqué en Algérie"
+          }
+        }
+      },
+      "block_order": [
+        "icons_and_text_A3L3aa",
+        "icons_and_text_kbtFgf",
+        "icons_and_text_bbAzmN",
+        "icons_and_text_cJTQMh"
+      ],
+      "name": "Custom Text et icones",
+      "settings": {
+        "icons_with_text_title": "Doumdoum, le choix des parents exigeants"
       }
     },
     "doumdoum_testimonials_RhzaHL": {
@@ -363,13 +431,6 @@
         "heading": "Aimé par +10,000 parents",
         "show_stars": true,
         "top_image": "shopify://shop_images/stories.png"
-      }
-    },
-    "custom_product_compare_table_EFbkg8": {
-      "type": "custom_product-compare-table",
-      "name": "Comparaison de produits",
-      "settings": {
-        "table_title": "Autres VS Doumdoum"
       }
     },
     "custom_product_devider_ry4t6w": {
@@ -450,9 +511,11 @@
     "doumdoum_custom_devider_mKKRYb",
     "custom_product_ingredient_QCVzcp",
     "main",
-    "custom_product_usage_9qJdM8",
+    "doumdoum_custom_product_usage_i639tK",
+    "doumdoum_custom_product_compare_table_QjRkL3",
+    "doumdoum_video_showcase_bfziUp",
+    "doumdoum_icons_with_text_mNrxRR",
     "doumdoum_testimonials_RhzaHL",
-    "custom_product_compare_table_EFbkg8",
     "custom_product_devider_ry4t6w",
     "custom_faq_YMYNXW"
   ]

@@ -1,0 +1,117 @@
+{{ "doumdoum__product-compare-table.css" | asset_url | stylesheet_tag }}
+
+
+{% liquid
+  assign metafield_color = product.metafields.custom.compared_product.value.bg_color
+
+  if metafield_color == 'blue'
+    assign bg_color = '#EEF6FF'
+    assign icon_name = 'doumdoum-blue.svg' | asset_url
+    assign rotation_deg_top = '-20deg'
+    assign rotation_deg_bot = '45deg'
+    assign width = '112px'
+    assign height = '108px'
+  else
+    assign bg_color = '#FFF1F9'
+    assign icon_name = 'doumdoum-pink.svg' | asset_url
+    assign rotation_deg_top = '-45deg'
+    assign rotation_deg_bot = '0deg'
+    assign width = '112px'
+    assign height = '112px'
+  endif
+%}
+
+<section class="doumdoum__product_table page-width section--{{ section.id }}" style="--custom-bg-color : {{ bg_color }}">
+  <div class="doumdoum-icon doumdoum-icon-top" style="--bear-icon: url('{{ icon_name }}'); --rotation-deg:{{ rotation_deg_top }}; --icon-width:{{ width }}; --icon-height:{{ height }};"></div>
+  <h2 class="product_table-title">{{ section.settings.table_title }}</h2>
+
+  <div class="doumdoum__product_table--grid_container product_table--grid_container">
+    <div class="cutom_grid--cell grid--cell_img col-left">
+      {% assign compared_img = product.metafields.custom.compared_product.value.image %}
+      {% if compared_img %}
+        <img
+          src="{{ compared_img | image_url: width: 500 }}"
+          class="vs-product-img"
+          width="500"
+          height="500"
+          alt="Produit comparé" />
+      {% endif %}
+    </div>
+    <div class="cutom_grid--cell grid--cell_img-vs grid--cell-vs col-center">
+      <p class="vs-text" id="vs-text">VS</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_img col-right">
+      {% assign compared_product_img = product.metafields.custom.compared_image.value %}
+      {% if compared_product_img %}
+        <img
+          src="{{ compared_product_img | image_url: width: 500 }}"
+          width="500"
+          height="500"
+          alt="Produit principal" />
+      {% endif %}
+    </div>
+    <div class="cutom_grid--cell grid--cell_price col-left">
+      {% assign compared_price = product.metafields.custom.compared_product.value.price %}
+      <span>+{{ compared_price | money }}</span>
+    </div>
+    <div class="cutom_grid--cell grid--cell_price-vs grid--cell-vs col-center">
+      <p>Prix</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_price col-right">
+      <span>{{ product.price | money }}</span>
+    </div>
+    <div class="cutom_grid--cell grid--cell_availability col-left">
+      <p>Non disponible facilement</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_availability-vs grid--cell-vs col-center">
+      <p>Disponibilité</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_availability col-right">
+      <p>Disponible</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_adaptation col-left">
+      <p>Non adapté aux mamans algériennes</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_adaptation-vs grid--cell-vs col-center">
+      <p>Adapté à l'Algérie</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_adaptation col-right">
+      <p>Pensé pour les mamans algériennes</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_quality col-left">
+      <p>haute</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_quality-vs grid--cell-vs col-center">
+      <p>Qualité</p>
+    </div>
+    <div class="cutom_grid--cell grid--cell_quality col-right">
+      <p>haute</p>
+    </div>
+
+  </div>
+  <div class="doumdoum__product-table-left-icon">
+    <img
+      src="{{ "doumdoum-pink.svg" | asset_url }}"
+      alt="Doumdoum Icon"
+      width="133"
+      height="128">
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Tableau de Comparaison",
+    "settings": [
+      {
+        "type": "text",
+        "id": "table_title",
+        "label": "Titre du tableau",
+        "default": "Autres VS Doumdoum"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Comparaison de produits"
+      }
+    ]
+  }
+{% endschema %}
