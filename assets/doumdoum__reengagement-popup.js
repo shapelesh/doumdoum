@@ -1,3 +1,11 @@
+import { createGlide } from "@theme/glide";
+import { sliderRegistry } from "@theme/slider-registry";
+
+/**
+ * @type {null}
+ */
+let popupGlide = null;
+
 (function () {
   "use strict";
 
@@ -15,9 +23,11 @@
       "DID SHOW POPUP: ",
       sessionStorage.getItem(SESSION_KEY) === "true",
     );
+    // @ts-ignore
     const targetHandlesRaw = popupElement.dataset.targetHandles || "";
     const targetHandles = targetHandlesRaw
       .split(",")
+      // @ts-ignore
       .map((handle) => handle.trim())
       .filter(Boolean);
 
@@ -28,7 +38,9 @@
 
     if (!targetHandles.includes(currentPageHandle)) return;
 
+    // @ts-ignore
     const triggerDelaySeconds =
+      // @ts-ignore
       parseInt(popupElement.dataset.triggerDelay, 10) || 30;
 
     setTimeout(() => {
@@ -39,6 +51,7 @@
     bindPopupEvents(popupElement);
   }
 
+  // @ts-ignore
   function showPopupA(popupElement) {
     popupElement.inert = false;
     popupElement.setAttribute("aria-hidden", "false");
@@ -46,19 +59,34 @@
     popupElement.classList.add("doumdoum__reengagement-popup-state-a");
   }
 
+  // @ts-ignore
   function showPopupB(popupElement) {
     popupElement.classList.remove("doumdoum__reengagement-popup-state-a");
     popupElement.classList.add("doumdoum__reengagement-popup-state-b");
+    if (!popupGlide) {
+      const sliderEl = popupElement.querySelector("[data-slider='popup']");
+      if (sliderEl) {
+        popupGlide = createGlide(sliderEl, sliderRegistry.popup);
+      }
+    }
   }
 
+  // @ts-ignore
   function closePopup(popupElement) {
     popupElement.setAttribute("aria-hidden", "true");
     popupElement.inert = true;
     popupElement.classList.remove("doumdoum__reengagement-popup-active");
     popupElement.classList.remove("doumdoum__reengagement-popup-state-a");
     popupElement.classList.remove("doumdoum__reengagement-popup-state-b");
+
+    if (popupGlide) {
+      // @ts-ignore
+      popupGlide.destroy();
+      popupGlide = null;
+    }
   }
 
+  // @ts-ignore
   function bindPopupEvents(popupElement) {
     const popupAOverlay = popupElement.querySelector(
       ".doumdoum__reengagement-popup-overlay-a",
@@ -89,9 +117,11 @@
     );
 
     // Prevent clicks inside the container from bubbling to the overlay
+    // @ts-ignore
     popupAContainer.addEventListener("click", (event) =>
       event.stopPropagation(),
     );
+    // @ts-ignore
     popupBContainer.addEventListener("click", (event) =>
       event.stopPropagation(),
     );
@@ -109,6 +139,7 @@
     );
   }
 
+  // @ts-ignore
   function handleBuyButtonClick(buyButtonElement) {
     const variantId = buyButtonElement.dataset.variantId;
     if (!variantId) return;

@@ -1,4 +1,4 @@
-<script src="{{ "doumdoum__reengagement-popup.js" |  asset_url }}" defer></script>
+<script src="{{ "doumdoum__reengagement-popup.js" |  asset_url }}" type="module" defer></script>
 {{ "doumdoum__reengagement-popup.css" | asset_url | stylesheet_tag }}
 
 {%- if section.settings.popup_product != blank -%}
@@ -25,6 +25,13 @@
         <button class="doumdoum__reengagement-popup-exit" aria-label="Close">
           ✕
         </button>
+
+        <div class="doumdoum__reengagement-popup-text">
+          <h4>
+            {{ section.settings.first_title }}
+          </h4>
+          {{ popup_a_product.description }}
+        </div>
 
         <div class="doumdoum__reengagement-popup-product">
           {%- if popup_a_product.metafields.custom.product_card_image.value != blank -%}
@@ -67,26 +74,37 @@
           ✕
         </button>
 
-        <div class="doumdoum__reengagement-popup-products">
-
-          {%- if popup_b_product_1 != blank -%}
-            <div class="doumdoum__reengagement-popup-b-product">
-              {%- render 'doumdoum__custom-product-card'
-                , product: popup_b_product_1
-                , show_description: false -%}
-            </div>
-          {%- endif -%}
-
-          {%- if popup_b_product_2 != blank -%}
-            <div class="doumdoum__reengagement-popup-b-product">
-              {%- render 'doumdoum__custom-product-card'
-                , product: popup_b_product_2
-                , show_description: false -%}
-            </div>
-          {%- endif -%}
-
+        <div class="doumdoum__reengagement-popup-text">
+          <h4>
+            {{ section.settings.second_title }}
+          </h4>
+          <p>
+            {{ section.settings.second_paragraph }}
+          </p>
         </div>
+        <div
+          class="glide"
+          data-slider="popup"
+          data-mobile-slider="600">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="doumdoum__reengagement-popup-products glide__slides">
+              {%- if popup_b_product_1 != blank -%}
+                {%- render 'doumdoum__custom-product-card'
+                  , product: popup_b_product_1
+                  , show_description: false
+                  , classname: "doumdoum__reengagement-popup-b-product glide__slide" -%}
+              {%- endif -%}
 
+              {%- if popup_b_product_2 != blank -%}
+                {%- render 'doumdoum__custom-product-card'
+                  , product: popup_b_product_2
+                  , show_description: false
+                  , classname: "doumdoum__reengagement-popup-b-product glide__slide" -%}
+              {%- endif -%}
+
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -119,8 +137,23 @@
         "label": "Back button label",
         "default": "Retour"
       }, {
+        "type": "text",
+        "id": "first_title",
+        "label": "First Title",
+        "default": "Tout pour bébé dès la naissance"
+      }, {
         "type": "header",
         "content": "Popup B — Cheaper Alternatives"
+      }, {
+        "type": "text",
+        "id": "second_title",
+        "label": "Second Title",
+        "default": "Choisissez ce qui vous convient"
+      }, {
+        "type": "text",
+        "id": "second_paragraph",
+        "label": "Second Paragraph",
+        "default": "Deux options pour votre bébé. Une simple, une complète. À vous de choisir."
       }, {
         "type": "product",
         "id": "popup_b_product_1",

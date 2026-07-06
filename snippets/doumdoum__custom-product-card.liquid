@@ -2,7 +2,13 @@
 
 
 
-<li class="doumdoum__custom-product-card">
+
+<li class="
+  doumdoum__custom-product-card
+  {% if classname %}
+    {{ classname }}
+  {% endif %}
+  ">
   <div class="doumdoum__custom-product-card-top" 
   style="
     {% if background_image %}
@@ -14,7 +20,7 @@
   >
     {%- assign card_image = product.metafields.custom.product_card_image.value -%}
     {%- if card_image != blank -%}
-      {%- for image in card_image -%}
+      {%- for image in card_image limit: 1 -%}
         <img
           src="{{ image |  image_url: width: image.width }}"
           alt="{{ image.alt }}"
