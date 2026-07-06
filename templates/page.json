@@ -87,11 +87,59 @@
         "collection": "produits",
         "products_limit": 10
       }
+    },
+    "doumdoum_about_soins_mAqaCn": {
+      "type": "doumdoum__about-soins",
+      "blocks": {
+        "item_KAYf4H": {
+          "type": "item",
+          "settings": {
+            "title": "Le bain :",
+            "desc": "Un moment de douceur pour nettoyer sans agresser la peau fragile de votre bébé."
+          }
+        },
+        "item_aqyyGy": {
+          "type": "item",
+          "settings": {
+            "title": "Le change :",
+            "desc": "Protéger et prévenir les irritations à chaque change en toute sérénité."
+          }
+        },
+        "item_37gV3M": {
+          "type": "item",
+          "settings": {
+            "title": "L’hydratation :",
+            "desc": "Nourrir et maintenir une peau douce, souple et confortable au quotidien."
+          }
+        },
+        "item_KCG9gH": {
+          "type": "item",
+          "settings": {
+            "title": "La protection contre les agressions extérieures :",
+            "desc": "Préserver la peau de votre bébé face au soleil, au froid et aux facteurs externes."
+          }
+        }
+      },
+      "block_order": [
+        "item_KAYf4H",
+        "item_aqyyGy",
+        "item_37gV3M",
+        "item_KCG9gH"
+      ],
+      "name": "Approche soins DoumDoum",
+      "settings": {
+        "about_soins_title": "Notre approche des soins",
+        "about_soins_desc": "Nous développons des soins essentiels du quotidien, pensés pour accompagner chaque moment :",
+        "img_box_back": "shopify://shop_images/back_img.png",
+        "img_box_front": "shopify://shop_images/front_img.png",
+        "footer_text": "Chaque produit est conçu pour être doux, pratique et parfaitement toléré, même par les peaux les plus sensibles."
+      }
     }
   },
   "order": [
     "main",
     "custom_hero_about_R6RDdq",
-    "custom_product_about_6CHRcq"
+    "custom_product_about_6CHRcq",
+    "doumdoum_about_soins_mAqaCn"
   ]
 }
