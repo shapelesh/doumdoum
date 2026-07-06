@@ -134,12 +134,57 @@
         "img_box_front": "shopify://shop_images/front_img.png",
         "footer_text": "Chaque produit est conçu pour être doux, pratique et parfaitement toléré, même par les peaux les plus sensibles."
       }
+    },
+    "doumdoum_about_table_FGFD9t": {
+      "type": "doumdoum__about-table",
+      "blocks": {
+        "row_EVRkET": {
+          "type": "row",
+          "settings": {
+            "left_text": "<h3>Nous évitons</h3>",
+            "right_text": "<h3>Nous privilégions</h3>"
+          }
+        },
+        "row_jLkzqD": {
+          "type": "row",
+          "settings": {
+            "left_text": "Les ingrédients agressifs",
+            "right_text": "Des actifs sûrs et efficaces"
+          }
+        },
+        "row_QE7G9E": {
+          "type": "row",
+          "settings": {
+            "left_text": "Les composants superflus",
+            "right_text": "Des formules minimalistes"
+          }
+        },
+        "row_rRD7e4": {
+          "type": "row",
+          "settings": {
+            "left_text": "Tout ce qui pourrait fragiliser la peau",
+            "right_text": "Une tolérance optimale pour les bébés"
+          }
+        }
+      },
+      "block_order": [
+        "row_EVRkET",
+        "row_jLkzqD",
+        "row_QE7G9E",
+        "row_rRD7e4"
+      ],
+      "name": "Tableau about page",
+      "settings": {
+        "header_title": "Notre philosophie des ingrédients",
+        "header_sub_text": "Chez Doumdoum, chaque ingrédient est choisi avec soin."
+      }
     }
   },
   "order": [
     "main",
     "custom_hero_about_R6RDdq",
     "custom_product_about_6CHRcq",
-    "doumdoum_about_soins_mAqaCn"
+    "doumdoum_about_soins_mAqaCn",
+    "doumdoum_about_table_FGFD9t"
   ]
 }

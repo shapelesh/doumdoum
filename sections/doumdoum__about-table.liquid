@@ -1,0 +1,87 @@
+{{ "doumdoum__about-table.css" | asset_url | stylesheet_tag }}
+
+<section class="doumdoum__about-table page-width section--{{ section.id }}">
+  <div class="doumdoum__about-table-header">
+    <h2 class="about_table-title">{{ section.settings.header_title }}</h2>
+    <p>{{ section.settings.header_sub_text }}</p>
+  </div>
+  <div class="doumdoum__about-table-grid-container about_table-grid-container">
+    {% for block in section.blocks %}
+      <div class="about-table-row" {{ block.shopify_attributes }}>
+        <div class="about-table-cell left-cell" style="{{ block.settings.left_cell_style }}">
+          {% if block.settings.left_text != blank %}
+            <p>{{ block.settings.left_text }}</p>
+          {% endif %}
+        </div>
+        <div class="about-table-cell right-cell" style="{{ block.settings.right_cell_style }}">
+          {% if block.settings.right_text != blank %}
+            <p>{{ block.settings.right_text }}</p>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="doumdoum__about-table-left-icon">
+    <img
+      src="{{ "doumdoum-pink.svg" | asset_url }}"
+      alt="Doumdoum Icon"
+      width="133"
+      height="128">
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Tableau de Comparaison",
+    "settings": [
+      {
+        "type": "text",
+        "id": "header_title",
+        "label": "Titre du tableau",
+        "default": "Notre philosophie des ingrédients"
+      }, {
+        "type": "text",
+        "id": "header_sub_text",
+        "label": "Text sous le titre",
+        "default": "Chez Doumdoum, chaque ingrédient est choisi avec soin."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "row",
+        "name": "Ligne (Row)",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Colonne Gauche"
+          }, {
+            "type": "text",
+            "id": "left_text",
+            "label": "Texte",
+            "default": "Contenu gauche"
+          }, {
+            "type": "header",
+            "content": "Colonne Droite"
+          }, {
+            "type": "text",
+            "id": "right_text",
+            "label": "Texte",
+            "default": "Contenu droit"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Tableau about page",
+        "blocks": [
+          {
+            "type": "row"
+          }, {
+            "type": "row"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
