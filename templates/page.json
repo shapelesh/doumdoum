@@ -178,6 +178,81 @@
         "header_title": "Notre philosophie des ingrédients",
         "header_sub_text": "Chez Doumdoum, chaque ingrédient est choisi avec soin."
       }
+    },
+    "doumdoum_custom_devider_CBFjAm": {
+      "type": "doumdoum__custom-devider",
+      "name": "Custom Devider",
+      "settings": {}
+    },
+    "doumdoum_about_engagement_card_XUdqPp": {
+      "type": "doumdoum__about-engagement-card",
+      "blocks": {
+        "card_KVeggV": {
+          "type": "card",
+          "settings": {
+            "card_icon": "shopify://shop_images/bf89d1a964785b1b8dd97800402fb708832168ea.png",
+            "card_text": "Testés dermatologiquement et pédiatriquement"
+          }
+        },
+        "card_W4rP4M": {
+          "type": "card",
+          "settings": {
+            "card_icon": "shopify://shop_images/Fabrique_en_algerie.png",
+            "card_text": "Pensés pour une utilisation quotidienne en toute confiance"
+          }
+        },
+        "card_TYeyw4": {
+          "type": "card",
+          "settings": {
+            "card_icon": "shopify://shop_images/noix-de-coco.png",
+            "card_text": "Adaptés aux peaux sensibles"
+          }
+        },
+        "card_iRgGCg": {
+          "type": "card",
+          "settings": {
+            "card_text": "Titre de la carte"
+          }
+        }
+      },
+      "block_order": [
+        "card_KVeggV",
+        "card_W4rP4M",
+        "card_TYeyw4",
+        "card_iRgGCg"
+      ],
+      "name": "Engagements Doumdoum",
+      "settings": {
+        "engagment_title": "Notre engagement",
+        "engagment_text": "Des soins sûrs, doux et fiables, conçus pour accompagner votre bébé chaque jour en toute confiance."
+      }
+    },
+    "doumdoum_about_video_showcase_qL7CeR": {
+      "type": "doumdoum_about-video-showcase",
+      "blocks": {
+        "videos_mXzQ6M": {
+          "type": "videos",
+          "settings": {
+            "product_handle": ""
+          }
+        },
+        "videos_Vxndjt": {
+          "type": "videos",
+          "settings": {
+            "product_handle": ""
+          }
+        }
+      },
+      "block_order": [
+        "videos_mXzQ6M",
+        "videos_Vxndjt"
+      ],
+      "name": "Video ShowCase - About",
+      "settings": {
+        "about_video_header_title": "Notre promesse",
+        "about_video_header_sub_text": "Avec Doumdoum Babycare, chaque geste devient un geste sûr.",
+        "about_video_header_right_text": "Parce que prendre soin d'un bébé, ce n'est pas seulement une routine… c'est un acte d'amour, de protection et de confiance"
+      }
     }
   },
   "order": [
@@ -185,6 +260,9 @@
     "custom_hero_about_R6RDdq",
     "custom_product_about_6CHRcq",
     "doumdoum_about_soins_mAqaCn",
-    "doumdoum_about_table_FGFD9t"
+    "doumdoum_about_table_FGFD9t",
+    "doumdoum_custom_devider_CBFjAm",
+    "doumdoum_about_engagement_card_XUdqPp",
+    "doumdoum_about_video_showcase_qL7CeR"
   ]
 }
