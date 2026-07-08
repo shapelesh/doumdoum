@@ -1,5 +1,12 @@
 {{ "doumdoum__product-section.css" | asset_url | stylesheet_tag }}
 
+<script>
+  window.doumdoumSettings = window.doumdoumSettings || {};
+  window.doumdoumSettings.sectionId = "{{ section.id }}";
+  window.doumdoumSettings.moneyFormat = {{ shop.money_format | json }};
+</script>
+<script src="{{ 'doumdoum__product-section.js' | asset_url }}" defer></script>
+
 <section class="doumdoum__custom-product-section page-width section--{{ section.id }} {{ product.title }}--{{ section.id }}">
   <div class="doumdoum__custom-product-section_container-grid">
     <div class="container-grid__images">
@@ -140,133 +147,77 @@
       </div>
     </div>
   </div>
+
+  <div id="doumdoum__sticky-add-to-cart" class="sticky-add-to-cart is-visible">
+    <div class="doumdoum__sticky-add-to-cart__container page-width">
+      <div class="doumdoum__sticky-add-to-cart__info">
+        <div class="doumdoum__sticky-add-to-cart__image">
+          <img
+            src="{{ product.featured_image |  image_url: width: product.featured_image.width  }}"
+            width="{{ product.featured_image.width }}"
+            height="{{ product.featured_image.height }}"
+            alt="{{ product.featured_image.alt }}"
+            loading="lazy">
+        </div>
+        <div class="doumdoum__sticky-add-to-cart_info-container">
+          <div class="doumdoum__sticky-add-to-cart_info-container-title">
+            <span class="doumdoum__sticky-add-to-cart__qty" id="sticky-qty-display">1x</span>
+            <span class="doumdoum__sticky-add-to-cart__title">{{ product.title }}</span>
+            {% if product.selected_or_first_available_variant.price %}
+              <span class="doumdoum__sticky-add-to-cart__price">{{ product.selected_or_first_available_variant.price | money }}</span>
+            {% endif %}
+          </div>
+          <div class="doumdoum__sticky-add-to-cart_info-container-reviews">
+            {% render 'hero-yellow-stars' %}
+            <span>
+              {{ section.settings.review_text_add_to_cart }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="doumdoum__sticky-add-to-cart__actions">
+        {% if product.available %}
+          <form
+            action="/cart/add"
+            method="post"
+            enctype="multipart/form-data"
+            class="sticky-form">
+            <input
+              type="hidden"
+              name="id"
+              value="{{ product.selected_or_first_available_variant.id }}">
+            <input
+              type="hidden"
+              name="quantity"
+              id="StickyQuantity-{{ section.id }}"
+              value="1">
+            <button
+              type="button"
+              id="sticky-buy-now-btn"
+              class="doumdoum__add-btn doumdoum__sticky-btn-buy">
+              Acheter maintenant
+            </button>
+            <button
+              type="submit"
+              name="add"
+              class="doumdoum__add-btn doumdoum__sticky-btn-cart">
+              Ajouter au panier -
+              <span id="sticky-cart-price-display" data-base-price="{{ product.selected_or_first_available_variant.price }}">
+                {{ product.selected_or_first_available_variant.price | money }}
+              </span>
+            </button>
+          </form>
+          <p>Protège la peau de votre bébé en 30's</p>
+        {% else %}
+          <button class="doumdoum__add-btn sticky-btn-disabled" disabled>Épuisé</button>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
 </section>
-<script>
-  function handleActiveState(element, selector) {
-    if (element && element.classList.contains('active')) {
-      return;
-    }
-    document.querySelectorAll(selector).forEach(el => el.classList.remove('active'));
-  
-    if (element) {
-      element.classList.add('active');
-    }
-  }
-  
-  function selectQuantity(val, element = null, fromDropdown = false) {
-    const sectionId = "{{ section.id }}";
-    const hiddenInput = document.getElementById('Quantity-' + sectionId);
-    const triggerBtn = document.getElementById('custom-qty-trigger');
-    const manualInput = document.getElementById('manual-qty-input');
-    const btnText = document.getElementById('custom-qty-btn-text');
-  
-    hiddenInput.value = val;
-  
-    if (fromDropdown) {
-      handleActiveState(triggerBtn, '.qty-btn, .manual-input');
-      btnText.innerText = val + 'x';      
-      manualInput.style.display = 'none';
-      triggerBtn.style.display = 'flex';
-    } 
-    else if (element) {
-      handleActiveState(element, '.qty-btn, .manual-input');
-  
-      btnText.innerText = '4x';           
-      manualInput.style.display = 'none';
-      triggerBtn.style.display = 'flex';
-    }
-  
-    closeDropdown();
-  }
-  
-  function showManualInput() {
-    const triggerBtn = document.getElementById('custom-qty-trigger');
-    const manualInput = document.getElementById('manual-qty-input');
-    const sectionId = "{{ section.id }}";
-    const hiddenInput = document.getElementById('Quantity-' + sectionId);
-  
-    triggerBtn.style.display = 'none';
-    manualInput.style.display = 'block';
-  
-    handleActiveState(manualInput, '.static-qty-btn, .manual-input');
-    
-    if (!manualInput.classList.contains('active')) {
-        manualInput.value = 10;
-        hiddenInput.value = 10;
-    }
-    
-    manualInput.focus();
-    closeDropdown();
-  }
-  
-  function updateManualQuantity(val) {
-    const sectionId = "{{ section.id }}";
-    document.getElementById('Quantity-' + sectionId).value = val;
-  }
-  
-  function toggleDropdown() {
-    document.getElementById('qty-dropdown').classList.toggle('show');
-    document.getElementById('custom-select-wrapper').classList.toggle('open');
-  }
-  
-  function closeDropdown() {
-    document.getElementById('qty-dropdown').classList.remove('show');
-    document.getElementById('custom-select-wrapper').classList.remove('open');
-  }
-  
-  window.addEventListener('click', function(event) {
-    const wrapper = document.getElementById('custom-select-wrapper');
-    if (wrapper && !wrapper.contains(event.target)) {
-      closeDropdown();
-    }
-  });
-</script>
-{% comment %} tab-btns {% endcomment %}
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const buttons = document.querySelectorAll('.tab-btn');
-    const displayArea = document.getElementById('TabContentDisplay');
-  
-    buttons.forEach(btn => {
-      btn.addEventListener('click', function() {
-        buttons.forEach(b => b.classList.remove('selected'));
-        this.classList.add('selected');
-  
-        const content = this.getAttribute('data-content');
-  
-        const formattedContent = content
-        .replace(/&quot;/g, '"') 
-        .replace(/\n/g, '<br>'); 
-  
-        displayArea.innerHTML = formattedContent; 
-        
-        displayArea.style.opacity = 0;
-        setTimeout(() => {
-          displayArea.style.transition = 'opacity 0.3s ease';
-          displayArea.style.opacity = 1;
-        }, 50);
-      });
-    });
-  });
-</script>
-{% comment %} gallery-image {% endcomment %}
-<script>
-  function updateMainImage(imgSrc, thumbElement) {
-  const mainImg = document.getElementById('MainImage-{{ section.id }}');
-  
-  mainImg.style.opacity = '0';
-  
-  setTimeout(() => {
-    mainImg.src = imgSrc;
-    mainImg.style.opacity = '1';
-  }, 200);
-  
-  const thumbnails = document.querySelectorAll('.thumb-item');
-  thumbnails.forEach(thumb => thumb.classList.remove('active'));
-  thumbElement.classList.add('active');
-  }
-</script>
-<style></style>
+
 {% schema %}
   {
     "name": "Product Section",
@@ -276,6 +227,11 @@
         "id": "review_text",
         "label": "Review Text",
         "default": "+5,000 maman a validé le produit"
+      }, {
+        "type": "text",
+        "id": "review_text_add_to_cart",
+        "label": "Review Text",
+        "default": "+5 000 mamans, débutantes et expérimentées"
       }, {
         "type": "image_picker",
         "id": "approved",
