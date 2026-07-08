@@ -1,31 +1,22 @@
 {{ "doumdoum__custom-devider.css" | asset_url | stylesheet_tag }}
 
 {%- liquid
-  assign accent_color = section.settings.color
+  assign final_img_url = ''
 
-  if product.metafields.custom.devider_color != blank
-    assign accent_color = product.metafields.custom.devider_color | downcase
+  assign devider_data = product.metafields.custom.theme_devider_color.value
+
+  if product and devider_data.devider_svg != blank
+    assign final_img_url = devider_data.devider_svg.value | image_url: width: 800
   else
-    assign accent_color = 'blue'
+    assign final_img_url = 'devider-blue.svg' | asset_url
   endif
-
-  assign file_suffix = accent_color
-  if accent_color == 'orange'
-    assign file_suffix = 'orang'
-  elsif accent_color == 'violet'
-    assign file_suffix = 'purple'
-  elsif accent_color == 'rose'
-    assign file_suffix = 'pink'
-  endif
-
-  assign filename = 'devider-' | append: file_suffix | append: '.svg'
 -%}
 
-<section class="doumdoum__devider page-width section--{{ section.id }} accent-{{ accent_color }}">
+<section class="doumdoum__devider page-width section--{{ section.id }}">
   <div class="devider-svg-container">
     <img
-      src="{{ filename | asset_url }}"
-      alt="Devider {{ accent_color }}"
+      src="{{ final_img_url }}"
+      alt="Devider"
       width="100%"
       height="100%"
       loading="lazy">
@@ -33,52 +24,13 @@
 </section>
 
 {% schema %}
-
   {
-    "name": "Custom Devider ",
-    "settings": [
-      {
-        "type": "select",
-        "id": "color",
-        "label": "Couleur du devider",
-        "options": [
-          {
-            "value": "cyan",
-            "label": "cyan"
-          },
-          {
-            "value": "bleu",
-            "label": "Bleu"
-          },
-          {
-            "value": "vert",
-            "label": "Vert"
-          },
-          {
-            "value": "jaune",
-            "label": "Jaune"
-          }, {
-            "value": "blanc",
-            "label": "Blanc"
-          }, {
-            "value": "orange",
-            "label": "Orange"
-          }, {
-            "value": "violet",
-            "label": "Violet"
-          }, {
-            "value": "rose",
-            "label": "Rose"
-          }
-        ],
-        "default": "bleu"
-      }
-    ],
+    "name": "Custom Devider",
+    "settings": [],
     "presets": [
       {
         "name": "Custom Devider"
       }
     ]
   }
-
 {% endschema %}

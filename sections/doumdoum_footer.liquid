@@ -1,0 +1,186 @@
+{{ 'doumdoum__footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="doumdoum__custom-footer page-width section--{{ section.id }} color-{{ section.settings.color_scheme }} 
+" style="background-image: url('{{ section.settings.footer_bg_image | image_url: width: 2000 }}'); position:relative;display: flex; flex-direction: column; justify-content: center; align-items: center; background-size: cover; background-position: center; background-repeat: no-repeat; padding: 32px 0 16px">
+  <div class="doumdoum__custom-footer footer_news-letter">
+    <h3 class="news-letter_title">
+      {{ section.settings.news_letter_title }}
+    </h3>
+    <p class="news-letter_info">
+      {{ section.settings.news_letter_info }}
+    </p>
+    <div class="news-letter_email">
+      {% for block in section.blocks %}
+        {% if block.type == 'custom_newsletter' %}
+          {% render 'custom-news-lettre'
+            , block: block %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="doumdoum__custom-footer footer_bear">
+    <img
+      src="{{ section.settings.footer_bear | img_url: '126px' }}"
+      width="126px"
+      height="126px"
+      alt="{{ section.settings.logo_footer.alt }}"
+      loading="lazy">
+  </div>
+  <div class="doumdoum__custom-footer footer_menu">
+    <div class="doumdoum__custom-footer footer_menu--top">
+      <div class="footer-grid">
+
+        {%- assign menu_index = 0 -%}
+        {%- assign total_menus = 3 -%}
+
+        {%- for i in (1..total_menus) -%}
+          {%- assign menu_setting = 'footer_menu_' | append: i -%}
+          {%- assign link_list = section.settings[menu_setting] -%}
+
+          {%- if link_list != blank -%}
+            {%- assign menu_data = linklists[link_list] -%}
+
+            {%- if i == 1 -%}
+              {%- assign col_span = 'grid-column: span 2;' -%}
+            {%- else -%}
+              {%- assign col_span = '' -%}
+            {%- endif -%}
+
+            <div class="footer-column" style="{{ col_span }}">
+              <h3 class="menu_title">{{ menu_data.title }}</h3>
+              <ul class="menu_list">
+                {%- for link in menu_data.links -%}
+                  <li class="menu_link">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+
+        <div class="footer-column">
+          <h3 class="menu_title">Langue</h3>
+          <ul class="menu_list">
+
+            <li class="language_link menu_link">
+              <a href="/fr">
+                <span style="margin-right: 8px;">🇫🇷</span>
+                Français
+              </a>
+            </li>
+
+            <li class="language_link menu_link">
+              <a href="/ar">
+                <span style="margin-right: 8px;">🇩🇿</span>
+                العربية
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      <h6 class="doudoum_signature">© 2025 - Doumdoum Baby Care</h6>
+    </div>
+    <div class="doumdoum__custom-footer footer_devider"></div>
+    <div class="doumdoum__custom-footer footer_logo--bot">
+      <img
+        src="{{ section.settings.logo_footer | img_url: '1024x' }}"
+        width="{{ section.settings.logo_footer.width }}"
+        height="{{ section.settings.logo_footer.height }}"
+        alt="{{ section.settings.logo_footer.alt }}"
+        loading="lazy">
+    </div>
+  </div>
+</footer>
+{% schema %}
+  {
+    "name": "Custom Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "news_letter_title",
+        "label": "Titre de la newsletter",
+        "default": "-10% sur votre première commande"
+      },
+      {
+        "type": "text",
+        "id": "news_letter_info",
+        "label": "Info de la newsletter",
+        "default": "Offrez à votre bébé des soins sûrs et doux dès aujourd'hui, nous vous appelons pour confirmer."
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_bg_image",
+        "label": "Image de fond du footer"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_bear",
+        "label": "Image du petit ours"
+      }, {
+        "type": "link_list",
+        "id": "footer_menu_1",
+        "label": "Shop"
+      }, {
+        "type": "link_list",
+        "id": "footer_menu_2",
+        "label": "Pages"
+      }, {
+        "type": "link_list",
+        "id": "footer_menu_3",
+        "label": "Social"
+      }, {
+        "type": "image_picker",
+        "id": "logo_footer",
+        "label": "Logo Image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "custom_newsletter",
+        "name": "Newsletter Personnalisée",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "select",
+            "id": "display_type",
+            "label": "Style du bouton",
+            "options": [
+              {
+                "value": "text",
+                "label": "Texte"
+              }, {
+                "value": "icon",
+                "label": "Icône (Flèche)"
+              }
+            ],
+            "default": "icon"
+          }, {
+            "type": "text",
+            "id": "label",
+            "label": "Texte du bouton",
+            "default": "S'inscrire",
+            "info": "Visible seulement si le style est 'Texte'"
+          }, {
+            "type": "text",
+            "id": "placeholder",
+            "label": "Texte du placeholder",
+            "default": "Votre adresse email",
+            "info": "Le texte affiché dans le champ avant la saisie."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Footer",
+        "blocks": [
+          {
+            "type": "custom_newsletter"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

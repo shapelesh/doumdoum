@@ -1,0 +1,115 @@
+{{ "doumdoum__about-soins.css" | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign doumdoum_icon = 'doumdoum-pink.svg' | asset_url
+  assign sun_img_bg ='bg_img_sun.svg' | asset_url
+%}
+<section class="doumdoum__about-soin page-width">
+  <div class="doumdoum__about-soin_doumdoum-icon" style="--doumdoum-bear : url('{{ doumdoum_icon }}')"></div>
+  <div class="doumdoum__about-soin-container">
+    <div class="doumdoum__about-soin-container-header">
+      <h2>{{ section.settings.about_soins_title }}</h2>
+      <p>{{ section.settings.about_soins_desc }}</p>
+    </div>
+    <div class="doumdoum__about-soin-content">
+      <div class="doumdoum__about-soin-content_img">
+        <div class="doumdoum__about-soin-content_img-box img-box-back" style="--sun-icon : url('{{ sun_img_bg }}')">
+          <img
+            src="{{ section.settings.img_box_back |  image_url: width: section.settings.img_box_back.width  }}"
+            width="{{ section.settings.img_box_back.width }}"
+            height="{{ section.settings.img_box_back.height }}"
+            alt="{{ section.settings.img_box_back.alt }}"
+            loading="lazy">
+        </div>
+
+        <div class="doumdoum__about-soin-content_img-box img-box-front" style="--doumdoum-bear : url('{{ doumdoum_icon }}')">
+          <img
+            src="{{ section.settings.img_box_front |  image_url: width: section.settings.img_box_front.width  }}"
+            width="{{ section.settings.img_box_front.width }}"
+            height="{{ section.settings.img_box_front.height }}"
+            alt="{{ section.settings.img_box_front.alt }}"
+            loading="lazy">
+        </div>
+      </div>
+      <div class="doumdoum__about-soin-content_text">
+        {% assign block_limit = 4 %}
+        {% for block in section.blocks limit: block_limit %}
+          <div class="doumdoum__about-soin-content_text-soin" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              <h3>{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.desc != blank %}
+              <p>{{ block.settings.desc }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="doumdoum__about-soin-footer">
+      <p>{{ section.settings.footer_text }}</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Approche de soins",
+    "settings": [
+      {
+        "type": "text",
+        "id": "about_soins_title",
+        "label": "Titre soins",
+        "default": "Notre approche des soins"
+      },
+      {
+        "type": "text",
+        "id": "about_soins_desc",
+        "label": "Descriptions soins",
+        "default": "Nous développons des soins essentiels du quotidien, pensés pour accompagner chaque moment :"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_box_back",
+        "label": "Image superposée",
+        "info": "Image de derriere"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_box_front",
+        "label": "Image superposée",
+        "info": "Image de devant"
+      }, {
+        "type": "text",
+        "id": "footer_text",
+        "label": "Footer de soin",
+        "default": "Chaque produit est conçu pour être doux, pratique et parfaitement toléré, même par les peaux les plus sensibles."
+      }
+
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Care Step",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Titre",
+            "default": "Bain"
+          }, {
+            "type": "text",
+            "id": "desc",
+            "label": "Description",
+            "default": "Un moment de douceur pour nettoyer sans agresser la peau fragile de votre bébé."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Approche soins DoumDoum"
+      }
+    ]
+
+  }
+{% endschema %}

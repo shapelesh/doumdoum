@@ -58,7 +58,7 @@
       }
     },
     "custom_hero_about_R6RDdq": {
-      "type": "custom_hero-about",
+      "type": "doumdoum__about-hero",
       "name": "Custom About Hero",
       "settings": {
         "btn_title_link": "",
@@ -72,7 +72,7 @@
       }
     },
     "custom_product_about_6CHRcq": {
-      "type": "custom_product-about",
+      "type": "doumdoum__about-product",
       "blocks": {
         "about_carousel_WrPYWk": {
           "type": "about_carousel",
@@ -87,11 +87,182 @@
         "collection": "produits",
         "products_limit": 10
       }
+    },
+    "doumdoum_about_soins_mAqaCn": {
+      "type": "doumdoum__about-soins",
+      "blocks": {
+        "item_KAYf4H": {
+          "type": "item",
+          "settings": {
+            "title": "Le bain :",
+            "desc": "Un moment de douceur pour nettoyer sans agresser la peau fragile de votre bébé."
+          }
+        },
+        "item_aqyyGy": {
+          "type": "item",
+          "settings": {
+            "title": "Le change :",
+            "desc": "Protéger et prévenir les irritations à chaque change en toute sérénité."
+          }
+        },
+        "item_37gV3M": {
+          "type": "item",
+          "settings": {
+            "title": "L’hydratation :",
+            "desc": "Nourrir et maintenir une peau douce, souple et confortable au quotidien."
+          }
+        },
+        "item_KCG9gH": {
+          "type": "item",
+          "settings": {
+            "title": "La protection contre les agressions extérieures :",
+            "desc": "Préserver la peau de votre bébé face au soleil, au froid et aux facteurs externes."
+          }
+        }
+      },
+      "block_order": [
+        "item_KAYf4H",
+        "item_aqyyGy",
+        "item_37gV3M",
+        "item_KCG9gH"
+      ],
+      "name": "Approche soins DoumDoum",
+      "settings": {
+        "about_soins_title": "Notre approche des soins",
+        "about_soins_desc": "Nous développons des soins essentiels du quotidien, pensés pour accompagner chaque moment :",
+        "img_box_back": "shopify://shop_images/back_img.png",
+        "img_box_front": "shopify://shop_images/front_img.png",
+        "footer_text": "Chaque produit est conçu pour être doux, pratique et parfaitement toléré, même par les peaux les plus sensibles."
+      }
+    },
+    "doumdoum_about_table_FGFD9t": {
+      "type": "doumdoum__about-table",
+      "blocks": {
+        "row_EVRkET": {
+          "type": "row",
+          "settings": {
+            "left_text": "<h3>Nous évitons</h3>",
+            "right_text": "<h3>Nous privilégions</h3>"
+          }
+        },
+        "row_jLkzqD": {
+          "type": "row",
+          "settings": {
+            "left_text": "Les ingrédients agressifs",
+            "right_text": "Des actifs sûrs et efficaces"
+          }
+        },
+        "row_QE7G9E": {
+          "type": "row",
+          "settings": {
+            "left_text": "Les composants superflus",
+            "right_text": "Des formules minimalistes"
+          }
+        },
+        "row_rRD7e4": {
+          "type": "row",
+          "settings": {
+            "left_text": "Tout ce qui pourrait fragiliser la peau",
+            "right_text": "Une tolérance optimale pour les bébés"
+          }
+        }
+      },
+      "block_order": [
+        "row_EVRkET",
+        "row_jLkzqD",
+        "row_QE7G9E",
+        "row_rRD7e4"
+      ],
+      "name": "Tableau about page",
+      "settings": {
+        "header_title": "Notre philosophie des ingrédients",
+        "header_sub_text": "Chez Doumdoum, chaque ingrédient est choisi avec soin."
+      }
+    },
+    "doumdoum_custom_devider_CBFjAm": {
+      "type": "doumdoum__custom-devider",
+      "name": "Custom Devider",
+      "settings": {}
+    },
+    "doumdoum_about_engagement_card_XUdqPp": {
+      "type": "doumdoum__about-engagement-card",
+      "blocks": {
+        "card_KVeggV": {
+          "type": "card",
+          "settings": {
+            "card_icon": "shopify://shop_images/bf89d1a964785b1b8dd97800402fb708832168ea.png",
+            "card_text": "Testés dermatologiquement et pédiatriquement"
+          }
+        },
+        "card_W4rP4M": {
+          "type": "card",
+          "settings": {
+            "card_icon": "shopify://shop_images/Fabrique_en_algerie.png",
+            "card_text": "Pensés pour une utilisation quotidienne en toute confiance"
+          }
+        },
+        "card_TYeyw4": {
+          "type": "card",
+          "settings": {
+            "card_icon": "shopify://shop_images/noix-de-coco.png",
+            "card_text": "Adaptés aux peaux sensibles"
+          }
+        },
+        "card_iRgGCg": {
+          "type": "card",
+          "settings": {
+            "card_text": "Titre de la carte"
+          }
+        }
+      },
+      "block_order": [
+        "card_KVeggV",
+        "card_W4rP4M",
+        "card_TYeyw4",
+        "card_iRgGCg"
+      ],
+      "name": "Engagements Doumdoum",
+      "settings": {
+        "engagment_title": "Notre engagement",
+        "engagment_text": "Des soins sûrs, doux et fiables, conçus pour accompagner votre bébé chaque jour en toute confiance."
+      }
+    },
+    "doumdoum_about_video_showcase_qL7CeR": {
+      "type": "doumdoum_about-video-showcase",
+      "blocks": {
+        "videos_mXzQ6M": {
+          "type": "videos",
+          "settings": {
+            "product_handle": ""
+          }
+        },
+        "videos_Vxndjt": {
+          "type": "videos",
+          "settings": {
+            "product_handle": ""
+          }
+        }
+      },
+      "block_order": [
+        "videos_mXzQ6M",
+        "videos_Vxndjt"
+      ],
+      "name": "Video ShowCase - About",
+      "settings": {
+        "about_video_header_title": "Notre promesse",
+        "about_video_header_sub_text": "Avec Doumdoum Babycare, chaque geste devient un geste sûr.",
+        "about_video_header_right_text": "Parce que prendre soin d'un bébé, ce n'est pas seulement une routine… c'est un acte d'amour, de protection et de confiance"
+      }
     }
   },
   "order": [
     "main",
     "custom_hero_about_R6RDdq",
-    "custom_product_about_6CHRcq"
+    "custom_product_about_6CHRcq",
+    "doumdoum_about_soins_mAqaCn",
+    "doumdoum_about_table_FGFD9t",
+    "doumdoum_custom_devider_CBFjAm",
+    "doumdoum_about_engagement_card_XUdqPp",
+    "doumdoum_about_video_showcase_qL7CeR"
   ]
 }

@@ -4,7 +4,10 @@
   <div class="doumdoum__custom-product-section_container-grid">
     <div class="container-grid__images">
       <div class="product-gallery">
-        <div class="product-main-image">
+        {% liquid
+          assign approved_img = section.settings.approved | image_url: width: 68
+        %}
+        <div class="product-main-image" style="--approved-icon : url('{{ approved_img }}')">
           <img
             id="MainImage-{{ section.id }}"
             src="{{ product.featured_media | img_url: '800x' }}"
@@ -31,7 +34,12 @@
     </div>
     <div class="container-grid__card-info card-info">
       <div class="card-info_title-price">
-        <div class="card-info_reviews"></div>
+        <div class="card-info_reviews">
+          {% render 'hero-yellow-stars' %}
+          <span>
+            {{ section.settings.review_text }}
+          </span>
+        </div>
         <h1>{{ product.title }}</h1>
         <span>{{ product.price | money }}</span>
       </div>
@@ -262,7 +270,18 @@
 {% schema %}
   {
     "name": "Product Section",
-    "settings": [],
+    "settings": [
+      {
+        "type": "text",
+        "id": "review_text",
+        "label": "Review Text",
+        "default": "+5,000 maman a validé le produit"
+      }, {
+        "type": "image_picker",
+        "id": "approved",
+        "label": "Approved"
+      }
+    ],
     "presets": [
       {
         "name": "Product Section"

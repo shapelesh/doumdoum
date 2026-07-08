@@ -1,0 +1,80 @@
+{{ 'doumdoum__about-video-showcase.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'doumdoum__video-player.js' | asset_url }}" defer></script>
+<script src="{{ 'video-overlay.js' | asset_url }}" defer></script>
+{% comment %} <script type="module">
+                                                                import { CustomCartDrawer } from '{{ "custom-cart-drawer.js" | asset_url }}';
+</script> {% endcomment %}
+<section class="doumdoum__about-video-showcase page-width">
+
+
+  <div class="doumdoum__about-video-showcase_header-container header-container ">
+    <div class="doumdoum__about-video-showcase_header-container-left">
+      <h2>{{ section.settings.about_video_header_title }}</h2>
+      <p>{{ section.settings.about_video_header_sub_text }}</p>
+    </div>
+    <div class="doumdoum__about-video-showcase_header-container-right">
+      <p>{{ section.settings.about_video_header_right_text }}</p>
+    </div>
+
+  </div>
+  <div class="doumdoum__about-video-showcase_carousels-container glide" data-slider="video_carousel">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        {% for block in section.blocks %}
+          {% if block.type == 'videos' %}
+            {% render 'custom-video'
+              , block: block
+              , video_index: forloop.index %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Video ShowCase - About",
+    "settings": [
+      {
+        "type": "text",
+        "id": "about_video_header_title",
+        "label": "Promess UGC",
+        "default": "Notre promesse"
+      }, {
+        "type": "text",
+        "id": "about_video_header_sub_text",
+        "label": "Sous-titre",
+        "default": "Avec Doumdoum Babycare, chaque geste devient un geste sûr."
+      }, {
+        "type": "text",
+        "id": "about_video_header_right_text",
+        "label": "Text a droite",
+        "default": "Parce que prendre soin d'un bébé, ce n'est pas seulement une routine… c'est un acte d'amour, de protection et de confiance"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "videos",
+        "name": "Videos",
+        "settings": [
+          {
+            "type": "video",
+            "id": "video_ugc",
+            "label": "Video UGC"
+          }, {
+            "type": "text",
+            "id": "product_handle",
+            "label": "Handle du produit associé",
+            "info": "Le handle (slug) du produit Shopify à afficher dans la modale vidéo, ex: mon-produit"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video ShowCase - About"
+      }
+    ]
+  }
+{% endschema %}

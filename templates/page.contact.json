@@ -6,8 +6,23 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
+    "doumdoum_contact_hero_U7cYUM": {
+      "type": "doumdoum__contact-hero",
+      "name": "Contact Hero",
+      "settings": {
+        "bg_contact_hero": "shopify://shop_images/contact_bg.png",
+        "about_banner_video": "shopify://files/videos/About-cover.mp4",
+        "contact_title": "Dis Salut !",
+        "profile_picture": "shopify://shop_images/pdp.png",
+        "profile_info_title": "Doumdoum.babycare",
+        "profile_info_sub_title": "Salut, je suis Younes. Parlons !",
+        "whatsapp_link": "",
+        "whatsapp_btn": "CHATTER MAINTENANT"
+      }
+    },
     "main": {
       "type": "main-page",
       "blocks": {
@@ -145,6 +160,7 @@
     }
   },
   "order": [
+    "doumdoum_contact_hero_U7cYUM",
     "main",
     "form"
   ]

@@ -1,0 +1,112 @@
+{{ "doumdoum__product-usage.css" | asset_url | stylesheet_tag }}
+
+<div class="doumdoum__product-usage_section-header-devider page-width section-header-devider">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    viewBox="0 0 1280 68"
+    fill="none">
+    <path d="M0 12L627 0L1280 12V66C1280 66 1082.47 68.5927 961 66C678.71 59.9748 461.022 47.89 246 53C138.579 55.5529 0 66 0 66V12Z" fill="#BDE4FD" />
+  </svg>
+</div>
+<section class="doumdoum__product-usage page-width section-{{ section.id }}">
+  {%- liquid
+    assign devider_color = product.metafields.custom.theme_devider_color.value
+    assign roll_img = devider_color.roll_svg.value
+
+    if roll_img.url
+      assign final_roll_img_url = roll_img.url
+    else
+      assign final_roll_img_url = roll_img | image_url
+    endif
+  -%}
+  <div class="product-usage_content_roll" style="--roll-icon: url('{{ final_roll_img_url }}');"></div>
+  <div class="doumdoum__product-usage_content-container product-usage_content-container">
+    <div class="product-usage_content_stars">
+      <div class="left-stars content_stars">
+        {%- liquid
+          assign star_img = devider_color.star_svg.value
+
+          if star_img.url
+            assign final_star_img_url = star_img.url
+          else
+            assign final_star_img_url = star_img | image_url
+          endif
+        -%}
+        {% for i in (1..3) %}
+          <div class="single-star left-single-star--{{ i }}">
+            <img
+              src="{{ final_star_img_url }}"
+              alt="Décoratif {{ devider_color }}"
+              width="12px"
+              height="20px" />
+          </div>
+        {% endfor %}
+      </div>
+      <div class="right-stars content_stars">
+        {% for i in (1..3) %}
+          <div class="single-star right-single-star--{{ i }}">
+            <img
+              src="{{ final_star_img_url }}"
+              alt="Décoratif {{ devider_color }}"
+              width="12px"
+              height="20px" />
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="product-usage_content usage-image">
+      {% assign usage_image = product.metafields.custom.usage_img %}
+      {% if usage_image != blank %}
+        <img
+          src="{{ usage_image.value |  image_url: width:1000  }}"
+          width="{{ usage_image.width }}"
+          height="{{ usage_image.height }}"
+          alt="image d'utilisation">
+      {% endif %}
+    </div>
+    <div class="product-usage_content-container usage-text-content">
+      <h2>{{ section.settings.usage_title }}</h2>
+      {% assign instructions_list = product.metafields.custom.produits.value %}
+
+      {% if instructions_list %}
+        <div class="product-instructions">
+
+          {% for instruction in instructions_list %}
+            <div class="instruction-item" style="margin-bottom: 20px;">
+
+              <h4 class="instruction-title">
+                {{ instruction.name }}
+              </h4>
+
+              <div class="instruction-description">
+                {{ instruction.usage }}
+              </div>
+
+            </div>
+          {% endfor %}
+
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+</section>
+{% schema %}
+  {
+    "name": "Utilisations Produits",
+    "settings": [
+      {
+        "type": "text",
+        "id": "usage_title",
+        "label": "Titre d'usages",
+        "default": "Comment prendre soin de votre bébé"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Utilisations Produits"
+      }
+    ]
+  }
+{% endschema %}
