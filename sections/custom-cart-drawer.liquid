@@ -6,7 +6,7 @@
 <custom-cart-drawer id="CustomCartDrawer">
   <div class="cart-header">
     <div class="cart-header-offers">
-      <p>{{ section.settings.header_offer }}<span>{{ threshold }}</span>
+      <p>{{ section.settings.header_offer }}<span>{{ threshold | money_without_trailing_zeros }}</span>
       </p>
 
     </div>
@@ -23,7 +23,7 @@
       {%- assign remaining = threshold | minus: cart.total_price -%}
       <p class="shipping-message">
         😉
-        <span class="amount-needed">{{ remaining | money }}</span>
+        <span class="amount-needed">{{ remaining | money_without_trailing_zeros }}</span>
         pour la livraison gratuite !
       </p>
     {%- else -%}
@@ -113,7 +113,7 @@
       {%- if cart.item_count > 0 -%}
         <a href="/checkout" class="btn-checkout active">
           Commander maintenant
-          <span class="total-price">{{ cart.total_price | money }}</span>
+          <span class="total-price">{{ cart.total_price | money_without_trailing_zeros }}</span>
         </a>
       {%- else -%}
         <button class="btn-checkout disabled" disabled>
@@ -130,7 +130,7 @@
 </custom-cart-drawer>
 
 {% comment %} <script type="module">
-    import { CustomCartDrawer } from '{{ "custom-cart-drawer.js" | asset_url }}';
+        import { CustomCartDrawer } from '{{ "custom-cart-drawer.js" | asset_url }}';
 </script> {% endcomment %}
 
 {% schema %}

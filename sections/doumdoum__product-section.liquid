@@ -48,7 +48,7 @@
           </span>
         </div>
         <h1>{{ product.title }}</h1>
-        <span>{{ product.price | money }}</span>
+        <span>{{ product.price | money_without_trailing_zeros }}</span>
       </div>
       <div class="card-info_benifits-list">
         {% render 'meta_benefits'
