@@ -164,7 +164,7 @@
             <span class="doumdoum__sticky-add-to-cart__qty" id="sticky-qty-display">1x</span>
             <span class="doumdoum__sticky-add-to-cart__title">{{ product.title }}</span>
             {% if product.selected_or_first_available_variant.price %}
-              <span class="doumdoum__sticky-add-to-cart__price">{{ product.selected_or_first_available_variant.price | money }}</span>
+              <span class="doumdoum__sticky-add-to-cart__price">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
             {% endif %}
           </div>
           <div class="doumdoum__sticky-add-to-cart_info-container-reviews">
@@ -196,7 +196,9 @@
               type="button"
               id="sticky-buy-now-btn"
               class="doumdoum__add-btn doumdoum__sticky-btn-buy">
-              Acheter maintenant
+              <span class="btn-text--desktop">Acheter maintenant</span>
+              <span class="btn-text--mobile">Acheter</span>
+
             </button>
             <button
               type="submit"
@@ -204,7 +206,7 @@
               class="doumdoum__add-btn doumdoum__sticky-btn-cart">
               Ajouter au panier -
               <span id="sticky-cart-price-display" data-base-price="{{ product.selected_or_first_available_variant.price }}">
-                {{ product.selected_or_first_available_variant.price | money }}
+                {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
               </span>
             </button>
           </form>
