@@ -1,0 +1,114 @@
+{{ 'doumdoum__about-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="doumdoum__about-hero page-width section--{{ section.id }}">
+  <div class="doumdoum__about-hero_header main-hero_header">
+    {% liquid
+      assign btn_bg = 'footer_bg.webp' | asset_url
+    %}
+    <a
+      href="{{ section.settings.btn_title_link }}"
+      class="main-hero_header_title-btn"
+      style="--bg-btn : url('{{ btn_bg }}')">{{ section.settings.btn_title }}</a>
+    <h1 class="main-hero_header_title">{{ section.settings.about_title }}</h1>
+  </div>
+  <div class="doumdoum__about-hero_header main-hero_banner">
+    {% if section.settings.banner_type == 'video' and section.settings.about_banner_video != blank %}
+      <div class="hero-video-container">
+        {{ section.settings.about_banner_video | video_tag: image_size: '1800x1000', autoplay: section.settings.video_autoplay, loop: true, muted: true, controls: false, class: 'hero-video' }}
+      </div>
+    {% elsif section.settings.banner_type == 'image' and section.settings.about_banner != blank %}
+      <div class="hero-image-container">
+        <img
+          src="{{ section.settings.about_banner | image_url: width: 1800 }}"
+          alt="{{ section.settings.about_banner.alt | default: 'Bannière principale' }}"
+          loading="eager"
+          width="1800"
+          height="1000"
+          class="hero-image">
+      </div>
+    {% endif %}
+  </div>
+  <div class="doumdoum__about-hero_header main-hero_info">
+    <div class="main-hero_info_left">
+      {{ section.settings.info_text_left }}
+    </div>
+    <div class="main-hero_info_right">
+      {{ section.settings.info_text_right }}
+    </div>
+
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Custom About Hero",
+    "settings": [
+      {
+        "type": "url",
+        "id": "btn_title_link",
+        "label": "Lien boutton Nos Valeurs"
+      },
+      {
+        "type": "text",
+        "id": "btn_title",
+        "label": "Nos Valeurs",
+        "default": "Nos Valeurs"
+      },
+      {
+        "type": "text",
+        "id": "about_title",
+        "label": "Titre de la page",
+        "info": "Seo ++",
+        "default": "DoumDoum Plus qu'une marque, une mission"
+
+      },
+      {
+        "type": "select",
+        "id": "banner_type",
+        "label": "Type de média",
+        "options": [
+          {
+            "value": "image",
+            "label": "Image"
+          }, {
+            "value": "video",
+            "label": "Vidéo"
+          }
+        ],
+        "default": "image"
+      }, {
+        "type": "image_picker",
+        "id": "about_banner",
+        "label": "Bannière Image"
+      }, {
+        "type": "video",
+        "id": "about_banner_video",
+        "label": "Bannière Vidéo"
+      }, {
+        "type": "checkbox",
+        "id": "video_autoplay",
+        "label": "Lecture automatique",
+        "default": true
+      }, {
+        "type": "richtext",
+        "id": "info_text_left",
+        "label": "Description",
+        "info": "Coté gauche",
+        "default": "<p>Chez Doumdoum Babycare, nous croyons que la peau des bébés mérite une attention particulière, dès les premiers jours. Fine, fragile et encore en développement, elle nécessite des soins spécifiquement formulés pour protéger, apaiser et renforcer sa barrière naturelle.</p>"
+
+      }, {
+        "type": "richtext",
+        "id": "info_text_right",
+        "label": "Description",
+        "info": "Coté droit",
+        "default": "<p>Doumdoum est née avec une ambition simple :offrir aux parents des produits sûrs, efficaces et transparents, adaptés aux besoins réels de leurs bébés.</p>"
+
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom About Hero",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

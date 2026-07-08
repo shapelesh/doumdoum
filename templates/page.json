@@ -58,7 +58,7 @@
       }
     },
     "custom_hero_about_R6RDdq": {
-      "type": "custom_hero-about",
+      "type": "doumdoum__about-hero",
       "name": "Custom About Hero",
       "settings": {
         "btn_title_link": "",
@@ -72,7 +72,7 @@
       }
     },
     "custom_product_about_6CHRcq": {
-      "type": "custom_product-about",
+      "type": "doumdoum__about-product",
       "blocks": {
         "about_carousel_WrPYWk": {
           "type": "about_carousel",

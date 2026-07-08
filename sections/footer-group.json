@@ -12,7 +12,7 @@
   "name": "Footer",
   "sections": {
     "custom_footer_GXW9GJ": {
-      "type": "custom_footer",
+      "type": "doumdoum_footer",
       "blocks": {
         "custom_newsletter_pcFyqX": {
           "type": "custom_newsletter",
@@ -23,9 +23,7 @@
           }
         }
       },
-      "block_order": [
-        "custom_newsletter_pcFyqX"
-      ],
+      "block_order": ["custom_newsletter_pcFyqX"],
       "name": "Custom Footer",
       "settings": {
         "news_letter_title": "-10% sur votre première commande",
@@ -39,7 +37,5 @@
       }
     }
   },
-  "order": [
-    "custom_footer_GXW9GJ"
-  ]
+  "order": ["custom_footer_GXW9GJ"]
 }
