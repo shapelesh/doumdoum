@@ -1,0 +1,207 @@
+{{ 'doumdoum__contact-form.css' | asset_url | stylesheet_tag }}
+
+<section class="doumdoum__contact-form page-width">
+  <div class="doumdoum__contact-form-container">
+    <div class="doumdoum__contact-form-left doumdoum__contact-form-info-form-container">
+      <h3>{{ section.settings.contact_us_info }}</h3>
+
+      <div class="doumdoum__contact-form-left-direct-info">
+        <h4>{{ section.settings.direct_info }}</h4>
+
+        <div class="direct-info">
+          <p>Appelez-nous :</p>
+          <a href="tel:{{ section.settings.phone_number | remove: ' ' }}">
+            {{ section.settings.phone_number }}
+          </a>
+        </div>
+
+        <div class="direct-info">
+          <p>Envoyez un email :</p>
+          <a href="mailto:{{ section.settings.email_address }}">
+            {{ section.settings.email_address }}
+          </a>
+        </div>
+      </div>
+
+      <div class="doumdoum__contact-form-left-social">
+        <h4>{{ section.settings.social_title }}</h4>
+
+        <div class="doumdoum__contact-form-left-social-list">
+          {% if section.settings.social_menu != blank %}
+            <ul class="menu_list">
+              {% for link in section.settings.social_menu.links %}
+                <li class="menu_link">
+                  <a
+                    href="{{ link.url }}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="doumdoum__contact-form-right doumdoum__contact-form-info-form-container">
+      <div class="doumdoum__contact-form-right-title">
+        <h3>{{ section.settings.contact_us_send }}</h3>
+        <p>{{ section.settings.contact_us_response_info }}</p>
+      </div>
+
+      {% form 'contact'
+        , class: 'doumdoum__contact-form-element' %}
+
+        {% if form.posted_successfully? %}
+          <div class="form-success">
+            Merci, votre message a été envoyé avec succès.
+          </div>
+        {% endif %}
+
+        {% if form.errors %}
+          <div class="form-error-message">
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+
+        <input
+          type="hidden"
+          name="contact[email]"
+          value="contact@doumdoum.co">
+
+        <input
+          type="hidden"
+          name="contact[name]"
+          value="Client Site">
+
+        <div class="form-field">
+          <label for="contact-phone">Numéro de téléphone</label>
+          <input
+            type="tel"
+            id="contact-phone"
+            name="contact[phone]"
+            value="{{ form.phone }}"
+            placeholder="0550 11 22 33"
+            required>
+        </div>
+
+        <div class="form-field">
+          <label for="contact-message">Votre message ici...</label>
+          <textarea
+            id="contact-message"
+            name="contact[body]"
+            rows="5"
+            required>{{ form.body }}</textarea>
+        </div>
+
+        <div class="form-field form-radio-group">
+          <label>Qui êtes-vous ?</label>
+
+          <div class="radio_button">
+
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="type-grossiste"
+                name="contact[customer_type]"
+                value="Client"
+                checked>
+              <label for="type-grossiste">Client</label>
+            </div>
+
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="type-particulier"
+                name="contact[customer_type]"
+                value="Point de vente">
+              <label for="type-particulier">Point de vente</label>
+            </div>
+
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="type-point-vente"
+                name="contact[customer_type]"
+                value="Grossiste">
+              <label for="type-point-vente">Grossiste</label>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn">
+            Envoyer le message
+          </button>
+        </div>
+
+      {% endform %}
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+  {
+    "name": "Contact Doumdoum",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Colonne Gauche - Informations"
+      },
+      {
+        "type": "text",
+        "id": "contact_us_info",
+        "label": "Titre principal de gauche",
+        "default": "Entrer en contact"
+      },
+      {
+        "type": "text",
+        "id": "direct_info",
+        "label": "Sous-titre infos directes",
+        "default": "Contact direct"
+      },
+      {
+        "type": "text",
+        "id": "phone_number",
+        "label": "Numéro de téléphone",
+        "default": "+213 770 777 370"
+      }, {
+        "type": "text",
+        "id": "email_address",
+        "label": "Adresse e-mail",
+        "default": "contact@doumdoum.co"
+      }, {
+        "type": "text",
+        "id": "social_title",
+        "label": "Titre de la section liens/réseaux",
+        "default": "Réseaux sociaux"
+      }, {
+        "type": "link_list",
+        "id": "social_menu",
+        "label": "Menu à afficher"
+      }, {
+        "type": "header",
+        "content": "Colonne Droite - Formulaire"
+      }, {
+        "type": "text",
+        "id": "contact_us_send",
+        "label": "Titre du formulaire",
+        "default": "Envoyez-nous un message"
+      }, {
+        "type": "text",
+        "id": "contact_us_response_info",
+        "label": "Texte d'information de réponse",
+        "default": "Réponse en quelques minutes ..."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Contact Doumdoum"
+      }
+    ]
+  }
+{% endschema %}
