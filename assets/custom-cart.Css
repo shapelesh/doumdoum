@@ -362,6 +362,8 @@ custom-cart-drawer.is-loading {
   flex-direction: column;
   justify-content: center;
   gap: 4px;
+
+  overflow: hidden;
 }
 .recommendation-info h4 {
   font-family: Nunito;
@@ -373,6 +375,10 @@ custom-cart-drawer.is-loading {
   text-overflow: ellipsis;
   color: #181d27;
   margin: 0;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  max-width: 118px;
+  overflow: hidden;
 }
 .recommendation-info p,
 .recommendation-info span {

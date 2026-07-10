@@ -66,4 +66,9 @@ export const sliderRegistry = {
       },
     },
   },
+  productGallery: {
+    type: "slider",
+    perView: 7,
+    bound: true,
+  },
 };
