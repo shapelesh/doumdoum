@@ -187,8 +187,11 @@
 }
 .doumdoum__contact-form-element .form-field input[type="tel"]:focus {
   border-color: #bfc0c2;
+  border: 1px solid #f2b6d6;
   outline: none;
-  box-shadow: 0 0 5px 0 #0a0d120d;
+  box-shadow:
+    0 0 0 4px #ebf2ff,
+    0 1px 2px #0a0d120d;
 }
 .doumdoum__contact-form-element .form-field input[type="tel"]::placeholder {
   color: #717680;
@@ -209,9 +212,10 @@
   box-shadow: 0 1px 2px 0 #0a0d120d;
 }
 .doumdoum__contact-form-element .form-field textarea:focus {
-  border-color: #bfc0c2;
+  border-color: #fda29b;
   outline: none;
-  box-shadow: 0 0 5px 0 #0a0d120d;
+  box-shadow: 0 1px 2px 0 #0a0d120d;
+  background-color: #ffffff;
 }
 .form-radio-group {
   display: flex;
@@ -263,7 +267,9 @@
   .radio-option
   input[type="radio"]:checked
   + label {
-  outline: 2px solid #6f7072;
+  background-color: #fafafa;
+  box-shadow: 4px 4px 0 0 #d2d2d2;
+  outline: 1px solid #a4a7ae;
 }
 .form-submit {
   display: flex;

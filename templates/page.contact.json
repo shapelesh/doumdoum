@@ -106,11 +106,79 @@
         "contact_us_send": "Envoyez-nous un message",
         "contact_us_response_info": "Réponse en quelques minutes ..."
       }
+    },
+    "custom_faq_dexiEg": {
+      "type": "custom_FAQ",
+      "blocks": {
+        "custom_faq_Fde8Y9": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Est-ce que ce produit convient si mon bébé a de l’eczéma ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont formulés pour les peaux sensibles et fragiles. Grace a des ingrédients doux et sans substances agressives, ils peuvent être utilisés en cas de peau sujette a l'eczéma. En cas de poussés importante, il est toujours recommandé de demander l'avis d'un professionnel de santé"
+          }
+        },
+        "custom_faq_Vnhdj7": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Quelle est la différence entre le liniment et la crème de change ?",
+            "faq_res_text": "Le liniment s'utilise en prévention, dés le change, pour nettoyer la peau et créer un barrière protectrices afin d'éviter les irritations"
+          }
+        },
+        "custom_faq_3a6h6K": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "À partir de quel âge peut-on utiliser ces produits ?",
+            "faq_res_text": "Les produits Doumdoum peuvent être utilisés dés l'âge de 6 mois, ils sont conçue pour être doux et sûre pour la peau des enfants"
+          }
+        },
+        "custom_faq_jaBkdx": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Les produits sont-ils disponibles en pharmacie ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont disponible dans les pharmacie et les magasins"
+          }
+        },
+        "custom_faq_RNrjwi": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Les produits sont-ils adaptés aux peaux sensibles ?",
+            "faq_res_text": "Oui, tous les produits Doumdoum sont spécialement formulés pour les peaux sensibles : sans parfums agressif, avec des ingrédients doux et testés dermatologiquement"
+          }
+        },
+        "custom_faq_V4LJkm": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Le produit est-il algérien ?",
+            "faq_res_text": "Oui, les produits Doumdoum sont conçus fabriqués en Algérie spécialement pensés pour répondre aux besoins des mamans et bébés algériens"
+          }
+        },
+        "custom_faq_E9wKWz": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Peut-on utiliser ces produits dès la naissance ?",
+            "faq_res_text": "Les produits Doumdoum sont adaptés dés le plus jeune âges, mais pour les nouveau-nés, il est toujours préférable de demander conseils a un professionnel de santé, surtout en cas de peau très sensibles ou de situation particulière"
+          }
+        }
+      },
+      "block_order": [
+        "custom_faq_Fde8Y9",
+        "custom_faq_Vnhdj7",
+        "custom_faq_3a6h6K",
+        "custom_faq_jaBkdx",
+        "custom_faq_RNrjwi",
+        "custom_faq_V4LJkm",
+        "custom_faq_E9wKWz"
+      ],
+      "name": "Custom FAQ",
+      "settings": {
+        "faq_title": "Questions fréquentes des parents"
+      }
     }
   },
   "order": [
     "doumdoum_contact_hero_U7cYUM",
     "main",
-    "doumdoum_contact_form_GxmUBj"
+    "doumdoum_contact_form_GxmUBj",
+    "custom_faq_dexiEg"
   ]
 }
