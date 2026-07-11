@@ -177,10 +177,7 @@
                   "blocks": {}
                 }
               },
-              "block_order": [
-                "text_xrnftG",
-                "price_tVjtKg"
-              ]
+              "block_order": ["text_xrnftG", "price_tVjtKg"]
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -315,9 +312,7 @@
           }
         }
       },
-      "block_order": [
-        "videos_XnBb4J"
-      ],
+      "block_order": ["videos_XnBb4J"],
       "name": "Video ShowCase",
       "settings": {
         "header_title": "Les expériences réelles avec Doumdoum",
@@ -442,7 +437,7 @@
       "settings": {}
     },
     "custom_faq_YMYNXW": {
-      "type": "custom_FAQ",
+      "type": "doumoum_FAQ",
       "blocks": {
         "custom_faq_8nRW6c": {
           "type": "custom_faq",
