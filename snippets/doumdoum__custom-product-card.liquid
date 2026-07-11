@@ -1,8 +1,5 @@
 {%- assign background_image = product.metafields.custom.card_background.value |  image_url: height: 280 -%}
 
-
-
-
 <li class="
   doumdoum__custom-product-card
   {% if classname %}
@@ -18,6 +15,7 @@
     {% endif %}
   "
   >
+  <a href="{{ product.url }}"></a>
     {%- assign card_image = product.metafields.custom.product_card_image.value -%}
     {%- if card_image != blank -%}
       {%- for image in card_image limit: 1 -%}
@@ -48,6 +46,7 @@
     {%- endunless -%}
   </div>
   <div class="doumdoum__custom-product-card-bottom">
+    <a href="{{ product.url }}"></a>
     <div class="product-title">
       <h5>
         {{ product.title }}

@@ -9,6 +9,7 @@
   right: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .doumdoum__header-drawer-products_tab.open {
   transform: translateX(0);
@@ -75,6 +76,7 @@ product-category-tabs {
 .doumdoum__product-category-page.open {
   opacity: 1;
   pointer-events: all;
+  overflow-y: scroll;
 }
 
 .doumdoum__product-category-page ul {

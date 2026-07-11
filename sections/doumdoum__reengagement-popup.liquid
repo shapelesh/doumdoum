@@ -1,4 +1,7 @@
-<script src="{{ "doumdoum__reengagement-popup.js" |  asset_url }}" type="module" defer></script>
+<script
+  src="{{ "doumdoum__reengagement-popup.js" |  asset_url }}"
+  type="module"
+  defer></script>
 {{ "doumdoum__reengagement-popup.css" | asset_url | stylesheet_tag }}
 
 {%- if section.settings.popup_product != blank -%}
@@ -52,7 +55,7 @@
           </button>
           <button
             type="button"
-            class="doumdoum__reengagement-popup-buy-button"
+            class="doumdoum__reengagement-popup-buy-button light_ray"
             data-variant-id="{{ popup_a_product.selected_or_first_available_variant.id }}">
             {{ section.settings.buy_button_label }} - {{ popup_a_product.price | money }}
           </button>

@@ -51,7 +51,7 @@
               <div class="article-info-container">
                 <h3>{{ article.title }}</h3>
                 <p class="article-excerpt">{{ article.excerpt }}</p>
-                <a href="{{ article.url }}">Lire la suite
+                <a target="_blank" href="{{ article.url }}">Lire la suite
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@
               <div class="article-info-container">
                 <h3>Titre de l'article</h3>
                 <p>Extrait de l'article...</p>
-                <a href="#">Lire la suite
+                <a target="_blank" href="#">Lire la suite
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +127,7 @@
                 alt="Couverture vidéo">
               <div class="article-info-container">
                 <h3>{{ block.settings.custom_title | default: video.title }}</h3>
-                <a href="{{ video.url }}">YouTube Podcast
+                <a target="_blank" href="{{ video.url }}">YouTube Podcast
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +159,7 @@
               <div class="article-info-container">
                 <h3>Titre du Podcast</h3>
                 <p>Description de la vidéo...</p>
-                <a href="#">YouTube Podcast
+                <a target="_blank" href="#">YouTube Podcast
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

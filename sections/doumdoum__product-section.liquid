@@ -7,7 +7,7 @@
 </script>
 <script src="{{ 'doumdoum__product-section.js' | asset_url }}" defer></script>
 
-<section class="doumdoum__custom-product-section page-width section--{{ section.id }} {{ product.title }}--{{ section.id }}">
+<section class="doumdoum__custom-product-section section--{{ section.id }} {{ product.title }}--{{ section.id }}" data-section-id="{{ section.id }}">
   <div class="doumdoum__custom-product-section_container-grid">
     <div class="container-grid__images">
       <div class="product-gallery">
@@ -205,7 +205,7 @@
             <button
               type="submit"
               name="add"
-              class="doumdoum__add-btn doumdoum__sticky-btn-cart">
+              class="doumdoum__add-btn doumdoum__sticky-btn-cart light_ray">
               Ajouter au panier -
               <span id="sticky-cart-price-display" data-base-price="{{ product.selected_or_first_available_variant.price }}">
                 {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}

@@ -56,10 +56,14 @@
   border: none;
   outline: 1px solid #e9eaeb;
 }
+.doumdoum__custom-blog-articles .container_btn a:hover {
+}
 .doumdoum__custom-blog-articles .doumdoum_podcast {
   color: #f570b7;
 }
-
+.doumdoum__custom-blog-articles .doumdoum_blog:hover {
+  box-shadow: 4px 4px 0px 0px #d2d2d2;
+}
 .doumdoum__custom-blog-articles .blog-articles-grid {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -78,6 +82,7 @@
   gap: 32px;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 .doumdoum__custom-blog-articles .article-content img,
 .placeholder-image {
@@ -127,8 +132,24 @@
   line-height: 120%;
   letter-spacing: -0.5%;
   color: #414651;
+  margin-top: auto;
   margin-left: 16px;
+  margin-bottom: 12.5px;
+  transition: 300ms;
+  text-underline-offset: 4px;
 }
+.doumdoum__custom-blog-articles .article-info-container a::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.doumdoum__custom-blog-articles .article-info-container a:hover {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 992px) {
   .doumdoum__custom-blog-articles {
     padding: 57px 45px;

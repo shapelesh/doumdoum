@@ -1,7 +1,7 @@
 // getting liquid element from section.liquid
 function getSectionId(element) {
   if (element) {
-    const parentSection = element.closest(".doumdoum__custom-product-section");
+    const parentSection = element.closest("section");
     if (parentSection) {
       return parentSection.getAttribute("data-section-id");
     }

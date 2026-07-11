@@ -208,7 +208,7 @@ class CustomHeaderDrawer extends Component {
   _openDrawer() {
     const drawer = this.refs.headerDrawer;
     if (!drawer) return;
-
+    document.body.classList.add("disable_scroll");
     this.classList.add("is-open");
     drawer?.setAttribute("aria-hidden", "false");
     this.drawerOpener?.setAttribute("aria-expanded", "true");
@@ -220,6 +220,7 @@ class CustomHeaderDrawer extends Component {
   _closeDrawer() {
     const drawer = this.refs.headerDrawer;
     if (!drawer) return;
+    document.body.classList.remove("disable_scroll");
 
     if (this._isTabOpen) {
       this._closeTab();
