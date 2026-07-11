@@ -265,9 +265,7 @@
     "doumdoum_custom_devider_78WVxR": {
       "type": "doumdoum__custom-devider",
       "name": "Custom Devider",
-      "settings": {
-        "color": "bleu"
-      }
+      "settings": {}
     },
     "doumdoum_blog_posts_MCkike": {
       "type": "doumdoum__blog-posts",
