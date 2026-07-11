@@ -60,7 +60,8 @@ custom-cart-drawer.is-open {
 
 .cart-header-offers {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 34px;
   background: #6bb4f3;
@@ -77,6 +78,7 @@ custom-cart-drawer.is-open {
   letter-spacing: -0.5%;
   text-align: center;
   margin: 0;
+  text-wrap: nowrap;
 }
 .cart-header-title {
   display: flex;
@@ -462,6 +464,9 @@ custom-cart-drawer.is-from-video + .cart-drawer-overlay {
   }
 }
 @media screen and (max-width: 480px) {
+  .cart-header-offers {
+    padding: 10px 45px;
+  }
   custom-cart-drawer {
     --drawer-width: 90%;
   }

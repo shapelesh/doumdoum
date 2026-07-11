@@ -128,6 +128,7 @@
 }
 
 .doumdoum__main-hero-left-bottom-bottom a {
+  position: relative;
   font-family: nunito;
   font-weight: 500;
   font-size: 16px;

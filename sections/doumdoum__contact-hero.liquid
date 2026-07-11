@@ -1,11 +1,22 @@
+{{ 'doumdoum__contact-hero.css' | asset_url | stylesheet_tag }}
+
 <section class="doumdoum__contact-hero page-width">
   <div class="doumdoum__contact-hero-bg">
-    <img
-      src="{{ section.settings.bg_contact_hero |  image_url: width: section.settings.bg_contact_hero.width }}"
-      width="{{ section.settings.bg_contact_hero.width }}"
-      height="{{ section.settings.bg_contact_hero.height }}"
-      alt="{{ section.settings.bg_contact_hero.alt }}"
-      loading="eager">
+    {% if section.settings.banner_type == 'video' and section.settings.contact_banner_video != blank %}
+
+      {{ section.settings.contact_banner_video | video_tag: image_size: '1800x1000', autoplay: section.settings.video_autoplay, loop: true, muted: true, controls: false, class: 'hero-video' }}
+
+    {% elsif section.settings.banner_type == 'image' and section.settings.contact_banner_img != blank %}
+
+      <img
+        src="{{ section.settings.contact_banner_img |  image_url: width: section.settings.contact_banner_img.width }}"
+        width="{{ section.settings.contact_banner_img.width }}"
+        height="{{ section.settings.contact_banner_img.height }}"
+        alt="{{ section.settings.contact_banner_img.alt }}"
+        loading="eager">
+
+    {% endif %}
+
   </div>
   <div class="doumdoum__contact-hero-content">
     <h2>{{ section.settings.contact_title }}</h2>
@@ -36,186 +47,33 @@
     </div>
   </div>
 </section>
-<style>
-  .doumdoum__contact-hero {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .doumdoum__contact-hero-bg {
-    width: 100%;
-    height: 100%;
-  }
-  .doumdoum__contact-hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: blur(5px);
-  }
-  .doumdoum__contact-hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    max-width: 308px;
-    width: 100%;
-    transform: translate(-50%, -50%);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 13px;
-    z-index: 1;
-  }
-  .doumdoum__contact-hero-content h2 {
-    font-family: Fredoka;
-    font-weight: 500;
-    font-style: Medium;
-    font-size: 34px;
-    leading-trim: NONE;
-    line-height: 120%;
-    letter-spacing: -0.75%;
-    text-align: center;
-    color: #252B37;
-    margin: 0;
-  }
-  .doumdoum__contact-hero-contact-card {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 16px;
-
-    background-color: #EEF6FF99;
-    box-shadow: 0 4px 4px 0 #0000001A;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: none;
-    outline: 1px solid #E9EAEB;
-    border-radius: 16px;
-  }
-  .doumdoum__contact-hero-contact-card p {
-    font-family: Inter;
-    font-weight: 500;
-    font-style: Medium;
-    font-size: 12px;
-    leading-trim: NONE;
-    line-height: 120%;
-    letter-spacing: -0.5%;
-    margin: 0;
-    color: #414651;
-  }
-  .contact-card-profile {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-  }
-  .contact-card-profile-picture {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    border: none;
-    outline: 2px solid #FAFAFA;
-  }
-  .contact-card-profile-picture img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: contain;
-  }
-  .contact-card-profile-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .contact-card-profile-info h1 {
-    font-family: Nunito;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 18px;
-    leading-trim: NONE;
-    line-height: 120%;
-    letter-spacing: -0.5%;
-    color: black;
-    margin: 0;
-  }
-  .contact-card-profile-info p {
-    font-family: Nunito;
-    font-weight: 500;
-    font-style: Medium;
-    font-size: 14px;
-    leading-trim: NONE;
-    line-height: 120%;
-    letter-spacing: -0.5%;
-    color: #535862;
-    margin: 0;
-  }
-  .contact-card-btn {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-self: center;
-  }
-  .contact-card-btn a {
-    text-decoration: none;
-
-    width: 100%;
-    max-width: 90%;
-    padding: 12px 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0;
-    gap: 1.5px;
-
-    font-family: Nunito;
-    font-weight: 500;
-    font-style: Medium;
-    font-size: 16px;
-    leading-trim: NONE;
-    line-height: 120%;
-    letter-spacing: -0.5%;
-    color: #FFFFFF;
-    text-transform: uppercase;
-
-    border: none;
-    border-radius: 16px;
-    background-color: #6BB4F3;
-    outline: 1px solid #D5EDFF;
-  }
-  .contact-card-btn a .doumdoum_chat-icon {
-    position: relative;
-  }
-  .contact-card-btn a .doumdoum_chat-icon::after {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -33px;
-    transform: translate(50%, -50%);
-    background-image: var(--bg-btn);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-  }
-</style>
 {% schema %}
   {
     "name": "Contact Hero",
     "settings": [
       {
+        "type": "select",
+        "id": "banner_type",
+        "label": "Type de média",
+        "options": [
+          {
+            "value": "image",
+            "label": "Image"
+          }, {
+            "value": "video",
+            "label": "Vidéo"
+          }
+        ],
+        "default": "image"
+      },
+      {
+        "type": "video",
+        "id": "contact_banner_video",
+        "label": "Bannière Vidéo"
+      },
+      {
         "type": "image_picker",
-        "id": "bg_contact_hero",
+        "id": "contact_banner_img",
         "label": "Image d'arriere plan"
       },
       {
@@ -223,13 +81,11 @@
         "id": "contact_title",
         "label": "Titre Contact",
         "default": "Dis Salut !"
-      },
-      {
+      }, {
         "type": "image_picker",
         "id": "profile_picture",
         "label": "Photo de profile"
-      },
-      {
+      }, {
         "type": "text",
         "id": "profile_info_title",
         "label": "Nom de DoumDoum",
