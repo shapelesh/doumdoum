@@ -1,24 +1,11 @@
-<section class="doumdoum__custom-map section--{{ section.id }}">
-  <div class="doumdoum__custom-map-container custom_map-container">
+<!-- Chargement local des assets Leaflet depuis le dossier Assets de Shopify -->
+{{ 'leaflet.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'leaflet.js' | asset_url }}" defer="defer"></script>
 
+<section class="doumdoum__map section--{{ section.id }}">
+  <div class="doumdoum__map-container map-container">
 
-    <style>
-      /* La carte DOIT avoir une hauteur définie pour s'afficher */
-      #map-{{ section.id }} {
-        height: 500px;
-        width: 100%;
-        z-index: 1;
-        background: #eee;
-      }
-      .custom_map-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-    </style>
-
-    <div class="custom_map-container-prameters">
+    <div class="map-container-prameters">
       <div class="param_title">
         <h3>{{ section.settings.param_title }}</h3>
         <p>{{ section.settings.param_info }}</p>
@@ -67,25 +54,27 @@
       </div>
     </div>
 
-    <div class="custom_map-container--map" id="map-{{ section.id }}"></div>
+    <div class="map-container--map" id="map-{{ section.id }}"></div>
 
   </div>
 </section>
+
 <style>
-  .doumdoum__custom-map {
+  .doumdoum__map {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 100px 112px;
   }
-  .custom_map-container {
+  .map-container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-
+    flex-direction: column;
+    gap: 20px;
   }
-  .custom_map-container-prameters {
+
+  .map-container-prameters {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -96,58 +85,24 @@
     gap: 12px;
   }
   .param_title h3 {
-    font-family: Fredoka;
+    font-family: 'Fredoka'
+    , sans-serif;
     font-weight: 600;
-    font-style: SemiBold;
+    font-style: normal;
     font-size: 20px;
-    leading-trim: NONE;
     line-height: 120%;
-    letter-spacing: -0.75%;
+    letter-spacing: -0.0075em;
     margin: 0;
   }
   .param_title p {
-    font-family: Inter;
+    font-family: 'Inter'
+    , sans-serif;
     font-weight: 400;
-    font-style: Regular;
+    font-style: normal;
     font-size: 15px;
-    leading-trim: NONE;
     line-height: 120%;
-    letter-spacing: -0.5%;
+    letter-spacing: -0.005em;
     margin: 0;
-  }
-  .param_map {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
-  }
-  .param_map button {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 10.85px 36px;
-    border-radius: 16px;
-    border: none;
-    outline: 1px solid #D5D7DA;
-    background-color: #ffffff;
-  }
-
-  .param_map button p {
-    width: 149px;
-    margin: 0;
-    font-family: Nunito;
-    font-weight: 500;
-    font-style: Medium;
-    font-size: 15px;
-    vertical-align: center;
-    leading-trim: NONE;
-    line-height: 120%;
-    letter-spacing: -0.5%;
-    color: #535862;
-  }
-  .arrow-right-icon-svg {
-    margin-top: 4px;
   }
 
   .param_map {
@@ -156,138 +111,236 @@
     gap: 10px;
   }
   .btn-wilaya {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
     padding: 10px;
+    border-radius: 16px;
+    border: 1px solid #D5D7DA;
+    background-color: #ffffff;
     cursor: pointer;
-    background: #f1f1f1;
-    border: 1px solid #ccc;
     text-align: left;
+    transition: background-color 0.2s ease;
   }
   .btn-wilaya:hover {
-    background: #e0e0e0;
+    background-color: #e0e0e0;
+  }
+  .btn-wilaya p {
+    width: 149px;
+    margin: 0;
+    font-family: 'Nunito'
+    , sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 120%;
+    letter-spacing: -0.005em;
+    color: #535862;
+  }
+  .arrow-right-icon-svg {
+    display: flex;
+    align-items: center;
+  }
+
+
+  #map-{{ section.id }} {
+    height: 500px;
+    width: 100%;
+    z-index: 1;
+    background: #eee;
+    border-radius: 8px;
   }
 
   .custom-div-icon {
-    background-color: none;
+    background: transparent;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 32px;
     height: 32px;
-    color: #3B4042;
+    color: #ffffff;
     text-align: center;
-    line-height: 24px;
     font-weight: bold;
     font-size: 14px;
+    border-radius: 50%;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
     font-family: sans-serif;
     cursor: pointer;
   }
-  @media(min-width: 768px) {
-    .custom_map-container {
+  .map-pin {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .map-pin svg {
+    position: relative;
+    width: 100%;
+    min-width: 44.24px;
+    height: 100%;
+    z-index: -1;
+  }
+  .map-pin p {
+    position: absolute;
+    top: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4.09px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: black;
+  }
+  .map-pin p span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16.09px;
+    height: 16.09px;
+    border-radius: 50%;
+    background-color: #EA4234;
+  }
+  .map-pin p span svg {
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .map-container {
       flex-direction: row;
+      justify-content: space-between;
     }
-    .custom_map-container-prameters {
+    .map-container-prameters {
       width: 30%;
     }
-    .custom_map-container--map {
+    .map-container--map {
       width: 70%;
     }
-    .param_map button {
-    justify-content: flex-start;
-}
-}
-@media(max-width: 620px){
- .doumdoum__custom-map {
-    padding: 100px 40px;
+    .btn-wilaya {
+      justify-content: flex-start;
+    }
   }
-}
-@media(max-width: 450px){
- .doumdoum__custom-map {
-    padding: 80px 16px;
-  }
-}
 
+
+  @media (max-width: 768px) {
+    #map-{{ section.id }} {
+      height: 350px;
+
+    }
+  }
+  @media (max-width: 620px) {
+    .doumdoum__map {
+      padding: 60px 40px;
+
+    }
+  }
+  @media (max-width: 450px) {
+    .doumdoum__map {
+      padding: 40px 16px;
+    }
+  }
 </style>
 
 <script>
   (function() {
     const mapData = {};
-    let currentWilayaId = null;
     const wilayaIds = [];
   
     {% for block in section.blocks %}
       {% if block.type == 'wilaya' %}
-        currentWilayaId = "{{ block.id }}";
-        wilayaIds.push(currentWilayaId);
-        
-        mapData[currentWilayaId] = {
-          name: "{{ block.settings.wilaya_name | escape }}",
-          pinNumber: {{ block.settings.pin_number | default: 1 }},
-          center: [{{ block.settings.center_lat | default: 36.5 }}, {{ block.settings.center_lon | default: 3.0 }}],
-          zoom: {{ block.settings.zoom_level | default: 10 }},
-          gmapLink: "{{ block.settings.google_maps_link | default: '#' }}" 
-        };
+        (function() {
+          const currentWilayaId = "{{ block.id }}";
+          wilayaIds.push(currentWilayaId);
+          
+          mapData[currentWilayaId] = {
+            name: "{{ block.settings.wilaya_name | escape }}",
+            pinNumber: {{ block.settings.pin_number | default: 1 }},
+            center: [{{ block.settings.center_lat | default: 36.5 }}, {{ block.settings.center_lon | default: 3.0 }}],
+            zoom: {{ block.settings.zoom_level | default: 10 }},
+            gmapLink: "{{ block.settings.google_maps_link | default: '#' }}" 
+          };
+        })();
       {% endif %}
     {% endfor %}
   
-    const map = L.map('map-{{ section.id }}').setView([36.5, 2.5], 6);
-    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap'
-    }).addTo(map);
+    
+    function initLeafletMap() {
+    
+      if (typeof L === 'undefined') {
+        setTimeout(initLeafletMap, 100);
+        return;
+      }
   
-    const markersGroup = L.layerGroup().addTo(map);
+      const mapElement = document.getElementById('map-{{ section.id }}');
+      if (!mapElement) return;
   
-    function createNumberedIcon(number, color) {
-      return L.divIcon({
-        className: 'custom-div-icon',
-        html: `<div>${number}</div>`,
-        iconSize: [32, 32],
-        iconAnchor: [16, 16]
+      const map = L.map('map-{{ section.id }}').setView([36.5, 3.0], 6);
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap'
+      }).addTo(map);
+  
+      const markersGroup = L.layerGroup().addTo(map);
+  
+      function createNumberedIcon(number) {
+        return L.divIcon({
+          className: 'custom-div-icon',
+          html: `<div class="map-pin"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="30" viewBox="0 0 46 30" fill="none">
+  <path d="M21.9901 28.6059C22.3448 29.1972 23.2072 29.181 23.5395 28.5768L27.1962 21.9282C27.5104 21.3571 28.1105 21.0022 28.7624 21.0022H34.4084C40.0846 21.0022 44.6861 16.4007 44.6861 10.7245C44.6861 5.04827 40.0846 0.446777 34.4084 0.446777H22.7901H10.725C5.04875 0.446777 0.447266 5.04827 0.447266 10.7245C0.447266 16.4007 5.04876 21.0022 10.725 21.0022H16.4158C17.0437 21.0022 17.6255 21.3316 17.9485 21.87L21.9901 28.6059Z" fill="white" stroke="#9AA0A6" stroke-width="0.893714"/>
+  <p> <span><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="20"
+                  viewBox="0 0 16 20"
+                  fill="none">
+                  <path d="M8.00008 3.69238C5.61854 3.69238 3.69238 5.61854 3.69238 8.00008C3.69238 11.2308 8.00008 16.0001 8.00008 16.0001C8.00008 16.0001 12.3078 11.2308 12.3078 8.00008C12.3078 5.61854 10.3816 3.69238 8.00008 3.69238ZM8.00008 9.53854C7.59205 9.53854 7.20074 9.37645 6.91222 9.08793C6.6237 8.79941 6.46161 8.4081 6.46161 8.00008C6.46161 7.59205 6.6237 7.20074 6.91222 6.91222C7.20074 6.6237 7.59205 6.46161 8.00008 6.46161C8.4081 6.46161 8.79941 6.6237 9.08793 6.91222C9.37645 7.20074 9.53854 7.59205 9.53854 8.00008C9.53854 8.4081 9.37645 8.79941 9.08793 9.08793C8.79941 9.37645 8.4081 9.53854 8.00008 9.53854Z" fill="#FF5246" />
+                </svg></span> ${number}</p>
+  </svg></div>`,
+          iconSize: [32, 32],
+          iconAnchor: [16, 16]
+        });
+      }
+  
+    
+      wilayaIds.forEach((id, index) => {
+        const data = mapData[id];
+        if (data) {
+          const number = data.pinNumber;
+          const icon = createNumberedIcon(number);
+          
+          const marker = L.marker(data.center, { icon: icon }).addTo(markersGroup);
+    
+          marker.on('click', () => {
+            if (data.gmapLink && data.gmapLink !== '#') {
+              window.open(data.gmapLink, '_blank');
+            } else {
+              marker.bindPopup(`<strong>${number}. ${data.name}</strong><br><em>Cliquez sur la liste pour recentrer</em>`).openPopup();
+            }
+          });
+          
+          marker.bindTooltip(`${number}. ${data.name}`, { direction: 'top' });
+        }
+      });
+  
+      document.querySelectorAll('.btn-wilaya').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const wilayaId = btn.dataset.wilayaId;
+          const data = mapData[wilayaId];
+          if (!data) return;
+    
+          map.flyTo(data.center, data.zoom, { duration: 1.5 });
+        });
       });
     }
   
-    const colors = ['#3498db', '#2ecc71', '#e67e22', '#9b59b6', '#e74c3c'];
-  
-    // Affichage des pins
-    wilayaIds.forEach((id, index) => {
-      const data = mapData[id];
-      if (data) {
-        const number = data.pinNumber;
-        const color = colors[index % colors.length];
-        const icon = createNumberedIcon(number, color);
-        
-        const marker = L.marker(data.center, { icon: icon }).addTo(markersGroup);
-  
-        // GESTION DU CLIC SUR LE PIN
-        marker.on('click', () => {
-          if (data.gmapLink && data.gmapLink !== '#') {
-            // Ouvre le lien Google Maps dans un nouvel onglet
-            window.open(data.gmapLink, '_blank');
-          } else {
-            // Fallback : ouvre juste la popup avec le nom si pas de lien
-            marker.bindPopup(`<strong>${number}. ${data.name}</strong><br><em>Cliquez pour voir les stores</em>`).openPopup();
-          }
-        });
-        
-        // Optionnel : Tooltip au survol
-        marker.bindTooltip(`${number}. ${data.name}`, { direction: 'top' });
-      }
-    });
-  
-    // Gestion des boutons (optionnel, peut juste zoomer maintenant)
-    document.querySelectorAll('.btn-wilaya').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const wilayaId = btn.dataset.wilayaId;
-        const data = mapData[wilayaId];
-        if(!data) return;
-  
-        map.flyTo(data.center, data.zoom, { duration: 1.5 });
-        
-        // Optionnel : Ouvrir le lien aussi quand on clique sur le bouton
-        if (data.gmapLink && data.gmapLink !== '#') {
-           window.open(data.gmapLink, '_blank');
-        }
-      });
-    });
+    document.addEventListener('DOMContentLoaded', initLeafletMap);
   })();
 </script>
 
@@ -298,12 +351,12 @@
       {
         "type": "text",
         "id": "param_title",
-        "label": "Titre des parametres",
+        "label": "Titre des paramètres",
         "default": "Disponibles près de vous"
       }, {
         "type": "text",
         "id": "param_info",
-        "label": "Info des parametres",
+        "label": "Info des paramètres",
         "default": "Nos produits sont présents dans des points de vente sélectionnés à travers le pays"
       }
     ],
@@ -321,13 +374,15 @@
             "type": "number",
             "id": "center_lat",
             "label": "Latitude Centre",
-            "info": "Latitude de la wilaya sur la map"
+            "info": "Ex: 36.75",
+            "default": 36
           },
           {
             "type": "number",
             "id": "center_lon",
             "label": "Longitude Centre",
-            "info": "Longitude de la wilaya sur la map"
+            "info": "Ex: 3.05",
+            "default": 3
           },
           {
             "type": "range",
@@ -340,13 +395,13 @@
             "type": "number",
             "id": "pin_number",
             "label": "Numéro du Pin",
-            "info": "Ex: 29 pour Alger, 6 pour Tipaza",
+            "info": "Ex: 16 pour Alger, 31 pour Oran",
             "default": 1
           }, {
             "type": "url",
             "id": "google_maps_link",
             "label": "Lien Google Maps",
-            "info": "Collez le lien Google Maps de la liste des stores pour cette wilaya"
+            "info": "Collez le lien Google Maps pour cette wilaya"
           }
         ]
       }
