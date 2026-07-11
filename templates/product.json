@@ -26,7 +26,9 @@
       "type": "doumdoum__product-ingredients",
       "name": "Ingrédients Produit",
       "settings": {
-        "product_ingredient_title": "Nos Ingrédients"
+        "product_ingredient_title": "Nos Ingrédients",
+        "left_sun": "shopify://shop_images/Vector_3.png",
+        "right_sun": "shopify://shop_images/Vector_4.png"
       }
     },
     "main": {
@@ -308,15 +310,56 @@
     "doumdoum_video_showcase_bfziUp": {
       "type": "doumdoum__video-showcase",
       "blocks": {
-        "videos_XnBb4J": {
+        "videos_hg7Yqr": {
           "type": "videos",
           "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel-1- .mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_BCHmj7": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 2.mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_Mh8Myw": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 3.mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_CpyCAz": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/showering-product.mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_xjxNTL": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 5.mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_jfxHdA": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 7.mp4",
             "product_handle": ""
           }
         }
       },
       "block_order": [
-        "videos_XnBb4J"
+        "videos_hg7Yqr",
+        "videos_BCHmj7",
+        "videos_Mh8Myw",
+        "videos_CpyCAz",
+        "videos_xjxNTL",
+        "videos_jfxHdA"
       ],
       "name": "Video ShowCase",
       "settings": {

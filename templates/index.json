@@ -265,9 +265,7 @@
     "doumdoum_custom_devider_78WVxR": {
       "type": "doumdoum__custom-devider",
       "name": "Custom Devider",
-      "settings": {
-        "color": "bleu"
-      }
+      "settings": {}
     },
     "doumdoum_blog_posts_MCkike": {
       "type": "doumdoum__blog-posts",
@@ -275,19 +273,20 @@
         "article_block_Vny3zJ": {
           "type": "article_block",
           "settings": {
-            "selected_article": ""
+            "selected_article": "astuces-parentales/changement-de-saison-comment-adapter-les-soins-de-la-peau-de-bebe"
           }
         },
         "article_block_K4mndy": {
           "type": "article_block",
           "settings": {
-            "selected_article": ""
+            "selected_article": "astuces-parentales/6eme-journee-scientifique-pour-la-pediatrie-generale"
           }
         },
         "video_block_94g7yc": {
           "type": "video_block",
           "settings": {
-            "custom_title": "",
+            "video_link": "https://www.youtube.com/watch?v=07tJi056JXw",
+            "custom_title": "Podcast DouxDoum les produits cosmétiques représentent-ils un danger pour les enfants ?",
             "description": ""
           }
         }
