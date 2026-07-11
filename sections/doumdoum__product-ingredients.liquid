@@ -4,26 +4,26 @@
   <div class="doumdoum__product-ingredients_title product-ingredient_title">
     <h2>{{ section.settings.product_ingredient_title }}</h2>
   </div>
-  {%- liquid
-    assign devider_color = product.metafields.custom.devider_color | downcase
-
-    if devider_color == 'blue'
-      assign left_sun_img = 'pink-sun.svg' | asset_url
-      assign right_sun_img = 'blue-sun.svg' | asset_url
-    else
-      assign left_sun_img = 'none'
-      assign right_sun_img = 'pink-sun.svg' | asset_url
-    endif
-  -%}
-  <div class="product-ingredient_container--sun-svg" style="--sun-left-url: {% if left_sun_img == 'none' %}none{% else %}url('{{ left_sun_img }}'){% endif %}; 
-            --sun-right-url: url('{{ right_sun_img }}');">
-    <div class="left-sun"></div>
-    <div class="right-sun"></div>
+  <div class="product-ingredient_container--sun-svg">
+    <div class="product-ingredient_container--sun-svg-left">
+      <img
+        src="{{ section.settings.left_sun |  image_url: width: section.settings.left_sun.width }}"
+        alt="{{ section.settings.left_sun.alt }}"
+        width="{{ section.settings.left_sun.width }}"
+        height="{{ section.settings.left_sun.height }}">
+    </div>
+    <div class="product-ingredient_container--sun-svg-right">
+      <img
+        src="{{ section.settings.right_sun |  image_url: width: section.settings.right_sun.width }}"
+        alt="{{ section.settings.right_sun.alt }}"
+        width="{{ section.settings.right_sun.width }}"
+        height="{{ section.settings.right_sun.height }}">
+    </div>
 
   </div>
   <div class="doumdoum__product-ingredients_container product-ingredient_container">
     {%- if product_ingredients -%}
-      <div class="glide">
+      <div class="glide" data-slider="ingredients">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             {%- assign ingredient_1 = '' -%}
@@ -66,41 +66,32 @@
     background-color: #fafafa;
   }
   .product-ingredient_container--sun-svg {
-    position: absolute;
-    top: 16%;
-    left: 5%;
-    width: 90%;
-    height: 0;
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  .left-sun::before {
-    content: "";
-    position: absolute;
-    top: 0;
+    position: relative;
+    width: 100%;
     left: 0;
-    width: 103.62px;
-    height: 99px;
-    background-image: var(--sun-left-url);
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: block;
-    z-index: 0;
-  }
-
-  .right-sun::before {
-    content: "";
-    position: absolute;
-    top: 0;
     right: 0;
-    width: 103.62px;
+  }
+  .product-ingredient_container--sun-svg-left {
+    width: 103px;
     height: 99px;
-    background-image: var(--sun-right-url);
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: block;
-    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: -30px;
+  }
+  .product-ingredient_container--sun-svg-left img {
+    width: 100%;
+    height: 100%;
+  }
+  .product-ingredient_container--sun-svg-right {
+    width: 103px;
+    height: 99px;
+    position: absolute;
+    right: 0;
+    top: -30px;
+  }
+  .product-ingredient_container--sun-svg-right img {
+    width: 100%;
+    height: 100%;
   }
   .product-ingredient_title {
     display: block;
@@ -120,11 +111,13 @@
   }
   .product-ingredient_container {
     display: flex;
+    width: 100%;
   }
   .product-ingredient_container .doumdoum__product-ingredients-column {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding: 2px;
   }
   .product-ingredient_container::-webkit-scrollbar {
     display: none;
@@ -135,9 +128,6 @@
     position: relative;
     justify-self: center;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    width: 280px;
     min-height: 173px;
     padding: 15px 12px;
     border-radius: 24px;
@@ -150,28 +140,29 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
   .ingredient-card__image-wrapper img {
     height: 100%;
     object-fit: cover;
   }
   .ingredient-card__image {
-    position: absolute;
-    top: 0;
-    right: 0;
     max-width: 100%;
     height: 174px;
     width: 94px;
   }
 
   .ingredient-card__content {
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
     gap: 12px;
+    z-index: 2;
   }
   .ingredient-card__content h3 {
     font-family: Fredoka;
@@ -228,36 +219,23 @@
     border-radius: 50%;
   }
   @media screen and (max-width: 768px) {
-    .ingredient-card {
-      width: 253px;
-      min-height: 167px;
-    }
     .ingredient-card__content h3 {
       font-size: 18px;
     }
     .doumdoum__product-ingredients {
       padding: 57px 40px;
     }
-    .product-ingredient_container--sun-svg {
-      position: absolute;
-      top: 18%;
-      left: 5%;
-      width: 90%;
-      height: 0;
-      z-index: -1;
-      pointer-events: none;
+  }
+  @media screen and (max-width: 600px) {
+    .doumdoum__product-ingredients {
+      padding: 54px 16px;
+    }
+
+    .product-ingredient_container--sun-svg-left {
+      left: -56px;
     }
   }
   @media screen and (max-width: 450px) {
-    .product-ingredient_container--sun-svg {
-      position: absolute;
-      top: 18%;
-      left: -10%;
-      width: 120%;
-      height: 0;
-      z-index: -1;
-      pointer-events: none;
-    }
     .ingredient-card__content h3 {
       font-size: 16px;
     }
@@ -282,6 +260,14 @@
         "id": "product_ingredient_title",
         "label": "Titre de la section",
         "default": "Nos Ingrédients"
+      }, {
+        "type": "image_picker",
+        "id": "left_sun",
+        "label": "Left Sun"
+      }, {
+        "type": "image_picker",
+        "id": "right_sun",
+        "label": "Right Sun"
       }
     ],
     "presets": [

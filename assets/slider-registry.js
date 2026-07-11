@@ -71,4 +71,26 @@ export const sliderRegistry = {
     perView: 7,
     bound: true,
   },
+  ingredients: {
+    type: "slider",
+    bound: true,
+    perView: 4,
+    breakpoints: {
+      992: {
+        perView: 3,
+      },
+      768: {
+        perView: 2.2,
+      },
+      630: {
+        perView: 2,
+      },
+      600: {
+        perView: 1.5,
+      },
+      400: {
+        perView: 1.3,
+      },
+    },
+  },
 };
