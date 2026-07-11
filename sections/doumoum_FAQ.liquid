@@ -1,0 +1,58 @@
+{{ 'doumdoum_faq.css' | asset_url | stylesheet_tag }}
+
+<section class="doumdoum__custom-faq page-width section--{{ section.id }}">
+  <div class="doumdoum__custom-faq custom_faq--container">
+    <h2>
+      {{ section.settings.faq_title }}
+    </h2>
+    <div class="custom_faq--accordion">
+      {% for block in section.blocks %}
+        {% if block.type == 'custom_faq' %}
+          {% render 'custom_faq-accordion'
+            , block: block %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Custom FAQ",
+    "settings": [
+      {
+        "type": "text",
+        "id": "faq_title",
+        "label": "Titre de Question frequentes",
+        "default": "Questions fréquentes des parents"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "custom_faq",
+        "name": "FAQ",
+        "settings": [
+          {
+            "type": "text",
+            "id": "faq_qst_text",
+            "label": "Question"
+          }, {
+            "type": "text",
+            "id": "faq_res_text",
+            "label": "Réponse"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom FAQ",
+        "blocks": [
+          {
+            "type": "custom_faq"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
