@@ -57,6 +57,7 @@ let popupGlide = null;
     popupElement.setAttribute("aria-hidden", "false");
     popupElement.classList.add("doumdoum__reengagement-popup-active");
     popupElement.classList.add("doumdoum__reengagement-popup-state-a");
+    document.body.classList.add("disable_scroll");
   }
 
   // @ts-ignore
@@ -84,6 +85,7 @@ let popupGlide = null;
       popupGlide.destroy();
       popupGlide = null;
     }
+    document.body.classList.remove("disable_scroll");
   }
 
   // @ts-ignore

@@ -62,7 +62,8 @@ export const sliderRegistry = {
     bound: true,
     breakpoints: {
       600: {
-        perView: 1,
+        perView: 1.4,
+        focusAt: "center",
       },
     },
   },

@@ -316,6 +316,7 @@
     border: none;
     border-radius: 24px;
     outline: 1px solid #d5d7da;
+    width: 100%;
   }
   .doumdoum__contact-form-right::before {
     width: 100%;

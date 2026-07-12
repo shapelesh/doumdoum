@@ -161,6 +161,13 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .doumdoum__custom-blog-articles .article-info-container h3 {
+    font-size: 16px;
+  }
+  .doumdoum__custom-blog-articles .article-info-container p {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
   .doumdoum__custom-blog-articles .article-content {
     gap: 12px;
   }

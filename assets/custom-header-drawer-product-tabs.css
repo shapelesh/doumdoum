@@ -85,10 +85,12 @@ product-category-tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  justify-content: center;
 }
 
 .doumdoum__product-category-page ul li.doumdoum__custom-product-card {
   flex: 1;
+  max-width: 90%;
 }
 .doumdoum__product-category-page
   ul
