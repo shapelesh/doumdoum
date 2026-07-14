@@ -78,7 +78,7 @@
 .doumdoum__reengagement-popup-product img {
   height: 307px;
   width: 300px;
-  object-fit: contain;
+  object-fit: cover;
 }
 .doumdoum__reengagement-popup-buttons {
   display: flex;
@@ -157,7 +157,7 @@
 .doumdoum__reengagement-popup-overlay-b
   .doumdoum__reengagement-popup-container {
   height: 448px;
-  max-width: 100%;
+  max-width: 96%;
   margin: 0 8px;
 }
 

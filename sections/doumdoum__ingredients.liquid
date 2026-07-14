@@ -1,0 +1,164 @@
+{% assign product_ingredients = product.metafields.custom.ingredients.value %}
+
+<section class="doumdoum__ingredients">
+  <div class="doumdoum__ingredients-top">
+    <h2>
+      {{ section.settings.heading }}
+    </h2>
+  </div>
+  <div class="doumdoum__ingredients-bottom">
+    <div class="doumdoum__ingredients-suns">
+      <img
+        src="{{ section.settings.left_sun | image_url: width: section.settings.left_sun.width }}"
+        alt="{{ section.settings.left_sun.alt }}"
+        width="{{ section.settings.left_sun.width }}"
+        height="{{ section.settings.left_sun.height }}">
+      <img
+        src="{{ section.settings.right_sun | image_url: width: section.settings.right_sun.width }}"
+        alt="{{ section.settings.right_sun.alt }}"
+        width="{{ section.settings.right_sun.width }}"
+        height="{{ section.settings.right_sun.height }}">
+    </div>
+    <div class="doumdoum__ingredients-desktop">
+      {%- if product_ingredients -%}
+        {%- for ingredient in product_ingredients -%}
+          {%- render 'custom_ingredient-card'
+            , ingredients: ingredient
+            , loop_index: forloop.index -%}
+        {%- endfor -%}
+      {%- else -%}
+        <p>Aucun ingrédient défini pour ce produit.</p>
+      {%- endif -%}
+    </div>
+    <div class="doumdoum__ingredients-mobile">
+      <div class="glide" data-slider="ingredients">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            {%- assign ingredient_1 = '' -%}
+            {% for ingredient in product_ingredients %}
+              {% assign remainder = forloop.index | modulo: 2 %}
+              {% if remainder != 0 %}
+                {%- capture ingredient_1 -%}
+              {%- render 'custom_ingredient-card'
+              , ingredients: ingredient
+              , loop_index: forloop.index -%}
+            {%- endcapture -%}
+              {% else %}
+                <li class="glide__slide">
+                  <div class="doumdoum__ingredients-column">
+                    {{ ingredient_1 }}
+                    {%- render 'custom_ingredient-card'
+                      , ingredients: ingredient
+                      , loop_index: forloop.index -%}
+                  </div>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .doumdoum__ingredients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .doumdoum__ingredients-top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .doumdoum__ingredients-top h2 {
+    font-family: fredoka;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    text-align: center;
+  }
+  .doumdoum__ingredients-bottom {
+    position: relative;
+    width: 100%;
+    padding: 0 57px;
+    /* max-width: 1168px; */
+  }
+  .doumdoum__ingredients-suns {
+    padding: 0 57px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    top: -55px;
+  }
+  .doumdoum__ingredients-suns img {
+    width: 103px;
+    height: 99px;
+  }
+
+  .doumdoum__ingredients-desktop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 24px;
+    justify-content: center;
+  }
+  .doumdoum__ingredients-desktop div.ingredient-card {
+    aspect-ratio: 280 / 173;
+    width: calc(calc(100% / 4) - 12px);
+    /* width: 280px; */
+    background-color: #FAFAFA;
+  }
+  .doumdoum__ingredients-mobile {
+    display: none;
+  }
+  .doumdoum__ingredients-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 3px;
+  }
+  @media (max-width: 768px) {
+    .doumdoum__ingredients-desktop {
+      display: none;
+    }
+    .doumdoum__ingredients-mobile {
+      display: flex;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .doumdoum__ingredients-bottom {
+      padding: 57px 40px;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "Les Ingredients",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Nos Ingrédients"
+      }, {
+        "type": "image_picker",
+        "id": "left_sun",
+        "label": "Left sun"
+      }, {
+        "type": "image_picker",
+        "id": "right_sun",
+        "label": "Right Sun"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Les Ingredients",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}
