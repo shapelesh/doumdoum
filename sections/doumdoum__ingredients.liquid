@@ -39,10 +39,10 @@
               {% assign remainder = forloop.index | modulo: 2 %}
               {% if remainder != 0 %}
                 {%- capture ingredient_1 -%}
-              {%- render 'custom_ingredient-card'
-              , ingredients: ingredient
-              , loop_index: forloop.index -%}
-            {%- endcapture -%}
+      {%- render 'custom_ingredient-card'
+        , ingredients: ingredient
+        , loop_index: forloop.index -%}
+    {%- endcapture -%}
               {% else %}
                 <li class="glide__slide">
                   <div class="doumdoum__ingredients-column">
@@ -52,8 +52,17 @@
                       , loop_index: forloop.index -%}
                   </div>
                 </li>
+                {%- assign ingredient_1 = '' -%}
               {% endif %}
             {% endfor %}
+
+            {%- if ingredient_1 != '' -%}
+              <li class="glide__slide">
+                <div class="doumdoum__ingredients-column">
+                  {{ ingredient_1 }}
+                </div>
+              </li>
+            {%- endif -%}
           </ul>
         </div>
       </div>
@@ -121,19 +130,133 @@
     gap: 12px;
     margin: 3px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .doumdoum__ingredients-desktop {
       display: none;
     }
     .doumdoum__ingredients-mobile {
       display: flex;
     }
-  }
-  @media screen and (max-width: 768px) {
+    .doumdoum__ingredients-suns {
+      padding: 0;
+      left: -40px;
+      right: -40px;
+      top: 0;
+
+    }
     .doumdoum__ingredients-bottom {
-      padding: 57px 40px;
+      overflow: hidden;
+      padding: 57px 0;
     }
   }
+  @media screen and (max-width: 992px) {
+    .doumdoum__ingredients-bottom {
+    ;
+    /* padding: 57px 16px; */
+  }
+}
+
+.ingredient-card {
+  position: relative;
+  display: flex;
+  min-height: 200px;
+  padding: 15px 12px;
+  border-radius: 24px;
+  border: none;
+  outline: 1px solid #A4A7AE;
+  overflow: hidden;
+  background-color: #FAFAFA;
+}
+.ingredient-card__image-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.ingredient-card__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.ingredient-card__image {
+  height: 100%;
+  /* width: 94px; */
+}
+
+.ingredient-card__content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 12px;
+}
+.ingredient-card__content h3 {
+  font-family: Fredoka;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: -0.75%;
+  color: #2998F6;
+  margin: 0;
+}
+.ingredient-card__description {
+  font-family: Nunito;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  color: #414651;
+  margin: 0;
+}
+.ingredient-card__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ingredient-card__benefits li {
+  position: relative;
+  font-family: Nunito;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  color: #414651;
+  padding-left: 14px;
+  margin: 0;
+  text-wrap: nowrap;
+}
+.ingredient-card__benefits li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  background-color: #EF95C5;
+  border-radius: 50%;
+}
+@media screen and (max-width: 768px) {
+  .ingredient-card {
+    /* width: 253px; */
+    min-height: 167px;
+  }
+  .ingredient-card__content h3 {
+    font-size: 18px;
+  }
+}
 </style>
 {% schema %}
   {

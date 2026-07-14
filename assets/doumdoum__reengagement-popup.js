@@ -19,10 +19,6 @@ let popupGlide = null;
     if (!popupElement) return;
 
     // if (sessionStorage.getItem(SESSION_KEY) === "true") return;
-    console.log(
-      "DID SHOW POPUP: ",
-      sessionStorage.getItem(SESSION_KEY) === "true",
-    );
     // @ts-ignore
     const targetHandlesRaw = popupElement.dataset.targetHandles || "";
     const targetHandles = targetHandlesRaw
