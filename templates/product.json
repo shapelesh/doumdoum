@@ -23,8 +23,18 @@
       "name": "Custom Devider",
       "settings": {}
     },
+    "doumdoum_ingredients_MAemdY": {
+      "type": "doumdoum__ingredients",
+      "name": "Les Ingredients",
+      "settings": {
+        "heading": "Nos Ingrédients",
+        "left_sun": "shopify://shop_images/Vector_3.png",
+        "right_sun": "shopify://shop_images/Vector_4.png"
+      }
+    },
     "custom_product_ingredient_QCVzcp": {
       "type": "doumdoum__product-ingredients",
+      "disabled": true,
       "name": "Ingrédients Produit",
       "settings": {
         "product_ingredient_title": "Nos Ingrédients",
@@ -180,7 +190,10 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["text_xrnftG", "price_tVjtKg"]
+              "block_order": [
+                "text_xrnftG",
+                "price_tVjtKg"
+              ]
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -553,6 +566,7 @@
   "order": [
     "custom_product_card_K3t6yT",
     "doumdoum_custom_devider_mKKRYb",
+    "doumdoum_ingredients_MAemdY",
     "custom_product_ingredient_QCVzcp",
     "main",
     "doumdoum_custom_product_usage_i639tK",
