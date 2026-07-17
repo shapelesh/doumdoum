@@ -52,13 +52,13 @@
     </div>
     <div class="cutom_grid--cell grid--cell_price col-left">
       {% assign compared_price = product.metafields.custom.compared_product.value.price %}
-      <span>+{{ compared_price | money }}</span>
+      <span>+{{ compared_price | money_without_trailing_zeros }}</span>
     </div>
     <div class="cutom_grid--cell grid--cell_price-vs grid--cell-vs col-center">
       <p>Prix</p>
     </div>
     <div class="cutom_grid--cell grid--cell_price col-right">
-      <span>{{ product.price | money }}</span>
+      <span>{{ product.price | money_without_trailing_zeros }}</span>
     </div>
     <div class="cutom_grid--cell grid--cell_availability col-left">
       <p>Non disponible facilement</p>

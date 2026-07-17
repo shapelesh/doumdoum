@@ -14,6 +14,7 @@
       "name": "Carte Produit Détaillée",
       "settings": {
         "review_text": "+5,000 maman a validé le produit",
+        "review_text_add_to_cart": "+5 000 mamans, débutantes et expérimentées",
         "approved": "shopify://shop_images/approved.svg"
       }
     },
@@ -308,15 +309,56 @@
     "doumdoum_video_showcase_bfziUp": {
       "type": "doumdoum__video-showcase",
       "blocks": {
+        "videos_VefX9R": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel-1- .mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_bajYhR": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 2.mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_nNC6Kf": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 3.mp4",
+            "product_handle": ""
+          }
+        },
         "videos_XnBb4J": {
           "type": "videos",
           "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 5.mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_8pCnq3": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/showering-product.mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_XqLByz": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 7.mp4",
             "product_handle": ""
           }
         }
       },
       "block_order": [
-        "videos_XnBb4J"
+        "videos_VefX9R",
+        "videos_bajYhR",
+        "videos_nNC6Kf",
+        "videos_XnBb4J",
+        "videos_8pCnq3",
+        "videos_XqLByz"
       ],
       "name": "Video ShowCase",
       "settings": {
@@ -442,7 +484,7 @@
       "settings": {}
     },
     "custom_faq_YMYNXW": {
-      "type": "custom_FAQ",
+      "type": "doumoum_FAQ",
       "blocks": {
         "custom_faq_8nRW6c": {
           "type": "custom_faq",

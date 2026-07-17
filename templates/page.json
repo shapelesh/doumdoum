@@ -230,22 +230,56 @@
     "doumdoum_about_video_showcase_qL7CeR": {
       "type": "doumdoum_about-video-showcase",
       "blocks": {
+        "videos_c9ePfr": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel-1- .mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_Mt6Jmw": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 2.mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_f33Bmk": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 3.mp4",
+            "product_handle": ""
+          }
+        },
         "videos_mXzQ6M": {
           "type": "videos",
           "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 5.mp4",
             "product_handle": ""
           }
         },
         "videos_Vxndjt": {
           "type": "videos",
           "settings": {
+            "video_ugc": "shopify://files/videos/showering-product.mp4",
+            "product_handle": ""
+          }
+        },
+        "videos_Wcj7HJ": {
+          "type": "videos",
+          "settings": {
+            "video_ugc": "shopify://files/videos/doumdoum.babycare_reel 7.mp4",
             "product_handle": ""
           }
         }
       },
       "block_order": [
+        "videos_c9ePfr",
+        "videos_Mt6Jmw",
+        "videos_f33Bmk",
         "videos_mXzQ6M",
-        "videos_Vxndjt"
+        "videos_Vxndjt",
+        "videos_Wcj7HJ"
       ],
       "name": "Video ShowCase - About",
       "settings": {

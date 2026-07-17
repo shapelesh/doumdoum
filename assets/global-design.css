@@ -1,0 +1,40 @@
+.glass-effect::before {
+  content: "";
+
+  position: absolute;
+
+  top: -40%;
+  left: -20%;
+
+  width: 60%;
+  height: 180%;
+
+  background: linear-gradient(20deg, transparent, #ffffff, transparent);
+
+  filter: blur(6px);
+
+  transform: rotateY(-120deg);
+
+  animation: glassEffect 1s ease-in-out infinite;
+}
+@keyframes glassEffect {
+  0% {
+    top: -40%;
+    left: -10%;
+  }
+
+  45% {
+    top: 0;
+    left: 20%;
+  }
+
+  65% {
+    top: 30%;
+    left: 64%;
+  }
+
+  100% {
+    top: 58%;
+    left: 100%;
+  }
+}
