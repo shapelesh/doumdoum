@@ -116,6 +116,7 @@
         <div class="tabs-header">
           {%- assign details_val = product.metafields.custom.details -%}
           {%- assign usage_val = product.metafields.custom.utilisations -%}
+          {%- assign ingredient_val = product.metafields.custom.ingredient_desc -%}
 
           <button
             type="button"
@@ -137,7 +138,7 @@
             type="button"
             class="tab-btn"
             data-tab="ingredients"
-            data-content="">
+            data-content="{{ ingredient_val |  escape }}">
             Ingrédients
           </button>
         </div>
