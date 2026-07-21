@@ -2,7 +2,8 @@
   <input
     type="checkbox"
     class="dropdown-toggler"
-    id="toggler-faq-{{ block.id }}">
+    id="toggler-faq-{{ block.id }}"
+    onclick="if(this.checked){ document.querySelectorAll('.dropdown-toggler').forEach(el => { if(el !== this) el.checked = false; }); }">
   <div class="dropdown-container">
     <label class="dropdown-title" for="toggler-faq-{{ block.id }}">
       <h4 class="dropdown-title__text">
