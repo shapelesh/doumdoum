@@ -97,15 +97,9 @@
     {%- endif -%}
   </div>
 
-  <div
-    class="cart-recommendations"
-    id="cart-recommendations"
-    data-fallback-id="{{ section.settings.fallback_product.id }}"
-    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}">
-    <div data-base-product-id="{{ cart.items[0].product_id }}">
-      {% if recommendations.performed %}
-        {% render 'cart-drawer-recommendations' %}
-      {% endif %}
+  <div class="cart-recommendations" id="cart-recommendations">
+    <div>
+      {% render 'cart-drawer-recommendations' %}
     </div>
   </div>
   <div class="cart-footer">
