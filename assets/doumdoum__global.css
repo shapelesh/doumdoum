@@ -1,8 +1,12 @@
-.page-width {
+/* .page-width {
   max-width: 1280px;
   margin: 0 auto;
+} */
+body.disable_scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
 }
-
 #header-group {
   position: fixed;
   top: 0;
@@ -78,6 +82,14 @@ main.content-for-layout {
   padding-top: 22px;
   border-radius: 20px;
 }
+.doumdoum__custom-product-card .doumdoum__custom-product-card-top > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
 .doumdoum__custom-product-card-top-bottom {
   display: flex;
   flex-direction: column;
@@ -129,6 +141,14 @@ main.content-for-layout {
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+  position: relative;
+}
+.doumdoum__custom-product-card-bottom > a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 .doumdoum__custom-product-card-bottom .product-title {
   display: flex;
@@ -181,6 +201,9 @@ main.content-for-layout {
   overflow: hidden;
   margin: 0;
 }
+.doumdoum__custom-product-card-bottom .product-atc {
+  z-index: 2;
+}
 .doumdoum__custom-product-card-bottom .product-atc button[type="submit"] {
   width: 100%;
   padding-top: 12px;
@@ -217,5 +240,54 @@ main.content-for-layout {
     line-height: 120%;
     letter-spacing: -0.75%;
     text-align: center;
+  }
+}
+
+.doumdoum__object-fit {
+  object-fit: cover;
+}
+
+@media (max-width: 790px) {
+  .doumdoum__object-fit {
+    object-fit: contain;
+  }
+}
+
+.light_ray {
+  background-image: linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-position: -1050px center;
+  animation: light 5s infinite;
+}
+
+@keyframes light {
+  0% {
+    background-position: -1050px center;
+  }
+  40% {
+    background-position: 0px center;
+  }
+  100% {
+    background-position: 1050px center;
+  }
+}
+
+@-webkit-keyframes light {
+  0% {
+    background-position: -1050px center;
+  }
+  40% {
+    background-position: 0px center;
+  }
+  100% {
+    background-position: 1050px center;
   }
 }

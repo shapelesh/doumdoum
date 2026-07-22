@@ -23,22 +23,20 @@
 .doumdoum__custom-blog-articles .blog-articles-title h3 {
   font-family: Fredoka;
   font-weight: 500;
-  font-style: Medium;
   font-size: 34px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.75%;
   margin: 0;
+  color: #252b37;
 }
 .doumdoum__custom-blog-articles .blog-articles-title p {
   font-family: Nunito;
   font-weight: 500;
-  font-style: Medium;
   font-size: 16px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.5%;
   margin: 0;
+  color: #414651;
 }
 .doumdoum__custom-blog-articles .container_btn {
   display: flex;
@@ -50,9 +48,7 @@
   display: flex;
   font-family: Geist;
   font-weight: 500;
-  font-style: Medium;
   font-size: 16px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.5%;
   border-radius: 16px;
@@ -60,10 +56,14 @@
   border: none;
   outline: 1px solid #e9eaeb;
 }
+.doumdoum__custom-blog-articles .container_btn a:hover {
+}
 .doumdoum__custom-blog-articles .doumdoum_podcast {
   color: #f570b7;
 }
-
+.doumdoum__custom-blog-articles .doumdoum_blog:hover {
+  box-shadow: 4px 4px 0px 0px #d2d2d2;
+}
 .doumdoum__custom-blog-articles .blog-articles-grid {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -79,10 +79,10 @@
 .doumdoum__custom-blog-articles .article-content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   gap: 32px;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 .doumdoum__custom-blog-articles .article-content img,
 .placeholder-image {
@@ -98,8 +98,6 @@
   width: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  gap: 8px;
 }
 .doumdoum__custom-blog-articles .article-info-container h3 {
   font-family: Nunito;
@@ -111,17 +109,17 @@
   letter-spacing: -0.5%;
   color: #252b37;
   margin: 0;
+  margin-bottom: 8px;
 }
 .doumdoum__custom-blog-articles .article-info-container p {
   font-family: Nunito;
   font-weight: 500;
-  font-style: Medium;
   font-size: 15px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.5%;
-  color: #252b37;
+  color: #414651;
   margin: 0;
+  margin-bottom: 24px;
 }
 .doumdoum__custom-blog-articles .article-info-container a {
   display: flex;
@@ -130,14 +128,32 @@
   gap: 8px;
   font-family: Geist;
   font-weight: 500;
-  font-style: Medium;
   font-size: 16px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.5%;
-  color: #252b37;
-  margin-top: 16px;
-  align-self: center;
+  color: #414651;
+  margin-top: auto;
+  margin-left: 16px;
+  margin-bottom: 12.5px;
+  transition: 300ms;
+  text-underline-offset: 4px;
+}
+.doumdoum__custom-blog-articles .article-info-container a::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.doumdoum__custom-blog-articles .article-info-container a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 992px) {
+  .doumdoum__custom-blog-articles {
+    padding: 57px 45px;
+  }
 }
 @media screen and (max-width: 844px) {
   .doumdoum__custom-blog-articles .blog-articles-title h3 {
@@ -145,6 +161,16 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .doumdoum__custom-blog-articles .article-info-container h3 {
+    font-size: 16px;
+  }
+  .doumdoum__custom-blog-articles .article-info-container p {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .doumdoum__custom-blog-articles .article-content {
+    gap: 12px;
+  }
   .doumdoum__custom-blog-articles .blog-articles-container {
     width: 100%;
     height: 100%;
@@ -159,18 +185,17 @@
   .doumdoum__custom-blog-articles .blog-articles-title {
     width: 100%;
   }
+  .doumdoum__custom-blog-articles {
+    padding: 80px 16px;
+  }
 }
 @media screen and (max-width: 620px) {
-  .doumdoum__custom-blog-articles {
-    padding: 57px 40px;
-  }
   .doumdoum__custom-blog-articles .blog-articles-title {
     padding: 0;
   }
 }
 @media screen and (max-width: 450px) {
   .doumdoum__custom-blog-articles {
-    padding: 57px 16px;
   }
   .doumdoum__custom-blog-articles .blog-articles-title h3 {
     font-size: 24px;

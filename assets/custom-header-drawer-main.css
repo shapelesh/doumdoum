@@ -28,6 +28,7 @@ custom-header-drawer.is-open {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  overflow: hidden;
 }
 
 custom-header-drawer.is-open .doumdoum__custom-header-drawer {

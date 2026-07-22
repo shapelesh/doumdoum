@@ -24,7 +24,13 @@
       <div class="doumdoum__product-category-pages" ref="pageList" id="pageList">
         {%- for block in section.blocks -%}
           <div class="doumdoum__product-category-page {% if forloop.first %} open    {% endif %}" data-page-handle="{{ block.settings.tab_name |  handleize }}">
-            here goes {{ block.settings.tab_name }} products
+            <ul>
+              {%- for product in block.settings.collection.products -%}
+                {%- render 'doumdoum__custom-product-card'
+                  , product: product
+                  , show_description: false -%}
+              {%- endfor -%}
+            </ul>
           </div>
         {%- endfor -%}
       </div>

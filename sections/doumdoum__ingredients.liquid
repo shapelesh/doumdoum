@@ -1,0 +1,287 @@
+{% assign product_ingredients = product.metafields.custom.ingredients.value %}
+
+<section class="doumdoum__ingredients">
+  <div class="doumdoum__ingredients-top">
+    <h2>
+      {{ section.settings.heading }}
+    </h2>
+  </div>
+  <div class="doumdoum__ingredients-bottom">
+    <div class="doumdoum__ingredients-suns">
+      <img
+        src="{{ section.settings.left_sun | image_url: width: section.settings.left_sun.width }}"
+        alt="{{ section.settings.left_sun.alt }}"
+        width="{{ section.settings.left_sun.width }}"
+        height="{{ section.settings.left_sun.height }}">
+      <img
+        src="{{ section.settings.right_sun | image_url: width: section.settings.right_sun.width }}"
+        alt="{{ section.settings.right_sun.alt }}"
+        width="{{ section.settings.right_sun.width }}"
+        height="{{ section.settings.right_sun.height }}">
+    </div>
+    <div class="doumdoum__ingredients-desktop">
+      {%- if product_ingredients -%}
+        {%- for ingredient in product_ingredients -%}
+          {%- render 'custom_ingredient-card'
+            , ingredients: ingredient
+            , loop_index: forloop.index -%}
+        {%- endfor -%}
+      {%- else -%}
+        <p>Aucun ingrédient défini pour ce produit.</p>
+      {%- endif -%}
+    </div>
+    <div class="doumdoum__ingredients-mobile">
+      <div class="glide" data-slider="ingredients">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            {%- assign ingredient_1 = '' -%}
+            {% for ingredient in product_ingredients %}
+              {% assign remainder = forloop.index | modulo: 2 %}
+              {% if remainder != 0 %}
+                {%- capture ingredient_1 -%}
+      {%- render 'custom_ingredient-card'
+        , ingredients: ingredient
+        , loop_index: forloop.index -%}
+    {%- endcapture -%}
+              {% else %}
+                <li class="glide__slide">
+                  <div class="doumdoum__ingredients-column">
+                    {{ ingredient_1 }}
+                    {%- render 'custom_ingredient-card'
+                      , ingredients: ingredient
+                      , loop_index: forloop.index -%}
+                  </div>
+                </li>
+                {%- assign ingredient_1 = '' -%}
+              {% endif %}
+            {% endfor %}
+
+            {%- if ingredient_1 != '' -%}
+              <li class="glide__slide">
+                <div class="doumdoum__ingredients-column">
+                  {{ ingredient_1 }}
+                </div>
+              </li>
+            {%- endif -%}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .doumdoum__ingredients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .doumdoum__ingredients-top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .doumdoum__ingredients-top h2 {
+    font-family: fredoka;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 120%;
+    letter-spacing: -0.75%;
+    text-align: center;
+  }
+  .doumdoum__ingredients-bottom {
+    position: relative;
+    width: 100%;
+    padding: 0 57px;
+    /* max-width: 1168px; */
+  }
+  .doumdoum__ingredients-suns {
+    padding: 0 57px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    top: -55px;
+  }
+  .doumdoum__ingredients-suns img {
+    width: 103px;
+    height: 99px;
+  }
+
+  .doumdoum__ingredients-desktop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 24px;
+    justify-content: center;
+  }
+  .doumdoum__ingredients-desktop div.ingredient-card {
+    aspect-ratio: 280 / 173;
+    width: calc(calc(100% / 4) - 12px);
+    /* width: 280px; */
+    background-color: #FAFAFA;
+  }
+  .doumdoum__ingredients-mobile {
+    display: none;
+  }
+  .doumdoum__ingredients-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 3px;
+  }
+  @media (max-width: 992px) {
+    .doumdoum__ingredients-desktop {
+      display: none;
+    }
+    .doumdoum__ingredients-mobile {
+      display: flex;
+    }
+    .doumdoum__ingredients-suns {
+      padding: 0;
+      left: -40px;
+      right: -40px;
+      top: 0;
+
+    }
+    .doumdoum__ingredients-bottom {
+      overflow: hidden;
+      padding: 57px 0;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .doumdoum__ingredients-bottom {
+    ;
+    /* padding: 57px 16px; */
+  }
+}
+
+.ingredient-card {
+  position: relative;
+  display: flex;
+  min-height: 200px;
+  padding: 15px 12px;
+  border-radius: 24px;
+  border: none;
+  outline: 1px solid #A4A7AE;
+  overflow: hidden;
+  background-color: #FAFAFA;
+}
+.ingredient-card__image-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.ingredient-card__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.ingredient-card__image {
+  height: 100%;
+  /* width: 94px; */
+}
+
+.ingredient-card__content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 12px;
+}
+.ingredient-card__content h3 {
+  font-family: Fredoka;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: -0.75%;
+  color: #2998F6;
+  margin: 0;
+}
+.ingredient-card__description {
+  font-family: Nunito;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  color: #414651;
+  margin: 0;
+}
+.ingredient-card__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ingredient-card__benefits li {
+  position: relative;
+  font-family: Nunito;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  color: #414651;
+  padding-left: 14px;
+  margin: 0;
+  text-wrap: nowrap;
+}
+.ingredient-card__benefits li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  background-color: #EF95C5;
+  border-radius: 50%;
+}
+@media screen and (max-width: 768px) {
+  .ingredient-card {
+    /* width: 253px; */
+    min-height: 167px;
+  }
+  .ingredient-card__content h3 {
+    font-size: 18px;
+  }
+}
+</style>
+{% schema %}
+  {
+    "name": "Les Ingredients",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Nos Ingrédients"
+      }, {
+        "type": "image_picker",
+        "id": "left_sun",
+        "label": "Left sun"
+      }, {
+        "type": "image_picker",
+        "id": "right_sun",
+        "label": "Right Sun"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Les Ingredients",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

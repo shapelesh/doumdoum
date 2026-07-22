@@ -129,14 +129,14 @@
           "type": "megamenu_tab",
           "settings": {
             "tab_name": "Coffrets",
-            "collection": ""
+            "collection": "coffrets"
           }
         },
         "megamenu_tab_7T93Y7": {
           "type": "megamenu_tab",
           "settings": {
             "tab_name": "Produits",
-            "collection": ""
+            "collection": "produits"
           }
         }
       },
@@ -148,7 +148,8 @@
       "name": "doumdoum header",
       "settings": {
         "menu": "header-menu",
-        "logo": "shopify://shop_images/doumdoum_logo.svg"
+        "logo": "shopify://shop_images/doumdoum_logo.svg",
+        "customer_account_menu": "customer-account-main-menu"
       }
     }
   },

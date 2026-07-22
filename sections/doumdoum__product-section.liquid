@@ -7,7 +7,7 @@
 </script>
 <script src="{{ 'doumdoum__product-section.js' | asset_url }}" defer></script>
 
-<section class="doumdoum__custom-product-section page-width section--{{ section.id }} {{ product.title }}--{{ section.id }}">
+<section class="doumdoum__custom-product-section section--{{ section.id }} {{ product.title }}--{{ section.id }}" data-section-id="{{ section.id }}">
   <div class="doumdoum__custom-product-section_container-grid">
     <div class="container-grid__images">
       <div class="product-gallery">
@@ -23,18 +23,20 @@
             height="100%"
             loading="lazy">
         </div>
-        <div class="product-thumbnails-container">
-          <div class="product-thumbnails-slider" id="ThumbSlider-{{ section.id }}">
-            {% for media in product.media %}
-              <div class="thumb-item {% if forloop.first %}active{% endif %}" onclick="updateMainImage('{{ media | img_url: '800x' }}', this)">
-                <img
-                  src="{{ media | img_url: '150x150', crop: 'center' }}"
-                  alt="{{ media.alt | escape }}"
-                  width="100%"
-                  height="100%"
-                  loading="lazy">
-              </div>
-            {% endfor %}
+        <div class="product-thumbnails-container glide" data-slider="productGallery">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides product-thumbnails-slider" id="ThumbSlider-{{ section.id }}">
+              {% for media in product.media %}
+                <li class="glide__slide thumb-item {% if forloop.first %}active{% endif %}" onclick="updateMainImage('{{ media | image_url: width: 800 }}', this)">
+                  <img
+                    src="{{ media | img_url: '150x150', crop: 'center' }}"
+                    alt="{{ media.alt | escape }}"
+                    width="100%"
+                    height="100%"
+                    loading="lazy">
+                </li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
       </div>
@@ -204,7 +206,7 @@
             <button
               type="submit"
               name="add"
-              class="doumdoum__add-btn doumdoum__sticky-btn-cart">
+              class="doumdoum__add-btn doumdoum__sticky-btn-cart light_ray">
               Ajouter au panier -
               <span id="sticky-cart-price-display" data-base-price="{{ product.selected_or_first_available_variant.price }}">
                 {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}

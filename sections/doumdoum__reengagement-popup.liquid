@@ -1,0 +1,188 @@
+<script
+  src="{{ "doumdoum__reengagement-popup.js" |  asset_url }}"
+  type="module"
+  defer></script>
+{{ "doumdoum__reengagement-popup.css" | asset_url | stylesheet_tag }}
+
+{%- if section.settings.popup_product != blank -%}
+
+  {%- assign popup_a_product = section.settings.popup_product -%}
+  {%- assign popup_b_product_1 = section.settings.popup_b_product_1 -%}
+  {%- assign popup_b_product_2 = section.settings.popup_b_product_2 -%}
+
+    <div
+    class="doumdoum__reengagement-popup"
+    aria-hidden="true"
+    inert
+    data-target-handles="{{ section.settings.target_handles | escape }}"
+    data-trigger-delay="{{ section.settings.trigger_delay }}">
+
+    {%- comment -%} POPUP A {%- endcomment -%}
+    <div class="doumdoum__reengagement-popup-overlay doumdoum__reengagement-popup-overlay-a">
+      <div
+        class="doumdoum__reengagement-popup-container doumdoum__reengagement-popup-container-a"
+        role="dialog"
+        aria-modal="true"
+        aria-label="{{ popup_a_product.title | escape }}">
+
+        <button class="doumdoum__reengagement-popup-exit" aria-label="Close">
+          ✕
+        </button>
+
+        <div class="doumdoum__reengagement-popup-text">
+          <h4>
+            {{ section.settings.first_title }}
+          </h4>
+          {{ popup_a_product.description }}
+        </div>
+
+        <div class="doumdoum__reengagement-popup-product">
+          {%- if popup_a_product.metafields.custom.product_card_image.value != blank -%}
+            {%- for image in popup_a_product.metafields.custom.product_card_image.value -%}
+              {%- assign product_card_image = image -%}
+            {%- endfor -%}
+            <img
+              src="{{ product_card_image |  image_url: width: 300 }}"
+              alt="{{ product_card_image.alt }}"
+              width="300"
+              height="330">
+          {%- endif -%}
+        </div>
+        <div class="doumdoum__reengagement-popup-buttons">
+
+          <button class="doumdoum__reengagement-popup-back-button">
+            {{ section.settings.back_button_label }}
+          </button>
+          <button
+            type="button"
+            class="doumdoum__reengagement-popup-buy-button light_ray"
+            data-variant-id="{{ popup_a_product.selected_or_first_available_variant.id }}">
+            {{ section.settings.buy_button_label }} - {{ popup_a_product.price | money }}
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    {%- comment -%} POPUP B {%- endcomment -%}
+    <div class="doumdoum__reengagement-popup-overlay doumdoum__reengagement-popup-overlay-b">
+      <div
+        class="doumdoum__reengagement-popup-container doumdoum__reengagement-popup-container-b"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Other options">
+
+        <button class="doumdoum__reengagement-popup-exit" aria-label="Close">
+          ✕
+        </button>
+
+        <div class="doumdoum__reengagement-popup-text">
+          <h4>
+            {{ section.settings.second_title }}
+          </h4>
+          <p>
+            {{ section.settings.second_paragraph }}
+          </p>
+        </div>
+        <div
+          class="glide"
+          data-slider="popup"
+          data-mobile-slider="600">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="doumdoum__reengagement-popup-products glide__slides">
+              {%- if popup_b_product_1 != blank -%}
+                {%- render 'doumdoum__custom-product-card'
+                  , product: popup_b_product_1
+                  , show_description: false
+                  , classname: "doumdoum__reengagement-popup-b-product glide__slide" -%}
+              {%- endif -%}
+
+              {%- if popup_b_product_2 != blank -%}
+                {%- render 'doumdoum__custom-product-card'
+                  , product: popup_b_product_2
+                  , show_description: false
+                  , classname: "doumdoum__reengagement-popup-b-product glide__slide" -%}
+              {%- endif -%}
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Re-engagement Popup",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Popup A — Main Offer"
+      },
+      {
+        "type": "product",
+        "id": "popup_product",
+        "label": "Product"
+      },
+      {
+        "type": "text",
+        "id": "buy_button_label",
+        "label": "Buy button label",
+        "default": "Acheter"
+      },
+      {
+        "type": "text",
+        "id": "back_button_label",
+        "label": "Back button label",
+        "default": "Retour"
+      }, {
+        "type": "text",
+        "id": "first_title",
+        "label": "First Title",
+        "default": "Tout pour bébé dès la naissance"
+      }, {
+        "type": "header",
+        "content": "Popup B — Cheaper Alternatives"
+      }, {
+        "type": "text",
+        "id": "second_title",
+        "label": "Second Title",
+        "default": "Choisissez ce qui vous convient"
+      }, {
+        "type": "text",
+        "id": "second_paragraph",
+        "label": "Second Paragraph",
+        "default": "Deux options pour votre bébé. Une simple, une complète. À vous de choisir."
+      }, {
+        "type": "product",
+        "id": "popup_b_product_1",
+        "label": "Product 1"
+      }, {
+        "type": "product",
+        "id": "popup_b_product_2",
+        "label": "Product 2"
+      }, {
+        "type": "header",
+        "content": "Targeting"
+      }, {
+        "type": "text",
+        "id": "target_handles",
+        "label": "Target page handles",
+        "info": "Comma-separated page handles where the popup should appear. Example: contact,our-values",
+        "default": "contact,our-values"
+      }, {
+        "type": "range",
+        "id": "trigger_delay",
+        "label": "Delay before popup appears (seconds)",
+        "min": 5,
+        "max": 120,
+        "step": 5,
+        "default": 30
+      }
+    ]
+  }
+{% endschema %}

@@ -1,13 +1,34 @@
-<li class="doumdoum__custom-product-card">
-  <div class="doumdoum__custom-product-card-top" style="background-color: {{ product.metafields.custom.theme_color }}">
+{%- assign background_image = product.metafields.custom.card_background.value |  image_url: height: 280 -%}
+
+<li class="
+  doumdoum__custom-product-card
+  {% if classname %}
+    {{ classname }}
+  {% endif %}
+  ">
+  <div class="doumdoum__custom-product-card-top" 
+  style="
+    {% if background_image %}
+      background-image: url({{ background_image }});
+    {% else %}
+      background-color: {{ product.metafields.custom.theme_color }}
+    {% endif %}
+  "
+  >
+  <a href="{{ product.url }}"></a>
     {%- assign card_image = product.metafields.custom.product_card_image.value -%}
     {%- if card_image != blank -%}
-      {%- for image in card_image -%}
+      {%- for image in card_image limit: 1 -%}
         <img
           src="{{ image |  image_url: width: image.width }}"
           alt="{{ image.alt }}"
           width="{{ image.width }}"
-          height="{{ image.height }}">
+          height="{{ image.height }}"
+          {%- if background_image -%}
+            style="width: 100%; padding: 0 22px;"
+          {%- endif -%}
+          class="doumdoum__object-fit"
+          >
       {%- endfor -%}
     {%- endif -%}
     <div class="doumdoum__custom-product-card-top-bottom">
@@ -18,11 +39,14 @@
         {{ product.metafields.custom.usage }}
       </p>
     </div>
-    <div class="bear-wrapper" style="color: {{ product.metafields.custom.theme_accent }};">
+    {%- unless background_image -%}
+      <div class="bear-wrapper" style="color: {{ product.metafields.custom.theme_accent }};">
       {%- render 'doumdoum__bear' -%}
     </div>
+    {%- endunless -%}
   </div>
   <div class="doumdoum__custom-product-card-bottom">
+    <a href="{{ product.url }}"></a>
     <div class="product-title">
       <h5>
         {{ product.title }}

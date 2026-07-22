@@ -1,0 +1,95 @@
+<script src="{{ "doumdoum__orders-notification.js" | asset_url }}" defer></script>
+{%- paginate shop.metaobjects.notification.values by 250 -%}
+  <script>
+    window.doumdoumNotifications = {{ shop.metaobjects.notification.values | json }};
+  </script>
+{%- endpaginate -%}
+
+<notification-manager>
+  <div class="doumdoum__notification" data-notification-template="">
+    <div class="doumdoum__notification-left">
+      <span class="recently-ordered">
+        a commandé récemment.
+      </span>
+      <span class="client" data-orderer-name="">
+        Nawal Benmouhoub
+      </span>
+    </div>
+    <div class="doumdoum__notification-right">
+      <span data-orderer-city="">
+        Bejaia
+      </span>
+      <span data-order-price>
+        3350 da
+      </span>
+    </div>
+  </div>
+</notification-manager>
+<style>
+  .doumdoum__notification {
+    display: flex;
+    min-width: 238px;
+    background-color: #FAFAFACC;
+    border: 1px solid #E9EAEB;
+    border-radius: 8px;
+    position: fixed;
+    left: 21px;
+    bottom: -30px;
+    padding: 6px 12px;
+    z-index: 100;
+    justify-content: space-between;
+    transition: bottom 300ms ease;
+    opacity: 0;
+  }
+  .doumdoum__notification.visible {
+    opacity: 1;
+    bottom: 10px;
+  }
+  .doumdoum__notification-left {
+    display: flex;
+    flex-direction: column;
+  }
+  .doumdoum__notification-left span.recently-ordered {
+    color: #535862;
+  }
+  .doumdoum__notification-left span.blurred {
+    filter: blur(1.5px);
+  }
+  .doumdoum__notification-left span.client {
+    color: #181D27;
+  }
+  .doumdoum__notification-left span {
+    font-family: nunito;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+    text-wrap: nowrap;
+  }
+  .doumdoum__notification-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .doumdoum__notification-right span {
+    color: #181D27;
+    font-family: nunito;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.5%;
+
+  }
+</style>
+{% schema %}
+  {
+    "name": "Order Notification",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Order Notification"
+      }
+    ]
+  }
+{% endschema %}

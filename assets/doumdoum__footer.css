@@ -132,6 +132,10 @@ footer.doumdoum_custom-footer {
   line-height: 120%;
   letter-spacing: -0.5%;
   color: #181d27;
+  text-underline-offset: 4px;
+}
+.doumdoum__custom-footer .menu_link a:hover {
+  text-decoration: underline;
 }
 .doumdoum__custom-footer .footer_devider {
   height: 0;

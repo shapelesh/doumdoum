@@ -4,6 +4,7 @@ import { sliderRegistry } from "@theme/slider-registry";
 function initSliders() {
   document.querySelectorAll("[data-slider]").forEach((el) => {
     const name = el.dataset.slider;
+    if (name === "popup") return;
     const config = sliderRegistry[name];
 
     if (!config) {
