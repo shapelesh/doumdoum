@@ -131,6 +131,7 @@ main.content-for-layout {
 
 .doumdoum__custom-product-card .doumdoum__custom-product-card-top > img {
   z-index: 2;
+  border-radius: 20px;
   height: 200px;
 }
 
