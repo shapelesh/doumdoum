@@ -29,7 +29,7 @@
               {% for media in product.media %}
                 <li class="glide__slide thumb-item {% if forloop.first %}active{% endif %}" onclick="updateMainImage('{{ media | image_url: width: 800 }}', this)">
                   <img
-                    src="{{ media | img_url: '150x150', crop: 'center' }}"
+                    src="{{ media | image_url: width: 150 }}"
                     alt="{{ media.alt | escape }}"
                     width="100%"
                     height="100%"
@@ -37,6 +37,22 @@
                 </li>
               {% endfor %}
             </ul>
+          </div>
+          <div class="glide__arrows" data-glide-el="controls">
+            <button
+              class="glide__arrow glide__arrow--left"
+              data-glide-dir="<">
+              <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="10" />
+  <path d="m14 16-4-4 4-4"/>
+</svg></button>
+    <button class="
+              glide__arrow
+              glide__arrow--right" data-glide-dir=">"><svg xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="10" />
+  <path d="m10 16 4-4-4-4"/>
+</svg>
+</button>
           </div>
         </div>
       </div>
