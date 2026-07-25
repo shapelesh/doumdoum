@@ -625,7 +625,8 @@
         "validation_errors_banner": {
           "heading": {
             "one": "هناك {{count}} خطأ:",
-            "other": "يوجد {{count}} أخطاء:"
+            "other": "يوجد {{count}} أخطاء:",
+            "many": "يوجد {{count}} أخطاء:"
           }
         }
       },
@@ -777,7 +778,55 @@
             "pickup_in_store": "سيتم سحب %{items} من المتجر.",
             "remove_items": "تمت إزالة %{items} من سلة التسوق."
           }
-        }
+        },
+        "pickup_all_items": "اختر جميع العناصر",
+        "delivery_method": "وضع الشحن المجزأ",
+        "delivery_method_menu": "قائمة وضع التسليم المجزأ",
+        "items_for_pickup": "مقالات للسحب",
+        "inventory_issue_banner": {
+          "remove_items_or_ship": "%{ship_separately_link} أو %{remove_items_link}",
+          "remove_items_or_pickup": "%{pickup_in_store_link} أو %{remove_items_link}",
+          "heading": {
+            "cannot_be_picked_up": {
+              "one": "لا يمكن استرجاع %{count} مقال",
+              "other": "يتعذر استرداد %{count} من المقالات",
+              "many": "يتعذر استرداد %{count} من المقالات"
+            },
+            "cannot_be_shipped": {
+              "one": "لا يمكن شحن %{count} مقال",
+              "other": "لا يمكن شحن %{count} مقال",
+              "many": "لا يمكن شحن %{count} مقال"
+            }
+          },
+          "remove_item": {
+            "one": "سحب المقال",
+            "other": "إزالة العناصر",
+            "many": "إزالة العناصر"
+          },
+          "ship_separately": {
+            "one": "أرسله بشكل منفصل",
+            "other": "شحنها بشكل منفصل",
+            "many": "شحنها بشكل منفصل"
+          },
+          "pick_them_up_in_store": {
+            "one": "استلامه من المتجر",
+            "other": "استلامها من المتجر",
+            "many": "استلامها من المتجر"
+          },
+          "remove_item_only": {
+            "one": "إزالة المادة",
+            "other": "إزالة العناصر",
+            "many": "إزالة العناصر"
+          }
+        },
+        "items_for_shipping": "مواد الشحن",
+        "pickup_items_count": {
+          "many": "إزالة %{count} مقالات"
+        },
+        "ship_items_count": {
+          "many": "شحن %{count} سلعة"
+        },
+        "items_moved_to_shipping_toast": "تم نقل الأصناف التي لا يمكن سحبها إلى الشحن."
       },
       "wallets": {
         "redirect_hint": "سيُطلب منك تسجيل الدخول باستخدام {{walletName}}.",
@@ -843,6 +892,120 @@
         "payment_link_expired_title": "رابط الدفع منتهي الصلاحية",
         "payment_link_expired_text": "حاول مسح رمز الاستجابة السريعة مرة أخرى.",
         "title": "فشل الدفع الخارجي"
+      },
+      "local_pickup": {
+        "location_information": {
+          "one": "يوجد %{count} موقع يتضمن مخزوناً في مكان قريب",
+          "other": "يوجد %{count} موقع يتضمن مخزونًا قريبًا",
+          "many": "يوجد %{count} موقع يتضمن مخزونًا قريبًا"
+        },
+        "all_stores_far_away": {
+          "title_with_location": "أقرب موقع يبعد أكثر من %{distance} عن %{location}",
+          "description_with_location": "%{change_location_link} أو %{ship_to_address_link}",
+          "change_location_link": "تغيير موقعك",
+          "title_with_specific_location": "أقرب موقع به السلعة التي طلبتها يبعد أكثر من %{distance} عن %{location}",
+          "title_with_item": {
+            "one": "أقرب موقع يحتوي على سِلعتك يبعد أكثر من %{distance} عن %{location}",
+            "other": "أقرب موقع يحتوي على سلعك يبعُد أكثر من %{distance} عن %{location}",
+            "many": "أقرب موقع يحتوي على سلعك يبعُد أكثر من %{distance} عن %{location}"
+          }
+        },
+        "selected_pickup_option_no_longer_available": {
+          "description": "لقد اخترنا أقرب موقع تتوفر فيه منتجاتك."
+        },
+        "no_pickup_locations_found": "لم يتم العثور على نقطة استلام",
+        "pickup_unavailable_banner_body": {
+          "try_different_location": "جرب موقعًا مختلفًا",
+          "there_are_no_stores": "لا توجد متاجر قريبة من عنوانك أو أن منتجاتك غير متوفرة للاستلام.",
+          "ship_items": "شحن بضائعكم",
+          "search_elsewhere": "ابحث في مكان آخر",
+          "ship_items_or_search_elsewhere": "%{ship_items} أو %{search_elsewhere}",
+          "search_elsewhere_standalone": "ابحث في مكان آخر"
+        },
+        "geolocation": {
+          "permission_not_allowed": "قم بتمكين مشاركة الموقع أو ابحث يدويًا."
+        },
+        "location_address_search_placeholder": "%{postal_code_label} أو العنوان",
+        "location_closest": "أقرب مكان به غرضك",
+        "toggle_multiple_locations": "+% {count} موقع إضافي",
+        "location_information_far_away": {
+          "one": "يوجد %{count} موقع يتوفر فيه منتجك",
+          "other": "توجد %{count} مواقع تحتوي على هذا المنتج",
+          "many": "توجد %{count} مواقع تحتوي على هذا المنتج"
+        },
+        "location_nearby": {
+          "one": "يوجد موقع واحد قريب لمنتجك\nيوجد موقعان قريبان لمنتجك\nيوجد %{count} مواقع قريبة لمنتجك\nتوجد %{count} مواقع قريبة لمنتجك",
+          "other": "يوجد %{count} موقع قريب به سلعتك",
+          "many": "يوجد %{count} موقع قريب به سلعتك"
+        },
+        "location_nearby_short": {
+          "one": "%{count} موقع قريب مع مقالك",
+          "other": "% {count} مواقع قريبة تتضمن السلعة التي تبحث عنها",
+          "many": "% {count} مواقع قريبة تتضمن السلعة التي تبحث عنها"
+        },
+        "location_far_away": {
+          "one": "%{count} موقع مع مقالك",
+          "other": "%{count} موقع متوفر به مقالك",
+          "many": "%{count} موقع متوفر به مقالك"
+        },
+        "toggle_more_locations": {
+          "one": "موقع آخر",
+          "other": "%{count} مواقع أخرى",
+          "many": "%{count} مواقع أخرى"
+        },
+        "pickup_unavailable_banner_title": {
+          "one": "لا يوجد موقع خاص بمنتجك",
+          "other": "لا يوجد موقع به موادك",
+          "many": "لا يوجد موقع به موادك"
+        },
+        "pickup_unavailable_banner_title_with_country": {
+          "one": "لا يوجد موقع في %{country} يطابق السلعة الخاصة بك",
+          "other": "لا يوجد موقع في/بـ %{country} يطابق أصنافك",
+          "many": "لا يوجد موقع في/بـ %{country} يطابق أصنافك"
+        },
+        "location_closest_one_item": "أقرب موقع يتوفر فيه منتجك",
+        "location_closest_other_items": "الموقع الأقرب الذي تتوفّر فيه بضائعكم",
+        "location_information_far_away_one_item": {
+          "one": "يوجد %{count} موقع يتضمن السلعة الخاصة بك",
+          "other": "يوجد %{count} موقع يتوفر فيه منتجك",
+          "many": "يوجد %{count} موقع يتوفر فيه منتجك"
+        },
+        "location_information_far_away_other_items": {
+          "one": "يوجد %{count} موقع يتضمن سلعك",
+          "other": "يوجد %{count} موقع يتضمن عناصرك",
+          "many": "يوجد %{count} موقع يتضمن عناصرك"
+        },
+        "location_nearby_one_item": {
+          "one": "يوجد %{count} موقع قريب متوفر لديه العنصر الذي تبحث عنه",
+          "other": "يوجد %{count} موقع قريب به سلعتك",
+          "many": "يوجد %{count} موقع قريب به سلعتك"
+        },
+        "location_nearby_other_items": {
+          "one": "يوجد %{count} موقع قريب به المنتجات المطلوبة.",
+          "other": "يوجد %{count} مواقع قريبة تحتوي على أغراضك",
+          "many": "يوجد %{count} مواقع قريبة تحتوي على أغراضك"
+        },
+        "location_nearby_short_one_item": {
+          "one": "%{count} موقع قريب يمتلك سلعتك",
+          "other": "%{count} موقعًا قريبًا يتوفر به منتجك",
+          "many": "%{count} موقعًا قريبًا يتوفر به منتجك"
+        },
+        "location_nearby_short_other_items": {
+          "one": "%{count} موقع قريب به المنتجات التي تبحث عنها",
+          "other": "%{count} موقعًا قريبًا بها عناصرك",
+          "many": "%{count} موقعًا قريبًا بها عناصرك"
+        },
+        "location_far_away_one_item": {
+          "one": "%{count} موقع متوفر فيه المنتج الخاص بك",
+          "other": "%{count} موقعًا يتوفر به العنصر الخاص بك",
+          "many": "%{count} موقعًا يتوفر به العنصر الخاص بك"
+        },
+        "location_far_away_other_items": {
+          "one": "%{count} مواقع تحتوي على عناصرك",
+          "other": "%{count} مواقع تتوفر فيها عناصرك",
+          "many": "%{count} مواقع تتوفر فيها عناصرك"
+        },
+        "location_selected": "موقعك المحدد"
       }
     },
     "links": {
@@ -1069,7 +1232,9 @@
       "other": "{{ count }} عنصرًا أُضيف إلى السلة",
       "many": "{{ count }} عنصرًا أُضيف إلى السلة"
     },
-    "quick_order_list": "قائمة الأوامر السريعة"
+    "quick_order_list": "قائمة الأوامر السريعة",
+    "powered_by": "سيتم تشغيل هذا المتجر بواسطة",
+    "store_owner_link_html": "هل أنت مالك المتجر؟ <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">سجل الدخول هنا</a>"
   },
   "placeholders": {
     "blog_post_title": "العنوان",
@@ -1373,7 +1538,153 @@
       },
       "add_payment_method_dropdown": {
         "bank_account_consent": "بإضافة وسيلة دفع، أنت توافق على أن يتم خصم بطاقتك أو حسابك المصرفي للمشتريات المستقبلية التي توافق عليها، حتى تلغي هذا التفويض."
+      },
+      "bank_account": {
+        "loading_accessibility_message": "يتم تحميل زر الحساب المصرفي",
+        "iframe_title_accessibility_label": "إعداد الحساب البنكي",
+        "display_name": "الحساب المصرفي",
+        "generic_error": "لا يمكن إضافة حساب بنكي. أعد المحاولة لاحقًا."
+      },
+      "replacement_payment_method_title": "وسيلة دفع بديلة",
+      "update_payment_method": {
+        "button_title": "تحديث",
+        "error_message": "تعذّر تحديث وسيلة الدفع",
+        "current": "حالي",
+        "loading_form_accessibility_message": "جارٍ تحميل نموذج تحديث طريقة الدفع",
+        "loading_current_payment_method": "جاري تحميل طريقة الدفع الحالية",
+        "loading_digital_wallets": "جاري تحميل خيارات المحفظة الإلكترونية",
+        "loading_card_fields": "تحميل حقول بطاقة الائتمان",
+        "subscriptions_list_accessibility_label": "قائمة منتجات الاشتراك",
+        "pre_orders_title": "قريباً",
+        "pre_orders_list_accessibility_label": "قائمة المنتجات من الطلبات المعلّقة",
+        "resources_list_accessibility_label": "منتجات الاشتراك والمنتجات المعلقة التي تستخدم طريقة الدفع هذه",
+        "resources_card_scroll": "اسحب لعرض المزيد من العناصر",
+        "loading_resources": "جارٍ تحميل الاشتراكات والطلبات القادمة"
+      },
+      "link_expired": {
+        "return_home_button": "العودة إلى الصفحة الرئيسية",
+        "update_message": "انتهت صلاحية هذا الرابط لتحديث طريقة الدفع الخاصة بك.",
+        "add_message": "انتهت صلاحية رابط إضافة وسيلة الدفع الخاص بك.",
+        "message": "انتهت صلاحية هذا الرابط لتحديث طريقة الدفع الخاصة بك."
+      },
+      "or": "أو",
+      "additional_payment_methods": "طرق دفع إضافية",
+      "expiring_badge_label": "تنتهي صلاحيته قريباً"
+    },
+    "payment_method_brands": {
+      "blik": "بليك",
+      "usdc": "العملات المشفرة: USDC"
+    },
+    "ui_components": {
+      "external": "فتح موقع إلكتروني خارجي.",
+      "externalNewWindow": "فتح موقع ويب خارجي في نافذة جديدة.",
+      "loading": "جارٍ التحميل...",
+      "newWindow": "افتح في نافذة جديدة.",
+      "removeChip": "حذف المقال"
+    },
+    "profile_preview_bar": {
+      "badge_active": "أصل",
+      "badge_draft": "مسودة",
+      "badge_launches": "إطلاق في {{date}}",
+      "badge_paused": "في استراحة",
+      "badge_scheduled": "مبرمج",
+      "badge_traffic": "{{percentage}} من حركة المرور",
+      "exit_preview": "الخروج من المعاينة",
+      "rollout_label": "نشر"
+    },
+    "settings": {
+      "log_out_everywhere": {
+        "title": "تسجيل الخروج من جميع الأجهزة",
+        "button": "تسجيل الخروج من جميع الأجهزة",
+        "warning_message": "سيتم تسجيل خروجك أيضاً من هذا الجهاز."
+      }
+    },
+    "shop_ads": {
+      "title": "منتجات أخرى قد تهمك"
+    },
+    "announcement_bar": {
+      "expand_label": "توسيع شريط الإعلانات",
+      "collapse_label": "تقليص شريط الإعلانات",
+      "close_label": "إغلاق شريط الإعلانات"
+    },
+    "subscriptions": {
+      "update_payment_instrument": {
+        "loading": "جارٍ تحميل طرق الدفع",
+        "no_payment_methods_available": "لا توجد وسيلة دفع متاحة",
+        "select_new_payment_method": "تحديد وسيلة دفع جديدة",
+        "current_method": "حالي",
+        "use_new_payment_method": "+ استخدام وسيلة دفع جديدة"
+      }
+    },
+    "account_menu": {
+      "signed_out_state": {
+        "sheet_title": "تسجيل الدخول أو إنشاء حساب",
+        "section_divider": "طرق اتصال أخرى",
+        "alternate_divider": "أو",
+        "shop_login_button": "الاتصال بـ Shop",
+        "continue_with_google": "المتابعة باستخدام Google",
+        "continue_with_facebook": "المتابعة باستخدام فيسبوك",
+        "use_email_button": "استخدام عنوان بريد إلكتروني بدلاً من ذلك"
+      },
+      "signed_in_state": {
+        "greeting_with_name": "مرحباً، {{first_name}}"
+      },
+      "location_picker": {
+        "sheet_title": "المواقع"
+      },
+      "aria_labels": {
+        "close_menu": "إغلاق القائمة",
+        "back_to_main_menu": "العودة إلى القائمة الرئيسية من {{title}}",
+        "open_submenu": "{{title}}، يفتح القائمة الفرعية",
+        "loading_menu": "جارٍ تحميل القائمة",
+        "sign_in_with_email": "تسجيل الدخول عبر البريد الإلكتروني"
+      }
+    },
+    "intents": {
+      "subscription_replace_payment_method": {
+        "replace_with": "استبدل بـ",
+        "add_new_payment_method": "إضافة جديد",
+        "loading": "جاري تحميل نافذة تبديل وسيلة الدفع المنبثقة",
+        "invalid_subscription_contract": "تعذر العثور على الاشتراك",
+        "expiry_date": "تاريخ انتهاء الصلاحية {{expiryDate}}",
+        "edit_current_payment_method": "تغيير وسيلة الدفع الحالية",
+        "edit_selected_payment_method": "تغيير طريقة الدفع المحددة"
+      }
+    },
+    "sign_in": {
+      "step_one": {
+        "subheading_with_sign_in_options": "تسجيل الدخول أو إنشاء حساب",
+        "consent_agreement": "باستمرارك، أنت توافق على %{terms}",
+        "last_used_pill": "آخر استخدام"
       }
     }
+  },
+  "blocks": {
+    "slider_label": "دائري"
+  },
+  "accessibility": {
+    "discount_menu": "رموز الخصم",
+    "find_country": "ابحث عن بلد",
+    "localization_region_and_language": "محدد المنطقة واللغة",
+    "decrease_quantity": "تقليل الكمية",
+    "increase_quantity": "زيادة الكمية",
+    "rating": "تقييم هذا المنتج هو {{ rating }} من 5",
+    "view_pricing_info": "عرض معلومات التسعير",
+    "slideshow": "عرض شرائح",
+    "header_navigation_label": "الرئيسية",
+    "home_logo_alt": "{{ store_name }} – الصفحة الرئيسية",
+    "active_filters": "تفعيل الفلاتر:",
+    "product_details": "تفاصيل المنتج",
+    "show_product_details": "عرض تفاصيل المنتج لـ {{ product_name }}",
+    "featured_product": "المنتج المميز",
+    "search_suggestions_available": "البحث عن اقتراحات متوفرة لـ « {{ query }} »",
+    "price_filter_low": "سعر منخفض",
+    "price_filter_high": "سعر مرتفع"
+  },
+  "actions": {
+    "show_all_options": "إظهار جميع الخيارات",
+    "open": "فتح",
+    "back_to": "العودة إلى {{ title }}",
+    "zoom_media": "تكبير وسائط متعددة {{ index }}"
   }
 }
