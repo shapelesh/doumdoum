@@ -263,7 +263,30 @@
         "address_line2_blank": "أدخل شقة، جناحًا، إلخ.",
         "address_line2_too_long": "السطر الثاني من العنوان طويل جدًا (الحد الأقصى هو {{count}} حرفًا)",
         "address_line2_contains_emojis": "لا يمكن أن يحتوي سطر العنوان الثاني على رموز تعبيرية",
-        "address_line2_contains_html_tags": "لا يمكن أن يحتوي سطر العنوان الثاني على وسوم HTML."
+        "address_line2_contains_html_tags": "لا يمكن أن يحتوي سطر العنوان الثاني على وسوم HTML.",
+        "vaulting_agreement_blank": "يجب حفظ طريقة الدفع الخاصة بك، حيث أن رصيد هذا الطلب مستحق الدفع في تاريخ لاحق.",
+        "address_street_name_blank": "أدخل اسم الشارع",
+        "address_street_name_contains_emojis": "لا يمكن أن يحتوي اسم الشارع على رموز تعبيرية",
+        "address_street_name_contains_html_tags": "لا يمكن أن يحتوي اسم الشارع على وسوم HTML.",
+        "address_street_name_contains_mathematical_symbols": "لا يمكن للشارع أن يحتوي على رموز رياضية",
+        "address_street_number_blank": "أدخل رقم المبنى",
+        "address_street_number_contains_emojis": "لا يمكن أن يحتوي رقم المبنى على رموز تعبيرية",
+        "address_street_number_contains_html_tags": "لا يمكن أن يحتوي رقم المبنى على وسوم HTML.",
+        "address_street_number_contains_mathematical_symbols": "لا يمكن أن يحتوي رقم المبنى على رموز رياضية",
+        "address_street_name_too_long": "الشارع طويل جداً (الحد الأقصى هو {{count}} حرف)",
+        "address_street_number_too_long": "رقم المبنى طويل جدًا (الحد الأقصى هو {{count}} أحرف)",
+        "address_district_blank": "أدخل مقاطعة",
+        "address_district_too_long": "المنطقة طويلة جداً (الحد الأقصى هو {{count}} أحرف)",
+        "address_district_contains_emojis": "لا يمكن أن يحتوي اسم المنطقة على رموز تعبيرية (إيموجي)",
+        "address_district_contains_html_tags": "لا يمكن أن تحتوي المنطقة على علامات HTML.",
+        "address_district_contains_mathematical_symbols": "لا يمكن أن يحتوي الحي على رموز رياضية",
+        "must_use_available_delivery_address": "يجب اختيار عنوان التسليم من بين عناوين التسليم المتاحة.",
+        "must_use_available_shipping_rate": "يجب تحديد سعر الشحن من بين أسعار الشحن المتاحة.",
+        "shipping_method_invalid_phone_number": "قم بتحديث رقم هاتفك في عنوان التسليم لمعرفة خيارات الشحن المتاحة.",
+        "split_by_delivery_method_not_allowed": "لا يُسمح بطريقة الشحن المجزأة لهذه الزيارة أو هذا المتجر.",
+        "split_by_delivery_method_unsupported_method_type": "تمت محاولة الفصل حسب طريقة التسليم باستخدام نوع طريقة تسليم غير مدعوم.",
+        "split_by_delivery_method_requires_merchandise_from_single_location": "يتطلب الفصل حسب طريقة التسليم معالجة بنود السلع الفردية من موقع واحد.",
+        "address_subdistrict_blank": "أدخل ناحية"
       },
       "payment_errors": {
         "three_d_secure_throttled": "محاولات كثيرة جدًا؛ يرجى الانتظار قبل إعادة المحاولة",
@@ -1006,6 +1029,106 @@
           "many": "%{count} مواقع تتوفر فيها عناصرك"
         },
         "location_selected": "موقعك المحدد"
+      },
+      "payment": {
+        "business_customer_vaulting_payment_label": "احفظ طريقة الدفع هذه عند السداد ووافق على قيام %{company} بفوترتها للمشتريات المستقبلية لهذا الموقع. يمكن لجميع جهات الاتصال المرتبطة بهذا الموقع استخدام طريقة الدفع.",
+        "markets_pro_disclaimer_label": "عند تقديم طلبك، فإنك توافق على الشراء من Global-e بصفتها التاجر المسجَّل، وفقًا لـ %{markets_pro_terms} و %{privacy_policy} من Global-e، وعلى مشاركة معلوماتك مع %{shop_name}.",
+        "shop_pay_ideal_unavailable_error": "iDEAL | Wero غير متاح لهذا الطلب. اختر طريقة دفع أخرى.",
+        "offsite_gateway_review_page_redirect_hint": "بعد مراجعة طلبك، ستتم إعادة توجيهك إلى %{gateway_label} لإتمام عملية الشراء.",
+        "blik_label": "بليك",
+        "offsite_gateway_redirect_hint_no_button_label": "سيتم توجيهك إلى %{gateway_label} لإتمام عملية الشراء.",
+        "billing_address_rollup_accessibility_label": "خيارات عنوان الفاتورة",
+        "payment_method_rollup_accessibility_label": "خيارات الدفع",
+        "crypto_modal": {
+          "header": "ادفع %{total_price} دولار أمريكي لـ %{shop_name}",
+          "error": {
+            "refresh": "تحديث",
+            "close": "أغلق",
+            "sandbox_error": "حدث خطأ"
+          }
+        },
+        "bank_account_type": {
+          "checking": "جاري التحقق",
+          "savings": "المدخرات"
+        },
+        "bank_account_choose": "اختر حسابًا لإتمام عملية الشراء بأمان",
+        "bank_account_connect_another": "ربط حساب بنكي آخر",
+        "bank_account_connect": "ربط حساب بنكي",
+        "bank_account_missing": "يجب ربط الحساب المصرفي",
+        "crypto_payment_method": {
+          "description": "صل محفظتك بأمان. لن تتم مشاركة رصيدك وعنوانك.",
+          "tooltip": "لن تتم مشاركة رصيد محفظتك الإلكترونية وعنوانها، ولن يُخصم سوى المبلغ المطلوب",
+          "cashback_descriptor": {
+            "one": "سوف تتلقى استردادك النقدي بعد %{count} يوم",
+            "other": "سوف تتلقى استرداد النقود بعد %{count} يومًا",
+            "many": "سوف تتلقى استرداد النقود بعد %{count} يومًا"
+          }
+        },
+        "usdc_cashback_title": "استرداد نقدي بنسبة %{incentive_percentage}",
+        "usdc_cashback_additional_info": "ادفع باستخدام USDC على Base واسترد %{incentive_percentage} في محفظتك الإلكترونية خلال 30 يومًا.",
+        "usdc_cashback_terms": "تُطبق الشروط والقيود",
+        "separate_payments_label": "أصنافك تأتي من عدة متاجر. ستتم محاسبتك في %{separate_payments_link}.",
+        "separate_payments_text": "دفعات منفصلة",
+        "payments": "المدفوعات",
+        "discount_show_more_warnings": {
+          "one": "إظهار %{count} أخرى",
+          "other": "إظهار %{count} أخرى",
+          "many": "إظهار %{count} أخرى"
+        },
+        "business_customer_with_bank_account_vaulting_payment_label": "احفظ طريقة الدفع هذه عند السداد ووافق على قيام %{company} بخصم المبلغ من حسابك مقابل المشتريات المستقبلية التي توافق عليها لهذا الموقع حتى تقوم بالإلغاء. يمكن لجميع جهات الاتصال المعينة لهذا الموقع استخدام طريقة الدفع.",
+        "new_bank_account_disclaimer": "عند إنهاء طلبك، فإنك تفوض %{shop_name} بخصم المبلغ الموضح من الحساب أدناه عبر ACH، في التاريخ المحدد.",
+        "bank_account_disclaimer": "قد تستغرق معالجة مدفوعات غرفة المقاصة الآلية (ACH) ما يصل إلى 4 أيام عمل.",
+        "bank_account_vaulted_company_location": "تم تسجيل حساب مصرفي لهذا الموقع",
+        "bank_account_generic_error": "لا يمكن إضافة حساب بنكي. أعد المحاولة لاحقًا.",
+        "discount_codes_removed_summary": {
+          "one": "تم حذف %{count} رمز خصم",
+          "other": "تم حذف %{count} رمز قسيمة",
+          "many": "تم حذف %{count} رمز قسيمة"
+        },
+        "continue_to_guest_checkout": "المتابعة كضيف",
+        "choose_new_payment_method": "اختيار طريقة دفع جديدة",
+        "add_new_payment_method": "إضافة طريقة دفع جديدة",
+        "discount_codes_modified_summary": {
+          "one": "تم تعديل %{count} رمز خصم",
+          "other": "تم تعديل %{count} رموز خصم",
+          "many": "تم تعديل %{count} رموز خصم"
+        },
+        "discount_codes_removed_or_modified_summary": {
+          "one": "تمت إزالة أو تعديل %{count} رمز خصم",
+          "other": "تمت إزالة أو تعديل %{count} رمز خصم",
+          "many": "تمت إزالة أو تعديل %{count} رمز خصم"
+        },
+        "multiple_primary_payment_not_allowed": "وسائل دفع غير صالحة",
+        "purchase_options_subscription_agreement_label": "سلة التسوق الخاصة بك تحتوي على اشتراك يتجدد تلقائياً. بالنقر على « %{button_label} »، %{consent_text} %{cancellation_instructions}",
+        "purchase_options_subscription_consent_text": "أنت توافق صراحةً ورسميًا على أنه سيتم إصدار فاتورة لك تلقائيًا بالمبالغ المتكررة المذكورة في سلة التسوق الخاصة بك (بالإضافة إلى الشحن والضرائب) حتى انتهاء الاشتراكات أو إلغائها.",
+        "purchase_options_subscription_cancellation_instructions": "%{cancel_text} يرجى مراجعة %{cancellation_policy_label}.",
+        "purchase_options_subscription_cancel_text": "يمكنك الإلغاء في أي وقت بالدخول إلى حسابك أو الاتصال بالمتجر.",
+        "vault_for_payment_later": {
+          "pay_button_label": "تقديم الطلب",
+          "notice": "لن يتم تحصيل أي مبلغ منك في الوقت الحالي. من خلال الاستمرار في الدفع، فإنك توافق على خصم مبلغ الدفع من وسيلة الدفع الخاصة بك عند معالجة طلبك."
+        },
+        "alipay_label": "أليباي",
+        "wechat_pay_label": "وي تشات باي",
+        "oxxo_label": "أوكسو",
+        "pay_with_credit_card": "الدفع ببطاقة الائتمان",
+        "pay_with_debit_card": "الدفع ببطاقة السحب الآلي",
+        "bogus_test_checkout": {
+          "title": "تعليمات الاختبار",
+          "intro": "استخدم هذه القيم لاختبار عملية الدفع:",
+          "approved_transaction": "{{card_number}} لإجراء محاكاة لعملية موافق عليها",
+          "declined_transaction": "{{card_number}} لمحاكاة معاملة مرفوضة",
+          "gateway_failure": "{{card_number}} لمحاكاة خطأ في البوابة",
+          "additional_instructions": "استخدم تاريخ انتهاء صلاحية مستقبليًا ورمز أمان ثلاثي الأرقام من اختيارك.",
+          "support_link": "الحصول على مساعدة"
+        },
+        "order_edit_banner_single_item_updated": "تم التحديث",
+        "order_edit_banner_previous_taxes_label": "الضرائب السابقة:",
+        "order_edit_banner_new_taxes_label": "ضرائب جديدة:",
+        "satispay_label": "ساتيسباي",
+        "wechat_app_label": "وي شات",
+        "alternative_payment_currency_total_notice_disclosure": "يعالج %{shop_name} المدفوعات بالـ %{shop_currency} (%{amount_due}).",
+        "alternative_payment_currency_total_manual_payment_notice_disclosure": "أنت تدفع لـ %{shop_name} بـ %{shop_currency} (%{amount_due}).",
+        "bizum_label": "بيزوم"
       }
     },
     "links": {
