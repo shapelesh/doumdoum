@@ -123,5 +123,65 @@
         "due_on_fulfillment": "مستحق بمجرد معالجة الطلب"
       }
     }
+  },
+  "content": {
+    "shipping_discount_error": "تُعرض خصومات الشحن عند الدفع بعد إضافة عنوان",
+    "discount_code_error": "لا يمكن تطبيق رمز التخفيض على سلتك",
+    "recipient_form_send_to": "أرسل إلى",
+    "recipient_form_email_label": "البريد الإلكتروني للمستلم",
+    "recipient_form_email_label_my_email": "بريدي الإلكتروني",
+    "recipient_form_email_address": "البريد الإلكتروني للمستلم",
+    "recipient_form_name_label": "اسم المستلم (اختياري)",
+    "recipient_form_message": "الرسالة (اختياري)",
+    "recipient_form_characters_used": "{{ used_chars }}/{{ max_chars }} حرفًا مستخدمًا",
+    "recipient_form_send_on": "يو-ش-سسسس",
+    "recipient_form_send_on_label": "إرسال (اختياري)",
+    "recipient_form_fields_visible": "أصبحت حقول نموذج المستلم مرئية الآن",
+    "recipient_form_fields_hidden": "تم إخفاء حقول نموذج المستلم الآن",
+    "recipient_form_error": "واجهت عملية إرسال النموذج خطأً",
+    "product_custom_property_character_count": "{{ used_chars }}/{{ max_chars }} حرفًا مستخدمًا",
+    "terms_and_policies": "الشروط والأحكام والسياسات",
+    "pagination": {
+      "nav_label": "ترقيم الصفحات",
+      "page": "صفحة {{ page }}"
+    },
+    "volume_pricing_available": "التسعير القائم على الكمية متاح",
+    "volume_pricing": "تسعير على أساس الكمية",
+    "at_price_each": "بسعر {{ price }}/قطعة",
+    "each": "{{ price }}/قطعة",
+    "each_abbreviation": "قطعة",
+    "price_range": "النطاق السعري",
+    "item_count_cutoff": "أكثر من {{ count }} مقال",
+    "product_subtotal": "المجموع الفرعي للمنتجات",
+    "quantity_per_item": "/قطعة",
+    "remove_all": "إزالة الكل",
+    "remove_all_items_confirmation": "إزالة {{ count }} عناصر من سلة التسوق؟",
+    "remove_one_item_confirmation": "إزالة 1 عنصر من سلة التسوق الخاصة بك؟",
+    "total_items": "إجمالي السلع",
+    "variant": "بديل",
+    "variant_total": "إجمالي المتغيرات",
+    "view_cart": "عرض سلة التسوق",
+    "items_added_to_cart": {
+      "one": "1 منتج أضيف إلى السلة",
+      "other": "{{ count }} عنصرًا أُضيف إلى السلة",
+      "many": "{{ count }} عنصرًا أُضيف إلى السلة"
+    },
+    "quick_order_list": "قائمة الأوامر السريعة"
+  },
+  "placeholders": {
+    "blog_post_title": "العنوان",
+    "blog_post_author": "المؤلف",
+    "blog_post_description": "مقتطف من محتوى تدوينتك"
+  },
+  "products": {
+    "product": {
+      "quantity_error_max": "هذا العنصر لديه حد أقصى قدره {{ maximum }}",
+      "quantity_increments": "زيادات بمقدار {{ increment }}",
+      "quantity_minimum": "الحد الأدنى {{ minimum }}",
+      "quantity_maximum": "الحد الأقصى {{ maximum }}",
+      "in_cart": "في السلة",
+      "default_title": "العنوان الافتراضي",
+      "sticky_add_to_cart": "شريط الإضافة السريعة إلى السلة"
+    }
   }
 }
