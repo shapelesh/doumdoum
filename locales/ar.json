@@ -411,6 +411,101 @@
             "other": "يوجد {{count}} أخطاء:"
           }
         }
+      },
+      "taxes": {
+        "vat_number": {
+          "status": {
+            "invalid_number": {
+              "gb": "أدخل رقم ضريبة قيمة مضافة بريطانيًا صالحًا"
+            },
+            "service_unavailable": "خدمة التحقق غير متاحة",
+            "service_error": "خدمة التحقق غير متاحة"
+          },
+          "accessibility": {
+            "status": {
+              "validating": "جار التحقق من صحة رقم ضريبة القيمة المضافة",
+              "valid": "رقم ضريبة القيمة المضافة صالح",
+              "applied": "تم تطبيق الإعفاء من ضريبة القيمة المضافة",
+              "domestic": "إعفاء من ضريبة القيمة المضافة غير مطبق",
+              "invalid_number": "فشل الإعفاء من ضريبة القيمة المضافة",
+              "service_unavailable": "تعذر التحقق من الإعفاء من ضريبة القيمة المضافة",
+              "service_error": "تعذر التحقق من الإعفاء من ضريبة القيمة المضافة"
+            }
+          }
+        }
+      },
+      "payment_collection": {
+        "cancelled": "هذه الدفعة لم تعد مطلوبة. تفضل بزيارة صفحة الطلب للاطلاع على التفاصيل.",
+        "paid": "لقد تم إرسال هذه الدفعة بالفعل. قم بزيارة صفحة الطلب لمراجعة التفاصيل."
+      },
+      "required_extensions": {
+        "errors": {
+          "interaction_required": "مطلوب تفاعل ملحق لإتمام الدفع."
+        }
+      },
+      "embed": {
+        "header": {
+          "review_order": "مراجعة طلبك"
+        },
+        "shipping": {
+          "shipping_options": "الاطلاع على جميع خيارات الشحن"
+        },
+        "payment": {
+          "payment_options": "مشاهدة جميع خيارات الدفع"
+        }
+      },
+      "too_many_requests": {
+        "title": "عدد كبير جدًا من محاولات الدفع",
+        "body": "انتظر بضع دقائق، ثم أعد تشغيل الإجراء من سلة التسوق الخاصة بك.",
+        "return_to_cart": "العودة إلى السلة",
+        "body_no_cart": "الرجاء الانتظار بضع دقائق ثم أعد المحاولة."
+      },
+      "address_management": {
+        "saved_with_store": "مسجّل لهذا المتجر"
+      },
+      "ucp": {
+        "standard_errors": {
+          "item_unavailable": "لا يمكن شراء السلعة"
+        }
+      }
+    },
+    "links": {
+      "powered_by_shopify": "تجارة إلكترونية مدعومة من Shopify"
+    },
+    "collections": {
+      "sorting": {
+        "most_relevant": "الأكثر ملاءمة"
+      }
+    },
+    "errors": {
+      "gift_card_currency_mismatch": "لا يمكن استخدام بطاقة الهدايا هذه لعملية الشراء هذه. يرجى التواصل مع %{shop_name} لإعادة إصدارها.",
+      "shop_404": {
+        "heros": {
+          "store_unavailable": "هذا المتجر غير متاح حالياً.",
+          "store_will_be_right_back": "سيعود هذا المتجر قريباً"
+        },
+        "title_unavailable": "المتجر غير متاح",
+        "subtitles": {
+          "store_will_be_right_back": "تبذل Shopify قصارى جهدها لإعادتها إلى العمل في أقرب وقت ممكن."
+        },
+        "status_card": {
+          "eyebrow": "مساعدة لأصحاب المتاجر",
+          "header": "حالة Shopify",
+          "caption": "تحقق مما إذا كان عطل في Shopify يؤثر على متاجر أخرى بالإضافة إلى هذا المتجر.",
+          "link_text": "التحقّق من حالة أنظمة Shopify"
+        }
+      }
+    },
+    "notices": {
+      "cart": {
+        "view_lines_limit_reached": "يجب أن تكون الأسطر أقل من أو تساوي %{limit}",
+        "merchandise_not_applicable": "لا يمكن شراء سلعة بالتهيئة الحالية.",
+        "not_found": "السلة غير موجودة"
+      }
+    },
+    "email_marketing": {
+      "sms_unsubscribe_confirm": {
+        "message": "هل تريد حقًا إلغاء الاشتراك في التسويق عبر الرسائل النصية القصيرة؟"
       }
     }
   },
@@ -472,6 +567,105 @@
       "in_cart": "في السلة",
       "default_title": "العنوان الافتراضي",
       "sticky_add_to_cart": "شريط الإضافة السريعة إلى السلة"
+    }
+  },
+  "customer_accounts": {
+    "navigation_and_structure": {
+      "dismiss_toast": "تجاهل",
+      "loading_policy_content_accessibility_label": "تحميل محتوى السياسة",
+      "policy_load_error": "يتعذر تحميل {{policyName}}",
+      "loading_section_accessibility_label": "جارٍ تحميل قسم {{sectionName}}",
+      "go_to_store_link": "الذهاب إلى المتجر",
+      "store_credit_accessibility_label": "{{formattedBalance}} رصيد المتجر",
+      "store_credit_balances_list_accessibility_label": "أرصدة المتجر الائتمانية",
+      "store_credit_multi_currency_accessibility_label": {
+        "one": "{{formattedBalance}} رصيد متجر وعبر {{count}} عملة أخرى",
+        "other": "{{formattedBalance}} رصيد متجر وفي {{count}} عملات أخرى",
+        "many": "{{formattedBalance}} رصيد متجر وفي {{count}} عملات أخرى"
+      }
+    },
+    "account_information": {
+      "profile_card": {
+        "email_help_text": "لا يمكن تعديل البريد الإلكتروني",
+        "phone_number_help_text": "لا يمكن تغيير رقم الهاتف",
+        "errors": {
+          "name_too_long": "{{fieldName}} طويل جدًا (الحد الأقصى هو 255 حرفًا)",
+          "name_cannot_contain_url": "{{fieldName}} لا يمكن أن يحتوي على عناوين URL",
+          "name_cannot_contain_html_tags": "{{fieldName}} لا يمكن أن يحتوي على علامات HTML",
+          "email_cant_be_blank": "لا يمكن أن يكون البريد الإلكتروني فارغًا"
+        },
+        "editable_email_help_text": "يتم استخدام عنوان البريد الإلكتروني هذا لتسجيل الدخول وتحديثات الطلبات."
+      },
+      "people": {
+        "pagination": {
+          "load_more_accessibility_label": "إظهار المزيد من الأشخاص"
+        }
+      },
+      "verify_new_email_modal": {
+        "title": "تحقق من عنوان بريدك الإلكتروني الجديد",
+        "description": "الآن، أدخِل الرمز المكون من 6 أرقام الذي أُرسِل إلى عنوان بريدك الإلكتروني الجديد:",
+        "email_resend_button_success_toast_message": "تم إرسال رمز التحقق",
+        "email_resend_button_failure_banner_message": "تعذّر إرسال رمز التحقق"
+      },
+      "email_update_confirmation_message": "تم تحديث البريد الإلكتروني إلى {{email}}",
+      "verify_current_email_modal": {
+        "description": "أدخل الرمز المكون من 6 أرقام المُرسل إلى عنوان بريدك الإلكتروني الأصلي:",
+        "title": "تأكيد هويتك",
+        "verify_button_accessibility_label": "تحقق من عنوان بريدك الإلكتروني الحالي"
+      },
+      "marketing_preferences": {
+        "pending_confirmation": "اضغط على الرابط في بريدك الإلكتروني للتأكيد.",
+        "title": "تفضيلات التسويق",
+        "unsubscribe_confirmation": {
+          "description": "لن تتلقى بعد الآن رسائل تسويقية عبر البريد الإلكتروني من {{shopName}}",
+          "title": "إلغاء الاشتراك في رسائل البريد الإلكتروني؟"
+        },
+        "update_error": {
+          "description": "حدثت مشكلة أثناء تحديث تفضيلاتك التسويقية. حاول تحديث هذه الصفحة أو تحقق من اتصالك بالإنترنت."
+        },
+        "update_success": "تفضيلات التسويق المحدّثة"
+      }
+    },
+    "orders": {
+      "order_list": {
+        "pagination": {
+          "load_more_accessibility_label": "عرض المزيد من الطلبات"
+        },
+        "filter": {
+          "date_section_accessibility_label": "تصفية حسب {{sectionTitle}}"
+        },
+        "view_order": "إظهار الأمر",
+        "view_order_accessibility_label": "عرض الطلب {{orderName}}",
+        "empty_state_redesign_cta": "شراء",
+        "empty_state_redesign_subtitle": "هل ترغب في التسوق؟",
+        "empty_state_redesign_welcome": "أهلاً بك",
+        "empty_state_redesign_welcome_with_name": "مرحباً، {{firstName}}",
+        "sort_options_accessibility_label": "خيارات الفرز للطلبات المؤكدة"
+      },
+      "order_status": {
+        "confirmed_description_pickup": "نحن نجهز هذه المواد للجمع.",
+        "delivered": "تم التسليم في {{date}}",
+        "expected_by": "مقرر في {{date}}",
+        "was_expected_by": "كان من المقرر في {{date}}",
+        "confirmed_description_shipping": "نحن نجهز هذه المواد للشحن.",
+        "arrives": "الوصول في {{date}}",
+        "delivery_estimate_backed_by": "مضمونة بواسطة",
+        "delivery_estimate_delayed_description": "عمليات التسليم في منطقتك أبطأ من المعتاد. قد يصل طلبك متأخراً.",
+        "delivery_estimate_delayed_title": "تأخر",
+        "delivery_estimate_early_description": "عمليات التسليم في منطقتك أسرع من المعتاد. قد يصل هذا الطلب مبكرًا.",
+        "delivery_exception_attempted_action": "جدولة تسليم جديد",
+        "delivery_exception_attempted_description": "{{link}} مع {{carrier}} أو ابحث عن إشعار تسليم",
+        "delivery_exception_attempted_description_unknown": "{{link}} أو ابحث عن إشعار بالطرود",
+        "delivery_exception_delivery_failed": "فشل التسليم",
+        "delivery_exception_failed_action": "التحقق مع {{carrier}}",
+        "delivery_exception_failed_description": "{{link}} أو اتصل بنا للمزيد من المعلومات",
+        "delivery_exception_failed_description_unknown": "اتصل بالناقل لمزيد من المعلومات",
+        "delivery_exception_on_hold_action": "تحديث تفاصيل التسليم",
+        "delivery_exception_on_hold_description": "{{link}} مع {{carrier}} لإعادة طلبك إلى المسار الصحيح",
+        "delivery_exception_on_hold_description_unknown": "{{link}} لإعادة تنشيط طلبك",
+        "delivery_exception_on_hold_title": "معلّق",
+        "delivery_exception_returning_to_sender_action": "الاتصال بـ {{carrier}}"
+      }
     }
   }
 }
