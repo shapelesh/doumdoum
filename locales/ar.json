@@ -1182,7 +1182,197 @@
         "delivery_exception_on_hold_description": "{{link}} مع {{carrier}} لإعادة طلبك إلى المسار الصحيح",
         "delivery_exception_on_hold_description_unknown": "{{link}} لإعادة تنشيط طلبك",
         "delivery_exception_on_hold_title": "معلّق",
-        "delivery_exception_returning_to_sender_action": "الاتصال بـ {{carrier}}"
+        "delivery_exception_returning_to_sender_action": "الاتصال بـ {{carrier}}",
+        "delivery_exception_returning_to_sender_description": "{{link}} للمزيد من المعلومات",
+        "delivery_exception_returning_to_sender_description_unknown": "اتصل بالناقل لمزيد من المعلومات",
+        "delivery_exception_shop_promise_delivered_late_description": "<p>طلبك مضمون من Shop Promise. بما أنه وصل متأخرًا، يمكنك المطالبة بـ {{amount}} من Shop Cash.</p>",
+        "delivery_exception_shop_promise_delivered_late_title": "تم التوصيل متأخرًا",
+        "predicted_by_shop": "التنبؤ بواسطة شوب"
+      },
+      "group_title_label_with_parent": "إلى: {{groupTitle}}"
+    },
+    "order_details": {
+      "payment": {
+        "shop_pay_installments": {
+          "summary": "تواريخ استحقاق المتجر"
+        }
+      },
+      "compare_at_sale": "ترويج ({{saleAmount}})",
+      "pagination": {
+        "load_more_accessibility_label": "عرض المزيد من المقالات"
+      },
+      "image_gallery": {
+        "load_more_items": {
+          "one": "عرض {{count}} مقال آخر",
+          "other": "عرض {{count}} مقالات أخرى",
+          "many": "عرض {{count}} مقالات أخرى"
+        }
+      },
+      "shop_order_tracking": {
+        "real_time_delivery_updates_with_gift": "احصل على تحديثات التسليم في الوقت الفعلي وهدية بقيمة {{promoAmount}} لتنفقها في تطبيق Shop.",
+        "shop_app_promo_amount_off": "احصل على هدية بقيمة {{promoAmount}}",
+        "shop_app_promo_text": "{{amountOff}} لإنفاقها في تطبيق Shop"
+      },
+      "shop_pay": {
+        "usdc_rewards_terms": "إظهار شروط المكافآت بـ USDC"
+      },
+      "paid_with_shop_pay_installments_card": {
+        "title": "تذكيرات بالدفع لأقساط الدفع مع Shop Pay"
+      },
+      "logged_in_account_no_permission_to_order": "أنت متصل بالبريد الإلكتروني التالي: {{email}}. هذا الحساب غير مصرّح له بإدارة هذا الطلب.",
+      "log_in_to_a_different_account": "تسجيل الدخول باستخدام حساب آخر",
+      "vat_invoices": {
+        "label": "ضريبة القيمة المضافة"
+      },
+      "login_card": {
+        "resend_link_and_login": "لعرض تفاصيل طلبك، سجّل الدخول أو أرسل رابطًا جديدًا إلى عنوان البريد الإلكتروني أو رقم الهاتف الذي استخدمته عند الدفع.",
+        "title": "الوصول إلى تفاصيل الطلب"
+      },
+      "group_title_label_with_parent": "إلى: {{groupTitle}}",
+      "due_on_receipt": "نظراً لتلقي الفاتورة",
+      "payment_confirmation": {
+        "payment_received": "شكرًا! لقد تلقينا دفعتك بقيمة {{amount}}.",
+        "full_payment_received": "<p dir=\"rtl\">شكرًا! لقد استلمنا دفعتك البالغة {{amount}}، وأصبح هذا الطلب مدفوعًا بالكامل الآن.</p>",
+        "dismiss_label": "تجاهل تأكيد الدفع",
+        "payment_authorized": "شكرًا لك! سيتم تحديث الرصيد عند استلام الدفعة."
+      },
+      "marketing_pending_confirmation": "انقر على الرابط الموجود في بريدك الإلكتروني للتأكيد.",
+      "subtotal_label_with_quantity": {
+        "other": "المجموع الفرعي · {{count}} منتجات",
+        "many": "المجموع الفرعي · {{count}} منتجات"
+      },
+      "price_before_discount_accessibility_label": "السعر الأصلي",
+      "discount_order_stacking": {
+        "other": "خصومات على الطلبات",
+        "many": "خصومات على الطلبات"
+      }
+    },
+    "addresses": {
+      "pagination": {
+        "load_more_accessibility_label": "إظهار المزيد من العناوين"
+      }
+    },
+    "address_form": {
+      "attention_company": "شركة / عناية"
+    },
+    "B2B": {
+      "locations": {
+        "shipping_address_required": "أضف عنوان شحن إلى هذا الموقع لبدء تقديم الطلبات.",
+        "pagination": {
+          "load_more_accessibility_label": "إظهار المزيد من المواقع"
+        }
+      },
+      "location_selection": {
+        "error_loading_locations": "حدثت مشكلة أثناء تحميل المواقع. تحقق من اتصالك بالإنترنت وأعد المحاولة."
+      },
+      "addresses": {
+        "no_billing_address_banner": "لم تتم إضافة عنوان فوترة"
+      },
+      "draft_order_details": {
+        "payment_status": {
+          "pending": {
+            "description_due_on_fulfillment_partially_paid_next": "تم دفع هذا الطلب جزئيًا. هناك رصيد متبقٍ للدفع.",
+            "banner_due_today_for_single_fulfillment": "<span dir=\"rtl\">مبلغ {{amount}} مستحق الدفع اليوم. {{link}}</span>",
+            "banner_due_today_for_multiple_fulfillments": "دفع مستحق اليوم لـ {{count}} طلبية",
+            "banner_overdue_for_multiple_fulfillments": "الدفع المستحق لـ {{count}} طلبات",
+            "banner_overdue_for_single_fulfillment": {
+              "one": "تأخر دفع {{amount}} لمدّة {{count}} يوم. {{link}}",
+              "other": "{{amount}} متأخر بـ {{count}} يومًا. {{link}}",
+              "many": "{{amount}} متأخر بـ {{count}} يومًا. {{link}}"
+            }
+          },
+          "total_balance": "الرصيد الإجمالي"
+        }
+      }
+    },
+    "errors": {
+      "already_upgraded": "تمت ترقية حسابات العملاء بالفعل.",
+      "failed_to_upgrade": "فشل تحديث إعدادات حسابات العميل.",
+      "profile_name_update_error": {
+        "description": "حدث خطأ أثناء تحديث اسمك. حاول تحديث هذه الصفحة أو تحقق من اتصالك بالإنترنت."
+      },
+      "load_address_form_error": {
+        "title": "تعذّر تحميل نموذج العنوان",
+        "description": "تعذر تحميل نموذج العنوان.",
+        "refresh_button": "تحديث الصفحة"
+      },
+      "not_upgraded": "لم تتم ترقية حسابات العملاء.",
+      "failed_to_revert": "فشل استعادة إعدادات حسابات العملاء.",
+      "revert_window_expired": "انتهت صلاحية نافذة الاسترداد."
+    },
+    "payment_methods": {
+      "payment_details": {
+        "checkout_card_banner": "لا يمكن استخدام طريقة الدفع هذه إلا للمدفوعات المصرح بها مسبقًا. لن تظهر عند الدفع إذا كنت مسجلاً للدخول إلى هذا المتجر.",
+        "replace_payment_method_button": "استبدال"
+      },
+      "add_payment_method": {
+        "replace_mode_warning": "سيؤثر حذف طريقة الدفع هذه على الاشتراكات أو الطلبات المسبقة. يرجى استبدالها بطريقة دفع أخرى لمواصلة استلام الطلبات اللاحقة.",
+        "add_new_button": "إنشاء",
+        "subscription_contracts": {
+          "title": "استخدام طريقة دفع للطلبات المتكررة",
+          "product_details": "تفاصيل المنتج",
+          "more_items": {
+            "one": "{{count}} منتج إضافي",
+            "other": "{{count}} منتج إضافي",
+            "many": "{{count}} منتج إضافي"
+          },
+          "product_count": {
+            "one": "{{count}} منتج",
+            "other": "{{count}} منتجات",
+            "many": "{{count}} منتجات"
+          }
+        },
+        "contracts_update_failed": "فشل تحديث بعض عقود الاشتراك",
+        "subscription_contracts_updated": "{{succeeded}} اشتراكًا من أصل {{total}} تم تحديثها",
+        "invalid_wallet_type_error": "نوع المحفظة الإلكترونية غير صالح.",
+        "updating_contracts": {
+          "one": "تحديث {{count}} عقد اشتراك...",
+          "other": "تحديث {{count}} عقد اشتراك...",
+          "many": "تحديث {{count}} عقد اشتراك..."
+        },
+        "contracts_updated": {
+          "one": "{{count}} تم تحديث عقد الاشتراك بنجاح.",
+          "other": "{{count}} عقود اشتراك تم تحديثها بنجاح",
+          "many": "{{count}} عقود اشتراك تم تحديثها بنجاح"
+        },
+        "missing_customer_error": "حدث خطأ. يرجى إعادة المحاولة أو الاتصال بالدعم."
+      },
+      "store_credit": {
+        "details_modal": {
+          "pagination": {
+            "load_more_accessibility_label": "عرض المزيد من المبالغ القابلة للانتهاء",
+            "expirable_transactions_loading": "جارٍ تحميل المزيد من المبالغ التي قد تنتهي صلاحيتها",
+            "transactions_loading": "جارٍ تحميل المزيد من المعاملات",
+            "load_more_transactions_accessibility_label": "عرض المزيد من المعاملات",
+            "expirable_transactions_loaded": "مبالغ أخرى قابلة للانتهاء تم تحميلها",
+            "transactions_loaded": "المعاملات الأخرى المحمّلة"
+          },
+          "load_error": "تعذر تحميل الرصيد في المتجر.",
+          "expirable_indicator": "{{formattedAmount}} ستنتهي صلاحيتها",
+          "expirable_indicator_accessibility_label": "{{formattedAmount}} ستنتهي صلاحيته. عرض المبالغ التي قد تنتهي صلاحيتها.",
+          "expirable_indicator_with_date_accessibility_label": "{{formattedAmount}} تنتهي في {{date}}. عرض المبالغ التي قد تنتهي صلاحيتها.",
+          "expires_at": "تنتهي صلاحيته في {{date}}",
+          "expirable_transactions_list_accessibility_label": "معاملات الائتمان داخل المتجر التي قد تنتهي صلاحيتها",
+          "loading_accessibility_message": "جاري تحميل تفاصيل رصيد المتجر",
+          "transactions_list_accessibility_label": "معاملات الائتمان في المتجر",
+          "transaction_types": {
+            "credit": "إضافة",
+            "debit": "إنفاق",
+            "debit_revert": "تسديد المبلغ",
+            "expiration": "تاريخ الانتهاء"
+          }
+        }
+      },
+      "three_d_secure": {
+        "verification_failed": "تعذّرت المصادقة على دفعك. يُرجى إعادة المحاولة أو استخدام طريقة دفع أخرى."
+      },
+      "pay_pal": {
+        "errors": {
+          "generic": "حدثت مشكلة في PayPal. الرجاء إعادة المحاولة أو استخدام طريقة دفع أخرى."
+        }
+      },
+      "add_payment_method_dropdown": {
+        "bank_account_consent": "بإضافة وسيلة دفع، أنت توافق على أن يتم خصم بطاقتك أو حسابك المصرفي للمشتريات المستقبلية التي توافق عليها، حتى تلغي هذا التفويض."
       }
     }
   }
