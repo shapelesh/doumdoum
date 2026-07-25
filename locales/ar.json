@@ -120,7 +120,59 @@
         "maximum_discount_code_limit_reached": "لقد وصلت إلى الحد الأقصى المسموح به من أكواد الخصم. احذف أي كود حالي لاستخدام <strong style=\"text-transform:uppercase\">%{code}</strong> .",
         "order_total_label": "إجمالي الطلب",
         "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> لا يعمل حاليًا. تواصل معنا للمساعدة.",
-        "due_on_fulfillment": "مستحق بمجرد معالجة الطلب"
+        "due_on_fulfillment": "مستحق بمجرد معالجة الطلب",
+        "add_discount_or_gift_card": "أضف رمز الخصم أو بطاقة الهدايا",
+        "discount_discovery": {
+          "back_to_finalize_order": "عودة لإنهاء الطلب"
+        },
+        "discount_code_applied_with_code": "تم تطبيق رمز الخصم %{code}",
+        "for_add_on": "إلى: %{group_title}",
+        "unconfirmed_label": "غير مؤكد",
+        "from_shop_heading": "من %{shop_name}",
+        "from_other_stores_heading": "متاجر أخرى",
+        "order_discounts_apply_to_local_shop": "تُطبّق تخفيضات الطلب فقط على منتجات %{shop_name}",
+        "gift_cards_apply_to_local_shop": "بطاقات الهدايا تنطبق فقط على المنتجات من %{shop_name}",
+        "estimated_taxes_label_short": "الموقرة",
+        "discount_code_removed": "تم حذف رمز التخفيض %{code}",
+        "discount_code_replaced": "تم حذف رمز الخصم %{old_code} وتم تطبيق %{code}",
+        "discount_code_replaced_multiple": "تم حذف العديد من أكواد الخصم، وتم تطبيق %{code}",
+        "from_multiple_stores_heading": "قادمة من متاجر مختلفة",
+        "pay_merchant_label": "الدفع لـ %{merchant_name}",
+        "discount_applies_to_subscription_items_only": "يسري هذا الخصم فقط على المنتجات التي تخضع للاشتراك",
+        "estimated_taxes_finalization_tooltip_content_short": "تم الانتهاء من الضريبة بعد الدفع",
+        "pickup_unavailable_banner_title_with_country": {
+          "one": "لا توجد متاجر متاحة في %{country} تحتوي على هذا المنتج",
+          "other": "لا توجد متاجر متوفرة في %{country} تحتوي على منتجاتك",
+          "many": "لا توجد متاجر متوفرة في %{country} تحتوي على منتجاتك"
+        },
+        "compare_at_sale": "ترويج (%{sale_amount})",
+        "discount_code_applied_count": {
+          "many": "عرض %{count} من الخصومات"
+        },
+        "tax_line": {
+          "gst": "نظام تحديد المواقع العالمي",
+          "rst": "مفوا"
+        },
+        "automatic_discount_tooltip": "لا يمكن إزالة الخصومات المطبقة تلقائياً",
+        "alternative_payment_currency_chinese_yuan": "تأكد من المبلغ الإجمالي النهائي باليوان الصيني في تطبيق %{wallet}.",
+        "alternative_payment_currency_total_disclosure": "يعالج %{shop_name} المدفوعات بالـ %{shop_currency} (%{amount_due}).",
+        "settlement_currency_note": "يعالج %{shop_name} المدفوعات بعملة %{processing_currency}. لقد أجريت عمليات الشراء بعملة %{original_currency}.",
+        "settlement_currency_note_wallet": "%{shop_name} تعالج المدفوعات بالعملة %{processing_currency}. لقد أجريت عمليات الشراء الخاصة بك بالعملة %{original_currency} ودفعت بواسطة %{wallet} بالعملة CNY. يرجى مراجعة تطبيق %{wallet_app} الخاص بك لمعرفة المبلغ النهائي.",
+        "settlement_currency_note_wallet_no_conversion": "لقد دفعتَ باستخدام %{wallet} باليوان الصيني. راجع تطبيق %{wallet_app} الخاص بك للاطلاع على المبلغ النهائي.",
+        "lpm": {
+          "wechat_pay": {
+            "checkout_disclosure": "يرجى تأكيد المبلغ الإجمالي النهائي باليوان الصيني في تطبيق WeChat.",
+            "post_purchase_disclosure": "لقد دفعت باستخدام WeChat Pay باليوان الصيني. يرجى التحقق من تطبيق WeChat لمعرفة المبلغ النهائي.",
+            "post_purchase_disclosure_with_alternative_payment_currency": "يتعامل %{shop_name} مع المدفوعات بعملة %{processing_currency}. لقد أجريتَ مشترياتك بعملة %{original_currency} ودفعتَ باستخدام WeChat Pay باليوان الصيني (CNY). يُرجى التحقق من تطبيق WeChat لمعرفة المبلغ النهائي.",
+            "checkout_disclosure_with_alternative_payment_currency": "يعالج %{shop_name} المدفوعات في %{processing_currency} (%{amount_due}).\nيُرجى تأكيد المبلغ الإجمالي النهائي باليوان الصيني في تطبيق وي تشات."
+          },
+          "alipay": {
+            "checkout_disclosure": "تأكد من المبلغ الإجمالي النهائي باليوان الصيني في تطبيق Alipay.",
+            "post_purchase_disclosure": "لقد دفعت باستخدام Alipay باليوان الصيني. تحقق من تطبيق Alipay لمعرفة المبلغ النهائي.",
+            "post_purchase_disclosure_with_alternative_payment_currency": "يعالج %{shop_name} المدفوعات بعملة %{processing_currency}. لقد أجريتَ عملية الشراء بعملة %{original_currency} ودفعتَ باستخدام Alipay باليوان الصيني. يُرجى مراجعة تطبيق Alipay للاطلاع على المبلغ النهائي.",
+            "checkout_disclosure_with_alternative_payment_currency": "يعالج %{shop_name} المدفوعات بعملة %{processing_currency} (%{amount_due}).\nالرجاء تأكيد المبلغ الإجمالي النهائي باليوان الصيني في تطبيق Alipay."
+          }
+        }
       },
       "general": {
         "errors": {
@@ -129,7 +181,8 @@
             "delivery_strategy_conditions_not_satisfied": "تتوفر استراتيجيات التسليم لهذا الموقع، ولكن لم يتم استيفاء شروطها.",
             "out_of_stock_at_origin_location": "لا يوجد مخزون في موقعه الأصلي.",
             "invalid_signature": "التوقيع غير صالح للحصول على الخصم.",
-            "selected_pickup_option_no_longer_available": "لم يعد خيار السحب المحدد مسبقًا متاحًا."
+            "selected_pickup_option_no_longer_available": "لم يعد خيار السحب المحدد مسبقًا متاحًا.",
+            "mixed_destination_countries": "التسليم غير متاح، بسبب توزيع خطوط التسليم في عدة دول."
           },
           "discount": {
             "discounts_not_allowed_for_b2b": "لا يُسمح بالخصومات في متاجر B2B.",
@@ -138,7 +191,9 @@
             "additional_requested_discount_code_discarded": "{{code}} صالح، ولكنه غير قابل للتطبيق. تحقق من شروط الخصم.",
             "allocations_mismatch": "تم تغيير رمز الخصم الخاص بك. يُرجى مراجعة سلة التسوق والمحاولة مرة أخرى.",
             "discount_title_too_long": "لا يمكن أن يتجاوز عنوان الخصم 255 حرفًا.",
-            "additional_requested_discount_discarded": "خصمك صالح، ولكنه غير قابل للتطبيق. تحقق من شروط الخصم."
+            "additional_requested_discount_discarded": "خصمك صالح، ولكنه غير قابل للتطبيق. تحقق من شروط الخصم.",
+            "discount_code_not_honoured": "للأسف، لا يمكن تطبيق رمز الخصم هذا على طلبك.",
+            "mixed_destination_countries": "الخصومات غير متوفرة، لأن خطوط التسليم موزعة في عدة دول."
           },
           "tax": {
             "new_tax_must_be_accepted": "لقد تغيرت الضرائب المرتبطة بطلبك. يُرجى التحقق والمحاولة مرة أخرى.",
@@ -230,6 +285,14 @@
           },
           "checkout_source": {
             "revoked": "هذا الدفع لم يعد متاحا."
+          },
+          "merchandise": {
+            "product_not_published_in_buyer_location": "المنتج غير متوفر في موقع المشتري الحالي.",
+            "combined_listing_parent_not_purchasable": "المنتجات الأصلية للعرض المجمّع لا يمكن شراؤها مباشرةً."
+          },
+          "buyer_identity": {
+            "customer_account_required": "يجب عليك تسجيل الدخول للمتابعة.",
+            "contact_info_does_not_match_customer_account": "يجب أن تتطابق معلومات جهة الاتصال مع الحساب الذي سجلت الدخول إليه."
           }
         },
         "full_price": "السعر العادي:",
@@ -252,7 +315,9 @@
           "decrease": "انخفاض {{type}}",
           "minimum_reached": "تم الوصول إلى الحد الأدنى من {{value}}",
           "maximum_reached": "تم الوصول إلى الحد الأقصى لـ {{value}}"
-        }
+        },
+        "remove_chip": "حذف المقال",
+        "finalize_order_accessibility_label": "إنهاء الطلب"
       },
       "field_errors": {
         "address_subdistrict_too_long": "الناحية طويلة جدًا (الحد الأقصى هو {{count}} حرفًا)",
@@ -1128,7 +1193,77 @@
         "wechat_app_label": "وي شات",
         "alternative_payment_currency_total_notice_disclosure": "يعالج %{shop_name} المدفوعات بالـ %{shop_currency} (%{amount_due}).",
         "alternative_payment_currency_total_manual_payment_notice_disclosure": "أنت تدفع لـ %{shop_name} بـ %{shop_currency} (%{amount_due}).",
-        "bizum_label": "بيزوم"
+        "bizum_label": "بيزوم",
+        "amazon_payments_login_hint": "ستتم دعوتك لتسجيل الدخول باستخدام أمازون.",
+        "amazon_payments_logout": "تسجيل الخروج من Amazon Pay",
+        "offsite_gateway_redirect_hint": "سيتم توجيهك إلى %{gateway_label} لإتمام عملية الشراء.",
+        "billing_address_not_supported_for_payment_method_error": "طريقة الدفع هذه غير متاحة لعملتك وعنوان الفاتورة الخاص بك. الرجاء تجربة طريقة دفع أخرى.",
+        "billing_address_associated_with_mandate_info": "إذا كنت ترغب في تغيير عنوان إرسال الفواتير الخاص بك، فيرجى حذف معلومات بطاقتك الائتمانية وإعادة إدخالها.",
+        "purchase_options_agreement_label": "تتضمن سلة مشترياتك منتجًا واحدًا أو أكثر مؤجلاً أو يتكرر شراؤه. من خلال المتابعة، فإنك توافق على خصم الدفع تلقائيًا بالسعر والوتيرة الموضحين في هذه الصفحة حتى انتهاء هذا الشراء أو إلغائه. تخضع جميع عمليات الإلغاء لـ %{cancellation_policy_label}.",
+        "purchase_options_agreement_label_html": "أدرك أن عنصرًا واحدًا أو أكثر في عربة التسوق الخاصة بي هي عملية شراء مؤجلة أو متكررة. من خلال المتابعة، أوافق على \n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">سياسة الإلغاء</a>\n وأُفوضك بخصم طريقة الدفع الخاصة بي بالأسعار والتكرار والتواريخ المعروضة في هذه الصفحة حتى تتم معالجة طلبي أو ألغيه، إذا كان ذلك مسموحًا به.\n",
+        "brand_not_available": "هذا المتجر لا يقبل {{brand}}. يُرجى استخدام بطاقة أخرى للدفع."
+      },
+      "contact": {
+        "email_rollup_accessibility_label": "خيارات البريد الإلكتروني",
+        "phone_rollup_accessibility_label": "خيارات الهاتف",
+        "phone_country_code_label": "رمز البلد الخاص برقم الهاتف",
+        "storefront_link": "الموقع الإلكتروني للتاجر",
+        "suburb_label": "ضاحية",
+        "subdistrict_label": "ناحية",
+        "optional_subdistrict_label": "الناحية (اختياري)",
+        "optional_street_name_label": "الشارع (اختياري)",
+        "field_saved_label": "تم التسجيل",
+        "field_tooltip_helper_text": "تُستخدم لتأكيد طلبك وتذكيرات سلة التسوق الخاصة بك.",
+        "field_tooltip_accessibility_label": "مزيد من المعلومات عن استخدام بيانات الاتصال الخاصة بك"
+      },
+      "delivery_options": {
+        "pick_up_locations": "مراكز السحب",
+        "subscription_pickup_information": "سيكون هذا هو نقطة الاستلام لجميع الطلبات المستقبلية لاشتراكك.",
+        "pickup_point_map_title": "خريطة نقاط الاستلام",
+        "digital_product": "منتج رقمي"
+      },
+      "customer_account": {
+        "rollup_accessibility_label": "خيارات الحساب"
+      },
+      "stock": {
+        "price_update": {
+          "updated_price": "سعر محدث"
+        },
+        "out_of_stock": {
+          "description": "هذه المنتجات لم تعد متوفرة وستتم إزالتها من سلة مشترياتك.",
+          "items_unavailable": "بعض المنتجات لم تعد متوفرة وسيتم إزالتها من سلة التسوق الخاصة بك."
+        }
+      },
+      "shipping": {
+        "address_form": {
+          "update": "حفظ التغييرات"
+        },
+        "local_pickup": {
+          "rollup_title": "نقطة تجميع",
+          "rollup_accessibility_label": "خيارات نقطة الاستلام"
+        },
+        "shipping_method_rollup_accessibility_label": "خيارات طريقة الشحن",
+        "shipping_address_rollup_accessibility_label": "خيارات الشحن إلى هذا العنوان",
+        "invalid_shipping_method_summary_selected": "حدد عنوان شحن مختلفًا لعرض طرق الشحن المتاحة",
+        "third_party_address_timeout": "تعذّر تحميل العناوين. يُرجى إعادة المحاولة أو استخدام عنوان مختلف.",
+        "third_party_address_error": "حدث خطأ أثناء تحميل تحديد العنوان. يرجى إدخال عنوانك يدويًا أدناه.",
+        "third_party_payment_timeout": "تعذر تحميل طرق الدفع. يُرجى إعادة المحاولة أو استخدام طريقة دفع مختلفة.",
+        "third_party_payment_error": "حدث خطأ أثناء تحميل تحديد طريقة الدفع. الرجاء استخدام طريقة دفع أخرى.",
+        "add_shipping_address": "إضافة عنوان شحن",
+        "choose_new_address": "اختيار عنوان جديد",
+        "unbranded_description_same_day": "يشحن في نفس يوم العمل",
+        "unbranded_description_with_fulfillment_days": {
+          "one": "الشحن في يوم العمل التالي",
+          "other": "الشحن في غضون %{count} يوم عمل",
+          "many": "الشحن في غضون %{count} يوم عمل"
+        },
+        "unbranded_description_with_fulfillment_weeks": {
+          "one": "الشحن خلال %{count} أسبوع/أسابيع",
+          "other": "الشحن في غضون %{count} أسابيع",
+          "many": "الشحن في غضون %{count} أسابيع"
+        },
+        "add_new_delivery_address": "إضافة عنوان توصيل جديد",
+        "delivery_to": "التسليم في"
       }
     },
     "links": {
