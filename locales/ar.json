@@ -1,0 +1,127 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "shopify": {
+    "checkout": {
+      "order_summary": {
+        "discount_title": "رمز ترويجي",
+        "discount_label": "رمز الخصم",
+        "discount_placeholder": "رمز الخصم",
+        "gift_card_title": "بطاقة هدية",
+        "gift_card_label": "بطاقة هدية",
+        "gift_card_placeholder": "بطاقة هدية",
+        "gift_card_and_discount_title": "رمز الخصم أو بطاقة الهدايا",
+        "gift_card_and_discount_label": "رمز الخصم أو بطاقة الهدايا",
+        "gift_card_and_discount_placeholder": "رمز الخصم أو بطاقة الهدايا",
+        "remove_gift_card_label": "سحب بطاقة الهدايا",
+        "remove_discount_label": "إزالة الرمز الترويجي",
+        "free_shipping_discount_label": "ًالشحن مجانا",
+        "apply_discount_button_label": "للتحقق من صحة",
+        "applied_discount_message": "تم خصم %{amount} من السعر الإجمالي",
+        "discount_has_been_applied": "تم تطبيق الخصم",
+        "discount_has_been_removed": "تم سحب الخصم",
+        "gift_card_has_been_applied": "تم تطبيق بطاقة الهدية",
+        "gift_card_has_been_removed": "تم سحب بطاقة الهدية",
+        "discount_already_applied": "تم تطبيق خصم على هذا الطلب. لا يمكنك تطبيق خصم آخر.",
+        "cart_does_not_meet_discount_requirements_notice": "رمز الخصم <strong style=\"text-transform:uppercase\">%{code}</strong> غير صالح للعناصر الموجودة في سلة التسوق الخاصة بك.",
+        "discount_requires_customer_notice": "أدخل معلومات الشحن الخاصة بك لتطبيق رمز الخصم <strong style=\"text-transform:uppercase\">%{code}</strong>",
+        "customer_does_not_meet_discount_requirements_notice": "كود الخصم <strong style=\"text-transform:uppercase\">%{code}</strong> غير متاح لك في الوقت الحالي.",
+        "shipping_information_does_not_meet_discount_requirements_notice": "رمز الخصم <strong style=\"text-transform:uppercase\">%{code}</strong> غير متاح لعنوان الشحن الخاص بك",
+        "customer_already_used_once_per_customer_discount_notice": "تم استخدام الرمز الترويجي <strong style=\"text-transform:uppercase\">%{code}</strong> بالفعل",
+        "subtotal_label": "المجموع الفرعي",
+        "shipping_label": "شحن",
+        "tip_label": "نصيحة",
+        "shipping_default_value": "محسوبة في الخطوة التالية",
+        "shipping_pending_message": "غير متوفر بعد",
+        "shipping_policy_link": "تكاليف الشحن",
+        "taxes_label": "الضرائب",
+        "total_label": "المجموع",
+        "total_outstanding_label": "المبلغ المستحق الدفع",
+        "partial_total_label": "المجموع",
+        "free_total_label": "حر",
+        "free_shipping_total_label": "حر",
+        "paid_label": "مدفوع",
+        "payment_due_label": "الدفع المستحق",
+        "vat_label_html": "الضرائب بنسبة %{amount} مشمولة",
+        "discount_and_gift_card_savings_notice": "بعد خصم %{discount_amount} و%{gift_card_amount} في بطاقات الهدايا",
+        "discount_savings_notice": "بعد خصم %{discount_amount}",
+        "gift_card_savings_notice": "بعد %{gift_card_amount} في بطاقات الهدايا",
+        "cost_table_title": "ملخص التكلفة",
+        "description_label": "وصف",
+        "price_label": "سعر",
+        "quantity_label": "كمية",
+        "product_change_label": "لتعديل",
+        "product_image_label": "صورة المنتج",
+        "scroll_order_summary": "قم بالتمرير خلال قائمة العناصر",
+        "expand_order_summary_short": "عرض",
+        "collapse_order_summary_short": "يخفي",
+        "total_updated_label": "إجمالي السعر المحدث:",
+        "order_total_updated_label": "إجمالي التحديث",
+        "total_already_paid_label": "مدفوع",
+        "unit_price": {
+          "accessible_separator": "بواسطة",
+          "content_html": "%{السعر}%{الفاصل المتاح}%{لكل وحدة}",
+          "per_item": {
+            "single": "%{price} قطعة",
+            "one": "%{price} لـ %{count} عنصر",
+            "other": "%{price} لـ %{count} عنصر",
+            "many": "%{price} لـ %{count} عنصر"
+          },
+          "per_unit": {
+            "single": "%{السعر}/%{الوحدة}",
+            "plural": "%{السعر}/%{العدد}%{الوحدة}"
+          }
+        },
+        "pickup_label": "الاستلام من المتجر",
+        "no_pickup_location": "لا توجد نقطة تجميع متاحة.",
+        "calculating_shipping": "جاري الحساب حاليا...",
+        "estimated_taxes_label": "الضرائب المقدرة",
+        "information_estimated_taxes_label": "الضرائب (تقديرية)",
+        "gift_card_ending": "بطاقة الهدايا تنتهي بـ %{last_characters}",
+        "estimated_tax_label": "الضريبة المقدرة",
+        "multiple_shipping_lines_label": "إجمالي الشحن",
+        "applied_free_shipping_discount_label": "مُطبَّق",
+        "original_price": "السعر الأصلي",
+        "sale_price": "سعر ترويجي",
+        "recurring_subtotal_label": "المجموع الفرعي المتكرر",
+        "recurring_total_label": "إجمالي المتكررة",
+        "recurring_total_tooltip": "لا يشمل الشحن أو الضرائب أو الرسوم الجمركية أو الخصومات المعمول بها.",
+        "gift_card_subscriptions_notice": "سيتم تطبيق بطاقات الهدايا فقط على دفعتك الأولى",
+        "confirmation_number_label": "رقم التأكيد %{confirmation_number}",
+        "estimated_taxes_finalization_tooltip_content": "سيتم تأكيد الضريبة النهائية والإجمالي عبر البريد الإلكتروني أو الرسائل القصيرة بعد تقديم الطلب.",
+        "deferred_payment_info": {
+          "title": "يجب دفع %{amount_due} في %{due_at}",
+          "description_html": "إذا كان لديك أي أسئلة حول طلبك، يرجى الاتصال بنا.",
+          "paid_today": "إجمالي المبلغ المدفوع اليوم",
+          "due_on_fulfillment_title": "يجب دفع %{amount_due} عند معالجة الطلب",
+          "due_on_receipt_title": "يجب دفع %{amount_due} عند الاستلام",
+          "paid_today_next": "تم الدفع اليوم"
+        },
+        "percent_off_shipping": "خصم %{percent}% على تكاليف الشحن",
+        "amount_off_shipping": "خصم %{amount} على تكاليف الشحن",
+        "payment_terms_totals": {
+          "due_today": "الإجمالي المستحق اليوم",
+          "due_later": "الإجمالي المستحق %{due_at}",
+          "due_later_checkout_to_draft": "الإجمالي المستحق لاحقًا",
+          "due_on_fulfillment": "المبلغ الإجمالي المستحق بمجرد معالجة الطلب",
+          "due_on_receipt": "المبلغ الإجمالي المستحق عند الاستلام",
+          "total_paid": "إجمالي المبلغ المدفوع",
+          "due_today_next": "المستحق اليوم",
+          "due_on_fulfillment_next": "المستحق عند معالجة الطلب"
+        },
+        "higher_value_discount_applied": "لا يمكن استخدام الكود <strong style=\"text-transform:uppercase\">%{code}</strong> مع الخصومات الحالية لديك.",
+        "maximum_discount_code_limit_reached": "لقد وصلت إلى الحد الأقصى المسموح به من أكواد الخصم. احذف أي كود حالي لاستخدام <strong style=\"text-transform:uppercase\">%{code}</strong> .",
+        "order_total_label": "إجمالي الطلب",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> لا يعمل حاليًا. تواصل معنا للمساعدة.",
+        "due_on_fulfillment": "مستحق بمجرد معالجة الطلب"
+      }
+    }
+  }
+}
