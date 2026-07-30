@@ -1,96 +1,152 @@
 {%- assign background_image = product.metafields.custom.card_background.value |  image_url: height: 280 -%}
+{%- assign is_coffret = product.metafields.custom.is_coffret -%}
 
-<li class="
-  doumdoum__custom-product-card
-  {% if classname %}
-    {{ classname }}
-  {% endif %}
-  ">
-  <div class="doumdoum__custom-product-card-top" 
-  style="
-    {% if background_image %}
-      background-image: url({{ background_image }});
-    {% else %}
-      background-color: {{ product.metafields.custom.theme_color }}
+
+{%- if is_coffret -%}
+  <li class="
+    doumdoum__custom-product-card
+    {% if classname%}
+      classname
     {% endif %}
-  "
-  >
-  <a href="{{ product.url }}"></a>
-    {%- assign card_image = product.metafields.custom.product_card_image.value -%}
-    {%- if card_image != blank -%}
-      {%- for image in card_image limit: 1 -%}
-        <img
-          src="{{ image |  image_url: width: image.width }}"
-          alt="{{ image.alt }}"
-          width="{{ image.width }}"
-          height="{{ image.height }}"
-          {%- if background_image -%}
-            style="width: 100%; padding: 0 22px;"
-          {%- endif -%}
-          class="doumdoum__object-fit"
-          >
-      {%- endfor -%}
-    {%- endif -%}
-    <div class="doumdoum__custom-product-card-top-bottom">
-      <h3 style="color: {{ product.metafields.custom.text_color }}">
-        {{ product.metafields.custom.substance }}
-      </h3>
-      <p style="color: {{ product.metafields.custom.text_color }};">
-        {{ product.metafields.custom.usage }}
-      </p>
-    </div>
-    {%- unless background_image -%}
-      <div class="bear-wrapper" style="color: {{ product.metafields.custom.theme_accent }};">
-      {%- render 'doumdoum__bear' -%}
-    </div>
-    {%- endunless -%}
-  </div>
-  <div class="doumdoum__custom-product-card-bottom">
-    <a href="{{ product.url }}"></a>
-    <div class="product-title">
-      <h5>
-        {{ product.title }}
-      </h5>
-      <div class="product-star-review">
-        {%- render 'doumdoum__star-review'
-          , percentage: 80 -%}
-        <span>
-          4.5
-        </span>
-      </div>
-    </div>
-    <div class="product-description">
-      {%- if product.description != blank and show_description == true -%}
-        <p>
-          {%- assign split_description = product.description | split: " " -%}
-          {%- for word in split_description -%}
-            {{ word }}
-          {%- endfor -%}
-        </p>
+  ">
+    <div 
+      class="doumdoum__custom-product-card-top"
+      style="
+        {% if background_image %}
+          background-image: url({{ background_image }});
+        {% endif %}
+      "
+    >
+      <a href="{{ product.url }}"></a>
+      {%- assign card_image = product.metafields.custom.product_card_image.value -%}
+      {%- if card_image != blank -%}
+        {%- for image in card_image limit: 1 -%}
+          <img
+            src="{{ image |  image_url: width: image.width }}"
+            alt="{{ image.alt }}"
+            width="{{ image.width }}"
+            height="{{ image.height }}"
+            {%- if background_image -%}
+              style="width: 100%; padding: 0 22px;"
+            {%- endif -%}
+            class="doumdoum__object-fit"
+            >
+        {%- endfor -%}
       {%- endif -%}
     </div>
-    <div class="product-atc">
-      {%- assign product_price = product.price | money_without_trailing_zeros | downcase -%}
-      {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
-      <product-form-component on:submit="/handleSubmit">
-        <div class="visually-hidden" style="opacity: 0; display: none;" ref="liveRegion"></div>
-        {%- form 'product'
-          , product -%}
-          <input
-            type="hidden"
-            name="id"
-            ref="variantId"
-            value="{{ product.selected_or_first_available_variant.id }}">
-          <input
-            type="hidden"
-            name="quantity"
-            value="1">
-          {%- render 'add-to-cart-button'
-            , can_add_to_cart: true
-            , product: product
-            , add_to_cart_text: add_to_cart_text -%}
-        {%- endform -%}
-      </product-form-component>
+    <div class="doumdoum__custom-product-card-bottom">
+      <a href="{{ product.url }}"></a>
+      <div class="product-title">
+        <h5>
+          {{ product.title }}
+        </h5>
+        <div class="product-star-review">
+          {%- render 'doumdoum__star-review'
+            , percentage: 80 -%}
+          <span>
+            4.5
+          </span>
+        </div>
+      </div>
+      <div class="product-description">
+        {%- if product.description != blank and show_description == true -%}
+          <p>
+            {%- assign split_description = product.description | split: " " -%}
+            {%- for word in split_description -%}
+              {{ word }}
+            {%- endfor -%}
+          </p>
+        {%- endif -%}
+      </div>
+      <div class="product-atc">
+        {%- assign product_price = product.price | money_without_trailing_zeros | downcase -%}
+        {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
+        <product-form-component on:submit="/handleSubmit">
+          <div class="visually-hidden" style="opacity: 0; display: none;" ref="liveRegion"></div>
+          {%- form 'product'
+            , product -%}
+            <input
+              type="hidden"
+              name="id"
+              ref="variantId"
+              value="{{ product.selected_or_first_available_variant.id }}">
+            <input
+              type="hidden"
+              name="quantity"
+              value="1">
+            {%- render 'add-to-cart-button'
+              , can_add_to_cart: true
+              , product: product
+              , add_to_cart_text: add_to_cart_text -%}
+          {%- endform -%}
+        </product-form-component>
+      </div>
     </div>
-  </div>
-</li>
+  </li>
+{%- else -%}
+  <li class="
+    doumdoum__custom-product-card
+    {% if classname%}
+      classname
+    {% endif %}
+  ">
+    <div class="doumdoum__custom-product-card-top">
+      <a href="{{ product.url }}"></a>
+      <img 
+        src="{{ product.featured_image | image_url: width: product.featured_image.width }}" 
+        alt="{{ product.featured_image.alt }}"
+        width="{{ product.featured_image.width }}"
+        height="{{ product.featured_image.height }}"
+      >
+    </div>
+    <div class="doumdoum__custom-product-card-bottom">
+      <a href="{{ product.url }}"></a>
+      <div class="product-title">
+        <h5>
+          {{ product.title }}
+        </h5>
+        <div class="product-star-review">
+          {%- render 'doumdoum__star-review'
+            , percentage: 80 -%}
+          <span>
+            4.5
+          </span>
+        </div>
+      </div>
+      <div class="product-description">
+        {%- if product.description != blank and show_description == true -%}
+          <p>
+            {%- assign split_description = product.description | split: " " -%}
+            {%- for word in split_description -%}
+              {{ word }}
+            {%- endfor -%}
+          </p>
+        {%- endif -%}
+      </div>
+      <div class="product-atc">
+        {%- assign product_price = product.price | money_without_trailing_zeros | downcase -%}
+        {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
+        <product-form-component on:submit="/handleSubmit">
+          <div class="visually-hidden" style="opacity: 0; display: none;" ref="liveRegion"></div>
+          {%- form 'product'
+            , product -%}
+            <input
+              type="hidden"
+              name="id"
+              ref="variantId"
+              value="{{ product.selected_or_first_available_variant.id }}">
+            <input
+              type="hidden"
+              name="quantity"
+              value="1">
+            {%- render 'add-to-cart-button'
+              , can_add_to_cart: true
+              , product: product
+              , add_to_cart_text: add_to_cart_text -%}
+          {%- endform -%}
+        </product-form-component>
+      </div>
+    </div>
+  </li>
+{%- endif -%}
+

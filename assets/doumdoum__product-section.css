@@ -322,8 +322,36 @@
   width: 100%;
   overflow-x: auto;
   padding-bottom: 10px;
+  position: relative;
+  overflow: visible;
 }
-
+.product-thumbnails-container > .glide__arrows {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.product-thumbnails-container > .glide__arrows > button.glide__arrow {
+  pointer-events: all;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.product-thumbnails-container
+  > .glide__arrows
+  > button.glide__arrow:nth-child(1) {
+  transform: translate(-50%, 0);
+}
+.product-thumbnails-container
+  > .glide__arrows
+  > button.glide__arrow:nth-child(2) {
+  transform: translate(50%, 0);
+}
 /* Barre de défilement style Horizon (discrète) */
 .product-thumbnails-container::-webkit-scrollbar {
   height: 4px;
