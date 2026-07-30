@@ -9,14 +9,14 @@
         <h4>{{ section.settings.direct_info }}</h4>
 
         <div class="direct-info">
-          <p>Appelez-nous :</p>
+          <p>{{ 'doumdoum.contact.contactForm.callUs' | t }}</p>
           <a href="tel:{{ section.settings.phone_number | remove: ' ' }}">
             {{ section.settings.phone_number }}
           </a>
         </div>
 
         <div class="direct-info">
-          <p>Envoyez un email :</p>
+          <p>{{ 'doumdoum.contact.contactForm.emailUs' | t }}</p>
           <a href="mailto:{{ section.settings.email_address }}">
             {{ section.settings.email_address }}
           </a>
@@ -56,7 +56,7 @@
 
         {% if form.posted_successfully? %}
           <div class="form-success">
-            Merci, votre message a été envoyé avec succès.
+            {{ 'doumdoum.contact.contactForm.formSuccess' | t }}
           </div>
         {% endif %}
 
@@ -77,7 +77,7 @@
           value="Client Site">
 
         <div class="form-field">
-          <label for="contact-phone">Numéro de téléphone</label>
+          <label for="contact-phone">{{ 'doumdoum.contact.contactForm.phoneNumber' | t }}</label>
           <input
             type="tel"
             id="contact-phone"
@@ -88,7 +88,7 @@
         </div>
 
         <div class="form-field">
-          <label for="contact-message">Votre message ici...</label>
+          <label for="contact-message">{{ 'doumdoum.contact.contactForm.messageLabel' | t }}</label>
           <textarea
             id="contact-message"
             name="contact[body]"
@@ -97,7 +97,7 @@
         </div>
 
         <div class="form-field form-radio-group">
-          <label>Qui êtes-vous ?</label>
+          <label>{{ 'doumdoum.contact.contactForm.typeCustomers' | t }}</label>
 
           <div class="radio_button">
 
@@ -108,7 +108,7 @@
                 name="contact[customer_type]"
                 value="Client"
                 checked>
-              <label for="type-grossiste">Client</label>
+              <label for="type-grossiste">{{ 'doumdoum.contact.contactForm.radioGrossiste' | t }}</label>
             </div>
 
             <div class="radio-option">
@@ -117,7 +117,7 @@
                 id="type-particulier"
                 name="contact[customer_type]"
                 value="Point de vente">
-              <label for="type-particulier">Point de vente</label>
+              <label for="type-particulier">{{ 'doumdoum.contact.contactForm.radioPointDeVente' | t }}</label>
             </div>
 
             <div class="radio-option">
@@ -126,7 +126,7 @@
                 id="type-point-vente"
                 name="contact[customer_type]"
                 value="Grossiste">
-              <label for="type-point-vente">Grossiste</label>
+              <label for="type-point-vente">{{ 'doumdoum.contact.contactForm.radioClient' | t }}</label>
             </div>
 
           </div>
@@ -134,7 +134,7 @@
 
         <div class="form-submit">
           <button type="submit" class="btn">
-            Envoyer le message
+            {{ 'doumdoum.contact.contactForm.submit' | t }}
           </button>
         </div>
 

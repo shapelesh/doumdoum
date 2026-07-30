@@ -1,51 +1,55 @@
-
 <custom-header-drawer aria-hidden="true">
-  <div id="doumdoum__header-drawer" class="doumdoum__custom-header-drawer" ref="headerDrawer" aria-hidden="true">
-    {% render 'custom-header-drawer-main', section: section %}
-    {% render 'custom-header-drawer-product-tabs', section: section %}
+  <div
+    id="doumdoum__header-drawer"
+    class="doumdoum__custom-header-drawer"
+    ref="headerDrawer"
+    aria-hidden="true">
+    {% render 'custom-header-drawer-main'
+      , section: section %}
+    {% render 'custom-header-drawer-product-tabs'
+      , section: section %}
   </div>
 </custom-header-drawer>
 
 
-
 {% comment %} 
-  This is related to styling the "Mon Compte" button. 
-  we can't style it directly so we created a fake button 
-  that we can style and hid the real button with the login functionality. 
-
-  this code snippet waits for the account functionality to be established 
-  and links clicking the fake button to the real hidden button.
+    This is related to styling the "Mon Compte" button. 
+    we can't style it directly so we created a fake button 
+    that we can style and hid the real button with the login functionality. 
+  
+    this code snippet waits for the account functionality to be established 
+    and links clicking the fake button to the real hidden button.
 {% endcomment %}
 <script>
   (function () {
     const fakeAccountBtn = document.getElementById('mobile_account_fake_button');
     if (!fakeAccountBtn) return;
-
+  
     async function hideRealButton() {
       await customElements.whenDefined('shopify-account');
       const shopifyAccount = document.querySelector(
         '#doumdoum__header-drawer shopify-account'
       );
       if (!shopifyAccount?.shadowRoot) return;
-
+  
       const sheet = new CSSStyleSheet();
       sheet.replaceSync('.account-button { display: none; }');
       shopifyAccount.shadowRoot.adoptedStyleSheets.push(sheet);
     }
-
+  
     hideRealButton();
-
+  
     fakeAccountBtn.addEventListener('click', async () => {
       const shopifyAccount = document.querySelector(
         '#doumdoum__header-drawer shopify-account'
       );
       if (!shopifyAccount) return;
-
+  
       await customElements.whenDefined('shopify-account');
-
+  
       const shadowRoot = shopifyAccount.shadowRoot;
       if (!shadowRoot) return;
-
+  
       const trigger = shadowRoot.querySelector('.account-button');
       trigger?.click();
     });

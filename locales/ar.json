@@ -1944,5 +1944,80 @@
     "open": "فتح",
     "back_to": "العودة إلى {{ title }}",
     "zoom_media": "تكبير وسائط متعددة {{ index }}"
+  },
+  "doumdoum": {
+    "header": {
+      "home": "الرئيسية",
+      "store": "المتجر",
+      "cart": "السلة",
+      "myAccount": "حسابي"
+    },
+    "customCartDrawer": {
+      "amountNeeded": "للتوصيل المجاني!",
+      "shippingMessage": "تهانينا! للتوصيل مجاني.",
+      "deleteFromCart": "حذف",
+      "commande": "اطلب الآن",
+      "commandeEmpty": "اطلب الآن 0 د.ج"
+    },
+    "blogPost": {
+      "articleTitle": "عنوان المقال",
+      "articleGlimps": "مقتطف من المقال...",
+      "articleNext": "اقرأ المزيد",
+      "podcastTitle": "عنوان البودكاست",
+      "podcastGlimps": "وصف الفيديو...",
+      "podcastNext": "بودكاست يوتيوب"
+    },
+    "videoShowCase": {
+      "choose": "اختر فيديو"
+    },
+    "products": {
+      "productTabs": {
+        "details": "التفاصيل",
+        "usage": "طريقة الاستعمال",
+        "ingredients": " المكونات",
+        "buyNowDesktop": "إشتري الأن",
+        "buyNowMobile": "إشتري الأن",
+        "disabled": "نَفِدَ",
+        "addToCart": "أضف إلى السلة - ",
+        "protect30s": "إحمي بشرة طفلك خلال 30 ثانية"
+      },
+      "compare_table": {
+        "vs": "مقابل",
+        "price": "السعر",
+        "availability": "التوفر",
+        "notavailable": "غير متوفر بسهولة",
+        "available": "متوفر",
+        "adaptability": "مناسب للجزائر",
+        "notadapted": "غير مناسب للأمهات الجزائريات",
+        "adapted": "مصمم للأمهات الجزائريات",
+        "quality": "الجودة",
+        "highQuality": "عالي",
+        "lowQuality": "عالي"
+      },
+      "ingredient": {
+        "fallBack": "لا توجد مكونات محددة لهذا المنتج"
+      }
+    },
+    "contact": {
+      "heroContact": {
+        "response": "الرد خلال دقائق..."
+      },
+      "contactForm": {
+        "callUs": "اتصل بنا:",
+        "emailUs": "أرسل بريداً إلكترونياً:",
+        "formSuccess": "شكراً لك، تم إرسال رسالتك بنجاح.",
+        "phoneNumber": "رقم الهاتف",
+        "messageLabel": "اكتب رسالتك هنا...",
+        "typeCustomers": "من أنت؟",
+        "radioGrossiste": "تاجر جملة",
+        "radioPointDeVente": "نقطة بيع",
+        "radioClient": "عميل",
+        "submit": "إرسال الرسالة"
+      }
+    },
+    "footer": {
+      "language": "اللغات",
+      "credits": "© 2025 - رعاية أطفال دومدوم"
+    }
   }
 }

@@ -38,7 +38,7 @@
       {% endif %}
     </div>
     <div class="cutom_grid--cell grid--cell_img-vs grid--cell-vs col-center">
-      <p class="vs-text" id="vs-text">VS</p>
+      <p class="vs-text" id="vs-text">{{ 'doumdoum.products.compare_table.vs' | t }}</p>
     </div>
     <div class="cutom_grid--cell grid--cell_img col-right">
       {% assign compared_product_img = product.metafields.custom.compared_image.value %}
@@ -55,37 +55,37 @@
       <span>+{{ compared_price | money_without_trailing_zeros }}</span>
     </div>
     <div class="cutom_grid--cell grid--cell_price-vs grid--cell-vs col-center">
-      <p>Prix</p>
+      <p>{{ 'doumdoum.products.compare_table.price' | t }}</p>
     </div>
     <div class="cutom_grid--cell grid--cell_price col-right">
       <span>{{ product.price | money_without_trailing_zeros }}</span>
     </div>
     <div class="cutom_grid--cell grid--cell_availability col-left">
-      <p>Non disponible facilement</p>
+      <p>{{ 'doumdoum.products.compare_table.notavailable' | t }}</p>
     </div>
     <div class="cutom_grid--cell grid--cell_availability-vs grid--cell-vs col-center">
-      <p>Disponibilité</p>
+      <p>{{ 'doumdoum.products.compare_table.availability' | t }}</p>
     </div>
     <div class="cutom_grid--cell grid--cell_availability col-right">
-      <p>Disponible</p>
+      <p>{{ 'doumdoum.products.compare_table.available' | t }}</p>
     </div>
     <div class="cutom_grid--cell grid--cell_adaptation col-left">
-      <p>Non adapté aux mamans algériennes</p>
+      <p>{{ 'doumdoum.products.compare_table.notadapted' | t }}</p>
     </div>
     <div class="cutom_grid--cell grid--cell_adaptation-vs grid--cell-vs col-center">
-      <p>Adapté à l'Algérie</p>
+      <p>{{ 'doumdoum.products.compare_table.adaptability' | t }}</p>
     </div>
     <div class="cutom_grid--cell grid--cell_adaptation col-right">
-      <p>Pensé pour les mamans algériennes</p>
+      <p>{{ 'doumdoum.products.compare_table.adapted' | t }}</p>
     </div>
     <div class="cutom_grid--cell grid--cell_quality col-left">
-      <p>haute</p>
+      <p>{{ 'doumdoum.products.compare_table.highQuality' | t }}</p>
     </div>
     <div class="cutom_grid--cell grid--cell_quality-vs grid--cell-vs col-center">
-      <p>Qualité</p>
+      <p>{{ 'doumdoum.products.compare_table.quality' | t }}</p>
     </div>
     <div class="cutom_grid--cell grid--cell_quality col-right">
-      <p>haute</p>
+      <p>{{ 'doumdoum.products.compare_table.lowQuality' | t }}</p>
     </div>
 
   </div>

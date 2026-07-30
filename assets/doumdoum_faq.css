@@ -172,6 +172,12 @@ section.doumdoum__custom-faq {
   opacity: 1;
   transform: none;
 }
+
+/* --------------rtlCss---------------- */
+html[dir="rtl"] .custom_faq--container h2 {
+  text-align: right;
+}
+
 @media screen and (max-width: 990px) {
   section.doumdoum__custom-faq {
     position: relative;

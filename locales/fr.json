@@ -355,5 +355,80 @@
       "success_moderated": "Commentaire publié, en attente de modération",
       "success": "Commentaire publié"
     }
+  },
+  "doumdoum": {
+    "header": {
+      "home": "Accueil",
+      "store": "Boutique",
+      "cart": "  Panier",
+      "myAccount": "Mon compte"
+    },
+    "customCartDrawer": {
+      "amountNeeded": "pour la livraison gratuite !",
+      "shippingMessage": "Félicitations ! La livraison est gratuite.",
+      "deleteFromCart": "Supprimer",
+      "commande": "Commander maintenant",
+      "commandeEmpty": "Commander maintenant  0 Da"
+    },
+    "blogPost": {
+      "articleTitle": "Titre de l'article",
+      "articleGlimps": "Extrait de l'article...",
+      "articleNext": "Lire la suite",
+      "podcastTitle": "Titre du Podcast",
+      "podcastGlimps": "Description de la vidéo...",
+      "podcastNext": "YouTube Podcast"
+    },
+    "videoShowCase": {
+      "choose": "Sélectionnez une vidéo"
+    },
+    "products": {
+      "productSec": {
+        "details": "Détails",
+        "usage": "Utilisations",
+        "ingredients": " Ingrédients",
+        "buyNowDesktop": "Acheter maintenant",
+        "buyNowMobile": "Acheter",
+        "disabled": "Épuisé",
+        "addToCart": "Ajouter au panier -",
+        "protect30s": "Protège la peau de votre bébé en 30's"
+      },
+      "compare_table": {
+        "vs": "VS",
+        "price": "Prix",
+        "availability": "Disponibilité",
+        "available": "Disponible",
+        "notavailable": "Non disponible facilement",
+        "adaptability": "Adapté à l'Algérie",
+        "adapted": "Pensé pour les mamans algériennes",
+        "notadapted": "Non adapté aux mamans algériennes",
+        "quality": "Qualité",
+        "highQuality": "Haute",
+        "lowQuality": "Haute"
+      },
+      "ingredient": {
+        "fallBack": "Aucun ingrédient défini pour ce produit."
+      }
+    },
+    "contact": {
+      "heroContact": {
+        "response": "Réponse en quelques minutes ..."
+      },
+      "contactForm": {
+        "callUs": "Appelez-nous :",
+        "emailUs": "Envoyez un email :",
+        "formSuccess": "Merci, votre message a été envoyé avec succès.",
+        "phoneNumber": "Numéro de téléphone",
+        "messageLabel": "Votre message ici...",
+        "typeCustomers": "Qui êtes-vous ?",
+        "radioGrossiste": "Grossiste",
+        "radioPointDeVente": "Point de vente",
+        "radioClient": "Client",
+        "submit": "Envoyer le message"
+      }
+    },
+    "footer": {
+      "language": "Langue",
+      "credits": "© 2025 - Doumdoum Baby Care"
+    }
   }
 }

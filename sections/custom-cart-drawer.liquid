@@ -24,10 +24,10 @@
       <p class="shipping-message">
         😉
         <span class="amount-needed">{{ remaining | money_without_trailing_zeros }}</span>
-        pour la livraison gratuite !
+        {{ 'doumdoum.customCartDrawer.amountNeeded' | t }}
       </p>
     {%- else -%}
-      <p class="shipping-message">Félicitations ! La livraison est gratuite.</p>
+      <p class="shipping-message">{{ 'doumdoum.customCartDrawer.shippingMessage' | t }}</p>
     {%- endif -%}
 
     {%- assign progress = cart.total_price | times: 100 | divided_by: threshold -%}
@@ -87,7 +87,7 @@
                   class="item-remove"
                   data-action="remove"
                   data-key="{{ item.key }}">
-                  Supprimer
+                  {{ 'doumdoum.customCartDrawer.deleteFromCart' | t }}
                 </button>
               </div>
             </div>
@@ -106,12 +106,12 @@
     <div class="buy-now-container" data-cart-buy-now>
       {%- if cart.item_count > 0 -%}
         <a href="/checkout" class="btn-checkout active">
-          Commander maintenant
+          {{ 'doumdoum.customCartDrawer.commande' | t }}
           <span class="total-price">{{ cart.total_price | money_without_trailing_zeros }}</span>
         </a>
       {%- else -%}
         <button class="btn-checkout disabled" disabled>
-          Commander maintenant  0 Da
+          {{ 'doumdoum.customCartDrawer.commandeEmpty' | t }}
         </button>
       {%- endif -%}
     </div>

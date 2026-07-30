@@ -1,4 +1,4 @@
-{{ "custom-header-drawer-main.css"  | asset_url | stylesheet_tag}}
+{{ "custom-header-drawer-main.css" | asset_url | stylesheet_tag }}
 <div class="doumdoum__header-drawer-top">
   {% render 'custom-logo'
     , image: section.settings.logo
@@ -15,9 +15,12 @@
       Accueil
     </a>
   </span>
-  <span class="doumdoum__header-drawer-link" id="tabOpenButton" aria-expanded="false">
+  <span
+    class="doumdoum__header-drawer-link"
+    id="tabOpenButton"
+    aria-expanded="false">
     <span>
-      Boutique 
+      Boutique
     </span>
     {% render 'icon-right-caret' %}
   </span>
@@ -35,23 +38,19 @@
     menu="{{ section.settings.customer_account_menu }}"
     {% if account_actions_style != blank %}
     {% endif %}
-    {% comment %} style="display: none;" {% endcomment %}
-  >
+    {% comment %}
+    style="display: none;"
+    {% endcomment %}>
 
-      <span
-        slot="signed-out-avatar"
-        class="account-button__text header-actions__text-style {% if display_style == 'icon' %}hidden{% else %}mobile:hidden{% endif %}"
-      >
-        {{ 'content.account_title' | t }}
-      </span>
+    <span slot="signed-out-avatar" class="account-button__text header-actions__text-style {% if display_style == 'icon' %}hidden{% else %}mobile:hidden{% endif %}">
+      {{ 'content.account_title' | t }}
+    </span>
 
-      <span
-        slot="signed-out-avatar"
-        class="{% if display_style != 'icon' %}desktop:hidden{% endif %}"
-        aria-hidden="true"
-      >
-        Mon compte
-      </span>
+    <span
+      slot="signed-out-avatar"
+      class="{% if display_style != 'icon' %}desktop:hidden{% endif %}"
+      aria-hidden="true">
+      {{ 'doumdoum.header.myAccount' | t }}
+    </span>
   </shopify-account>
 </div>
-

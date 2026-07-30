@@ -2,7 +2,8 @@
   <div ref="megaMenu" aria-hidden="true">
     <div class="doumdoum__custom-header-megamenu-left">
       {% for block in section.blocks %}
-        <div class="doumdoum__megamenu-tab-name {% if forloop.index == 1 %}selected_tab{% endif %}"
+        <div
+          class="doumdoum__megamenu-tab-name {% if forloop.index == 1 %}selected_tab{% endif %}"
           data-type="tab-button"
           data-handle="{{ block.settings.tab_name | handleize }}">
           <span>{{ block.settings.tab_name }}</span>
@@ -11,7 +12,8 @@
     </div>
     <div class="doumdoum__custom-header-megamenu-right">
       {%- for block in section.blocks -%}
-        <div class="doumdoum__megamenu-tab {% if forloop.first %}selected_tab{% endif %}"
+        <div
+          class="doumdoum__megamenu-tab {% if forloop.first %}selected_tab{% endif %}"
           data-type="tab"
           data-handle="{{ block.settings.tab_name | handleize }}">
           <ul>
@@ -43,20 +45,24 @@
     background-color: white;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 300ms ease,
-                max-height 300ms ease;
+    transition: opacity 300ms ease
+    , max-height 300ms ease;
   }
-  
+
   custom-header-megamenu [ref="megaMenu"][aria-hidden="false"] {
     max-height: 700px;
     opacity: 1;
     pointer-events: all;
     background-color: #fafafa;
   }
-/* 
-  custom-header-megamenu  {
-    display: block;
-  } */
+
+
+  /*
+
+   custom-header-megamenu { 
+   display: block; 
+   } 
+*/
   .doumdoum__custom-header-megamenu-left {
     display: flex;
     flex-direction: column;
@@ -88,14 +94,13 @@
   }
   .doumdoum__megamenu-tab ul {
     display: flex;
-    padding: 0;
+    padding: 6px;
     margin: 0;
     list-style: none;
     flex-wrap: wrap;
     gap: 16px 10px;
     background-color: #fafafa;
     overflow-y: auto;
-    padding: 6px
   }
   .doumdoum__megamenu-tab ul .doumdoum__custom-product-card .doumdoum__custom-product-card-top .bear-wrapper {
     padding-top: 24px;
@@ -103,7 +108,7 @@
   .doumdoum__megamenu-tab ul .doumdoum__custom-product-card-bottom .product-description {
     display: none;
   }
-  .doumdoum__megamenu-tab ul .doumdoum__custom-product-card{
+  .doumdoum__megamenu-tab ul .doumdoum__custom-product-card {
     gap: 12px;
     /* max-height: 322px; */
     max-width: 204px;
@@ -111,18 +116,18 @@
   .doumdoum__megamenu-tab ul .doumdoum__custom-product-card-bottom .product-title {
     margin-bottom: 12px;
   }
-  .doumdoum__megamenu-tab ul .doumdoum__custom-product-card-bottom .product-title h5{
+  .doumdoum__megamenu-tab ul .doumdoum__custom-product-card-bottom .product-title h5 {
     font-size: 16px;
   }
 
-  .doumdoum__megamenu-tab ul .doumdoum__custom-product-card .doumdoum__custom-product-card-top{
+  .doumdoum__megamenu-tab ul .doumdoum__custom-product-card .doumdoum__custom-product-card-top {
     width: unset;
   }
-  
-  .doumdoum__megamenu-tab ul .doumdoum__custom-product-card .doumdoum__custom-product-card-top>img{
+
+  .doumdoum__megamenu-tab ul .doumdoum__custom-product-card .doumdoum__custom-product-card-top > img {
     border-radius: 20px;
   }
-  .doumdoum__megamenu-tab ul .doumdoum__custom-product-card .doumdoum__custom-product-card-top svg{
+  .doumdoum__megamenu-tab ul .doumdoum__custom-product-card .doumdoum__custom-product-card-top svg {
     width: 157px;
     height: 151px;
   }

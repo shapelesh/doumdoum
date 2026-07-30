@@ -385,6 +385,18 @@
 .thumb-item.active {
   box-shadow: 0px 0px 8px 0px #0000001a;
 }
+
+/* --------------rtlCss---------------- */
+html[dir="rtl"] .ingredient-card__image-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotateY(180deg);
+}
 @media (max-width: 990px) {
   .doumdoum__custom-product-section {
     padding: 38px 40px;
