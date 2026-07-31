@@ -131,6 +131,10 @@ main.content-for-layout {
   display: flex;
   align-items: center;
 }
+html[dir="rtl"] .doumdoum__custom-product-card-bottom .product-title {
+  display: flex;
+  justify-content: space-between;
+}
 .doumdoum__custom-product-card-bottom .product-title h5 {
   font-family: nunito;
   font-weight: 700;

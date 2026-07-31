@@ -201,6 +201,27 @@
   align-items: flex-start;
   gap: 16px;
 }
+/* ----globalRtl---- */
+html[dir="rtl"] .doumdoum__about-soin-content_img .img-box-back {
+  position: relative;
+  top: -43.3px;
+  right: 73px;
+  width: 271.06px;
+  height: 311.58px;
+  border-radius: 34.6px;
+}
+html[dir="rtl"] .doumdoum__about-soin-content_img .img-box-front {
+  position: relative;
+  top: 85px;
+  right: -65px;
+  width: 312.87px;
+  height: 280.13px;
+  border-top-left-radius: 34.6px;
+  border-top-right-radius: 34.6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  z-index: 1;
+}
 @media screen and (max-width: 990px) {
   .doumdoum__about-soin {
     padding: 50px 90px;

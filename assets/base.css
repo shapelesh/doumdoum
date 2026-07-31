@@ -4408,3 +4408,9 @@ product-recommendations:has([data-has-recommendations="false"]) {
     translate: 0px var(--atc-destination, 0px);
   }
 }
+/* globalRtl Font */
+/* html[dir="rtl"] body {
+  font-family:
+    Playpen Sans Arabic,
+    sans-serif;
+} */

@@ -21,18 +21,27 @@ function initSliders() {
     if (mobileBreakpoint) {
       setupMobileOnlySlider(el, config, parseInt(mobileBreakpoint));
     } else {
-      createGlide(el, config);
+      const isRTL = document.documentElement.dir === "rtl";
+
+      createGlide(el, {
+        ...config,
+        direction: isRTL ? "rtl" : "ltr",
+      });
     }
   });
 }
 
 function setupMobileOnlySlider(el, config, breakpoint) {
+  const isRTL = document.documentElement.dir === "rtl";
   const mql = window.matchMedia(`(max-width: ${breakpoint}px)`);
   let glide = null;
 
   function sync(e) {
     if (e.matches && !glide) {
-      glide = createGlide(el, config);
+      glide = createGlide(el, {
+        ...config,
+        direction: isRTL ? "rtl" : "ltr",
+      });
     } else if (!e.matches && glide) {
       glide.destroy();
       glide = null;

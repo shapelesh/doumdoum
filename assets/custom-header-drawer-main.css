@@ -30,7 +30,14 @@ custom-header-drawer.is-open {
   gap: 12px;
   overflow: hidden;
 }
-
+html[dir="rtl"] .doumdoum__custom-header-drawer {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+}
+html[dir="rtl"] .doumdoum__custom-header-drawer.open {
+  transform: translateX(0);
+}
 custom-header-drawer.is-open .doumdoum__custom-header-drawer {
   transform: translateX(0);
 }

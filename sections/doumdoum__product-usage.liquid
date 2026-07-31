@@ -17,8 +17,14 @@
 
     if devider_color != blank
       if devider_color.name == 'Standard (bleu)'
-        assign final_roll_img_url = 'roll-blue.svg' | asset_url
-        assign final_star_img_url = 'Star-blue.svg' | asset_url
+
+        if request.locale.iso_code == 'ar'
+          assign final_roll_img_url = 'roll-blue-ar.svg' | asset_url
+        else
+          assign final_roll_img_url = 'roll-blue.svg' | asset_url
+          assign final_star_img_url = 'Star-blue.svg' | asset_url
+        endif
+
       else
         assign roll_img = devider_color.roll_svg.value
         assign star_img = devider_color.star_svg.value

@@ -46,6 +46,9 @@
   -webkit-touch-callout: none;
   user-select: none;
 }
+html[dir="rtl"] .glide__arrows {
+  transform: rotateY(180deg);
+}
 .glide__bullets {
   -webkit-touch-callout: none;
   user-select: none;

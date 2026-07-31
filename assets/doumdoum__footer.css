@@ -205,7 +205,9 @@ html[dir="rtl"] .custom__email-signup__input-group input::placeholder {
     align-self: center;
   }
 
-  .doumdoum__custom-footer .footer_bear {
+  html[dir="rtl"] .custom__email-signup__input-group {
+    display: flex;
+    flex-direction: column;
   }
   .doumdoum__custom-footer .footer_bear img {
     width: 90px;

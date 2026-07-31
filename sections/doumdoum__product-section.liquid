@@ -11,10 +11,7 @@
   <div class="doumdoum__custom-product-section_container-grid">
     <div class="container-grid__images">
       <div class="product-gallery">
-        {% liquid
-          assign approved_img = section.settings.approved | image_url: width: 68
-        %}
-        <div class="product-main-image" style="--approved-icon : url('{{ approved_img }}')">
+        <div class="product-main-image">
           <img
             id="MainImage-{{ section.id }}"
             src="{{ product.featured_media | img_url: '800x' }}"

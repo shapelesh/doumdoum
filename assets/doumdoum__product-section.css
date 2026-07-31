@@ -395,7 +395,7 @@ html[dir="rtl"] .ingredient-card__image-wrapper {
   position: absolute;
   left: 0;
   top: 0;
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translate(37%, 0);
 }
 @media (max-width: 990px) {
   .doumdoum__custom-product-section {
