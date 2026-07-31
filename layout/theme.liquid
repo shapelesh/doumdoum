@@ -1,14 +1,10 @@
 <!doctype html>
 <html
+  dir="{% if request.locale.iso_code == 'ar' %}rtl{% else %}ltr{% endif %}"
   {% if request.design_mode %}
   class="shopify-design-mode"
   {% endif %}
-  lang="{{ request.locale.iso_code }}"
-  {% if request.locale.iso_code == 'ar' %}
-  dir="rtl"
-  {% else %}
-  dir="ltr"
-  {% endif %}>
+  lang="{{ request.locale.iso_code }}">
   <head>
     {%- if settings.favicon != blank -%}
       <link
@@ -53,6 +49,46 @@
     <div id="header-group">
       {% sections 'header-group' %}
     </div>
+    <div class="language-switcher">
+      {% if request.locale.iso_code == 'ar' %}
+        <a href="{{ request.path | remove_first: '/ar' }}" class="language-switcher__button">
+          FR
+        </a>
+      {% else %}
+        <a href="/ar{{ request.path }}" class="language-switcher__button">
+          AR
+        </a>
+      {% endif %}
+    </div>
+
+    <style>
+      .language-switcher {
+        position: fixed;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 9999;
+      }
+
+      .language-switcher__button {
+        width: 52px;
+        height: 52px;
+        border-radius: 999px;
+        background: #181d27;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 700;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.25s;
+      }
+
+      .language-switcher__button:hover {
+        background: #333;
+      }
+    </style>
 
     <script>
       // Inline header height and menu style calculations to prevent layout shift

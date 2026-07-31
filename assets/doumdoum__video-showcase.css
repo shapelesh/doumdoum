@@ -227,7 +227,9 @@ doumdoum-video-overlay.ddv-overlay-root {
   display: flex;
   justify-content: flex-start;
 }
-
+html[dir="rtl"] .ddv-overlay.active {
+  direction: ltr;
+}
 .ddv-overlay-content {
   display: grid;
   grid-template-columns: 106.21px 1fr;

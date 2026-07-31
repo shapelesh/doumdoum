@@ -36,20 +36,44 @@
             </ul>
           </div>
           <div class="glide__arrows" data-glide-el="controls">
-            <button
-              class="glide__arrow glide__arrow--left"
-              data-glide-dir="<">
-              <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="12" cy="12" r="10" />
-  <path d="m14 16-4-4 4-4"/>
-</svg></button>
-    <button class="
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="&lt;">
+              <svg
+                xmlns="http://w3.org"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10" />
+                <path d="m14 16-4-4 4-4" />
+              </svg>
+            </button>
+            <button class="
               glide__arrow
-              glide__arrow--right" data-glide-dir=">"><svg xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="12" cy="12" r="10" />
-  <path d="m10 16 4-4-4-4"/>
-</svg>
-</button>
+              glide__arrow--right" data-glide-dir="&gt;">
+              <svg
+                xmlns="http://w3.org"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10" />
+                <path d="m10 16 4-4-4-4" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -137,7 +161,7 @@
             data-tab="details"
             data-content="{{ details_val | escape }}">
             {{ 'doumdoum.products.productSec.details' | t }}
-            
+
           </button>
 
           <button
@@ -221,7 +245,7 @@
               type="submit"
               name="add"
               class="doumdoum__add-btn doumdoum__sticky-btn-cart light_ray">
-               {{ 'doumdoum.products.productSec.addToCart' | t }}
+              {{ 'doumdoum.products.productSec.addToCart' | t }}
               <span id="sticky-cart-price-display" data-base-price="{{ product.selected_or_first_available_variant.price }}">
                 {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
               </span>

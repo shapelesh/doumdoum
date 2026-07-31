@@ -6,11 +6,20 @@ custom-header-drawer {
   right: 0;
   z-index: 8;
   pointer-events: none;
+
+  /* CORRECTIF CLÉ : On masque l'élément pour le calcul du scroll quand il est fermé */
+  visibility: hidden;
+  transition:
+    visibility 0.3s,
+    background-color 0.3s ease;
 }
 
 custom-header-drawer.is-open {
   pointer-events: all;
   background-color: rgba(0, 0, 0, 0.5);
+
+  /* On le rend visible uniquement quand il est ouvert */
+  visibility: visible;
 }
 
 .doumdoum__custom-header-drawer {
@@ -30,16 +39,17 @@ custom-header-drawer.is-open {
   gap: 12px;
   overflow: hidden;
 }
+
+/* Comportement en mode RTL */
 html[dir="rtl"] .doumdoum__custom-header-drawer {
   left: auto;
   right: 0;
   transform: translateX(100%);
 }
-html[dir="rtl"] .doumdoum__custom-header-drawer.open {
-  transform: translateX(0);
-}
+
+/* Gestion unifiée de l'ouverture pour LTR et RTL */
 custom-header-drawer.is-open .doumdoum__custom-header-drawer {
-  transform: translateX(0);
+  transform: translateX(0) !important;
 }
 
 .doumdoum__header-drawer-top {

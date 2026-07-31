@@ -17,20 +17,26 @@
 </a>
 
 {% stylesheet %}
-  .skip-to-content-link {
-    position: absolute;
-    left: -99999px;
-  }
-
-  .skip-to-content-link:focus {
-    z-index: var(--layer-temporary);
-    overflow: auto;
-    width: auto;
-    height: auto;
-    padding: var(--padding-lg) var(--padding-4xl);
-    left: var(--margin-lg);
-    top: var(--margin-lg);
-    background-color: var(--color-background);
-    box-shadow: 0 0 0 var(--focus-outline-offset) var(--color-background);
-  }
+.skip-to-content-link:not(:focus) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+.skip-to-content-link {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
 {% endstylesheet %}

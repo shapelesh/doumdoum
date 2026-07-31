@@ -397,6 +397,12 @@ html[dir="rtl"] .ingredient-card__image-wrapper {
   top: 0;
   transform: rotateY(180deg) translate(37%, 0);
 }
+html[dir="rtl"]
+  .product-thumbnails-container
+  > .glide__arrows
+  > button.glide__arrow {
+  transform: rotateY(180deg);
+}
 @media (max-width: 990px) {
   .doumdoum__custom-product-section {
     padding: 38px 40px;

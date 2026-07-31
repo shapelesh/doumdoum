@@ -367,5 +367,80 @@
       "default_title": "Default Title",
       "sticky_add_to_cart": "Quick add to cart bar"
     }
+  },
+  "doumdoum": {
+    "header": {
+      "home": "Home",
+      "store": "Store",
+      "cart": "Cart",
+      "myAccount": "My Account"
+    },
+    "customCartDrawer": {
+      "amountNeeded": "for free shipping!",
+      "shippingMessage": "Congratulations! Shipping is free.",
+      "deleteFromCart": "Delete",
+      "commande": "Order Now",
+      "commandeEmpty": "Order Now 0 DZD"
+    },
+    "blogPost": {
+      "articleTitle": "Article Title",
+      "articleGlimps": "Article excerpt...",
+      "articleNext": "Read more",
+      "podcastTitle": "Podcast Title",
+      "podcastGlimps": "Video description...",
+      "podcastNext": "YouTube Podcast"
+    },
+    "videoShowCase": {
+      "choose": "Select a video"
+    },
+    "products": {
+      "productTabs": {
+        "details": "Details",
+        "usage": "Usage Instructions",
+        "ingredients": "Ingredients",
+        "buyNowDesktop": "Buy Now",
+        "buyNowMobile": "Buy Now",
+        "disabled": "Out of Stock",
+        "addToCart": "Add to Cart - ",
+        "protect30s": "Protect your child's skin in 30 seconds"
+      },
+      "compare_table": {
+        "vs": "vs",
+        "price": "Price",
+        "availability": "Availability",
+        "notavailable": "Not easily available",
+        "available": "Available",
+        "adaptability": "Suitable for Algeria",
+        "notadapted": "Not suitable for Algerian mothers",
+        "adapted": "Designed for Algerian mothers",
+        "quality": "Quality",
+        "highQuality": "High",
+        "lowQuality": "High"
+      },
+      "ingredient": {
+        "fallBack": "No ingredients defined for this product"
+      }
+    },
+    "contact": {
+      "heroContact": {
+        "response": "Response within minutes..."
+      },
+      "contactForm": {
+        "callUs": "Call us:",
+        "emailUs": "Send an email:",
+        "formSuccess": "Thank you, your message has been sent successfully.",
+        "phoneNumber": "Phone Number",
+        "messageLabel": "Type your message here...",
+        "typeCustomers": "Who are you?",
+        "radioGrossiste": "Wholesaler",
+        "radioPointDeVente": "Point of Sale",
+        "radioClient": "Customer",
+        "submit": "Send Message"
+      }
+    },
+    "footer": {
+      "language": "Languages",
+      "credits": "© 2025 - Doumdoum Child Care"
+    }
   }
 }
