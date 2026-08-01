@@ -48,6 +48,18 @@
   text-align: center;
   color: #252b37;
 }
+html[dir="rtl"] .doumdoum__main-hero-left-top-left span {
+  font-family: "playpen-sans-arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+
+  color: #252b37;
+}
 .doumdoum__main-hero-left-top-left img {
   max-width: 27px;
 }
@@ -66,14 +78,16 @@
   line-height: 120%;
   letter-spacing: -0.5%;
 }
-
 html[dir="rtl"] .doumdoum__main-hero-left-top-right p {
   font-family: "playpen-sans-arabic";
   font-weight: 500;
+  font-style: Medium;
   font-size: 12px;
   line-height: 120%;
   letter-spacing: -0.5%;
+  text-align: right;
 }
+
 .doumdoum__main-hero-left-bottom {
   display: flex;
   flex-direction: column;
@@ -96,12 +110,12 @@ html[dir="rtl"] .doumdoum__main-hero-left-top-right p {
 html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
   font-family: "playpen-sans-arabic";
   font-weight: 600;
-  font-size: 70px;
+  font-size: 52px;
   line-height: 120%;
-  letter-spacing: 0%;
-  margin: 0;
-  color: #181d27;
+  letter-spacing: -0.5%;
+  text-align: right;
   margin-bottom: 12px;
+  color: #181d27;
 }
 .doumdoum__main-hero-left-bottom-top h1 span:nth-of-type(1) {
   color: #6bb4f3;
@@ -109,9 +123,22 @@ html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
 .doumdoum__main-hero-left-bottom-top h1 span:nth-of-type(2) {
   color: #f570b7;
 }
+html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 span {
+  display: contents;
+  color: #181d27;
+}
 
 .doumdoum__main-hero-left-bottom-top p {
   font-family: nunito;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  color: #252b37;
+  margin: 0;
+}
+html[dir="rtl"] .doumdoum__main-hero-left-bottom-top p {
+  font-family: "playpen-sans-arabic";
   font-weight: 500;
   font-size: 16px;
   line-height: 120%;
@@ -143,6 +170,16 @@ html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
   letter-spacing: -0.5%;
   color: #414651;
 }
+html[dir="rtl"] .doumdoum__main-hero-left-bottom-bottom-reviews span {
+  font-family: "playpen-sans-arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+
+  color: #414651;
+}
 
 .doumdoum__main-hero-left-bottom-bottom a {
   position: relative;
@@ -160,7 +197,15 @@ html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
   border-radius: 16px;
   margin-bottom: 10px;
 }
-
+html[dir="rtl"] .doumdoum__main-hero-left-bottom-bottom a {
+  font-family: "playpen-sans-arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+}
 .doumdoum__main-hero-left-bottom-bottom p {
   font-family: nunito;
   font-weight: 500;
@@ -170,6 +215,15 @@ html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
   text-align: center;
   color: #535862;
   margin: 0;
+}
+html[dir="rtl"] .doumdoum__main-hero-left-bottom-bottom p {
+  font-family: "playpen-sans-arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
 }
 
 .doumdoum__main-hero-right {
@@ -216,6 +270,15 @@ html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
   border: 1px solid #d5edff;
   background-color: #6bb4f3;
 }
+html[dir="rtl"] .doumdoum__main-hero-pink-rectangle .mobile .text a {
+  font-family: "playpen-sans-arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+}
 .doumdoum__main-hero-pink-rectangle .mobile .text p {
   font-family: nunito;
   font-weight: 500;
@@ -225,6 +288,15 @@ html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
   text-align: center;
   color: #fafafa;
   margin: 0;
+}
+html[dir="rtl"] .doumdoum__main-hero-pink-rectangle .mobile .text p {
+  font-family: "playpen-sans-arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
 }
 .doumdoum__main-hero-pink-rectangle div img {
   width: 100%;
@@ -251,6 +323,9 @@ html[dir="rtl"] .doumdoum__main-hero-left-top-right {
   .doumdoum__main-hero-left-bottom-top h1 {
     font-size: 60px;
   }
+  html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
+    font-size: 48px;
+  }
   .doumdoum__main-hero-left {
     max-width: 600px;
   }
@@ -267,6 +342,9 @@ html[dir="rtl"] .doumdoum__main-hero-left-top-right {
   .doumdoum__main-hero-left-bottom-top h1 {
     font-size: 46px;
   }
+  html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
+    font-size: 42px;
+  }
   .doumdoum__main-hero-left {
     flex: 0.9;
     width: unset;
@@ -276,6 +354,9 @@ html[dir="rtl"] .doumdoum__main-hero-left-top-right {
 @media screen and (max-width: 1210px) {
   .doumdoum__main-hero-left-bottom-top h1 {
     font-size: 38px;
+  }
+  html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
+    font-size: 32px;
   }
   .doumdoum__main-hero-wrapper {
     padding: 38px 90px;
@@ -293,6 +374,9 @@ html[dir="rtl"] .doumdoum__main-hero-left-top-right {
 @media screen and (max-width: 992px) {
   .doumdoum__main-hero-left-bottom-top h1 {
     font-size: 32px;
+  }
+  html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
+    font-size: 28px;
   }
   .doumdoum__main-hero-wrapper {
     padding: 30px 30px;
