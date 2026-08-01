@@ -95,4 +95,21 @@ export const sliderRegistry = {
       },
     },
   },
+  nosProduits: {
+    type: "slider",
+    perView: 4,
+    gap: 16,
+    bound: true,
+    breakpoints: {
+      992: {
+        perView: 3,
+      },
+      768: {
+        perView: 2,
+      },
+      480: {
+        perView: 1,
+      },
+    },
+  },
 };

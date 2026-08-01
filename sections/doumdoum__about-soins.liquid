@@ -5,14 +5,17 @@
   assign sun_img_bg ='bg_img_sun.svg' | asset_url
 %}
 <section class="doumdoum__about-soin page-width">
-  <div class="doumdoum__about-soin_doumdoum-icon" style="--doumdoum-bear : url('{{ doumdoum_icon }}')"></div>
+  <div
+    class="doumdoum__about-soin_doumdoum-icon"
+    style="--doumdoum-bear : url('{{ doumdoum_icon }}')"
+    dir="ltr"></div>
   <div class="doumdoum__about-soin-container">
     <div class="doumdoum__about-soin-container-header">
       <h2>{{ section.settings.about_soins_title }}</h2>
       <p>{{ section.settings.about_soins_desc }}</p>
     </div>
     <div class="doumdoum__about-soin-content">
-      <div class="doumdoum__about-soin-content_img">
+      <div class="doumdoum__about-soin-content_img" dir="ltr">
         <div class="doumdoum__about-soin-content_img-box img-box-back" style="--sun-icon : url('{{ sun_img_bg }}')">
           <img
             src="{{ section.settings.img_box_back |  image_url: width: section.settings.img_box_back.width  }}"

@@ -57,19 +57,24 @@
   display: flex;
   overflow: hidden;
 }
+html[dir="rtl"] .doumdoum__nos-coffrets-products ul {
+  flex-direction: row-reverse;
+}
 
 .doumdoum__nos-coffrets-products ul li {
   padding: 16px;
   max-width: 350px;
   display: flex;
   position: relative;
+  flex-shrink: 0;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  isolation: isolate;
 }
 .doumdoum__nos-coffrets-products ul li > a {
   position: absolute;
-  z-index: 4;
+  z-index: 1;
   top: 0;
   left: 0;
   bottom: 0;
@@ -82,6 +87,7 @@
 }
 
 .doumdoum__nos-coffrets-products ul li .doumdoum__nos-coffret-product-top {
+  position: relative;
   margin-bottom: 18px;
   display: flex;
   justify-content: center;
@@ -94,10 +100,21 @@
 }
 
 .doumdoum__nos-coffrets-products ul li .doumdoum__nos-coffret-product-bottom {
-  z-index: 5;
+  z-index: 3;
   margin-top: auto;
   position: relative;
 }
+html[dir="rtl"]
+  .doumdoum__nos-coffrets-products
+  ul
+  li
+  .doumdoum__nos-coffret-product-bottom {
+  width: 100%;
+  z-index: 3;
+  margin-top: auto;
+  position: relative;
+}
+
 .doumdoum__nos-coffret-product-bottom > a {
   position: absolute;
   top: 0;
@@ -137,12 +154,22 @@
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 1;
+  z-index: 0;
+}
+html[dir="rtl"] .doumdoum__nos-coffret-product-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .doumdoum__nos-coffret-product-background img {
   height: 100%;
   width: 100%;
+  display: block;
+  object-fit: cover;
 }
 .doumdoum__nos-coffret-product-atc {
   z-index: 3;

@@ -50,32 +50,61 @@
       {% sections 'header-group' %}
     </div>
     <div class="language-switcher">
-      {% if request.locale.iso_code == 'ar' %}
-        <a href="{{ request.path | remove_first: '/ar' }}" class="language-switcher__button">
-          FR
-        </a>
-      {% else %}
-        <a href="/ar{{ request.path }}" class="language-switcher__button">
-          AR
-        </a>
-      {% endif %}
-    </div>
+      {%- assign current_locale = request.locale.iso_code | downcase -%}
 
+      {%- if current_locale contains 'ar' -%}
+        {%- assign target_path = request.path | remove_first: '/ar' -%}
+        {%- if target_path == blank or target_path == '' -%}
+          {%- assign target_path = '/' -%}
+        {%- endif -%}
+        <a
+          href="{{ target_path }}"
+          class="language-switcher__button"
+          aria-label="Passer en Français">
+          <img
+            src="{{ 'france.svg' | asset_url }}"
+            alt="Français"
+            width="24"
+            height="24"
+            loading="lazy">
+        </a>
+      {%- else -%}
+        {%- if request.path == '/' -%}
+          {%- assign target_path = '/ar' -%}
+        {%- else -%}
+          {%- assign target_path = '/ar' | append: request.path -%}
+        {%- endif -%}
+
+        <a
+          href="{{ target_path }}"
+          class="language-switcher__button"
+          aria-label="Passer en Arabe">
+          <img
+            src="{{ 'algeria.svg' | asset_url }}"
+            alt="Arabe"
+            width="24"
+            height="24"
+            loading="lazy">
+        </a>
+      {%- endif -%}
+    </div>
     <style>
       .language-switcher {
         position: fixed;
-        left: 20px;
-        top: 50%;
+        left: 0;
+        top: 30%;
         transform: translateY(-50%);
         z-index: 9999;
       }
 
       .language-switcher__button {
-        width: 52px;
-        height: 52px;
-        border-radius: 999px;
-        background: #181d27;
-        color: #fff;
+        width: 48px;
+        height: 36px;
+        border-top-right-radius: 99px;
+        border-bottom-right-radius: 99px;
+        background: #fff;
+        color: #181d27;
+        outline: 1px solid #D5D7DA;
         cursor: pointer;
         font-weight: 700;
         text-decoration: none;
@@ -84,9 +113,11 @@
         justify-content: center;
         transition: 0.25s;
       }
-
-      .language-switcher__button:hover {
-        background: #333;
+      .language-switcher__button img {
+        width: 100%;
+        height: 100%;
+        max-width: 24px;
+        object-fit: contain;
       }
     </style>
 

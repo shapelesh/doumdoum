@@ -16,20 +16,27 @@
           {%- if forloop.index == 4 -%}
             ...
           {%- else -%}
-          {{ letter }}  
+            {{ letter }}
           {%- endif -%}
         {%- endfor -%}
       </h4>
       <p>
-        {%- assign split_product_desc = product.description | split: " " -%}
-        {%- for word in split_product_desc limit: 15 -%}
-          {{ word }}
-        {%- endfor -%}
+        {% if localization.language.iso_code == 'ar' %}
+          {{ product.description | strip_html | truncatewords: 15 }}
+        {% else %}
+          {%- assign split_product_desc = product.description | split: " " -%}
+          {%- for word in split_product_desc limit: 15 -%}
+            {{ word }}
+          {%- endfor -%}
+        {% endif %}
       </p>
     </div>
     <div class="doumdoum__nos-coffret-product-atc">
       <product-form-component on:submit="/handleSubmit">
-        <div class="visually-hidden" style="opacity: 0; display: none;" ref="liveRegion"></div>
+        <div
+          class="visually-hidden"
+          style="opacity: 0; display: none;"
+          ref="liveRegion"></div>
         {%- form 'product'
           , product -%}
           <input

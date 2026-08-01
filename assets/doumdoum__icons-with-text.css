@@ -36,7 +36,7 @@
   justify-content: space-between;
   gap: 16px;
   padding: 0 10px;
-  width: 146px;
+  width: 180px;
 }
 .list_icon-and-text .icon {
   width: 126px;
@@ -46,7 +46,7 @@
   max-width: 146px;
 }
 .list_icon-and-text .text h4 {
-  text-wrap: wrap;
+  text-wrap: pretty;
 }
 .list_icon-and-text .text h4 {
   font-family: Nunito;
@@ -68,6 +68,9 @@
   }
   .icons-with-text_container h3 {
     font-size: 24px;
+  }
+  .list_icon-and-text {
+    width: 146px;
   }
 }
 @media screen and (max-width: 632px) {

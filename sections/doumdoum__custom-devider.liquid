@@ -8,10 +8,13 @@
   if product and devider_data.devider_svg != blank
     assign final_img_url = devider_data.devider_svg.value | image_url: width: 800
   else
-    assign final_img_url = 'devider-blue.svg' | asset_url
+    if request.locale.iso_code == 'ar'
+      assign final_img_url = 'devider-blue-ar.svg' | asset_url
+    else
+      assign final_img_url = 'devider-blue.svg' | asset_url
+    endif
   endif
 -%}
-
 <section class="doumdoum__devider page-width section--{{ section.id }}">
   <div class="devider-svg-container">
     <img

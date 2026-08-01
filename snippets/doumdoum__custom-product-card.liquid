@@ -1,22 +1,17 @@
-{%- assign background_image = product.metafields.custom.card_background.value |  image_url: height: 280 -%}
+{%- assign background_image = product.metafields.custom.card_background.value | image_url: height: 280 -%}
 {%- assign is_coffret = product.metafields.custom.is_coffret -%}
 
 
 {%- if is_coffret -%}
   <li class="
     doumdoum__custom-product-card
-    {% if classname%}
-      classname
-    {% endif %}
+    {{ classname }}
   ">
-    <div 
-      class="doumdoum__custom-product-card-top"
-      style="
+    <div class="doumdoum__custom-product-card-top" style="
         {% if background_image %}
           background-image: url({{ background_image }});
         {% endif %}
-      "
-    >
+      ">
       <a href="{{ product.url }}"></a>
       {%- assign card_image = product.metafields.custom.product_card_image.value -%}
       {%- if card_image != blank -%}
@@ -27,10 +22,9 @@
             width="{{ image.width }}"
             height="{{ image.height }}"
             {%- if background_image -%}
-              style="width: 100%; padding: 0 22px;"
+            style="width: 100%; padding: 0 22px;"
             {%- endif -%}
-            class="doumdoum__object-fit"
-            >
+            class="doumdoum__object-fit">
         {%- endfor -%}
       {%- endif -%}
     </div>
@@ -62,7 +56,10 @@
         {%- assign product_price = product.price | money_without_trailing_zeros | downcase -%}
         {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
         <product-form-component on:submit="/handleSubmit">
-          <div class="visually-hidden" style="opacity: 0; display: none;" ref="liveRegion"></div>
+          <div
+            class="visually-hidden"
+            style="opacity: 0; display: none;"
+            ref="liveRegion"></div>
           {%- form 'product'
             , product -%}
             <input
@@ -92,12 +89,11 @@
   ">
     <div class="doumdoum__custom-product-card-top">
       <a href="{{ product.url }}"></a>
-      <img 
-        src="{{ product.featured_image | image_url: width: product.featured_image.width }}" 
+      <img
+        src="{{ product.featured_image | image_url: width: product.featured_image.width }}"
         alt="{{ product.featured_image.alt }}"
         width="{{ product.featured_image.width }}"
-        height="{{ product.featured_image.height }}"
-      >
+        height="{{ product.featured_image.height }}">
     </div>
     <div class="doumdoum__custom-product-card-bottom">
       <a href="{{ product.url }}"></a>
@@ -127,7 +123,10 @@
         {%- assign product_price = product.price | money_without_trailing_zeros | downcase -%}
         {%- assign add_to_cart_text = "Ajouter - " | append: product_price -%}
         <product-form-component on:submit="/handleSubmit">
-          <div class="visually-hidden" style="opacity: 0; display: none;" ref="liveRegion"></div>
+          <div
+            class="visually-hidden"
+            style="opacity: 0; display: none;"
+            ref="liveRegion"></div>
           {%- form 'product'
             , product -%}
             <input
@@ -149,4 +148,3 @@
     </div>
   </li>
 {%- endif -%}
-

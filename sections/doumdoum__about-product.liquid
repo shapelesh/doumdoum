@@ -1,7 +1,7 @@
 {{ 'doumdoum__about-product.css' | asset_url | stylesheet_tag }}
 
 <section class="doumdoum__products-about page-width section--{{ section.id }}">
-  <div class="doumdoum__products-about_carousel-container carousel-container">
+  <div class="doumdoum__products-about_carousel-container carousel-container" dir="ltr">
     {% assign target_collection = collections[section.settings.collection] %}
     {% for block in section.blocks %}
       {% if block.type == 'about_carousel' %}
