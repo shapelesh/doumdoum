@@ -1507,7 +1507,9 @@
       "quantity_maximum": "الحد الأقصى {{ maximum }}",
       "in_cart": "في السلة",
       "default_title": "العنوان الافتراضي",
-      "sticky_add_to_cart": "شريط الإضافة السريعة إلى السلة"
+      "sticky_add_to_cart": "شريط الإضافة السريعة إلى السلة",
+      "add_to_cart": "أضف إلى السلة",
+      "added_to_cart": "تمت الإضافة إلى السلة"
     }
   },
   "customer_accounts": {
