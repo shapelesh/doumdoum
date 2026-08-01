@@ -67,6 +67,13 @@
   letter-spacing: -0.5%;
 }
 
+html[dir="rtl"] .doumdoum__main-hero-left-top-right p {
+  font-family: "playpen-sans-arabic";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+}
 .doumdoum__main-hero-left-bottom {
   display: flex;
   flex-direction: column;
@@ -78,6 +85,16 @@
 }
 .doumdoum__main-hero-left-bottom-top h1 {
   font-family: fredoka;
+  font-weight: 600;
+  font-size: 70px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  margin: 0;
+  color: #181d27;
+  margin-bottom: 12px;
+}
+html[dir="rtl"] .doumdoum__main-hero-left-bottom-top h1 {
+  font-family: "playpen-sans-arabic";
   font-weight: 600;
   font-size: 70px;
   line-height: 120%;
