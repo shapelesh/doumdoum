@@ -22,7 +22,6 @@
   font-weight: 700;
   font-style: Bold;
   font-size: 15px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.5%;
   text-align: center;
@@ -44,13 +43,22 @@
   font-weight: 500;
   font-style: Medium;
   font-size: 34px;
-  leading-trim: NONE;
   line-height: 120%;
   text-align: left;
   letter-spacing: -0.75%;
   color: #252b37;
   margin: 0;
 }
+html[dir="rtl"] .main-hero_header h1 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 34px;
+  line-height: 120%;
+  letter-spacing: -0.75%;
+  text-align: right;
+}
+
 .main-hero_banner {
   display: flex;
   width: 100%;
@@ -87,11 +95,19 @@
   font-weight: 400;
   font-style: Regular;
   font-size: 16px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.5%;
   text-align: left;
   margin: 0;
+}
+.main-hero_info p {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
 }
 .main-hero_info_right {
   color: #535862;

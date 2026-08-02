@@ -426,6 +426,11 @@
         "submit": "Envoyer le message"
       }
     },
+    "about": {
+      "productAbout": {
+        "link": "Commander"
+      }
+    },
     "footer": {
       "language": "Langue",
       "credits": "© 2025 - Doumdoum Baby Care"

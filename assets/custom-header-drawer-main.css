@@ -78,3 +78,12 @@ custom-header-drawer.is-open .doumdoum__custom-header-drawer {
   display: flex;
   justify-content: space-between;
 }
+html[dir="rtl"] .doumdoum__header-drawer-link {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+
+  line-height: 120%;
+  letter-spacing: -0.5%;
+}

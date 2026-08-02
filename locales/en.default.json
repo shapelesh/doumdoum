@@ -438,6 +438,11 @@
         "submit": "Send Message"
       }
     },
+    "about": {
+      "productAbout": {
+        "link": "Commander"
+      }
+    },
     "footer": {
       "language": "Languages",
       "credits": "© 2025 - Doumdoum Child Care"

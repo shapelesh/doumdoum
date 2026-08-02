@@ -56,17 +56,29 @@
   max-width: 308px;
   padding: 8px;
 }
+html[dir="rtl"] .product-title-container {
+  direction: rtl;
+}
+
 .product-title-container h3 {
   font-family: Fredoka;
   font-weight: 600;
   font-style: SemiBold;
   font-size: 20px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.75%;
   text-align: left;
   text-decoration: none;
   align-self: flex-start;
+}
+html[dir="rtl"] .product-title-container h3 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
 }
 .product-title-container a {
   display: flex;
@@ -76,7 +88,6 @@
   font-weight: 500;
   font-style: Medium;
   font-size: 16px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.5%;
   text-align: right;
@@ -87,18 +98,40 @@
   gap: 4px;
   color: #181d27;
 }
+html[dir="rtl"] .product-title-container a {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+  text-wrap: nowrap;
+}
+html[dir="rtl"] .product-title-container a img {
+  transform: rotateY(180deg);
+}
 .product-desc {
   font-family: Nunito;
   font-weight: 500;
   font-style: Medium;
   font-size: 14px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -1.5%;
   text-align: left;
   color: #181d27;
   padding: 0 8px 8px;
 }
+html[dir="rtl"] .product-desc {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+}
+
 @media screen and (max-width: 990px) {
   .doumdoum__products-about {
     padding: 64px 0 64px 90px;

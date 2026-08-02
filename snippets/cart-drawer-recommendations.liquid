@@ -1,36 +1,72 @@
+{% comment %} {% assign all_products = collections['all'].products %}
+                            
+                            <div class="recommendations-grid">
+                              {% for product in all_products %}
+                                {% assign product_in_cart = false %}
+                            
+                                {% for item in cart.items %}
+                                  {% if item.product.id == product.id %}
+                                    {% assign product_in_cart = true %}
+                                    {% break %}
+                                  {% endif %}
+                                {% endfor %}
+                            
+                                {% unless product_in_cart %}
+                                  <a
+                                    class="recommendation-card"
+                                    href="{{ product.url }}"
+                                    data-product-id="{{ product.id }}">
+                            
+                                    <div class="recommendation-image">
+                                      <img
+                                        src="{{ product.featured_image |  image_url: width: image.width }}"
+                                        alt="{{ product.featured_image.alt }}"
+                                        width="{{ product.featured_image.width }}"
+                                        height="{{ product.featured_image.height }}">
+                                    </div>
+                            
+                                    <div class="recommendation-info">
+                                      <h4 class="rec-title">{{ product.title | strip_html | truncate: 60 }}</h4>
+                                      <p class="rec-desc">{{ product.description | strip_html | truncate: 20 }}</p>
+                                      <span class="rec-price">{{ product.price | money }}</span>
+                                    </div>
+                                  </a>
+                                {% endunless %}
+                              {% endfor %}
+</div> {% endcomment %}
 {% assign all_products = collections['all'].products %}
 
 <div class="recommendations-grid">
   {% for product in all_products %}
-    {% assign product_in_cart = false %}
 
-    {% for item in cart.items %}
-      {% if item.product.id == product.id %}
-        {% assign product_in_cart = true %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
+    <a
+      class="recommendation-card"
+      href="{{ product.url }}"
+      data-product-id="{{ product.id }}">
 
-    {% unless product_in_cart %}
-      <a
-        class="recommendation-card"
-        href="{{ product.url }}"
-        data-product-id="{{ product.id }}">
+      <div class="recommendation-image">
+        <img
+          src="{{ product.featured_image | image_url: width: 400 }}"
+          alt="{{ product.featured_image.alt }}"
+          width="{{ product.featured_image.width }}"
+          height="{{ product.featured_image.height }}">
+      </div>
 
-        <div class="recommendation-image">
-          <img
-            src="{{ product.featured_image |  image_url: width: image.width }}"
-            alt="{{ product.featured_image.alt }}"
-            width="{{ product.featured_image.width }}"
-            height="{{ product.featured_image.height }}">
-        </div>
+      <div class="recommendation-info">
+        <h4 class="rec-title">
+          {{ product.title | strip_html | truncate: 60 }}
+        </h4>
 
-        <div class="recommendation-info">
-          <h4 class="rec-title">{{ product.title | strip_html | truncate: 60 }}</h4>
-          <p class="rec-desc">{{ product.description | strip_html | truncate: 20 }}</p>
-          <span class="rec-price">{{ product.price | money }}</span>
-        </div>
-      </a>
-    {% endunless %}
+        <p class="rec-desc">
+          {{ product.description | strip_html | truncate: 20 }}
+        </p>
+
+        <span class="rec-price">
+          {{ product.price | money }}
+        </span>
+      </div>
+
+    </a>
+
   {% endfor %}
 </div>

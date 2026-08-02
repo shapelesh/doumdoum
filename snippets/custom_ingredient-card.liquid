@@ -1,7 +1,6 @@
 <div class="ingredient-card" id="ingredient-{{ loop_index }}">
 
 
-
   <div class="ingredient-card__content">
     <h3 class="ingredient-card__title">{{ ingredients.name }}</h3>
 
@@ -14,7 +13,7 @@
       {%- endfor -%}
     </ul>
   </div>
-    <div class="ingredient-card__image-wrapper">
+  <div class="ingredient-card__image-wrapper">
     <img
       src="{{ ingredients.ingredient_pic | image_url: width: 400 }}"
       alt="{{ ingredients.name.value }}"

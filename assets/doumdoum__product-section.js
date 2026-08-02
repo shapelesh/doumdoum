@@ -317,19 +317,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // loading main image
+// loading main image (Optimized with onload event to avoid flickering)
 function updateMainImage(imgSrc, thumbElement) {
   const sectionId = getSectionId(thumbElement);
   const mainImg = document.getElementById("MainImage-" + sectionId);
 
   if (mainImg) {
-    mainImg.style.opacity = "0";
+    // Évite de relancer l'animation si l'utilisateur clique sur la même miniature
+    if (mainImg.src === imgSrc) return;
 
-    setTimeout(() => {
+    // Transition de sortie fluide (opacité réduite)
+    mainImg.style.opacity = "0.2";
+
+    // Pré-chargement de l'image en mémoire
+    const tempImg = new Image();
+    tempImg.src = imgSrc;
+
+    tempImg.onload = function () {
       mainImg.src = imgSrc;
       mainImg.style.opacity = "1";
-    }, 200);
+    };
+
+    tempImg.onerror = function () {
+      // En cas d'erreur de chargement, on force l'affichage pour ne pas bloquer l'interface
+      mainImg.src = imgSrc;
+      mainImg.style.opacity = "1";
+    };
   }
 
+  // Mise à jour de la classe active sur les miniatures
   const thumbnails = document.querySelectorAll(".thumb-item");
   thumbnails.forEach((thumb) => thumb.classList.remove("active"));
   if (thumbElement) {

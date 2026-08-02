@@ -3,7 +3,10 @@
 {%- assign threshold = section.settings.free_shipping_threshold -%}
 
 <div class="cart-drawer-overlay" data-close-drawer></div>
-<custom-cart-drawer id="CustomCartDrawer">
+<custom-cart-drawer
+  id="CustomCartDrawer"
+  dir="ltr"
+  ">
   <div class="cart-header">
     <div class="cart-header-offers">
       <p>{{ section.settings.header_offer }}<span>{{ threshold | money_without_trailing_zeros }}</span>

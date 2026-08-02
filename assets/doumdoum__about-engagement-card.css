@@ -1,0 +1,200 @@
+.doumdoum__about-engagement-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 13px 201px 119.96px;
+}
+.doumdoum__about-engagement-card-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.doumdoum__about-engagement-card-header h2 {
+  font-family: Fredoka;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 34px;
+
+  line-height: 120%;
+  letter-spacing: -0.75%;
+  text-align: center;
+  vertical-align: middle;
+  color: #181d27;
+  margin: 0;
+}
+html[dir="rtl"] .doumdoum__about-engagement-card-header h2 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 32px;
+
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+  vertical-align: middle;
+}
+.doumdoum__about-engagement-card-header p {
+  font-family: Nunito;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+  vertical-align: middle;
+  color: #181d27;
+  margin: 0;
+}
+html[dir="rtl"] .doumdoum__about-engagement-card-header p {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+  vertical-align: middle;
+}
+.doumdoum__about-engagement-card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.doumdoum_card {
+  position: relative;
+  max-width: 280.66px;
+  min-height: 231.04px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d7edff;
+  padding: 12px;
+  border-radius: 16px;
+}
+.doumdoum_card .doumdoum_card-icon {
+  max-width: 149px;
+  max-height: 163px;
+  width: 100%;
+  height: 100%;
+}
+.doumdoum_card-text h3 {
+  font-family: Fredoka;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+
+  line-height: 120%;
+  letter-spacing: -0.75%;
+  text-align: center;
+  color: #226e7b;
+}
+html[dir="rtl"] .doumdoum_card-text h3 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+}
+.doumdoum_card.doumdoum_card-pink {
+  background-color: #ffe1ce;
+}
+.doumdoum_card.doumdoum_card-pink .doumdoum_card-text h3 {
+  color: #8e431d;
+}
+.doumdoum_card-approved {
+  width: 100%;
+}
+.doumdoum_card-approved .check {
+  position: absolute;
+  top: 31px;
+  left: 31px;
+  width: 10px;
+  height: 6px;
+  border-left: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  transform: rotate(-45deg);
+  z-index: 3;
+}
+.doumdoum_card-approved::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 36px;
+  height: 34.15px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  z-index: 1;
+}
+.doumdoum_card-approved::after {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: 23px;
+  width: 26px;
+  height: 24.15px;
+  border-radius: 50%;
+  background-color: #d7edff;
+  z-index: 2;
+}
+.doumdoum_card.doumdoum_card-pink .doumdoum_card-approved::after {
+  background-color: #ffe1ce;
+}
+@media screen and (max-width: 990px) {
+  .doumdoum__about-engagement-card {
+    padding: 13px 90px 119.96px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .doumdoum__about-engagement-card {
+    padding: 13px 40px 70.09 x;
+  }
+}
+@media screen and (max-width: 646px) {
+  .doumdoum__about-engagement-card-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .doumdoum_card {
+    max-width: 70%;
+    min-height: 231.04px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .doumdoum__about-engagement-card {
+    padding: 13px 16px 70.09px;
+  }
+  .doumdoum__about-engagement-card-header {
+    width: 100%;
+    align-items: flex-start;
+  }
+  .doumdoum__about-engagement-card-header h2 {
+    font-size: 24px;
+    text-align: start;
+  }
+  .doumdoum__about-engagement-card-header p {
+    font-size: 14px;
+    text-align: start;
+  }
+  .doumdoum_card {
+    max-width: 100%;
+    min-height: 231.04px;
+  }
+}

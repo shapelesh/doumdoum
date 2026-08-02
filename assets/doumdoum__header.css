@@ -28,6 +28,14 @@
   height: 100%;
   cursor: pointer;
 }
+html[dir="rtl"] .doumdoum__header-left .header-link {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+}
 .doumdoum__header-left .header-link.active {
   font-weight: 700;
   text-decoration: underline;

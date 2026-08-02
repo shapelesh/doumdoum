@@ -29,6 +29,16 @@
   margin: 0;
   color: #252b37;
 }
+html[dir="rtl"] .doumdoum__custom-blog-articles .blog-articles-title h3 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+}
+
 .doumdoum__custom-blog-articles .blog-articles-title p {
   font-family: Nunito;
   font-weight: 500;
@@ -38,6 +48,16 @@
   margin: 0;
   color: #414651;
 }
+html[dir="rtl"] .doumdoum__custom-blog-articles .blog-articles-title p {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+}
+
 .doumdoum__custom-blog-articles .container_btn {
   display: flex;
   flex-direction: row;
@@ -56,8 +76,15 @@
   border: none;
   outline: 1px solid #e9eaeb;
 }
-.doumdoum__custom-blog-articles .container_btn a:hover {
+html[dir="rtl"] .doumdoum__custom-blog-articles .container_btn a {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
 }
+
 .doumdoum__custom-blog-articles .doumdoum_podcast {
   color: #f570b7;
 }
@@ -104,12 +131,22 @@
   font-weight: 700;
   font-style: Bold;
   font-size: 18px;
-  leading-trim: NONE;
+
   line-height: 120%;
   letter-spacing: -0.5%;
   color: #252b37;
   margin: 0;
   margin-bottom: 8px;
+}
+html[dir="rtl"] .doumdoum__custom-blog-articles .article-info-container h3 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+
+  line-height: 140%;
+  letter-spacing: -0.5%;
+  text-align: right;
 }
 .doumdoum__custom-blog-articles .article-info-container p {
   font-family: Nunito;
@@ -120,6 +157,15 @@
   color: #414651;
   margin: 0;
   margin-bottom: 24px;
+}
+html[dir="rtl"] .doumdoum__custom-blog-articles .article-info-container p {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: -0.5%;
+  text-align: right;
 }
 .doumdoum__custom-blog-articles .article-info-container a {
   display: flex;
@@ -137,6 +183,17 @@
   margin-bottom: 12.5px;
   transition: 300ms;
   text-underline-offset: 4px;
+}
+html[dir="rtl"] .doumdoum__custom-blog-articles .article-info-container a {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+}
+html[dir="rtl"] .doumdoum__custom-blog-articles .article-info-container a span {
+  transform: rotateY(180deg);
 }
 .doumdoum__custom-blog-articles .article-info-container a::before {
   position: absolute;

@@ -561,6 +561,16 @@
       "settings": {
         "faq_title": "Questions fréquentes des parents"
       }
+    },
+    "doumdoum_nos_produits_hEzEkr": {
+      "type": "doumdoum__nos-produits",
+      "name": "Nos Produits",
+      "settings": {
+        "mobile_layout": "slider",
+        "heading": "Découvrez nos produits pour bébé",
+        "label": "Nos produits",
+        "collection": "produits"
+      }
     }
   },
   "order": [
@@ -575,6 +585,7 @@
     "doumdoum_icons_with_text_mNrxRR",
     "doumdoum_testimonials_RhzaHL",
     "custom_product_devider_ry4t6w",
+    "doumdoum_nos_produits_hEzEkr",
     "custom_faq_YMYNXW"
   ]
 }

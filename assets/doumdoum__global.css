@@ -148,6 +148,15 @@ html[dir="rtl"] .doumdoum__custom-product-card-bottom .product-title {
   text-overflow: ellipsis;
   margin: 0;
 }
+html[dir="rtl"] .doumdoum__custom-product-card-bottom .product-title h5 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+}
 
 .doumdoum__custom-product-card-bottom .product-title .product-star-review {
   display: flex;
@@ -182,6 +191,15 @@ html[dir="rtl"] .doumdoum__custom-product-card-bottom .product-title {
   overflow: hidden;
   margin: 0;
 }
+html[dir="rtl"] .doumdoum__custom-product-card-bottom .product-description p {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+}
 .doumdoum__custom-product-card-bottom .product-atc {
   z-index: 2;
 }
@@ -194,6 +212,16 @@ html[dir="rtl"] .doumdoum__custom-product-card-bottom .product-title {
   font-family: nunito;
   font-weight: 500;
   font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+}
+html[dir="rtl"]
+  .doumdoum__custom-product-card-bottom
+  .product-atc
+  button[type="submit"] {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-size: 15px;
   line-height: 120%;
   letter-spacing: -0.5%;
 }
@@ -220,6 +248,11 @@ html[dir="rtl"] .doumdoum__custom-product-card-bottom .product-title {
     font-size: 24px;
     line-height: 120%;
     letter-spacing: -0.75%;
+    text-align: center;
+  }
+  html[dir] .doumdoum__nos-produits-top h2 {
+    font-family: "Playpen-Sans-Arabic";
+    font-weight: 600;
     text-align: center;
   }
 }

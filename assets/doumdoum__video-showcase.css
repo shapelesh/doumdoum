@@ -28,6 +28,16 @@
   color: #252b37;
   margin: 0;
 }
+html[dir="rtl"] .header-container h3 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+  vertical-align: middle;
+}
 .header-container a {
   display: flex;
   font-family: Geist;
@@ -42,6 +52,18 @@
   border: none;
   outline: 1px solid #e9eaeb;
   color: #f570b7;
+}
+html[dir="rtl"] .header-container a {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+}
+
+html[dir="rtl"] .header-container a span {
+  transform: rotateY(180deg);
 }
 .doumdoum__video-showcase_carousels-container {
   width: 100%;

@@ -25,26 +25,45 @@ footer.doumdoum_custom-footer {
   font-weight: 700;
   font-style: Bold;
   font-size: 34px;
-  leading-trim: NONE;
+
   line-height: 120%;
   letter-spacing: -0.75%;
   text-align: center;
   color: #ffffff;
   margin: 0;
 }
+html[dir="rtl"] .doumdoum__custom-footer .news-letter_title {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+}
+
 .doumdoum__custom-footer .news-letter_info {
   width: 420px;
   font-family: Nunito;
   font-weight: 700;
   font-style: Bold;
   font-size: 16px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.5%;
   text-align: center;
   color: #ffffff;
   margin: 0;
 }
+html[dir="rtl"] .doumdoum__custom-footer .news-letter_info {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+}
+
 .doumdoum__custom-footer .news-letter_email {
   max-width: 412px;
   width: 100%;
@@ -116,11 +135,20 @@ footer.doumdoum_custom-footer {
   font-weight: 700;
   font-style: Bold;
   font-size: 16px;
-  leading-trim: NONE;
+
   line-height: 120%;
   letter-spacing: -0.5%;
   color: #181d27;
   margin: 0 0 24px;
+}
+html[dir="rtl"] .doumdoum__custom-footer .menu_title {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
 }
 .doumdoum__custom-footer .menu_link a {
   text-decoration: none;
@@ -128,11 +156,20 @@ footer.doumdoum_custom-footer {
   font-weight: 500;
   font-style: Medium;
   font-size: 14px;
-  leading-trim: NONE;
+
   line-height: 120%;
   letter-spacing: -0.5%;
   color: #181d27;
   text-underline-offset: 4px;
+}
+html[dir="rtl"] .doumdoum__custom-footer .menu_link a {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 400;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
 }
 .doumdoum__custom-footer .menu_link a:hover {
   text-decoration: underline;
@@ -161,6 +198,7 @@ footer.doumdoum_custom-footer {
   color: #717680;
   margin-top: 16px;
 }
+
 /* --------------------------------rtlCss------------------------------- */
 html[dir="rtl"] .custom__email-signup__input-group {
   display: flex;

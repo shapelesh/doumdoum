@@ -24,6 +24,15 @@
   text-align: center;
   color: #2998f6;
 }
+html[dir="rtl"] .doumdoum__nos-coffrets-label span {
+  font-family: "playpen-sans-arabic";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+}
 
 .doumdoum__nos-coffrets-heading {
   display: flex;
@@ -40,6 +49,15 @@
   color: #181d27;
   margin-bottom: 20px;
   margin-top: 10px;
+}
+html[dir="rtl"] .doumdoum__nos-coffrets-heading h2 {
+  font-family: "playpen-sans-arabic";
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
 }
 
 .doumdoum__nos-coffrets-products {
@@ -137,6 +155,19 @@ html[dir="rtl"]
   margin: 0;
   margin-bottom: 4px;
 }
+html[dir="rtl"]
+  .doumdoum__nos-coffrets-products
+  ul
+  li
+  .doumdoum__nos-coffret-product-bottom
+  h4 {
+  font-family: "playpen-sans-arabic";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+}
 .doumdoum__nos-coffrets-products ul li .doumdoum__nos-coffret-product-bottom p {
   font-family: nunito;
   font-weight: 500;
@@ -146,6 +177,21 @@ html[dir="rtl"]
   color: #535862;
   margin: 0;
   margin-bottom: 18px;
+}
+html[dir="rtl"]
+  .doumdoum__nos-coffrets-products
+  ul
+  li
+  .doumdoum__nos-coffret-product-bottom
+  p {
+  font-family: "playpen-sans-arabic";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
 }
 
 .doumdoum__nos-coffret-product-background {
@@ -187,6 +233,14 @@ html[dir="rtl"] .doumdoum__nos-coffret-product-background {
   line-height: 120%;
   letter-spacing: -0.5%;
   border: 1px solid #e9eaeb;
+}
+html[dir="rtl"] .doumdoum__nos-coffret-product-atc button[type="submit"] {
+  font-family: "playpen-sans-arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
 }
 .doumdoum__nos-coffret-product-atc button[type="submit"]:hover {
   background-color: #fafafa;

@@ -32,6 +32,15 @@
   text-align: center;
   color: #2998f6;
 }
+html[dir="rtl"] .doumdoum__testimonials-label span {
+  font-family: "playpen-sans-arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+}
 
 .doumdoum__testimonials-top h2 {
   font-family: fredoka;
@@ -43,6 +52,16 @@
   color: #181d27;
   margin: 0;
   margin-top: 10px;
+}
+html[dir="rtl"] .doumdoum__testimonials-top h2 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .doumdoum__testimonials-stars {
@@ -119,6 +138,15 @@
   color: #414651;
   margin: 0;
 }
+html[dir="rtl"] .doumdoum__testimonial-card-text {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+}
 
 .doumdoum__testimonials-card-top {
   margin-bottom: 8px;
@@ -133,6 +161,15 @@
   color: #181d27;
   margin: 0;
 }
+html[dir="rtl"] .doumdoum__testimonial-card-author {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+}
 .doumdoum__testimonial-card-text {
   font-family: nunito;
   font-weight: 500;
@@ -143,14 +180,31 @@
   letter-spacing: -0.5%;
   color: #252b37;
 }
+html[dir="rtl"] .doumdoum__testimonial-card-text {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+}
 
 /* Auto alternation: blue / pink, tilt left / right, staggered heights */
 li:nth-child(odd) .doumdoum__testimonial-card {
   transform: rotate(-10deg);
 }
+html[dir="rtl"] li:nth-child(odd) .doumdoum__testimonial-card {
+  transform: rotate(10deg);
+}
 
 li:nth-child(even) .doumdoum__testimonial-card {
   transform: rotate(10deg);
+  background-color: #ffeef6;
+  border: 1px solid #f2b6d6;
+}
+html[dir="rtl"] li:nth-child(even) .doumdoum__testimonial-card {
+  transform: rotate(-10deg);
   background-color: #ffeef6;
   border: 1px solid #f2b6d6;
 }

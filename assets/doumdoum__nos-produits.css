@@ -27,6 +27,15 @@
   text-align: center;
   color: #2998f6;
 }
+html[dir="rtl"] .doumdoum__nos-produits-top span {
+  font-family: "playpen-sans-arabic";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
+}
 
 .doumdoum__nos-produits-top h2 {
   font-family: fredoka;
@@ -39,6 +48,14 @@
   margin: 0;
   margin-bottom: 20px;
   margin-top: 8px;
+}
+html[dir="rtl"] .doumdoum__nos-produits-top h2 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: center;
 }
 .doumdoum__nos-produits-products {
   display: flex;

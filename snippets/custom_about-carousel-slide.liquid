@@ -25,7 +25,7 @@
     <div class="product-title-container">
       <h3 class="product-title" style="color: {{ product.metafields.custom.text_color }};">{{ product.title }}</h3>
       <a class="command-link" href="{{ product.url }}">
-        <span>Commander</span>
+        <span>{{ 'doumdoum.about.productAbout.link' | t }}</span>
         <img
           src="{{ 'arrow-right.svg' | asset_url }}"
           alt="Commander"

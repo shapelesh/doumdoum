@@ -33,7 +33,7 @@
   font-weight: 500;
   font-style: Medium;
   font-size: 34px;
-  leading-trim: NONE;
+
   line-height: 120%;
   letter-spacing: -0.75%;
   text-align: center;
@@ -41,17 +41,39 @@
   margin: 0;
   color: #181d27;
 }
+html[dir="rtl"] .doumdoum__about-video-showcase_header-container-left h2 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 32px;
+
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+  vertical-align: middle;
+}
 .doumdoum__about-video-showcase_header-container p {
   font-family: Nunito;
   font-weight: 500;
   font-style: Medium;
   font-size: 16px;
-  leading-trim: NONE;
+
   line-height: 120%;
   letter-spacing: -0.5%;
   vertical-align: middle;
   margin: 0;
   color: #181d27;
+}
+html[dir="rtl"] .doumdoum__about-video-showcase_header-container p {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+  vertical-align: middle;
 }
 
 .doumdoum__about-video-showcase_carousels-container {

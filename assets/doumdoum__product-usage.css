@@ -103,7 +103,6 @@
   font-weight: 600;
   font-style: SemiBold;
   font-size: 34px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.75%;
   margin: 0;
@@ -112,27 +111,52 @@
   text-align: left;
   align-self: baseline;
 }
+html[dir="rtl"] .usage-text-content h2 {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
+}
 .instruction-title {
   font-family: Nunito;
   font-weight: 500;
   font-style: Medium;
   font-size: 14px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.5%;
   margin: 0;
   color: #9dc7eb;
+}
+html[dir="rtl"] .instruction-title {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
 }
 .instruction-description {
   font-family: Nunito;
   font-weight: 500;
   font-style: Medium;
   font-size: 15px;
-  leading-trim: NONE;
   line-height: 120%;
   letter-spacing: -0.5%;
   margin: 0;
   color: #2998f6;
+}
+html[dir="rtl"] .instruction-description {
+  font-family: "Playpen-Sans-Arabic";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.5%;
+  text-align: right;
 }
 /* --------------rtlCss---------------- */
 html[dir="rtl"] .usage-text-content h2 {
@@ -213,6 +237,9 @@ html[dir="rtl"] .product-usage_content_roll::after {
   .right-single-star--1 {
     left: -37px;
   }
+  html[dir="rtl"] .right-single-star--1 {
+    left: -30px;
+  }
   .left-single-star--1 {
     left: 90px;
   }
@@ -222,6 +249,9 @@ html[dir="rtl"] .product-usage_content_roll::after {
   }
   .right-single-star--3 {
     left: -40px;
+  }
+  html[dir="rtl"] .right-single-star--3 {
+    left: -30px;
   }
   .left-single-star--3 {
     top: -180px;
@@ -236,10 +266,19 @@ html[dir="rtl"] .product-usage_content_roll::after {
     top: 320px;
     left: -16px;
   }
+  html[dir="rtl"] .product-usage_content_roll {
+    top: 320px;
+    left: 0;
+    right: 0;
+  }
   .product-usage_content_roll::after {
     display: block;
     width: 80.12px;
     height: 157.64px;
+  }
+  html[dir="rtl"] .product-usage_content_roll::after {
+    top: 0;
+    right: -23px;
   }
   .product-usage_content_stars {
     top: -5%;
