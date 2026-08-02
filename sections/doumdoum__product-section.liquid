@@ -237,23 +237,23 @@
               type="button"
               id="sticky-buy-now-btn"
               class="doumdoum__add-btn doumdoum__sticky-btn-buy">
-              <span class="btn-text--desktop">{{ 'doumdoum.products.productSec.buyNowDesktop' | t }}</span>
-              <span class="btn-text--mobile">{{ 'doumdoum.products.productSec.buyNowMobile' | t }}</span>
+              <span class="btn-text--desktop">{{ 'doumdoum.products.productTabs.buyNowDesktop' | t }}</span>
+              <span class="btn-text--mobile">{{ 'doumdoum.products.productTabs.buyNowMobile' | t }}</span>
 
             </button>
             <button
               type="submit"
               name="add"
               class="doumdoum__add-btn doumdoum__sticky-btn-cart light_ray">
-              {{ 'doumdoum.products.productSec.addToCart' | t }}
+              {{ 'doumdoum.products.productTabs.addToCart' | t }}
               <span id="sticky-cart-price-display" data-base-price="{{ product.selected_or_first_available_variant.price }}">
                 {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
               </span>
             </button>
           </form>
-          <p>{{ 'doumdoum.products.productSec.protect30s' | t }}</p>
+          <p>{{ 'doumdoum.products.productTabs.protect30s' | t }}</p>
         {% else %}
-          <button class="doumdoum__add-btn sticky-btn-disabled" disabled>{{ 'doumdoum.products.productSec.disabeled' | t }}</button>
+          <button class="doumdoum__add-btn sticky-btn-disabled" disabled>{{ 'doumdoum.products.productTabs.disabled' | t }}</button>
         {% endif %}
       </div>
 
