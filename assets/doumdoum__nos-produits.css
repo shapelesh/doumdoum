@@ -61,6 +61,7 @@ html[dir="rtl"] .doumdoum__nos-produits-top h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px 0;
 }
 .doumdoum__nos-produits-products ul {
   display: flex;
