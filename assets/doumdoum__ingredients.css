@@ -183,7 +183,7 @@ html[dir="rtl"] .ingredient-card__description {
   margin: 0;
   text-wrap: nowrap;
 }
-.ingredient-card__benefits li {
+html[dir="rtl"] .ingredient-card__benefits li {
   font-family: "Playpen-Sans-Arabic";
   font-weight: 400;
   font-style: Regular;
