@@ -194,13 +194,15 @@ html[dir="rtl"] .contact-card-profile-info p {
   background-color: #6bb4f3;
   outline: 1px solid #d5edff;
 }
-.contact-card-btn a {
+
+html[dir="rtl"] .contact-card-btn a {
   font-family: "Playpen-Sans-Arabic";
   font-weight: 500;
   font-style: Medium;
   font-size: 15px;
   line-height: 120%;
   letter-spacing: -0.5%;
+  justify-content: flex-start;
 }
 .contact-card-btn a .doumdoum_chat-icon {
   position: relative;
