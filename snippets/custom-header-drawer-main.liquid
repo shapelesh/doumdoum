@@ -12,7 +12,7 @@
 <div class="doumdoum__header-drawer-links">
   <span class="doumdoum__header-drawer-link {% if request.page_type == 'index' %}active{% endif %}">
     <a href="{{ shop.url }}">
-      Accueil
+      {{ 'doumdoum.header.home' | t }}
     </a>
   </span>
   <span
@@ -20,7 +20,7 @@
     id="tabOpenButton"
     aria-expanded="false">
     <span>
-      Boutique
+      {{ 'doumdoum.header.store' | t }}
     </span>
     {% render 'icon-right-caret' %}
   </span>
@@ -32,7 +32,7 @@
     </span>
   {%- endfor -%}
   <span class="doumdoum__header-drawer-link" id="mobile_account_fake_button">
-    Mon compte
+    {{ 'doumdoum.header.myAccount' | t }}
   </span>
   <shopify-account
     menu="{{ section.settings.customer_account_menu }}"

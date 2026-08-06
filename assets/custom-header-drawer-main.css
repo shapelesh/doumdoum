@@ -78,6 +78,9 @@ custom-header-drawer.is-open .doumdoum__custom-header-drawer {
   display: flex;
   justify-content: space-between;
 }
+html[dir="rtl"] .doumdoum__header-drawer-link svg {
+  transform: rotateY(180deg);
+}
 html[dir="rtl"] .doumdoum__header-drawer-link {
   font-family: "Playpen-Sans-Arabic";
   font-weight: 500;
