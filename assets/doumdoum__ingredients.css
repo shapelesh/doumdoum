@@ -30,7 +30,6 @@ html[dir="rtl"] .doumdoum__ingredients-top h2 {
   position: relative;
   width: 100%;
   padding: 0 57px;
-  /* max-width: 1168px; */
 }
 .doumdoum__ingredients-suns {
   padding: 0 57px;
@@ -123,7 +122,6 @@ html[dir="rtl"] .ingredient-card__image-wrapper {
 }
 .ingredient-card__image {
   height: 100%;
-  /* width: 94px; */
 }
 
 .ingredient-card__content {
@@ -226,7 +224,6 @@ html[dir="rtl"] .ingredient-card__benefits li::before {
 }
 @media screen and (max-width: 768px) {
   .ingredient-card {
-    /* width: 253px; */
     min-height: 167px;
   }
   .ingredient-card__content h3 {
