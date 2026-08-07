@@ -77,6 +77,7 @@ html[dir="rtl"] .doumdoum__nos-produits-top h2 {
 .glide__bullets {
   display: none;
 }
+
 @media (max-width: 992px) {
   .doumdoum__nos-produits-products:not(.is-slider) ul {
     display: flex;
@@ -89,7 +90,7 @@ html[dir="rtl"] .doumdoum__nos-produits-top h2 {
   .doumdoum__nos-produits-products.is-slider ul {
     max-width: none;
     flex-wrap: nowrap;
-    padding-left: 90px;
+    gap: 0;
   }
   .doumdoum__nos-produits-products.is-slider ul li .product-title {
     display: flex;
@@ -113,7 +114,6 @@ html[dir="rtl"] .doumdoum__nos-produits-top h2 {
   .doumdoum__nos-produits-products.is-slider ul {
     max-width: none;
     flex-wrap: nowrap;
-    padding-left: 40px;
   }
   .doumdoum__nos-produits-products.is-slider
     ul

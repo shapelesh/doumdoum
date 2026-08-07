@@ -97,16 +97,7 @@ html[dir="rtl"] .doumdoum__ingredients-top h2 {
   top: 0;
   bottom: 0;
 }
-html[dir="rtl"] .ingredient-card__image-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  transform: rotateY(180deg);
-}
+
 .ingredient-card__image-wrapper img {
   height: 100%;
   object-fit: contain;
