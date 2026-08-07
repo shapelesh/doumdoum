@@ -1,5 +1,3 @@
-{{ "doumdoum__ingredients.css" | asset_url | stylesheet_tag }}
-
 {{ "doumdoum__product-ingredients.css" | asset_url | stylesheet_tag }}
 
 {% assign product_ingredients = product.metafields.custom.ingredients.value %}
@@ -8,37 +6,50 @@
   <div class="doumdoum__product-ingredients_title product-ingredient_title">
     <h2>{{ section.settings.product_ingredient_title }}</h2>
   </div>
+
   <div class="product-ingredient_container--sun-svg">
     <div class="product-ingredient_container--sun-svg-left">
       <img
-        src="{{ section.settings.left_sun |  image_url: width: section.settings.left_sun.width }}"
+        src="{{ section.settings.left_sun | image_url: width: section.settings.left_sun.width }}"
         alt="{{ section.settings.left_sun.alt }}"
         width="{{ section.settings.left_sun.width }}"
         height="{{ section.settings.left_sun.height }}">
     </div>
     <div class="product-ingredient_container--sun-svg-right">
       <img
-        src="{{ section.settings.right_sun |  image_url: width: section.settings.right_sun.width }}"
+        src="{{ section.settings.right_sun | image_url: width: section.settings.right_sun.width }}"
         alt="{{ section.settings.right_sun.alt }}"
         width="{{ section.settings.right_sun.width }}"
         height="{{ section.settings.right_sun.height }}">
     </div>
-
   </div>
+
   <div class="doumdoum__product-ingredients_container product-ingredient_container">
     {%- if product_ingredients -%}
       <div class="glide" data-slider="ingredients">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             {%- assign ingredient_1 = '' -%}
+            {%- assign total_ingredients = product_ingredients | size -%}
+
             {% for ingredient in product_ingredients %}
               {% assign remainder = forloop.index | modulo: 2 %}
-              {% if remainder != 0 %}
+
+                {% if remainder != 0 %}
                 {%- capture ingredient_1 -%}
-              {%- render 'custom_ingredient-card'
-              , ingredients: ingredient
-              , loop_index: forloop.index -%}
-            {%- endcapture -%}
+                  {%- render 'custom_ingredient-card',
+                    ingredients: ingredient,
+                    loop_index: forloop.index -%}
+                {%- endcapture -%}
+                {% comment %} Si c'est le dernier élément et qu'il est impair, on l'affiche dans sa propre slide {% endcomment %}
+                {% if forloop.last %}
+                  <li class="glide__slide">
+                    <div class="doumdoum__product-ingredients-column">
+                      {{ ingredient_1 }}
+                    </div>
+                  </li>
+                {% endif %}
+
               {% else %}
                 <li class="glide__slide">
                   <div class="doumdoum__product-ingredients-column">
