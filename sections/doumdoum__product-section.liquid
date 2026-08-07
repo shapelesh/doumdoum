@@ -11,7 +11,7 @@
   <div class="doumdoum__custom-product-section_container-grid">
     <div class="container-grid__images">
       <div class="product-gallery">
-        <div class="product-main-image">
+        <div class="product-main-image" id="MainImageContainer-{{ section.id }}">
           <img
             id="MainImage-{{ section.id }}"
             src="{{ product.featured_media | img_url: '800x' }}"
@@ -219,6 +219,28 @@
 
     </div>
   </div>
+  <!-- Lightbox -->
+  <div
+    class="product-lightbox"
+    id="ProductLightbox-{{ section.id }}"
+    aria-hidden="true">
+
+    <button
+      type="button"
+      class="product-lightbox-close"
+      aria-label="Fermer">
+      &times;
+    </button>
+
+    <div class="product-lightbox-content">
+      <img
+        id="LightboxImage-{{ section.id }}"
+        src=""
+        alt="">
+    </div>
+
+  </div>
+</div>
 </section>
 
 {% schema %}

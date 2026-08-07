@@ -352,3 +352,64 @@ function updateMainImage(imgSrc, thumbElement) {
     thumbElement.classList.add("active");
   }
 }
+function initProductLightbox() {
+  const mainImages = document.querySelectorAll(".product-main-image");
+
+  mainImages.forEach((container) => {
+    const mainImage = container.querySelector("img");
+
+    if (!mainImage) return;
+
+    const sectionId = mainImage.id.replace("MainImage-", "");
+
+    const lightbox = document.getElementById("ProductLightbox-" + sectionId);
+
+    const lightboxImage = document.getElementById("LightboxImage-" + sectionId);
+
+    const closeButton = lightbox?.querySelector(".product-lightbox-close");
+
+    if (!lightbox || !lightboxImage) return;
+
+    container.addEventListener("click", () => {
+      lightboxImage.src = mainImage.src;
+      lightboxImage.alt = mainImage.alt || "";
+
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+
+      document.body.style.overflow = "hidden";
+    });
+
+    closeButton?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      closeProductLightbox(lightbox);
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeProductLightbox(lightbox);
+      }
+    });
+  });
+}
+
+function closeProductLightbox(lightbox) {
+  lightbox.classList.remove("is-open");
+  lightbox.setAttribute("aria-hidden", "true");
+
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+
+  const openLightbox = document.querySelector(".product-lightbox.is-open");
+
+  if (openLightbox) {
+    closeProductLightbox(openLightbox);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  initProductLightbox();
+});
