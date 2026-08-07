@@ -120,7 +120,7 @@ html[dir="rtl"] .ingredient-card__image-wrapper {
 .ingredient-card__image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .ingredient-card__image {
   height: 100%;
@@ -232,5 +232,29 @@ html[dir="rtl"] .ingredient-card__benefits li::before {
   }
   .ingredient-card__content h3 {
     font-size: 18px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .ingredient-card__image-wrapper {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+  html[dir="rtl"] .ingredient-card__image-wrapper {
+    display: flex;
+    align-items: center;
+    width: 35%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: auto;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    z-index: 1;
   }
 }
