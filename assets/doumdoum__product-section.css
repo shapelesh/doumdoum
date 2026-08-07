@@ -442,16 +442,7 @@ html[dir="rtl"] .tab-content-display p {
 }
 
 /* --------------rtlCss---------------- */
-html[dir="rtl"] .ingredient-card__image-wrapper {
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: rotateY(180deg) translate(37%, 0);
-}
+
 html[dir="rtl"]
   .product-thumbnails-container
   > .glide__arrows
