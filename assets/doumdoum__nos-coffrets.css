@@ -317,6 +317,10 @@ html[dir="rtl"] .doumdoum__nos-coffret-product-atc button[type="submit"] {
     flex-direction: column;
   }
 
+  html[dir="rtl"] .doumdoum__nos-coffrets-products ul {
+    flex-direction: column;
+  }
+
   .doumdoum__nos-coffrets-products ul li:nth-child(2) {
     border-left: none;
     border-right: none;

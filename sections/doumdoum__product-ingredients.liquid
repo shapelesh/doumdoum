@@ -1,5 +1,7 @@
 {{ "doumdoum__product-ingredients.css" | asset_url | stylesheet_tag }}
 
+{{ "doumdoum__product-ingredients.css" | asset_url | stylesheet_tag }}
+
 {% assign product_ingredients = product.metafields.custom.ingredients.value %}
 
 <section class="page-width doumdoum__product-ingredients section-{{ section.id }} ingredient-of-{{ product.title }}">
