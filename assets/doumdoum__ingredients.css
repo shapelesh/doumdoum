@@ -96,7 +96,6 @@ html[dir="rtl"] .doumdoum__ingredients-top h2 {
   overflow: hidden;
   background-color: #fafafa;
   isolation: isolate;
-  z-index: 0;
 }
 .ingredient-card__image-wrapper {
   height: 100%;
@@ -134,6 +133,8 @@ html[dir="rtl"] .ingredient-card__image-wrapper {
   align-items: flex-start;
   text-align: left;
   gap: 12px;
+  z-index: 0;
+  position: relative;
 }
 .ingredient-card__content h3 {
   font-family: Fredoka;
