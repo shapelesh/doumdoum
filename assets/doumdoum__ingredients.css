@@ -99,7 +99,6 @@ html[dir="rtl"] .doumdoum__ingredients-top h2 {
 .ingredient-card__image-wrapper {
   height: 100%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   position: absolute;
   right: 0;
@@ -107,7 +106,6 @@ html[dir="rtl"] .doumdoum__ingredients-top h2 {
 }
 html[dir="rtl"] .ingredient-card__image-wrapper {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   position: absolute;
   left: 0;
