@@ -80,6 +80,8 @@ html[dir="rtl"] .doumdoum__ingredients-top h2 {
   position: relative;
   justify-self: center;
   display: flex;
+  min-width: 0;
+  width: 100%;
   min-height: 173px;
   padding: 15px 12px;
   border-radius: 24px;
@@ -103,13 +105,16 @@ html[dir="rtl"] .doumdoum__ingredients-top h2 {
   object-fit: contain;
 }
 .ingredient-card__image {
-  max-width: 100%;
-  height: 174px;
-  width: 94px;
+  width: 82px;
+  max-width: 82px;
+  height: 100%;
+  object-fit: contain;
 }
 
 .ingredient-card__content {
-  width: 80%;
+  max-width: 100%;
+  height: 174px;
+  width: 94px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -182,6 +187,48 @@ html[dir="rtl"] .ingredient-card__image-wrapper {
   top: 0;
   transform: rotateY(180deg) translate(37%, 0);
 }
+/* ================================
+   INGREDIENTS - GLIDE
+================================ */
+
+.product-ingredient_container {
+  width: 100%;
+  min-width: 0;
+}
+
+.product-ingredient_container .glide {
+  width: 100%;
+  min-width: 0;
+}
+
+.product-ingredient_container .glide__track {
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-ingredient_container .glide__slides {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-ingredient_container .glide__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.product-ingredient_container .doumdoum__product-ingredients-column {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 2px;
+}
 @media screen and (max-width: 768px) {
   .ingredient-card__content h3 {
     font-size: 18px;
@@ -212,5 +259,37 @@ html[dir="rtl"] .ingredient-card__image-wrapper {
   }
   .ingredient-card__benefits li {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .doumdoum__product-ingredients {
+    padding: 57px 0 57px 16px;
+    overflow: hidden;
+  }
+
+  .ingredient-card {
+    min-height: 165px;
+  }
+
+  .ingredient-card__content {
+    max-width: calc(100% - 70px);
+  }
+
+  .ingredient-card__image-wrapper {
+    width: 70px;
+  }
+
+  .ingredient-card__image {
+    width: 70px;
+    max-width: 70px;
+  }
+
+  .ingredient-card__description {
+    font-size: 14px;
+  }
+
+  .ingredient-card__benefits li {
+    font-size: 12px;
+    white-space: normal;
   }
 }
