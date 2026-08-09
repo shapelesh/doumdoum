@@ -152,7 +152,7 @@ html[dir="rtl"] .doumdoum__nos-produits-top h2 {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 500px) {
   .doumdoum__nos-produits-products.is-slider ul {
     max-width: none;
     flex-wrap: nowrap;

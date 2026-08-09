@@ -339,6 +339,10 @@ custom-cart-drawer.is-loading {
   overflow-y: hidden;
   scrollbar-width: none;
 }
+.recommendations-grid.is-loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
 .recommendation-card {
   display: flex;
   flex-direction: row;
@@ -349,6 +353,7 @@ custom-cart-drawer.is-loading {
   border: none;
   outline: 1px solid #d5d7da;
 }
+
 .recommendation-image {
   display: flex;
   position: relative;
