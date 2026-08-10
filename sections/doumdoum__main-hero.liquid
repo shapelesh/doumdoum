@@ -79,7 +79,8 @@
           src="{{ section.settings.right_image |  image_url: width: section.settings.right_image.width }}"
           alt="{{ section.settings.right_image.alt }}"
           width="{{ section.settings.right_image.width }}"
-          height="{{ section.settings.right_image.height }}">
+          height="{{ section.settings.right_image.height }}"
+          fetchpriority="high">
       </div>
       <img
         src="{{ section.settings.approved |  image_url: width: section.settings.approved.width }}"
