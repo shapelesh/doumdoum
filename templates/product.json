@@ -505,20 +505,6 @@
             "faq_res_text": "Oui, les produits Doumdoum sont formulés pour les peaux sensibles et fragiles. Grace a des ingrédients doux et sans substances agressives, ils peuvent être utilisés en cas de peau sujette a l'eczéma. En cas de poussés importante, il est toujours recommandé de demander l'avis d'un professionnel de santé"
           }
         },
-        "custom_faq_Cwn676": {
-          "type": "custom_faq",
-          "settings": {
-            "faq_qst_text": "Que se passe-t-il si le gel lavant entre dans les yeux de bébé ?",
-            "faq_res_text": "Le liniment s'utilise en prévention, dés le change, pour nettoyer la peau et créer un barrière protectrices afin d'éviter les irritations"
-          }
-        },
-        "custom_faq_knBawY": {
-          "type": "custom_faq",
-          "settings": {
-            "faq_qst_text": "Quelle est la différence entre le liniment et la crème de change ?",
-            "faq_res_text": "Les produits Doumdoum peuvent être utilisés dés l'âge de 6 mois, ils sont conçue pour être doux et sûre pour la peau des enfants"
-          }
-        },
         "custom_faq_DnBBKQ": {
           "type": "custom_faq",
           "settings": {
@@ -530,6 +516,13 @@
           "type": "custom_faq",
           "settings": {
             "faq_qst_text": "Les produits sont-ils disponibles en pharmacie ?",
+            "faq_res_text": "Oui, tous les produits Doumdoum sont spécialement formulés pour les peaux sensibles : sans parfums agressif, avec des ingrédients doux et testés dermatologiquement"
+          }
+        },
+        "custom_faq_VQheyn": {
+          "type": "custom_faq",
+          "settings": {
+            "faq_qst_text": "Les produits sont-ils adaptés aux peaux sensibles ?",
             "faq_res_text": "Oui, tous les produits Doumdoum sont spécialement formulés pour les peaux sensibles : sans parfums agressif, avec des ingrédients doux et testés dermatologiquement"
           }
         },
@@ -550,10 +543,9 @@
       },
       "block_order": [
         "custom_faq_8nRW6c",
-        "custom_faq_Cwn676",
-        "custom_faq_knBawY",
         "custom_faq_DnBBKQ",
         "custom_faq_PVGLf7",
+        "custom_faq_VQheyn",
         "custom_faq_KyxeEN",
         "custom_faq_H9DWdj"
       ],

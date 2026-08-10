@@ -104,11 +104,21 @@
             <div class="radio-option">
               <input
                 type="radio"
-                id="type-grossiste"
                 name="contact[customer_type]"
-                value="Client"
+                id="type-point-vente"
+                value="Point de vente"
                 checked>
-              <label for="type-grossiste">{{ 'doumdoum.contact.contactForm.radioGrossiste' | t }}</label>
+              <label for="type-point-vente">{{ 'doumdoum.contact.contactForm.radioGrossiste' | t }}</label>
+            </div>
+
+            <div class="radio-option">
+              <input
+                type="radio"
+                for="type-grossiste"
+                name="contact[customer_type]"
+                id="type-grossiste"
+                value="Grossiste">
+              <label>{{ 'doumdoum.contact.contactForm.radioPointDeVente' | t }}</label>
             </div>
 
             <div class="radio-option">
@@ -116,17 +126,8 @@
                 type="radio"
                 id="type-particulier"
                 name="contact[customer_type]"
-                value="Point de vente">
-              <label for="type-particulier">{{ 'doumdoum.contact.contactForm.radioPointDeVente' | t }}</label>
-            </div>
-
-            <div class="radio-option">
-              <input
-                type="radio"
-                id="type-point-vente"
-                name="contact[customer_type]"
-                value="Grossiste">
-              <label for="type-point-vente">{{ 'doumdoum.contact.contactForm.radioClient' | t }}</label>
+                value="Client">
+              <label for="type-particulier">{{ 'doumdoum.contact.contactForm.radioClient' | t }}</label>
             </div>
 
           </div>

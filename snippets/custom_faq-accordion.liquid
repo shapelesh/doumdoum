@@ -1,19 +1,59 @@
+{% comment %} <div class="dropdown _blurry _icon-plus">
+                                              <input
+                                                type="checkbox"
+                                                class="dropdown-toggler"
+                                                id="toggler-faq-{{ block.id }}"
+                                                onclick="if(this.checked){ document.querySelectorAll('.dropdown-toggler').forEach(el => { if(el !== this) el.checked = false; }); }">
+                                              <div class="dropdown-container">
+                                                <label class="dropdown-title" for="toggler-faq-{{ block.id }}">
+                                                  <h4 class="dropdown-title__text">
+                                                    {{ block.settings.faq_qst_text }}
+                                                  </h4>
+                                                </label>
+                                                <div class="dropdown-content__wrap">
+                                                  <div class="dropdown-content">
+                                                    <p>{{ block.settings.faq_res_text }}</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+</div> {% endcomment %}
 <div class="dropdown _blurry _icon-plus">
+
+  {% if faq %}
+    {% assign faq_unique_id = faq.system.id | remove: 'gid://shopify/Metaobject/' | remove: '/' %}
+  {% else %}
+    {% assign faq_unique_id = block.id %}
+  {% endif %}
+
   <input
     type="checkbox"
     class="dropdown-toggler"
-    id="toggler-faq-{{ block.id }}"
+    id="toggler-faq-{{ section.id }}-{{ faq_unique_id }}"
     onclick="if(this.checked){ document.querySelectorAll('.dropdown-toggler').forEach(el => { if(el !== this) el.checked = false; }); }">
+
   <div class="dropdown-container">
-    <label class="dropdown-title" for="toggler-faq-{{ block.id }}">
+
+    <label class="dropdown-title" for="toggler-faq-{{ section.id }}-{{ faq_unique_id }}">
       <h4 class="dropdown-title__text">
-        {{ block.settings.faq_qst_text }}
+        {% if faq %}
+          {{ faq.question }}
+        {% else %}
+          {{ block.settings.faq_qst_text }}
+        {% endif %}
       </h4>
     </label>
+
     <div class="dropdown-content__wrap">
       <div class="dropdown-content">
-        <p>{{ block.settings.faq_res_text }}</p>
+
+        {% if faq %}
+          <p>{{ faq.reponse }}</p>
+        {% else %}
+          <p>{{ block.settings.faq_res_text }}</p>
+        {% endif %}
+
       </div>
     </div>
+
   </div>
 </div>

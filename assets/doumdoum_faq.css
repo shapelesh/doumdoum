@@ -85,6 +85,8 @@ html[dir="rtl"] .custom_faq--container h2 {
   letter-spacing: -0.5%;
   vertical-align: middle;
   padding-left: 30px;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
 html[dir="rtl"] .dropdown-title h4 {
   font-family: "Playpen-Sans-Arabic";

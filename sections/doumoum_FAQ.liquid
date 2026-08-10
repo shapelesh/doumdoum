@@ -6,12 +6,19 @@
       {{ section.settings.faq_title }}
     </h2>
     <div class="custom_faq--accordion">
+      {% if product and product.metafields.custom.product_related_question.value != blank %}
+        {% for faq in product.metafields.custom.product_related_question.value %}
+          {% render 'custom_faq-accordion'
+            , faq: faq %}
+        {% endfor %}
+      {% endif %}
       {% for block in section.blocks %}
         {% if block.type == 'custom_faq' %}
           {% render 'custom_faq-accordion'
             , block: block %}
         {% endif %}
       {% endfor %}
+
     </div>
   </div>
 </section>

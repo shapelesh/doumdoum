@@ -392,6 +392,9 @@ html[dir="rtl"] .form-submit button {
   .doumdoum__contact-form {
     padding: 100px 20px;
   }
+  .doumdoum__contact-form-right {
+    width: 100%;
+  }
   .doumdoum__contact-form-container {
     display: flex;
     flex-direction: column;
