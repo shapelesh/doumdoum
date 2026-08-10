@@ -415,46 +415,6 @@
     "doumdoum_testimonials_RhzaHL": {
       "type": "doumdoum__testimonials",
       "blocks": {
-        "testimonial_byRmTz": {
-          "type": "testimonial",
-          "settings": {
-            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
-            "author": "Une maman",
-            "background": ""
-          }
-        },
-        "testimonial_7pE3PR": {
-          "type": "testimonial",
-          "settings": {
-            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
-            "author": "Une maman",
-            "background": ""
-          }
-        },
-        "testimonial_eKC8AM": {
-          "type": "testimonial",
-          "settings": {
-            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
-            "author": "Une maman",
-            "background": ""
-          }
-        },
-        "testimonial_CP4rjr": {
-          "type": "testimonial",
-          "settings": {
-            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
-            "author": "Une maman",
-            "background": ""
-          }
-        },
-        "testimonial_e69Mcn": {
-          "type": "testimonial",
-          "settings": {
-            "text": "Franchement, je n'attendais pas un résultat aussi rapide. La peau de mon bébé est plus douce dès la première semaine.",
-            "author": "Une maman",
-            "background": ""
-          }
-        },
         "testimonial_p8NbWt": {
           "type": "testimonial",
           "settings": {
@@ -465,11 +425,6 @@
         }
       },
       "block_order": [
-        "testimonial_byRmTz",
-        "testimonial_7pE3PR",
-        "testimonial_eKC8AM",
-        "testimonial_CP4rjr",
-        "testimonial_e69Mcn",
         "testimonial_p8NbWt"
       ],
       "name": "Testimonials",

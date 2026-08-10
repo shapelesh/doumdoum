@@ -25,34 +25,63 @@
 
   {%- if section.blocks.size > 0 -%}
     <div class="doumdoum__testimonials-cards">
-      <div class="glide" data-slider="testimonials">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            {%- for block in section.blocks -%}
-              <li
-                class="glide__slide"
-                {% if block.settings.background != blank %}
-                style="background-color: {{ block.settings.background }};"
-                {% endif %}
-                {{ block.shopify_attributes }}>
-                <div class="doumdoum__testimonial-card">
-                  <div class="doumdoum__testimonials-card-top">
-                    <p class="doumdoum__testimonial-card-author">
-                      {{ block.settings.author }}
-                    </p>
-                  </div>
-                  <div class="doumdoum__testimonials-card">
-                    <p class="doumdoum__testimonial-card-text">
-                      {{ block.settings.text }}
-                    </p>
-                  </div>
-                </div>
-              </li>
-            {%- endfor -%}
-          </ul>
-        </div>
-      </div>
+      {{ "doumdoum__testimonials.css" | asset_url | stylesheet_tag }}
 
+      {%- assign product_reviews = product.metafields.custom.product_related_reviews.value -%}
+      {%- assign total_reviews = section.blocks.size | plus: product_reviews.size -%}
+
+      {%- if total_reviews > 0 -%}
+
+        <div class="glide" data-slider="testimonials">
+
+          <div class="glide__track" data-glide-el="track">
+
+            <ul class="glide__slides">
+              {%- for review in product_reviews -%}
+                <li
+                  class="glide__slide"
+                  {% if review.background != blank %}
+                  style="background-color: {{ review.background }};"
+                  {% endif %}>
+                  <div class="doumdoum__testimonial-card">
+                    <div class="doumdoum__testimonials-card-top">
+                      <p class="doumdoum__testimonial-card-author">
+                        {{ review.auteur }}
+                      </p>
+                    </div>
+                    <div class="doumdoum__testimonials-card">
+                      <p class="doumdoum__testimonial-card-text">
+                        {{ review.text }}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              {%- endfor -%}
+              {%- for block in section.blocks -%}
+                <li
+                  class="glide__slide"
+                  {% if block.settings.background != blank %}
+                  style="background-color: {{ block.settings.background }};"
+                  {% endif %}
+                  {{ block.shopify_attributes }}>
+                  <div class="doumdoum__testimonial-card">
+                    <div class="doumdoum__testimonials-card-top">
+                      <p class="doumdoum__testimonial-card-author">
+                        {{ block.settings.author }}
+                      </p>
+                    </div>
+                    <div class="doumdoum__testimonials-card">
+                      <p class="doumdoum__testimonial-card-text">
+                        {{ block.settings.text }}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </div>
+      {%- endif -%}
     </div>
   {%- endif -%}
 </section>
