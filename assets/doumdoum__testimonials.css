@@ -138,6 +138,7 @@ html[dir="rtl"] .doumdoum__testimonials-top h2 {
   color: #414651;
   margin: 0;
   text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 html[dir="rtl"] .doumdoum__testimonial-card-text {
   font-family: "Playpen-Sans-Arabic";
