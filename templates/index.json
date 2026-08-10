@@ -63,7 +63,7 @@
         "first_product_thumbnail": "shopify://shop_images/2eace863e8ec031917b3745987799bcb4f1de5c2.png",
         "first_background_color": "radial-gradient(rgba(195, 255, 222, 1), rgba(255, 255, 255, 1) 100%)",
         "product_bg": "shopify://shop_images/green.png",
-        "second_product": "pack-soins-complets",
+        "second_product": "pack-soins-complets-1",
         "second_product_thumbnail": "shopify://shop_images/880e0f7dda7a0ebde45fecea8e54798d93ec9da4.png",
         "second_background_color": "linear-gradient(57deg, rgba(255, 196, 235, 1), rgba(255, 255, 255, 1) 100%)",
         "product_bg_2": "shopify://shop_images/pink_52b2e6ef-2ba8-4cd8-8c34-bc30046dcf99.png",
@@ -77,6 +77,7 @@
       "type": "doumdoum__nos-produits",
       "name": "Nos Produits",
       "settings": {
+        "mobile_layout": "grid",
         "heading": "Découvrez nos produits pour bébé",
         "label": "Nos produits",
         "collection": "produits"
