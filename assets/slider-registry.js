@@ -78,6 +78,9 @@ export const sliderRegistry = {
     perView: 4,
     focusAt: "center",
     breakpoints: {
+      1069: {
+        perView: 3.1,
+      },
       992: {
         perView: 2.8,
       },

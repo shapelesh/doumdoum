@@ -66,13 +66,15 @@ html[dir="rtl"] .doumdoum__ingredients-top h2 {
   gap: 12px;
   margin: 3px;
 }
-@media (max-width: 992px) {
+@media (max-width: 1069px) {
   .doumdoum__ingredients-desktop {
     display: none;
   }
   .doumdoum__ingredients-mobile {
     display: flex;
   }
+}
+@media (max-width: 992px) {
   .doumdoum__ingredients-suns {
     padding: 0;
     left: -40px;
