@@ -100,6 +100,9 @@ html[dir="rtl"] .doumdoum__testimonials-top h2 {
   display: flex;
   align-items: center;
 }
+.doumdoum__testimonial-card {
+  overflow: hidden;
+}
 .doumdoum__testimonials-cards ul li:hover .doumdoum__testimonial-card {
   z-index: 3;
   transform: rotate(0);
@@ -181,6 +184,7 @@ html[dir="rtl"] .doumdoum__testimonial-card-author {
   letter-spacing: -0.5%;
   color: #252b37;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 html[dir="rtl"] .doumdoum__testimonial-card-text {
   font-family: "Playpen-Sans-Arabic";
