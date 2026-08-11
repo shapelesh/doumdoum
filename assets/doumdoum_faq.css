@@ -218,6 +218,9 @@ html[dir="rtl"] .custom_faq--container h2 {
     position: relative;
     align-self: baseline;
   }
+  .dropdown-title h4 {
+    text-wrap: wrap;
+  }
 }
 @media screen and (max-width: 768px) {
   .dropdown-container {

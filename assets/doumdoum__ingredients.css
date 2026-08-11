@@ -233,6 +233,16 @@ html[dir="rtl"] .ingredient-card__benefits li::before {
   .ingredient-card__content h3 {
     font-size: 18px;
   }
+  .ingredient-card__image-wrapper {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
 }
 @media screen and (max-width: 425px) {
   .ingredient-card__image-wrapper {
