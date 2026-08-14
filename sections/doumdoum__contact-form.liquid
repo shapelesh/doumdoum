@@ -65,17 +65,6 @@
             {{ form.errors | default_errors }}
           </div>
         {% endif %}
-
-        <input
-          type="hidden"
-          name="contact[email]"
-          value="contact@doumdoum.co">
-
-        <input
-          type="hidden"
-          name="contact[name]"
-          value="Client Site">
-
         <div class="form-field">
           <label for="contact-phone">{{ 'doumdoum.contact.contactForm.phoneNumber' | t }}</label>
           <input
@@ -132,6 +121,15 @@
 
           </div>
         </div>
+        <input
+          type="hidden"
+          name="contact[email]"
+          value="contact@doumdoum.co">
+
+        <input
+          type="hidden"
+          name="contact[name]"
+          value="Client Site">
 
         <div class="form-submit">
           <button type="submit" class="btn">
