@@ -12,6 +12,7 @@
     "logo": "shopify://shop_images/doumdoum_logo.svg",
     "logo_height": 36,
     "logo_height_mobile": 28,
+    "favicon": "shopify://shop_images/icon_site.png",
     "type_body_font": "inter_n4",
     "type_subheading_font": "inter_n5",
     "type_heading_font": "inter_n7",
@@ -92,11 +93,18 @@
           "popup_product": "pack-soins-complets-1",
           "buy_button_label": "Acheter",
           "back_button_label": "Retour",
+          "first_title": "Tout pour bébé dès la naissance",
+          "second_title": "Choisissez ce qui vous convient",
+          "second_paragraph": "Deux options pour votre bébé. Une simple, une complète. À vous de choisir.",
           "popup_b_product_1": "gel-lavant-2en1",
           "popup_b_product_2": "coffret-naissance",
           "target_handles": "contact,a-propos",
           "trigger_delay": 5
         }
+      },
+      "doumdoum__orders-notification": {
+        "type": "doumdoum__orders-notification",
+        "settings": {}
       }
     },
     "content_for_index": [],
